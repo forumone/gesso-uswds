@@ -59,6 +59,6 @@
   },
   "dependencies": {
     "lightercollective": "^0.3.0",
-    "uswds": "^2.2.1"
+    "uswds": "2.2.1"
   }
 }
