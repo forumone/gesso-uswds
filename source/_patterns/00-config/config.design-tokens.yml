@@ -143,25 +143,49 @@ gesso:
     font-family:
       primary:
         name: Primary
-        stack: '"Source Sans Pro", Arial, sans-serif'
+        stack: !sass
+          sass: 'family("body")'
+          fallback: '"Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif'
       system:
         name: System
         stack: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Fira Sans", Droid Sans, sans-serif'
       monospace:
         name: Monospace
-        stack: 'Consolas, "Lucida Console", "Liberation Mono", "Courier New", monospace, sans-serif'
+        stack: !sass
+          sass: 'family("mono")'
+          fallback: '"Roboto Mono Web", "Roboto Mono Web", "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace'
     base-font-size: 16px
     font-size:
-      0: 12px
-      1: 16px
-      2: 20px
-      3: 24px
-      4: 32px
-      5: 40px
-      6: 48px
-      7: 56px
-      8: 64px
-      9: 72px
+      0: !sass
+        sass: 'size("body", "3xs")'
+        fallback: 13px
+      1: !sass
+        sass: 'size("body", "2xs")'
+        fallback: 14px
+      2: !sass
+        sass: 'size("body", "xs")'
+        fallback: 15px
+      3: !sass
+        sass: 'size("body", "sm")'
+        fallback: 16px
+      4: !sass
+        sass: 'size("heading", "md")'
+        fallback: 17px
+      5: !sass
+        sass: 'size("heading", "lg")'
+        fallback: 22px
+      6: !sass
+        sass: 'size("heading", "xl")'
+        fallback: 32px
+      7: !sass
+        sass: 'size("heading", "2xl")'
+        fallback: 40px
+      8: !sass
+        sass: 'size("heading", "3xl")'
+        fallback: 48px
+      9: !sass
+        sass: 'size("heading", 18)'
+        fallback: 80px
     font-weight:
       light: 300
       regular: 400

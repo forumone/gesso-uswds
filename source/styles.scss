@@ -1,10 +1,11 @@
 // @file
 // Main styles
 
+@import '_patterns/uswds-theme-settings';
 @import 'breakpoint';
-
-@import '_patterns/00-config/**/*.scss';
 @import 'packages/required';
+@import '_patterns/00-config/**/*.scss';
+@import 'packages/global';
 @import '_patterns/01-global/**/*.scss';
 @import '_patterns/02-base/**/*.scss';
 @import '_patterns/03-layouts/**/*.scss';
