@@ -2,10 +2,10 @@
 // Styles for form fieldsets.
 
 
-$fieldset-legend-offset: rem(gesso-line-height(base) * gesso-base-font-size()) !default;
+$fieldset-legend-offset: rem(gesso-line-height(base)) * gesso-base-font-size() !default;
 
 .fieldset {
-  margin-bottom: rem(gesso-spacing(md) + (gesso-line-height(base) * gesso-base-font-size()));
+  margin-bottom: gesso-spacing(md) + (rem(gesso-line-height(base)) * gesso-base-font-size());
   padding: 0;
   position: relative;
   top: $fieldset-legend-offset; // Offsets the negative margin of legends.
