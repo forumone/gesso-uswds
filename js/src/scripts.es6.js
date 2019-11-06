@@ -1,4 +1,11 @@
 // Custom scripts file
+// Include the USWDS Accordion script.
+// This makes the component available globally. If you're only using it on certain pages,
+// include it on a template-specific script file instead.
+// Be sure to initialize any components as well (see init() function below.)
+import domready from 'domready';
+import accordion from 'uswds/src/js/components/accordion.js';
+
 (function() {
   'use strict';
 
@@ -17,5 +24,9 @@
 
     // 200 is time in miliseconds.
     timeOut = setTimeout(resizeStuff, 200);
+  });
+
+  domready(() => {
+    accordion.on(document.body);
   });
 })();

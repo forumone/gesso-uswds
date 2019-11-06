@@ -27,6 +27,7 @@
     "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
     "breakpoint-sass": "^2.7.1",
+    "domready": "^1.0.8",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-loader": "^3.0.0",
