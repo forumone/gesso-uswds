@@ -2,7 +2,11 @@
 
   {% set rendered_style = '' %}
   {% for prop, value in style %}
-    {% set rendered_style = prop ~ ': ' ~ value ~ '; ' ~ rendered_style %}
+    {% if value is iterable %}
+      {% set rendered_style = prop ~ ': ' ~ (value['fallback'] is empty ? value['sass'] : value['fallback']) ~ '; ' ~ rendered_style %}
+    {% else %}
+      {% set rendered_style = prop ~ ': ' ~ value ~ '; ' ~ rendered_style %}
+    {% endif %}
   {% endfor %}
 
   <div class="pattern-lab__text-style">
