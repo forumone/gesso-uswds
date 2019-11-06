@@ -357,7 +357,7 @@ gesso:
     modal: 1300
   spacing:
     xxs: !sass
-      sass: 'units(05)'
+      sass: 'units("05")'
       fallback: '4px'
     xs: !sass
       sass: 'units(1)'
