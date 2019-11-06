@@ -10,8 +10,7 @@ caption {
 // colgroup {}
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  @extend %usa-table;
   margin-bottom: rem(gesso-spacing(xs));
   min-width: 100%;
 }

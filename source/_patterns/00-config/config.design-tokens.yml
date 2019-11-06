@@ -252,16 +252,16 @@ gesso:
         fallback: 80px
     font-weight:
       light: !sass
-        sass: 'weight("normal")'
+        sass: 'font-weight("normal")'
         fallback: 300
       regular: !sass
-        sass: 'weight("normal")'
+        sass: 'font-weight("normal")'
         fallback: 400
       semibold: !sass
-        sass: 'weight("semibold")'
+        sass: 'font-weight("semibold")'
         fallback: 600
       bold: !sass
-        sass: 'weight("bold")'
+        sass: 'font-weight("bold")'
         fallback: 700
     line-height:
       tight: 1.1
@@ -277,31 +277,31 @@ gesso:
       h1:
         color: text.primary
         font-family: primary.stack
-        font-size: 6
+        font-size: 7
         font-weight: bold
         line-height: tight
       h2:
         color: text.primary
         font-family: primary.stack
-        font-size: 5
+        font-size: 6
         font-weight: bold
         line-height: tight
       h3:
         color: text.primary
         font-family: primary.stack
-        font-size: 4
+        font-size: 5
         font-weight: bold
         line-height: tight
       h4:
         color: text.primary
         font-family: primary.stack
-        font-size: 3
+        font-size: 4
         font-weight: bold
         line-height: base
       h5:
         color: text.primary
         font-family: primary.stack
-        font-size: 1
+        font-size: 2
         font-weight: bold
         line-height: base
       h6:
@@ -315,19 +315,19 @@ gesso:
       blockquote:
         color: text.link
         font-family: primary.stack
-        font-size: 3
+        font-size: 5
         font-weight: regular
         line-height: base
       body:
         color: text.primary
         font-family: primary.stack
-        font-size: 1
+        font-size: 3
         font-weight: regular
         line-height: base
       body-large:
         color: text.primary
         font-family: primary.stack
-        font-size: 2
+        font-size: 4
         font-weight: regular
         line-height: base
       cite:

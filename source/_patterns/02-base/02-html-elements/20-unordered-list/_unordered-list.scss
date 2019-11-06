@@ -2,14 +2,17 @@
 // Unordered list styles.
 
 ul {
+  @extend %usa-list;
   list-style-type: disc;
-  margin: 0 0 rem(gesso-spacing(sm));
-  padding: 0 0 0 rem(gesso-spacing(md)); // LTR
 
   @if $support-for-rtl {
     [dir='rtl'] & {
       padding: 0 rem(gesso-spacing(md)) 0 0;
     }
+  }
+
+  li {
+    @extend %usa-list-item;
   }
 
   ol,
