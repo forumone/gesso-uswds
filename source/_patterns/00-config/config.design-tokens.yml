@@ -4,42 +4,96 @@ gesso:
   palette:
     brand:
       blue:
-        base: '#0071BC'
-        light: '#4773aa'
-        light-1: '#8ba6ca'
-        light-2: '#dce4ef'
-        dark: '#205493'
-        dark-1: '#112E51'
+        base: !sass
+          sass: 'color("blue-60v")'
+          fallback: '#005ea2'
+        light: !sass
+          sass: 'color("blue-40")'
+          fallback: '#4f97d1'
+        light-1: !sass
+          sass: 'color("blue-20")'
+          fallback: '#aacdec'
+        light-2: !sass
+          sass: 'sass("blue-10")'
+          fallback: '#d9e8f6'
+        dark: !sass
+          sass: 'sass("blue-warm-70v")'
+          fallback: '#1a4480'
+        dark-1: !sass
+          sass: 'sass("blue-warm-80v")'
+          fallback: '#162e51'
       ocean-blue:
-        base: '#02bfe7'
-        light: '#9bdaf1'
-        light-1: '#e1f3f8'
-        dark: '#00a6d2'
-        dark-1: '#046b99'
+        base: !sass
+          sass: 'color("cyan-30v")'
+          fallback: '#00bde3'
+        light: !sass
+          sass: 'color("blue-cool-20v")'
+          fallback: '#97d4ea'
+        light-1: !sass
+          sass: 'color("blue-cool-5v")'
+          fallback: '#e1f3f8'
+        dark: !sass
+          sass: 'color("blue-cool-40v")'
+          fallback: '#28a0cb'
+        dark-1: !sass
+          sass: 'color("blue-cool-60v")'
+          fallback: '#07648d'
     grayscale:
       white: '#fff'
-      gray-1: '#f7f7f7'
-      gray-2: '#f1f1f1'
-      gray-3: '#d6d7d9'
-      gray-4: '#aeb0b5'
-      gray-5: '#5b616b'
-      gray-6: '#323a45'
-      black: '#212121'
+      gray-1: !sass
+        sass: 'color("gray-cool-5")'
+        fallback: '#f0f0f0'
+      gray-2: !sass
+        sass: 'color("gray-cool-10")'
+        fallback: '#dcdee0'
+      gray-3: !sass
+        sass: 'color("gray-cool-30")'
+        fallback: '#a9aeb1'
+      gray-4: !sass
+        sass: 'color("gray-cool-50")'
+        fallback: '#71767a'
+      gray-5: !sass
+        sass: 'color("gray-cool-60")'
+        fallback: '#565c65'
+      gray-6: !sass
+        sass: 'color("gray-cool-70")'
+        fallback: '#3d4551'
+      black: !sass
+        sass: 'color("gray-90")'
+        fallback: '#1b1b1b'
     other:
       yellow:
-        base: '#fad980'
-        light: '#fff1d2'
+        base: !sass
+          sass: 'color("yellow-20v")'
+          fallback: '#face00'
+        light: !sass
+          sass: 'color("yellow-10v")'
+          fallback: '#fee685'
       yellow-neon:
         base: '#ff0'
       green:
-        base: '#94bfa2'
-        light: '#e7f4e4'
+        base: !sass
+          sass: 'color("green-40")'
+          fallback: '#7d9b4e'
+        light: !sass
+          sass: 'color("green-10")'
+          fallback: '#dfeacd'
       red:
-        base: '#e31c3d'
-        light: '#e59393'
-        light-1: '#f9dede'
-        dark: '#cd2026'
-        dark-1: '#981b1e'
+        base: !sass
+          sass: 'color("red-50")'
+          fallback: '#d83933'
+        light: !sass
+          sass: 'color("red-30")'
+          fallback: '#f2938c'
+        light-1: !sass
+          sass: 'color("red-cool-10v")'
+          fallback: '#f8dfe2'
+        dark: !sass
+          sass: 'color("red-60v")'
+          fallback: '#b51d09'
+        dark-1: !sass
+          sass: 'color("red-70v")'
+          fallback: '#8b1303'
   box-shadow:
     0: none
     1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
@@ -187,10 +241,18 @@ gesso:
         sass: 'size("heading", 18)'
         fallback: 80px
     font-weight:
-      light: 300
-      regular: 400
-      semibold: 600
-      bold: 700
+      light: !sass
+        sass: 'weight("normal")'
+        fallback: 300
+      regular: !sass
+        sass: 'weight("normal")'
+        fallback: 400
+      semibold: !sass
+        sass: 'weight("semibold")'
+        fallback: 600
+      bold: !sass
+        sass: 'weight("bold")'
+        fallback: 700
     line-height:
       tight: 1.1
       base: 1.45
