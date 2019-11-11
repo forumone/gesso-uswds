@@ -1,3 +1,8 @@
-<a class="site-name" href="{{ url }}" title="{{ 'Home'|t }}" rel="home">
-  <h1 class="site-name__text">{{ site_name }}</h1>
-</a>
+<div class="usa-navbar">
+  <div class="usa-logo" id="extended-logo">
+    <em class="site-name usa-logo__text">
+      <a class="site-name__text" href="{{ url }}" title="{{ 'Home'|t }}" rel="home" aria-label="{{ 'Home'|t }}">{{ site_name }}</a>
+    </em>
+  </div>
+  <button class="usa-menu-btn">{{ 'Menu'|t }}</button>
+</div>
