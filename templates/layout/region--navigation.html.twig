@@ -1,0 +1,18 @@
+{#
+ /**
+  * @file
+  * Theme override to display a region.
+  */
+#}
+
+{% if content %}
+  {% embed '@layouts/nav/nav.twig' with {
+    'label': 'Primary navigation'
+  } %}
+
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+
+  {% endembed %}
+{% endif %}

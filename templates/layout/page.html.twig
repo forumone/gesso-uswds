@@ -38,9 +38,13 @@
 {% extends '@layouts/site-container/site-container.twig' %}
   {% block site_content %}
 
-    {{ page.header }}
+    {% embed "@layouts/header/header.twig" %}
+      {% block content %}
+        {{ page.header }}
 
-    {{ page.navigation }}
+        {{ page.navigation }}
+      {% endblock %}
+    {% endembed %}
 
     {{ page.breadcrumb }}
 
