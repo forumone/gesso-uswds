@@ -1,11 +1,6 @@
-<header class="l-header" role="banner">
-  {% if has_constrain %}
-    <div class="l-constrain {{ constrain_modifier_classes }}">
-  {% endif %}
+<div class="usa-overlay"></div>
+<header class="l-header usa-header usa-header--extended" role="banner">
   {% block content %}
     Header Region Content
   {% endblock %}
-  {% if has_constrain %}
-    </div>
-  {% endif %}
 </header>
