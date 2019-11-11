@@ -356,24 +356,24 @@ gesso:
     drawer: 1200
     modal: 1300
   spacing:
-    xxs: !sass
+    "05": !sass
       sass: 'units("05")'
       fallback: '4px'
-    xs: !sass
+    1: !sass
       sass: 'units(1)'
       fallback: '8px'
-    sm: !sass
+    2: !sass
       sass: 'units(2)'
       fallback: '16px'
-    md: !sass
+    3: !sass
       sass: 'units(3)'
       fallback: '24px'
-    lg: !sass
+    5: !sass
       sass: 'units(5)'
       fallback: '40px'
-    xl: !sass
+    8: !sass
       sass: 'units(8)'
       fallback: '64px'
-    xxl: !sass
+    15: !sass
       sass: 'units(15)'
       fallback: '120px'

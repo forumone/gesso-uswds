@@ -11,9 +11,9 @@ $breadcrumb-text-color: gesso-color(text, on-dark) !default;
   background-color: $breadcrumb-background-color;
   color: $breadcrumb-text-color;
   font-size: rem(gesso-font-size(0));
-  margin: rem(gesso-spacing(sm)) 0;
-  min-height: rem(gesso-spacing(lg));
-  padding-top: rem(gesso-spacing(sm));
+  margin: rem(gesso-spacing(2)) 0;
+  min-height: rem(gesso-spacing(5));
+  padding-top: rem(gesso-spacing(2));
 }
 
 .breadcrumb__title {

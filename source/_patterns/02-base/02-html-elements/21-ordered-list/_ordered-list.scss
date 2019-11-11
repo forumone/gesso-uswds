@@ -6,7 +6,7 @@ ol {
 
   @if $support-for-rtl {
     [dir='rtl'] & {
-      padding: 0 rem(gesso-spacing(md)) 0 0;
+      padding: 0 rem(gesso-spacing(3)) 0 0;
     }
   }
 
@@ -16,6 +16,6 @@ ol {
 
   ol,
   ul {
-    margin: rem(gesso-spacing(sm) / 2) 0 0;
+    margin: rem(gesso-spacing(2) / 2) 0 0;
   }
 }
