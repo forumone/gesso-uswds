@@ -252,7 +252,7 @@ gesso:
         fallback: 80px
     font-weight:
       light: !sass
-        sass: 'font-weight("normal")'
+        sass: 'font-weight("light")'
         fallback: 300
       regular: !sass
         sass: 'font-weight("normal")'
