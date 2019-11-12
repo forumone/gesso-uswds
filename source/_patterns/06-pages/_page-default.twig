@@ -105,18 +105,20 @@
     </main>
 
     {% embed '@layouts/footer/footer.twig' with {
-      'has_constrain': true
+      'has_back_to_top': true
     } %}
       {% block content %}
-        {% include '@components/menu/menu.twig' with {
+        {% include '@components/menu/menu--footer/menu--footer.twig' with {
           'menu_name': 'footer',
           'items': [
             { 'title': 'Careers', 'url': '#' },
             { 'title': 'Contact', 'url': '#' },
             { 'title': 'Credits', 'url': '#' },
             { 'title': 'Terms of Use', 'url': '#' }
-          ]
+          ],
         } %}
+      {% endblock %}
+      {% block secondary %}
         {% include '@components/copyright/copyright.twig' %}
       {% endblock %}
     {% endembed %}
