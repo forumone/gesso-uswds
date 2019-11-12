@@ -2,7 +2,7 @@
 // Paragraph styles.
 
 p {
-  margin: 0 0 rem(gesso-spacing(sm));
+  @include typeset-p;
 
   @media print {
     orphans: 3;

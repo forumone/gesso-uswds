@@ -1,12 +1,8 @@
 // @file
 // Heading styles.
-
 %hN {
-  color: inherit;
-  font-weight: gesso-font-weight(bold);
   hyphens: none;
-  line-height: gesso-line-height(base);
-  margin: 0 0 rem(gesso-spacing(sm));
+  margin: 0 0 gesso-spacing(2);
   text-rendering: optimizeLegibility;
 
   @media print {

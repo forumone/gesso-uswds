@@ -4,3 +4,8 @@
 
 @include breakpoint-set('to ems', true);
 $support-for-rtl: true !default;
+
+// USWDS Settings
+// https://github.com/uswds/uswds/tree/develop/src/stylesheets/settings
+$theme-image-path: '../images';
+$theme-root-font-size: gesso-base-font-size;

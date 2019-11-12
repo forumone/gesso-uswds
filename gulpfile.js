@@ -74,7 +74,7 @@ const compileStyles = () => {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        includePaths: ['./node_modules/breakpoint-sass/stylesheets'],
+        includePaths: ['./node_modules/breakpoint-sass/stylesheets', './node_modules/uswds/src/stylesheets'],
         precision: 10,
       })
     )
@@ -149,7 +149,7 @@ const build = (isProduction = true ) =>  {
   return series(
     buildConfig,
     parallel(task('bundleScripts'), buildStyles, buildPatternLab));
-}
+};
 
 exports.build = build(true);
 

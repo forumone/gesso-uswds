@@ -8,12 +8,6 @@
 //   transition-timing-function: gesso-easing(ease-in);
 // }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 @media print {
   * {
     background-color: transparent !important;

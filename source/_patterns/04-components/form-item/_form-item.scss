@@ -10,7 +10,7 @@ $form-disabled-opacity: 0.35 !default;
 $form-text-size: gesso-base-font-size() !default;
 
 .form-item {
-  margin: 0 0 rem(gesso-spacing(md));
+  margin: 0 0 rem(gesso-spacing(3));
 }
 
 .form-item__label {
