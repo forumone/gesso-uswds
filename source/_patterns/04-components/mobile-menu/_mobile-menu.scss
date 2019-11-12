@@ -46,7 +46,7 @@ $mobile-menu-line-height: gesso-line-height(base);
   font-weight: gesso-font-weight(bold);
   line-height: $mobile-menu-line-height;
   margin: 0;
-  padding: ($mobile-menu-button-height - ($mobile-menu-font-size * $mobile-menu-line-height) / 2) gesso-spacing(sm);
+  padding: ($mobile-menu-button-height - ($mobile-menu-font-size * $mobile-menu-line-height) / 2) gesso-spacing(2);
   text-align: left;
   text-decoration: none;
   white-space: normal;
@@ -109,7 +109,7 @@ $mobile-menu-line-height: gesso-line-height(base);
 
   .mobile-menu__link {
     color: $mobile-menu-submenu-link-color;
-    padding-left: gesso-spacing(md);
+    padding-left: gesso-spacing(3);
 
     &:hover,
     &:focus,

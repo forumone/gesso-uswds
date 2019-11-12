@@ -1,5 +1,5 @@
 ---
-el: .accordion
+el: .usa-accordion
 title: Accordion
 ---
 

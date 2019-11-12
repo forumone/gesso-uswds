@@ -2,7 +2,7 @@
 // Table styles.
 
 caption {
-  margin-bottom: rem(gesso-spacing(xxs));
+  margin-bottom: rem(gesso-spacing('05'));
 }
 
 // col {}
@@ -11,7 +11,7 @@ caption {
 
 table {
   @extend %usa-table;
-  margin-bottom: rem(gesso-spacing(xs));
+  margin-bottom: rem(gesso-spacing(1));
   min-width: 100%;
 }
 
@@ -20,7 +20,7 @@ table {
 td {
   background-color: gesso-color(table, background);
   border: 1px solid gesso-color(table, border);
-  padding: rem(gesso-spacing(sm));
+  padding: rem(gesso-spacing(2));
 }
 
 tfoot {
@@ -33,7 +33,7 @@ tfoot {
 th {
   background-color: gesso-color(table, background);
   border: 1px solid gesso-color(table, border);
-  padding: rem(gesso-spacing(sm));
+  padding: rem(gesso-spacing(2));
   text-align: left;
 }
 
