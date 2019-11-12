@@ -1,10 +1,7 @@
-<div class="usa-nav__secondary">
-  {% block content %}
-  {% include '@components/menu/menu.twig' with {
-    'menu_name': menu_name,
-    'items': items,
-    'menu_class': ['usa-nav__secondary-links'],
-    'item_class': ['usa-nav__secondary-item']
-  } %}
-  {% endblock %}
-</div>
+{% set menu_class = 'usa-nav__secondary' %}
+{% include '@components/menu/menu.twig' with {
+  'menu_name': menu_name,
+  'items': items,
+  'menu_class_prefix': menu_class,
+  'menu_class': [menu_class ~ '-links']
+} %}

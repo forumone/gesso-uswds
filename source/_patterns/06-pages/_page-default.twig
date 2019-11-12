@@ -2,13 +2,20 @@
   {% block site_content %}
 
     {% embed '@layouts/header/header.twig' with {
-      'has_constrain': true
+      'extended': true
     } %}
       {% block content %}
-        {% include '@components/site-name/site-name.twig' %}
-
+        <div class="usa-nav-container">
+        {% embed '@layouts/navbar/navbar.twig' %}
+          {% block content %}
+            <div class="usa-logo">
+              {% include '@components/site-name/site-name.twig' %}
+            </div>
+          {% endblock %}
+        {% endembed %}
         {% embed '@layouts/nav/nav.twig' with {
-          'label': 'Primary navigation'
+          'label': 'Primary navigation',
+          'extended': true
         } %}
           {% block content %}
             {% include '@components/menu/menu--main/menu--main.twig' with {
@@ -31,15 +38,20 @@
                 { 'title': 'Contact', 'url': '#' }
               ]
             } %}
-            {% include '@components/menu/menu--account/menu--account.twig' with {
-              'menu_name': 'account',
-              'items': [
-                { 'title': 'My Account', 'url': '#' },
-                { 'title': 'Logout', 'url': '#' }
-              ]
-            } %}
+            {% embed '@layouts/secondary/secondary.twig' %}
+              {% block content %}
+                {% include '@components/menu/menu--account/menu--account.twig' with {
+                  'menu_name': 'account',
+                  'items': [
+                    { 'title': 'My Account', 'url': '#' },
+                    { 'title': 'Logout', 'url': '#' }
+                  ]
+                } %}
+              {% endblock %}
+            {% endembed %}
           {% endblock %}
         {% endembed %}
+        </div>
       {% endblock %}
     {% endembed %}
 

@@ -45,6 +45,7 @@ regions:
   page_top: 'Page top'
   header: Header
   navigation: Navigation
+  secondary: Secondary Navigation
   breadcrumb: Breadcrumb
   help: Help
   highlighted: Highlighted

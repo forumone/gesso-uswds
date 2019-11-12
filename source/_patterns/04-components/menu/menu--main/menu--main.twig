@@ -1,5 +1,7 @@
+{% set menu_class = 'usa-nav__primary' %}
 {% include '@components/menu/menu.twig' with {
   'menu_name': menu_name,
   'items': items,
-  'menu_class': ['usa-nav__primary', 'usa-accordion']
+  'menu_class_prefix': menu_class,
+  'menu_class': ['usa-accordion', menu_class]
 } %}
