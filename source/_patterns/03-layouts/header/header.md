@@ -2,7 +2,7 @@
 el: .l-header
 title: Header Layout
 ---
-_Layout for Header Region_
+_Layout for Header Wrapper_
 
 ### Variables:
 * has_constrain: [boolean] True/False whether to add a constraint to block.

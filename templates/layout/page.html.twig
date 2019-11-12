@@ -38,11 +38,24 @@
 {% extends '@layouts/site-container/site-container.twig' %}
   {% block site_content %}
 
-    {% embed "@layouts/header/header.twig" %}
+    {% embed "@layouts/header/header.twig" with {
+      'extended': page.secondary.content is empty
+    }
+    %}
       {% block content %}
+        <div class="usa-nav-container">
         {{ page.header }}
-
-        {{ page.navigation }}
+        {% if page.secondary.content %}</div>{% endif %}
+        {% embed '@layouts/nav/nav.twig' with {
+          'label': 'Primary navigation',
+          'extended': page.secondary.content is empty
+        } %}
+          {% block content %}
+            {{ page.navigation }}
+            {{ page.secondary }}
+          {% endblock %}
+        {% endembed %}
+        {% if not page.secondary.content %}</div>{% endif %}
       {% endblock %}
     {% endembed %}
 

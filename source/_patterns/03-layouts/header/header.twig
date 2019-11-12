@@ -1,5 +1,5 @@
 <div class="usa-overlay"></div>
-<header class="l-header usa-header usa-header--extended" role="banner">
+<header class="l-header usa-header {% if extended %}usa-header--extended{% else %}usa-header--basic{% endif %}" role="banner">
   {% block content %}
     Header Region Content
   {% endblock %}
