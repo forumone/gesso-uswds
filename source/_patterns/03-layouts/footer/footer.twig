@@ -1,13 +1,13 @@
-<footer class="l-footer usa-footer usa-footer--slim" role="contentinfo">
+<footer class="usa-footer usa-footer--slim" role="contentinfo">
   {% if has_back_to_top %}
-    <div class="grid-container usa-footer__return-to-top">
+    <div class="usa-footer__return-to-top grid-container">
       <a href="#">{{ 'Return to top'|t }}</a>
     </div>
   {% endif %}
   <div class="usa-footer__primary-section">
     <div class="usa-footer__primary-container grid-row">
-      {% block content %}
-        Footer Content
+      {% block primary %}
+        Primary Content
       {% endblock %}
     </div>
   </div>
