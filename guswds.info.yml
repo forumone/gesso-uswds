@@ -53,6 +53,7 @@ regions:
   footer: Footer
   disabled: Disabled
   page_bottom: 'Page bottom'
+  subfooter: Subfooter
 
 component-libraries:
   base:
