@@ -5,7 +5,6 @@
       'is_extended': true
     } %}
       {% block content %}
-        <div class="usa-nav-container">
         {% embed '@layouts/navbar/navbar.twig' %}
           {% block content %}
             <div class="usa-logo">
@@ -51,7 +50,6 @@
             {% endembed %}
           {% endblock %}
         {% endembed %}
-        </div>
       {% endblock %}
     {% endembed %}
 
