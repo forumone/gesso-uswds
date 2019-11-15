@@ -1,18 +1,18 @@
 {% extends '@layouts/site-container/site-container.twig' %}
   {% block site_content %}
 
-    {% embed '@layouts/header/header.twig' with {
+    {% embed '@uswds/header/header.twig' with {
       'is_extended': true
     } %}
       {% block content %}
-        {% embed '@layouts/navbar/navbar.twig' %}
+        {% embed '@uswds/navbar/navbar.twig' %}
           {% block content %}
             <div class="usa-logo">
               {% include '@components/site-name/site-name.twig' %}
             </div>
           {% endblock %}
         {% endembed %}
-        {% embed '@layouts/nav/nav.twig' with {
+        {% embed '@uswds/nav/nav.twig' with {
           'label': 'Primary navigation',
           'extended': true
         } %}
@@ -37,7 +37,7 @@
                 { 'title': 'Contact', 'url': '#' }
               ]
             } %}
-            {% embed '@layouts/secondary/secondary.twig' %}
+            {% embed '@uswds/secondary/secondary.twig' %}
               {% block content %}
                 {% include '@components/menu/menu--account/menu--account.twig' with {
                   'menu_name': 'account',
@@ -50,10 +50,6 @@
             {% endembed %}
           {% endblock %}
         {% endembed %}
-<<<<<<< HEAD
-        </div>
-=======
->>>>>>> 8c0063fc40ef21ba4f241f8a88ee9a92492d67ba
       {% endblock %}
     {% endembed %}
 
