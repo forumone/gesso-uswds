@@ -1,12 +1,11 @@
 ---
-el: .l-header
+el: .usa-header
 title: Header Layout
 ---
-_Layout for Header Wrapper_
 
 ### Variables:
-* has_constrain: [boolean] True/False whether to add a constraint to block.
-* constrain_modifier_classes: [string] Additional constrain classes used to control layout.
+* is_extended: [boolean] Whether to use the extended header style.
+* modifier_classes: [string] Classes to modify the default layout styling.
 
 ### Blocks:
 * content: Twig block for content.

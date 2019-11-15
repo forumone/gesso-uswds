@@ -1,12 +1,12 @@
 ---
-el: .l-footer
+el: .usa-footer
 title: Footer Layout
 ---
 _Layout for Footer Region_
 
 ### Variables:
-* has_constrain: [boolean] True/False whether to add a constraint to block.
-* constrain_modifier_classes: [string] Additional constrain classes used to control layout.
+* has_back_to_top: [boolean] True/False whether to add a back to top link.
 
 ### Blocks:
-* content: Twig block for content.
+* primary: Twig block for primary content.
+* secondary: Twig block for secondary content.

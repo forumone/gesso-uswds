@@ -1,6 +1,6 @@
 <div class="usa-overlay"></div>
-<header class="l-header usa-header {% if extended %}usa-header--extended{% else %}usa-header--basic{% endif %}" role="banner">
+<header class="usa-header{% if is_extended %} usa-header--extended{% else %} usa-header--basic{% endif %} {{ modifier_classes }}" role="banner">
   {% block content %}
-    Header Region Content
+    Header Content
   {% endblock %}
 </header>

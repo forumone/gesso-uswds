@@ -2,10 +2,9 @@
   {% block site_content %}
 
     {% embed '@layouts/header/header.twig' with {
-      'extended': true
+      'is_extended': true
     } %}
       {% block content %}
-        <div class="usa-nav-container">
         {% embed '@layouts/navbar/navbar.twig' %}
           {% block content %}
             <div class="usa-logo">
@@ -51,7 +50,10 @@
             {% endembed %}
           {% endblock %}
         {% endembed %}
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> 8c0063fc40ef21ba4f241f8a88ee9a92492d67ba
       {% endblock %}
     {% endembed %}
 
@@ -116,18 +118,20 @@
     </main>
 
     {% embed '@layouts/footer/footer.twig' with {
-      'has_constrain': true
+      'has_back_to_top': true
     } %}
-      {% block content %}
-        {% include '@components/menu/menu.twig' with {
+      {% block primary %}
+        {% include '@components/menu/menu--footer/menu--footer.twig' with {
           'menu_name': 'footer',
           'items': [
             { 'title': 'Careers', 'url': '#' },
             { 'title': 'Contact', 'url': '#' },
             { 'title': 'Credits', 'url': '#' },
             { 'title': 'Terms of Use', 'url': '#' }
-          ]
+          ],
         } %}
+      {% endblock %}
+      {% block secondary %}
         {% include '@components/copyright/copyright.twig' %}
       {% endblock %}
     {% endembed %}

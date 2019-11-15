@@ -71,6 +71,14 @@
       {{ page.postscript }}
     </main>
 
-    {{ page.footer }}
-
+    {% embed '@layouts/footer/footer.twig' with {
+      has_back_to_top: true
+    } %}
+      {% block content %}
+        {{ page.footer }}
+      {% endblock %}
+      {% block secondary %}
+        {{ page.subfooter }}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}

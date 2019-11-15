@@ -1,12 +1,12 @@
-name: Gesso
+name: Gesso USWDS
 type: theme
-description: 'Sass-based starter theme.'
+description: 'Sass-based starter theme based on Gesso and the United States Web Design System.'
 package: Core
 core: 8.x
 base theme: stable
 
 libraries:
-  - gesso/global
+  - guswds/global
 
 libraries-override:
   core/drupal.dropbutton:
@@ -54,6 +54,7 @@ regions:
   footer: Footer
   disabled: Disabled
   page_bottom: 'Page bottom'
+  subfooter: Subfooter
 
 component-libraries:
   base:
