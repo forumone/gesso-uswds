@@ -19,7 +19,7 @@
       } %}
       <ul {{ add_attributes(additional_attributes) }}>
     {% else %}
-      <ul class="menu menu__subnav usa-nav__submenu" hidden>
+      <ul class="menu menu__subnav" hidden>
     {% endif %}
     {% for item in items %}
 
@@ -66,7 +66,6 @@
         {% if item.below and menu_level == 0 %}
           {% set link_attributes = link_attributes|merge({
             "class": link_attributes["class"]|merge([
-              'usa-accordion__button',
               'usa-nav__link'
             ]),
             "aria-expanded": "false"

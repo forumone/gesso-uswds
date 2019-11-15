@@ -2,5 +2,20 @@
 // Styles for the footer menu.
 
 .menu--footer {
-  @include list-inline;
+  @include grid-row;
+  @include grid-gap;
+  list-style: none;
+
+  .menu__item {
+    @extend .usa-footer__primary-content;
+    @include grid-col(6);
+
+    @include breakpoint(gesso-breakpoint(md)) {
+      @include grid-col(auto);
+    }
+  }
+
+  .menu__link {
+    @extend .usa-footer__primary-link;
+  }
 }

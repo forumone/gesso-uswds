@@ -6,9 +6,13 @@
   {% endif %}
   <div class="usa-footer__primary-section">
     <div class="usa-footer__primary-container grid-row">
-      {% block primary %}
-        Primary Content
-      {% endblock %}
+      <div class="mobile-lg:grid-col-8">
+        <nav class="usa-footer__nav">
+          {% block primary %}
+            Primary Content
+          {% endblock %}
+        </nav>
+      </div>
     </div>
   </div>
   <div class="usa-footer__secondary-section">
