@@ -38,7 +38,7 @@
 {% extends '@layouts/site-container/site-container.twig' %}
   {% block site_content %}
 
-    {% embed "@layouts/header/header.twig" with {
+    {% embed "@uswds/header/header.twig" with {
       'extended': page.secondary.content is empty
     }
     %}
@@ -46,7 +46,7 @@
         <div class="usa-nav-container">
         {{ page.header }}
         {% if page.secondary.content %}</div>{% endif %}
-        {% embed '@layouts/nav/nav.twig' with {
+        {% embed '@uswds/nav/nav.twig' with {
           'label': 'Primary navigation',
           'extended': page.secondary.content is empty
         } %}
@@ -71,7 +71,7 @@
       {{ page.postscript }}
     </main>
 
-    {% embed '@layouts/footer/footer.twig' with {
+    {% embed '@uswds/footer/footer.twig' with {
       has_back_to_top: true
     } %}
       {% block content %}
