@@ -39,23 +39,20 @@
   {% block site_content %}
 
     {% embed "@uswds/header/header.twig" with {
-      'extended': page.secondary.content is empty
+      'is_extended': page.secondary.content is empty
     }
     %}
       {% block content %}
-        <div class="usa-nav-container">
         {{ page.header }}
-        {% if page.secondary.content %}</div>{% endif %}
-        {% embed '@uswds/nav/nav.twig' with {
+        {% embed '@uswds/header/nav/nav.twig' with {
           'label': 'Primary navigation',
-          'extended': page.secondary.content is empty
+          'is_extended': page.secondary.content is empty
         } %}
           {% block content %}
             {{ page.navigation }}
             {{ page.secondary }}
           {% endblock %}
         {% endembed %}
-        {% if not page.secondary.content %}</div>{% endif %}
       {% endblock %}
     {% endembed %}
 
@@ -74,7 +71,7 @@
     {% embed '@uswds/footer/footer.twig' with {
       has_back_to_top: true
     } %}
-      {% block content %}
+      {% block primary %}
         {{ page.footer }}
       {% endblock %}
       {% block secondary %}
