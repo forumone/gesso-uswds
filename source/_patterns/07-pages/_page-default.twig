@@ -5,14 +5,8 @@
       'is_extended': true
     } %}
       {% block content %}
-        {% embed '@uswds/navbar/navbar.twig' %}
-          {% block content %}
-            <div class="usa-logo">
-              {% include '@components/site-name/site-name.twig' %}
-            </div>
-          {% endblock %}
-        {% endembed %}
-        {% embed '@uswds/nav/nav.twig' with {
+        {% include '@uswds/header/navbar/navbar.twig' %}
+        {% embed '@uswds/header/nav/nav.twig' with {
           'label': 'Primary navigation',
           'extended': true
         } %}
@@ -37,7 +31,7 @@
                 { 'title': 'Contact', 'url': '#' }
               ]
             } %}
-            {% embed '@uswds/secondary/secondary.twig' %}
+            {% embed '@uswds/header/secondary/secondary.twig' %}
               {% block content %}
                 {% include '@components/menu/menu--account/menu--account.twig' with {
                   'menu_name': 'account',

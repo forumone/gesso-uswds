@@ -1,8 +1,0 @@
-<nav class="usa-nav" role="navigation" aria-label="{{ label }}">
-  {% if extended %}<div class="usa-nav__inner">{% endif %}
-    <button class="usa-nav__close">{{ 'Close'|t }}</button>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  {% if extended %}</div>{% endif %}
-</nav>

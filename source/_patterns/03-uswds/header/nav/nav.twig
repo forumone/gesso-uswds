@@ -1,0 +1,13 @@
+<nav class="usa-nav" role="navigation" aria-label="{{ label }}">
+  {% if is_extended %}<div class="usa-nav__inner">{% endif %}
+    <button class="usa-nav__close">{{ 'Close'|t }}</button>
+    {% block content %}
+      {% include "@uswds/header/nav/_primary-nav.twig" with {
+        "prefix": is_extended ? "extended" : "basic"
+      } %}
+      {% if is_extended %}
+        {% include "@uswds/header/secondary/secondary.twig" %}
+      {% endif %}
+    {% endblock %}
+  {% if is_extended %}</div>{% endif %}
+</nav>
