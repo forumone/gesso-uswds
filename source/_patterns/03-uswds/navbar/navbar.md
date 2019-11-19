@@ -1,6 +1,6 @@
 ---
 el: .usa-navbar
-title: USWDS Navbar
+title: Navbar
 ---
 
 Part of the USWDS Header component.

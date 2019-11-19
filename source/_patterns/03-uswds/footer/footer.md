@@ -1,6 +1,6 @@
 ---
 el: .usa-footer
-title: USWDS Footer
+title: Footer
 ---
 ### Variables:
 * has_back_to_top: [boolean] True/False whether to add a back to top link.

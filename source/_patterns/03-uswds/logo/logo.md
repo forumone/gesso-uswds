@@ -1,8 +1,8 @@
 ---
 el: .usa-logo
-title: USWDS Site Name
+title: Logo
 ---
 
 ## Variables
 * url: [string] The site link url.
-* site_name: [string] the site name.
+* site_name: [string] The site name.

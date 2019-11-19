@@ -5,8 +5,8 @@
       'is_extended': true
     } %}
       {% block content %}
-        {% include '@uswds/header/navbar/navbar.twig' %}
-        {% embed '@uswds/header/nav/nav.twig' with {
+        {% include '@uswds/navbar/navbar.twig' %}
+        {% embed '@uswds/nav/nav.twig' with {
           'label': 'Primary navigation',
           'extended': true
         } %}
@@ -31,7 +31,7 @@
                 { 'title': 'Contact', 'url': '#' }
               ]
             } %}
-            {% embed '@uswds/header/secondary/secondary.twig' %}
+            {% embed '@uswds/nav/_secondary.twig' %}
               {% block content %}
                 {% include '@components/menu/menu.twig' with {
                   'menu_name': 'account',

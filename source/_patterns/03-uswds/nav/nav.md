@@ -1,6 +1,6 @@
 ---
 el: .usa-nav
-title: USWDS Nav Container
+title: Nav
 ---
 
 ### Variables

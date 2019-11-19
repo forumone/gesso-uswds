@@ -1,6 +1,6 @@
 ---
 el: .usa-accordion
-title: USWDS Accordion
+title: Accordion
 ---
 
 _Component for Accordion_

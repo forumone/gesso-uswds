@@ -1,6 +1,6 @@
 ---
 el: .usa-header
-title: USWDS Header
+title: Header
 ---
 
 ### Variables:

@@ -44,7 +44,7 @@
     %}
       {% block content %}
         {{ page.header }}
-        {% embed '@uswds/header/nav/nav.twig' with {
+        {% embed '@uswds/nav/nav.twig' with {
           'label': 'Primary navigation',
           'is_extended': page.secondary.content is empty
         } %}
