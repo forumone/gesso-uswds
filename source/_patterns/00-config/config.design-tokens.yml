@@ -128,6 +128,7 @@ gesso:
       on-dark: grayscale.white
       link: brand.blue.base
       link-hover: brand.blue.dark
+      link-active: brand.blue.dark
       link-visited: brand.blue.dark
     background:
       site: grayscale.white
@@ -194,6 +195,7 @@ gesso:
         accent: brand.blue.base
         accent-dark: brand.blue.dark-1
         accent-light: brand.blue.light
+        focus: brand.blue.light
       error:
         background: other.red.light-1
         border: other.red.light
