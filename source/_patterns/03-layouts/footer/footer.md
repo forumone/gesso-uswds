@@ -2,11 +2,10 @@
 el: .usa-footer
 title: Footer Layout
 ---
-_Layout for Footer Region_
 
-### Variables:
+__Variables:__
 * has_back_to_top: [boolean] True/False whether to add a back to top link.
 
-### Blocks:
+__Blocks:__
 * primary: Twig block for primary content.
 * secondary: Twig block for secondary content.
