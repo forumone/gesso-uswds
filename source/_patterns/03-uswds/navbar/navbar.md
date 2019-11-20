@@ -5,5 +5,5 @@ title: Navbar
 
 Part of the USWDS Header component.
 
-### Blocks
+__Blocks:__
 * content: Twig block for content

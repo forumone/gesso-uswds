@@ -3,6 +3,6 @@ el: .usa-logo
 title: Logo
 ---
 
-## Variables
-* url: [string] The site link url.
-* site_name: [string] The site name.
+__Variables__
+* url: [string] URL of the site name link.
+* site_name: [string] Text of the site name.

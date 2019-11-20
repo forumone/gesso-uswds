@@ -3,8 +3,8 @@ el: .usa-nav
 title: Nav
 ---
 
-### Variables
-* is_extended: Inherited from the parent Header. Whether an extended Header is in use.
+__Variables:__
+* is_extended: [boolean] Inherited from the parent Header. Whether an extended Header is in use.
 
-### Blocks
+__Blocks:__
 * content: Twig block for content.

@@ -2,10 +2,10 @@
 el: .usa-footer
 title: Footer
 ---
-### Variables:
-* has_back_to_top: [boolean] True/False whether to add a back to top link.
+__Variables:__
+* has_back_to_top: [boolean] Whether to add a back to top link.
 
-### Blocks:
+__Blocks:__
 * primary: Twig block for primary content.
 * secondary: Twig block for secondary content.
 
