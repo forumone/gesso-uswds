@@ -1,5 +1,9 @@
 # Design Tokens
 # Define basic design variables here.
+uswds:
+  image-path: '../images'
+  root-font-size: 16px
+  font-weight-semibold: 600
 gesso:
   palette:
     brand:
