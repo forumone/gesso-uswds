@@ -379,3 +379,4 @@ gesso:
     15: !sass
       sass: 'units(15)'
       fallback: '120px'
+  gutter-width: 40px
