@@ -5,7 +5,8 @@ uswds:
   root-font-size: 16px
   font-weight-semibold: 600
   show-compile-warnings: false
-  grid-container-max-width: 1440px
+  grid-container-max-width: 'widescreen'
+  column-gap-desktop: 5
 gesso:
   palette:
     brand:
@@ -119,7 +120,7 @@ gesso:
       fallback: '0 16px 32px 0 rgba(0, 0, 0, 0.1)'
   constrains:
     sm: 800px
-    md: uswds.grid-container-max-width
+    md: !uswds uswds.grid-container-max-width
     lg: 2200px
   breakpoints:
     xs: !sass
@@ -393,3 +394,4 @@ gesso:
     15: !sass
       sass: 'units(15)'
       fallback: '120px'
+  gutter-width: !uswds uswds.column-gap-desktop
