@@ -4,7 +4,8 @@ uswds:
   image-path: '../images'
   root-font-size: 16px
   font-weight-semibold: 600
-  column-gap-desktop: 5
+  show-compile-warnings: false
+  grid-container-max-width: 1440px
 gesso:
   palette:
     brand:
@@ -118,7 +119,7 @@ gesso:
       fallback: '0 16px 32px 0 rgba(0, 0, 0, 0.1)'
   constrains:
     sm: 800px
-    md: 1440px
+    md: uswds.grid-container-max-width
     lg: 2200px
   breakpoints:
     xs: !sass
