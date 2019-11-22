@@ -224,7 +224,7 @@ gesso:
         stack: !sass
           sass: 'family("mono")'
           fallback: '"Roboto Mono Web", "Roboto Mono Web", "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace'
-    base-font-size: 16px
+    base-font-size: uswds.root-font-size
     font-size:
       0: !sass
         sass: 'size("body", "3xs")'
