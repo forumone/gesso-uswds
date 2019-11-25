@@ -54,7 +54,7 @@ const buildConfig = async () => {
       dataComment + os.EOL + yaml.stringify(transformed.data)
     ),
     writeFile(
-      path.join(configDir, '_uswds-theme-settings.scss'),
+      path.join(configDir, '_uswds-theme-settings.artifact.scss'),
       sassComment + os.EOL + renderUswdsConfig(transformed.data)
     ),
     writeFile(
