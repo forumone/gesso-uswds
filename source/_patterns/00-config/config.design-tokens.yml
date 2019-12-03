@@ -232,9 +232,7 @@ gesso:
         stack: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Fira Sans", Droid Sans, sans-serif'
       monospace:
         name: Monospace
-        stack: !sass
-          sass: 'family("mono")'
-          fallback: '"Roboto Mono Web", "Roboto Mono Web", "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace'
+        stack: 'Menlo, Consolas, "Lucida Console", "Liberation Mono", "Courier New", monospace, sans-serif'
     base-font-size: uswds.root-font-size
     font-size:
       0: !sass
