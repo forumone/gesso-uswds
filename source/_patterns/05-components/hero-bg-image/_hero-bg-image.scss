@@ -43,7 +43,7 @@ $hero-bg-image-bp: gesso-breakpoint(md) !default;
 }
 
 .hero-bg-image__summary {
-  @include display-text-style(body-large);
+  @include display-text-style(lead);
   color: gesso-color(text, on-dark);
   margin-bottom: rem(gesso-spacing(5));
 

@@ -6,7 +6,6 @@ uswds:
   show-compile-warnings: false
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-typography.scss
   font-path: '../fonts'
-  font-weight-semibold: 600
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
   grid-container-max-width: 'widescreen'
@@ -229,27 +228,27 @@ gesso:
       body:
         name: Body
         stack: !sass
-          sass: 'family("body")'
+          sass: 'font-family(body)'
           fallback: '"Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif'
       heading:
         name: Heading
         stack: !sass
-          sass: 'family("heading")'
+          sass: 'font-family(heading)'
           fallback: '"Merriweather Web", Georgia, Cambria, "Times New Roman", Times, serif'
       code:
         name: Code
         stack: !sass
-          sass: 'family("mono")'
+          sass: 'font-family(mono)'
           fallback: '"Roboto Mono Web", "Bitstream Vera Sans Mono", Consolas, Courier, monospace'
       ui:
         name: UI
         stack: !sass
-          sass: 'family("ui")'
+          sass: 'font-family(ui)'
           fallback: '"Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif'
       alt:
         name: Alternate
         stack: !sass
-          sass: 'family("alt")'
+          sass: 'font-family(alt)'
           fallback: '"Merriweather Web", Georgia, Cambria, "Times New Roman", Times, serif'
     base-font-size: 16px
     font-size:
@@ -285,16 +284,13 @@ gesso:
         fallback: 80px
     font-weight:
       light: !sass
-        sass: 'font-weight("light")'
+        sass: 'font-weight(light)'
         fallback: 300
-      regular: !sass
-        sass: 'font-weight("normal")'
+      normal: !sass
+        sass: 'font-weight(normal)'
         fallback: 400
-      semibold: !sass
-        sass: 'font-weight("semibold")'
-        fallback: 600
       bold: !sass
-        sass: 'font-weight("bold")'
+        sass: 'font-weight(bold)'
         fallback: 700
     line-height:
       1: 1
@@ -305,75 +301,114 @@ gesso:
       6: 1.75
     display:
       display:
-        color: text.primary
         font-family: heading.stack
-        font-size: 8
+        font-size: !sass
+          sass: 'font-size(heading, $theme-display-font-size)'
+          fallback: 2.93rem
         font-weight: bold
-        line-height: 2
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h1:
-        color: text.primary
         font-family: heading.stack
-        font-size: 7
+        font-size: !sass
+          sass: 'font-size(heading, $theme-h1-font-size)'
+          fallback: 2.44rem
         font-weight: bold
-        line-height: 2
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h2:
-        color: text.primary
         font-family: heading.stack
-        font-size: 6
+        font-size: !sass
+          sass: 'font-size(heading, $theme-h2-font-size)'
+          fallback: 1.95rem
         font-weight: bold
-        line-height: 2
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h3:
-        color: text.primary
         font-family: heading.stack
-        font-size: 5
+        font-size: !sass
+          sass: 'font-size(heading, $theme-h3-font-size)'
+          fallback: 1.34rem
         font-weight: bold
-        line-height: 2
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h4:
-        color: text.primary
         font-family: heading.stack
-        font-size: 4
+        font-size: !sass
+          sass: 'font-size(heading, $theme-h4-font-size)'
+          fallback: 0.98rem
         font-weight: bold
-        line-height: 5
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h5:
-        color: text.primary
         font-family: heading.stack
-        font-size: 2
+        font-size: !sass
+          sass: 'font-size(heading, $theme-h5-font-size)'
+          fallback: 0.91rem
         font-weight: bold
-        line-height: 5
+        line-height: !sass
+          sass: 'line-height(heading, $theme-heading-line-height)'
+          fallback: 1.2
       h6:
-        color: text.primary
-        font-family: heading.stack
-        font-size: 0
-        font-weight: semibold
-        letter-spacing: -0.04em
-        line-height: 6
+        font-family: body.stack
+        font-size: !sass
+          sass: 'font-size(body, $theme-h6-font-size)'
+          fallback: 0.87rem
+        font-weight: normal
+        letter-spacing: !sass
+          sass: 'letter-spacing(ls-1)'
+          fallback: 0.025em
+        line-height: !sass
+          sass: 'line-height(body, $theme-heading-line-height)'
+          fallback: 1.1
         text-transform: uppercase
       blockquote:
-        color: text.link
-        font-family: body.stack
-        font-size: 5
-        font-weight: regular
-        line-height: 5
+        font-family: alt.stack
+        font-size: !sass
+          sass: 'font-size(alt, md)'
+          fallback: 1.04rem
+        font-weight: normal
+        line-height: !sass
+          sass: 'line-height(alt, $theme-body-line-height)'
+          fallback: 1.7
       body:
-        color: text.primary
         font-family: body.stack
-        font-size: 3
-        font-weight: regular
-        line-height: 5
-      body-large:
-        color: text.primary
-        font-family: body.stack
-        font-size: 4
-        font-weight: regular
-        line-height: 5
+        font-size: !sass
+          sass: 'font-size(body, $theme-body-font-size)'
+          fallback: 1.06rem
+        font-weight: normal
+        line-height: !sass
+          sass: 'line-height(body, $theme-body-line-height)'
+          fallback: 1.5
       cite:
         color: text.secondary
         font-family: body.stack
-        font-size: 0
+        font-size: !sass
+          sass: 'font-size(body, 2xs)'
+          fallback: 0.93rem
         font-style: normal
-        font-weight: semibold
-        letter-spacing: .02em
-        line-height: 2
+        font-weight: normal
+        letter-spacing: !sass
+          sass: 'letter-spacing(ls-1)'
+          fallback: 0.025em
+        line-height: !sass
+          sass: 'line-height(body, 6)'
+          fallback: 1.6
+      lead:
+        font-family: !sass
+          sass: 'family($theme-lead-font-family)'
+          fallback: '"Merriweather Web", Georgia, Cambria, "Times New Roman", Times, serif'
+        font-size: !sass
+          sass: 'font-size($theme-lead-font-family, $theme-lead-font-size)'
+          fallback: 1.34rem
+        line-height: !sass
+          sass: 'line-height($theme-lead-font-family, $theme-lead-line-height)'
+          fallback: 1.8
   transitions:
     ease:
       ease-in-out: 'cubic-bezier(0.4, 0, 0.2, 1)'
