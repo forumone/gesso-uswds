@@ -127,17 +127,26 @@ gesso:
     md: !uswds uswds.grid-container-max-width
     lg: 2200px
   breakpoints:
-    xs: !sass
-      sass: 'units("mobile-lg")'
+    mobile: !sass
+      sass: 'units(mobile)'
+      fallback: 320px
+    mobile-lg: !sass
+      sass: 'units(mobile-lg)'
       fallback: 480px
-    sm: !sass
-      sass: 'units("tablet")'
+    tablet: !sass
+      sass: 'units(tablet)'
       fallback: 640px
-    md: !sass
-      sass: 'units("desktop")'
+    tablet-lg: !sass
+      sass: 'units(tablet-lg)'
+      fallback: 880px
+    desktop: !sass
+      sass: 'units(desktop)'
       fallback: 1024px
-    lg: !sass
-      sass: 'units("widescreen")'
+    desktop-lg: !sass
+      sass: 'units(desktop-lg)'
+      fallback: 1200px
+    widescreen: !sass
+      sass: 'units(widescreen)'
       fallback: 1400px
   colors:
     text:
