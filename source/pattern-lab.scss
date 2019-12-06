@@ -1,7 +1,11 @@
 // CSS styles and overrides for Pattern Lab only.
 // This stylesheet is not loaded by the theme.
-@import 'breakpoint';
 
+@import '_patterns/uswds-theme-settings.artifact';
+@import 'breakpoint';
+// Required USWDS styles.
+@import 'packages/required';
+// Gesso configuration.
 @import '_patterns/00-config/**/*.scss';
 @import '_patterns/01-global/**/*.scss';
 
