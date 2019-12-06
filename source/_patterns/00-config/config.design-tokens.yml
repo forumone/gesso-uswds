@@ -297,72 +297,75 @@ gesso:
         sass: 'font-weight("bold")'
         fallback: 700
     line-height:
-      tight: 1.1
-      base: 1.45
-      loose: 1.7
+      1: 1
+      2: 1.2
+      3: 1.35
+      4: 1.5
+      5: 1.62
+      6: 1.75
     display:
       display:
         color: text.primary
         font-family: heading.stack
         font-size: 8
         font-weight: bold
-        line-height: tight
+        line-height: 2
       h1:
         color: text.primary
         font-family: heading.stack
         font-size: 7
         font-weight: bold
-        line-height: tight
+        line-height: 2
       h2:
         color: text.primary
         font-family: heading.stack
         font-size: 6
         font-weight: bold
-        line-height: tight
+        line-height: 2
       h3:
         color: text.primary
         font-family: heading.stack
         font-size: 5
         font-weight: bold
-        line-height: tight
+        line-height: 2
       h4:
         color: text.primary
         font-family: heading.stack
         font-size: 4
         font-weight: bold
-        line-height: base
+        line-height: 5
       h5:
         color: text.primary
         font-family: heading.stack
         font-size: 2
         font-weight: bold
-        line-height: base
+        line-height: 5
       h6:
         color: text.primary
         font-family: heading.stack
         font-size: 0
         font-weight: semibold
         letter-spacing: -0.04em
-        line-height: loose
+        line-height: 6
         text-transform: uppercase
       blockquote:
         color: text.link
         font-family: body.stack
         font-size: 5
         font-weight: regular
-        line-height: base
+        line-height: 5
       body:
         color: text.primary
         font-family: body.stack
         font-size: 3
         font-weight: regular
-        line-height: base
+        line-height: 5
       body-large:
         color: text.primary
         font-family: body.stack
         font-size: 4
         font-weight: regular
-        line-height: base
+        line-height: 5
       cite:
         color: text.secondary
         font-family: body.stack
@@ -370,7 +373,7 @@ gesso:
         font-style: normal
         font-weight: semibold
         letter-spacing: .02em
-        line-height: tight
+        line-height: 2
   transitions:
     ease:
       ease-in-out: 'cubic-bezier(0.4, 0, 0.2, 1)'
