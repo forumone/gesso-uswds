@@ -6,6 +6,7 @@ uswds:
   show-compile-warnings: false
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-typography.scss
   font-path: '../fonts'
+  type-scale-md: 7
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
   grid-container-max-width: 'widescreen'
