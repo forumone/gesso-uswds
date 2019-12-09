@@ -9,7 +9,7 @@
   box-shadow: none;
   display: inline-block;
   font-family: gesso-font-family(ui);
-  font-size: rem(gesso-font-size(1));
+  font-size: font-size(ui, sm);
   font-weight: gesso-font-weight(bold);
   height: 55px;
   line-height: 55px;

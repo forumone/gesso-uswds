@@ -39,7 +39,7 @@ $fieldset-legend-offset: rem(line-height($theme-body-font-family, $theme-body-li
 
 .fieldset__description {
   color: gesso-color(text, secondary);
-  font-size: rem(gesso-font-size(1));
+  font-size: font-size(body, sm);
 
   > :last-child {
     margin-bottom: 0;

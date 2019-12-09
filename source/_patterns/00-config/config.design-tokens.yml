@@ -261,37 +261,6 @@ gesso:
           sass: 'font-family(alt)'
           fallback: '"Merriweather Web", Georgia, Cambria, "Times New Roman", Times, serif'
     base-font-size: 16px # Changing this value will throw off USWDS calculations.
-    font-size:
-      0: !sass
-        sass: 'size("body", "3xs")'
-        fallback: 13px
-      1: !sass
-        sass: 'size("body", "2xs")'
-        fallback: 14px
-      2: !sass
-        sass: 'size("body", "xs")'
-        fallback: 15px
-      3: !sass
-        sass: 'size("body", "sm")'
-        fallback: 16px
-      4: !sass
-        sass: 'size("heading", "md")'
-        fallback: 17px
-      5: !sass
-        sass: 'size("heading", "lg")'
-        fallback: 22px
-      6: !sass
-        sass: 'size("heading", "xl")'
-        fallback: 32px
-      7: !sass
-        sass: 'size("heading", "2xl")'
-        fallback: 40px
-      8: !sass
-        sass: 'size("heading", "3xl")'
-        fallback: 48px
-      9: !sass
-        sass: 'size("heading", 18)'
-        fallback: 80px
     font-weight:
       light: !sass
         sass: 'font-weight(light)'

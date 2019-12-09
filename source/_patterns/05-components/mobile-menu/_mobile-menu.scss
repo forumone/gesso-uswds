@@ -11,8 +11,8 @@ $mobile-menu-submenu-link-color: gesso-color(ui, generic, text-dark) !default;
 $mobile-menu-submenu-link-hover-color: gesso-color(ui, generic, text-darker) !default;
 $mobile-menu-button-height: rem(54px);
 $mobile-menu-button-width: 44px;
-$mobile-menu-font-size: gesso-font-size(2);
-$mobile-menu-line-height: line-height($theme-body-font-family, $theme-body-line-height);
+$mobile-menu-font-size: font-size(ui, md);
+$mobile-menu-line-height: line-height(ui, $theme-body-line-height);
 
 .mobile-menu {
   background-color: $mobile-menu-fallback-bg-color;
