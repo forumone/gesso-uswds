@@ -260,7 +260,7 @@ gesso:
         stack: !sass
           sass: 'font-family(alt)'
           fallback: '"Merriweather Web", Georgia, Cambria, "Times New Roman", Times, serif'
-    base-font-size: 16px
+    base-font-size: 16px # Changing this value will throw off USWDS calculations.
     font-size:
       0: !sass
         sass: 'size("body", "3xs")'
