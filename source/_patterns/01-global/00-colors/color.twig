@@ -74,6 +74,20 @@
   </div>
 </div>
 
+<h4>USWDS</h4>
+<div class="pattern-lab-color">
+  {% for key, list in gesso.palette.uswds %}
+    <div class="pattern-lab-color__group">
+      {% for name, color in list %}
+        {% include '@global/00-colors/_color-item.twig' with  {
+          color: color,
+          name: key ~'-'~ name
+        } %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
 <h4>Other</h4>
 <div class="pattern-lab-color">
   {% for key, list in gesso.palette.other %}
