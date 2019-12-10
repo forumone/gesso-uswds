@@ -2,7 +2,6 @@
 // Inline element styles.
 
 a {
-  @include focus();
   background-color: transparent;
   color: gesso-color(text, link);
   -webkit-text-decoration-skip: objects;

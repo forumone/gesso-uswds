@@ -2,7 +2,6 @@
 // Styles for the mobile menu buttons.
 
 .mobile-menu-button {
-  @include focus();
   background-color: transparent;
   border: 0;
   border-radius: 0;
@@ -16,6 +15,10 @@
   margin: 0;
   padding: 0 gesso-spacing(2);
   text-decoration: none;
+
+  &:focus {
+    @include focus-outline();
+  }
 }
 
 .mobile-menu-button__icon {
