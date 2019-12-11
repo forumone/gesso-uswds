@@ -132,25 +132,25 @@ gesso:
     grayscale:
       white: '#fff'
       gray-1: !sass
-        sass: 'color("gray-cool-5")'
+        sass: 'color(gray-cool-5)'
         fallback: '#f0f0f0'
       gray-2: !sass
-        sass: 'color("gray-cool-10")'
+        sass: 'color(gray-cool-10)'
         fallback: '#dcdee0'
       gray-3: !sass
-        sass: 'color("gray-cool-30")'
+        sass: 'color(gray-cool-30)'
         fallback: '#a9aeb1'
       gray-4: !sass
-        sass: 'color("gray-cool-50")'
+        sass: 'color(gray-cool-50)'
         fallback: '#71767a'
       gray-5: !sass
-        sass: 'color("gray-cool-60")'
+        sass: 'color(gray-cool-60)'
         fallback: '#565c65'
       gray-6: !sass
-        sass: 'color("gray-cool-70")'
+        sass: 'color(gray-cool-70)'
         fallback: '#3d4551'
       gray-7: !sass
-        sass: 'color("gray-90")'
+        sass: 'color(gray-90)'
         fallback: '#1b1b1b'
       black: '#000'
     uswds:
