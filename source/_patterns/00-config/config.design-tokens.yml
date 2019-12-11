@@ -21,7 +21,6 @@ uswds:
   color-base-darker: 'gray-cool-70'
   color-base-darkest: 'gray-90'
   color-base-ink: 'gray-90'
-  color-primary-family: 'blue'
   color-primary-lightest: false
   color-primary-lighter: 'blue-10'
   color-primary-light: 'blue-30'
@@ -30,7 +29,6 @@ uswds:
   color-primary-dark: 'blue-warm-70v'
   color-primary-darker: 'blue-warm-80v'
   color-primary-darkest: false
-  color-secondary-family: 'red'
   color-secondary-lightest: false
   color-secondary-lighter: 'red-cool-10'
   color-secondary-light: 'red-30'
@@ -39,7 +37,6 @@ uswds:
   color-secondary-dark: 'red-60v'
   color-secondary-darker: 'red-70v'
   color-secondary-darkest: false
-  color-accent-warm-family: 'orange'
   color-accent-warm-lightest: false
   color-accent-warm-lighter: 'orange-10'
   color-accent-warm-light: 'orange-20v'
@@ -47,7 +44,6 @@ uswds:
   color-accent-warm-dark: 'orange-50v'
   color-accent-warm-darker: 'orange-60'
   color-accent-warm-darkest: false
-  color-accent-cool-family: 'blue-cool'
   color-accent-cool-lightest: false
   color-accent-cool-lighter: 'blue-cool-5v'
   color-accent-cool-light: 'blue-cool-20v'
@@ -55,31 +51,26 @@ uswds:
   color-accent-cool-dark: 'blue-cool-40v'
   color-accent-cool-darker: 'blue-cool-60v'
   color-accent-cool-darkest: false
-  color-error-family: 'red-warm'
   color-error-lighter: 'red-warm-10'
   color-error-light: 'red-warm-30v'
   color-error: 'red-warm-50v'
   color-error-dark: 'red-60v'
   color-error-darker: 'red-70'
-  color-warning-family: 'gold'
   color-warning-lighter: 'yellow-5'
   color-warning-light: 'yellow-10v'
   color-warning: 'gold-20v'
   color-warning-dark: 'gold-30v'
   color-warning-darker: 'gold-50v'
-  color-success-family: 'green-cool'
   color-success-lighter: 'green-cool-5'
   color-success-light: 'green-cool-20v'
   color-success: 'green-cool-40v'
   color-success-dark: 'green-cool-50'
   color-success-darker: 'green-cool-60'
-  color-info-family: 'cyan'
   color-info-lighter: 'cyan-5'
   color-info-light: 'cyan-20'
   color-info: 'cyan-30v'
   color-info-dark: 'cyan-40v'
   color-info-darker: 'blue-cool-60'
-  color-disabled-family: 'gray'
   color-disabled-light: 'gray-10'
   color-disabled: 'gray-20'
   color-disabled-dark: 'gray-30'
@@ -318,39 +309,6 @@ gesso:
         dark: !sass
           sass: 'color($theme-color-disabled-dark)'
           fallback: '#adadad'
-    other:
-      yellow:
-        base: !sass
-          sass: 'color("yellow-20v")'
-          fallback: '#face00'
-        light: !sass
-          sass: 'color("yellow-10v")'
-          fallback: '#fee685'
-      yellow-neon:
-        base: '#ff0'
-      green:
-        base: !sass
-          sass: 'color("green-40")'
-          fallback: '#7d9b4e'
-        light: !sass
-          sass: 'color("green-10")'
-          fallback: '#dfeacd'
-      red:
-        base: !sass
-          sass: 'color("red-50")'
-          fallback: '#d83933'
-        light: !sass
-          sass: 'color("red-30")'
-          fallback: '#f2938c'
-        light-1: !sass
-          sass: 'color("red-cool-10v")'
-          fallback: '#f8dfe2'
-        dark: !sass
-          sass: 'color("red-60v")'
-          fallback: '#b51d09'
-        dark-1: !sass
-          sass: 'color("red-70v")'
-          fallback: '#8b1303'
   box-shadow:
     0: none
     1: !sass
@@ -400,58 +358,58 @@ gesso:
       secondary: grayscale.gray-5
       on-light: grayscale.black
       on-dark: grayscale.white
-      link: brand.blue.base
-      link-hover: brand.blue.dark
-      link-active: brand.blue.dark
-      link-visited: brand.blue.dark
+      link: !sass
+        sass: 'color($theme-link-color)'
+        fallback: '#005ea2'
+      link-hover: !sass
+        sass: 'color($theme-link-hover-color)'
+        fallback: '#1a4480'
+      link-active: !sass
+        sass: 'color($theme-link-active-color)'
+        fallback: '#162e51'
+      link-visited: !sass
+        sass: 'color($theme-link-visited-color)'
+        fallback: '#562b97'
     background:
       site: grayscale.white
     button:
       primary:
-        background: brand.blue.base
-        background-hover: brand.blue.dark
-        background-active: brand.blue.dark-1
+        background: uswds.primary.base
+        background-hover: uswds.primary.dark
+        background-active: uswds.primary.darker
         text: grayscale.white
         text-hover: grayscale.white
         text-active: grayscale.white
       secondary:
-        background: brand.ocean-blue.base
-        background-hover: brand.ocean-blue.dark
-        background-active: brand.ocean-blue.dark-1
-        text: grayscale.white
+        background: uswds.accent-cool.base
+        background-hover: uswds.accent-cool.dark
+        background-active: uswds.accent-cool.darker
+        text: grayscale.black
         text-hover: grayscale.white
         text-active: grayscale.white
       disabled:
-        background: grayscale.gray-2
-        text: grayscale.gray-4
+        background: uswds.disabled.base
+        text: grayscale.white
       danger:
-        background: other.red.base
-        background-hover: other.red.dark
-        background-active: other.red.dark-1
+        background: uswds.error.base
+        background-hover: uswds.error.dark
+        background-active: uswds.error.darker
         text: grayscale.white
         text-hover: grayscale.white
         text-active: grayscale.white
     form:
       background: grayscale.gray-1
       background-active: grayscale.white
-      background-checked: brand.blue.base
+      background-checked: uswds.primary.base
       background-unchecked: grayscale.white
       border: grayscale.gray-3
       border-dark: grayscale.gray-5
       border-light: grayscale.gray-1
       thumb: grayscale.gray-5
       track: grayscale.gray-4
-    mark:
-      background: other.yellow-neon.base
-      text: grayscale.black
     selection:
-      background: brand.blue.base
+      background: uswds.primary.base
       text: grayscale.white
-    table:
-      border: grayscale.gray-5
-      background: grayscale.white
-      background-head: grayscale.gray-2
-      background-foot: grayscale.gray-2
     ui:
       generic:
         background: grayscale.gray-4
@@ -466,18 +424,18 @@ gesso:
         text-light: grayscale.gray-4
         text-dark: grayscale.gray-5
         text-darker: grayscale.black
-        accent: brand.blue.base
-        accent-dark: brand.blue.dark-1
-        accent-light: brand.blue.light
+        accent: uswds.accent-cool.base
+        accent-dark: uswds.accent-cool.dark
+        accent-light: uswds.accent-cool.light
       error:
-        background: other.red.light-1
-        border: other.red.light
+        background: uswds.error.lighter
+        border: uswds.error.light
       success:
-        background: other.green.light
-        border: other.green.base
+        background: uswds.success.lighter
+        border: uswds.success.light
       warning:
-        background: other.yellow.light
-        border: other.yellow.base
+        background: uswds.warning.lighter
+        border: uswds.warning.base
   typography:
     font-family:
       body:
