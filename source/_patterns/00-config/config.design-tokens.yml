@@ -82,40 +82,53 @@ gesso:
   palette:
     brand:
       blue:
-        base: !sass
-          sass: 'color("blue-60v")'
-          fallback: '#005ea2'
-        light: !sass
-          sass: 'color("blue-40")'
-          fallback: '#4f97d1'
         light-1: !sass
-          sass: 'color("blue-20")'
+          sass: 'color(blue-20)'
           fallback: '#aacdec'
-        light-2: !sass
-          sass: 'sass("blue-10")'
-          fallback: '#d9e8f6'
+        light: !sass
+          sass: 'color(blue-40)'
+          fallback: '#4f97d1'
+        base: !sass
+          sass: 'color(blue-60v)'
+          fallback: '#005ea2'
         dark: !sass
-          sass: 'sass("blue-warm-70v")'
+          sass: 'color(blue-warm-70v)'
           fallback: '#1a4480'
         dark-1: !sass
-          sass: 'sass("blue-warm-80v")'
+          sass: 'color(blue-warm-80v)'
           fallback: '#162e51'
-      ocean-blue:
-        base: !sass
-          sass: 'color("cyan-30v")'
-          fallback: '#00bde3'
-        light: !sass
-          sass: 'color("blue-cool-20v")'
-          fallback: '#97d4ea'
+      aqua:
         light-1: !sass
-          sass: 'color("blue-cool-5v")'
+          sass: 'color(blue-cool-5v)'
           fallback: '#e1f3f8'
+        light: !sass
+          sass: 'color(blue-cool-20v)'
+          fallback: '#97d4ea'
+        base: !sass
+          sass: 'color(cyan-30v)'
+          fallback: '#00bde3'
         dark: !sass
-          sass: 'color("blue-cool-40v")'
+          sass: 'color(blue-cool-40v)'
           fallback: '#28a0cb'
         dark-1: !sass
-          sass: 'color("blue-cool-60v")'
+          sass: 'color(blue-cool-60v)'
           fallback: '#07648d'
+      green:
+        light-1: !sass
+          sass: 'color(green-cool-10)'
+          fallback: '#dbebde'
+        light: !sass
+          sass: 'color(green-cool-30)'
+          fallback: '#86b98e'
+        base: !sass
+          sass: 'color(green-cool-40)'
+          fallback: '#5e9f69'
+        dark: !sass
+          sass: 'color(green-cool-50)'
+          fallback: '#4d8055'
+        dark-1: !sass
+          sass: 'color(green-cool-70)'
+          fallback: '#37493b'
     grayscale:
       white: '#fff'
       gray-1: !sass
