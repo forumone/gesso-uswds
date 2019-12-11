@@ -149,9 +149,10 @@ gesso:
       gray-6: !sass
         sass: 'color("gray-cool-70")'
         fallback: '#3d4551'
-      black: !sass
+      gray-7: !sass
         sass: 'color("gray-90")'
         fallback: '#1b1b1b'
+      black: '#000'
     uswds:
       base:
         lightest: !sass
@@ -367,9 +368,9 @@ gesso:
       fallback: 1400px
   colors:
     text:
-      primary: grayscale.black
+      primary: grayscale.gray-7
       secondary: grayscale.gray-5
-      on-light: grayscale.black
+      on-light: grayscale.gray-7
       on-dark: grayscale.white
       link: !sass
         sass: 'color($theme-link-color)'
@@ -397,7 +398,7 @@ gesso:
         background: uswds.accent-cool.base
         background-hover: uswds.accent-cool.dark
         background-active: uswds.accent-cool.darker
-        text: grayscale.black
+        text: grayscale.gray-7
         text-hover: grayscale.white
         text-active: grayscale.white
       disabled:
@@ -426,7 +427,7 @@ gesso:
     ui:
       generic:
         background: grayscale.gray-4
-        background-darker: grayscale.black
+        background-darker: grayscale.gray-7
         background-dark: grayscale.gray-6
         background-light: grayscale.gray-2
         background-lighter: grayscale.gray-1
@@ -436,7 +437,7 @@ gesso:
         text-lighter: grayscale.white
         text-light: grayscale.gray-4
         text-dark: grayscale.gray-5
-        text-darker: grayscale.black
+        text-darker: grayscale.gray-7
         accent: uswds.accent-cool.base
         accent-dark: uswds.accent-cool.dark
         accent-light: uswds.accent-cool.light
