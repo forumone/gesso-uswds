@@ -623,24 +623,45 @@ gesso:
     drawer: 1200
     modal: 1300
   spacing:
-    "05": !sass
-      sass: 'units("05")'
+    '05': !sass
+      sass: "units('05')"
       fallback: '4px'
     1: !sass
       sass: 'units(1)'
       fallback: '8px'
+    '105': !sass
+      sass: "units('105')"
+      fallback: '12px'
     2: !sass
       sass: 'units(2)'
       fallback: '16px'
+    '205': !sass
+      sass: "units('205')"
+      fallback: '20px'
     3: !sass
       sass: 'units(3)'
       fallback: '24px'
+    4: !sass
+      sass: 'units(4)'
+      fallback: '32px'
     5: !sass
       sass: 'units(5)'
       fallback: '40px'
+    6: !sass
+      sass: 'units(6)'
+      fallback: '48px'
+    7: !sass
+      sass: 'units(7)'
+      fallback: '56px'
     8: !sass
       sass: 'units(8)'
       fallback: '64px'
+    9: !sass
+      sass: 'units(9)'
+      fallback: '72px'
+    10: !sass
+      sass: 'units(10)'
+      fallback: '80px'
     15: !sass
       sass: 'units(15)'
       fallback: '120px'
