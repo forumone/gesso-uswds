@@ -1,65 +1,115 @@
 <div class="form-item form-item--textfield">
-  <label class="form-item__label" for="edit-textfield">Textfield</label>
-  <input class="form-item__text" id="edit-textfield" type="text" size="60" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-textfield',
+    input_label: 'Textfield',
+    input_size: 60,
+    input_max: 128
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--textfield">
-  <label class="form-item__label" for="edit-textfield-placeholder">Textfield with placeholder</label>
-  <input class="form-item__text" placeholder="Placeholder text" id="edit-textfield-placeholder" type="text" size="60" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-textfield-placeholder',
+    input_label: 'Textfield with placeholder',
+    input_size: 60,
+    input_max: 128,
+    input_placeholder: 'Placeholder text'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--textfield is-disabled">
-  <label class="form-item__label" for="edit-textfield-disabled">Disabled textfield</label>
-  <input class="form-item__text" id="edit-textfield-disabled" type="text" size="60" maxlength="128" disabled>
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-textfield-disabled',
+    input_label: 'Disabled textfield',
+    input_size: 60,
+    input_max: 128,
+    input_disabled: true
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--textfield is-full-width">
-  <label class="form-item__label" for="edit-textfield">Full width textfield</label>
-  <input class="form-item__text" id="edit-textfield" type="text" size="60" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-textfield-full',
+    input_label: 'Full width textfield',
+    input_size: 60,
+    input_max: 128
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--textfield is-required">
-  <label class="form-item__label" for="edit-required-textfield">Required textfield<span class="form-item__required-marker"><span class="visually-hidden">This field is required.</span></span></label>
-  <input class="form-item__text is-required" id="edit-required-textfield" type="text" size="60" maxlength="128" required="required" aria-required="true">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-textfield-required',
+    input_label: 'Required textfield',
+    input_size: 60,
+    input_max: 128,
+    input_required: true
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--email">
-  <label class="form-item__label" for="edit-email">Email</label>
-  <input class="form-item__email" id="edit-email" type="email" size="60" maxlength="255">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-email',
+    input_label: 'Email',
+    input_size: 60,
+    input_max: 255,
+    input_type: 'email'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--number">
-  <label class="form-item__label" for="edit-number">Number</label>
-  <input class="form-item__number" id="edit-number" type="number" step="1">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-number',
+    input_label: 'Number',
+    input_type: 'number'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--password">
-  <label class="form-item__label" for="edit-password">Password</label>
-  <input class="form-item__password" id="edit-password" type="password" size="60" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-password',
+    input_label: 'Password',
+    input_size: 60,
+    input_max: 128,
+    input_type: 'password'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--search">
-  <label class="form-item__label" for="edit-search">Search</label>
-  <input class="form-item__search" id="edit-search" type="search" size="60" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-search',
+    input_label: 'Search',
+    input_size: 60,
+    input_max: 128,
+    input_type: 'search'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--tel">
-  <label class="form-item__label" for="edit-tel">Telephone</label>
-  <input class="form-item__tel" id="edit-tel" type="tel" size="30" maxlength="128">
+  {% include "@uswds/input/input.twig" with {
+    input_id: 'edit-tel',
+    input_label: 'Telephone',
+    input_size: 30,
+    input_max: 128,
+    input_type: 'tel'
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--textarea">
-  <label class="form-item__label" for="edit-textarea">Textarea</label>
-  <textarea class="form-item__textarea" id="edit-textarea" cols="60" rows="5"></textarea>
+  {% include "@uswds/textarea/textarea.twig" with {
+    textarea_id: 'edit-textarea',
+    textarea_label: 'Textarea',
+    textarea_rows: 5,
+    textarea_cols: 60
+  }%}
   <div class="form-item__description">The description for this form field.</div>
 </div>

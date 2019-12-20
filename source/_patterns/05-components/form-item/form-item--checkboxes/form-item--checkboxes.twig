@@ -1,8 +1,9 @@
-<fieldset class="fieldset fieldset--checkboxes" aria-describedby="edit-checkboxes-description">
-  <legend class="fieldset__legend">
-    <span class="fieldset__legend-text">Checkboxes</span>
-  </legend>
-  <div class="fieldset__content">
+{% embed "@uswds/fieldset/fieldset.twig" with {
+  legend: 'Checkboxes',
+  description: '<p>The description for this form field.</p>',
+  description_id: 'edit-checkboxes-description'
+}%}
+  {% block fieldset_content %}
     <div class="form-item form-item--checkboxes">
       {% include '@components/form-item/form-item--checkbox/form-item--checkbox.twig' with {
         'checkbox_id': 'edit-checkboxes-a',
@@ -32,8 +33,5 @@
         'checkbox_checked': true
       } %}
     </div>
-    <div class="fieldset__description" id="edit-checkboxes-description">
-      <p>The description for this form field.</p>
-    </div>
-  </div>
-</fieldset>
+  {% endblock %}
+{% endembed %}

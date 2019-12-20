@@ -1,4 +1,8 @@
 <div class="form-item form-item--date">
-  <label class="form-item__label" for="edit-date">Date</label>
-  <input class="form-item__date" id="edit-date" type="date" data-drupal-date-format="Y-m-d">
+  {% include "@uswds/date-input/date-input.twig" with {
+    label: 'Date',
+    month_id: 'edit-date-1',
+    day_id: 'edit-date-2',
+    year_id: 'edit-date-3'
+  }%}
 </div>

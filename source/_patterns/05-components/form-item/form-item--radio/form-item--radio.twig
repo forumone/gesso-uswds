@@ -1,4 +1,10 @@
 <div class="form-item form-item--radio">
-  <input class="form-item__radio" id="{{ radio_option_id }}" name="radios" aria-describedby="edit-radios-description" type="radio"{% if radio_option_disabled %} disabled{% endif %}>
-  <label class="form-item__label is-after" for="{{ radio_option_id }}">{{ radio_option_label }}</label>
+  {% include "@uswds/radio/radio.twig" with {
+    radio_id: radio_option_id,
+    radio_name: 'edit-radios',
+    radio_disabled: radio_option_disabled,
+    radio_checked: radio_option_checked,
+    radio_label: radio_option_label,
+    radio_value: ''
+  }%}
 </div>
