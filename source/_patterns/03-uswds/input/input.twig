@@ -1,0 +1,7 @@
+<div class="usa-form-group {{ group_modifier_classes }}">
+  <label class="usa-label {{ label_modifier_classes }}" for="{{ input_id }}">{{ input_label }}</label>
+  {% if error_message %}
+    <span class="usa-error-message" id="{{ input_id }}-message" role="alert">{{ error_message }}</span>
+  {% endif %}
+  <input class="usa-input {{ modifier_classes }}" id="{{ input_id }}" name="{{ input_id }}" type="{{ input_type|default('text') }}"{% if error_message %} aria-describedby="{{ input_id }}-message"{% endif %}>
+</div>

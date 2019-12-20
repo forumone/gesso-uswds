@@ -24,6 +24,7 @@
 
 // USWDS components.
 @import '_patterns/03-uswds/**/*.scss';
+@import 'packages/form-controls';
 
 // Gesso layouts and components.
 @import '_patterns/04-layouts/**/*.scss';
