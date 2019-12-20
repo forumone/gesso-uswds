@@ -9,3 +9,4 @@ ___Variables:___
 * range_min: [number] Minimum value.
 * range_max: [number] Maximum value.
 * range_step: [number] Range step value.
+* range_disabled: [boolean] Whether range is disabled.

@@ -1,6 +1,6 @@
 ---
 el: .usa-select
-title: Dropdown
+title: Dropdown Select
 ---
 
 ___Variables:___
