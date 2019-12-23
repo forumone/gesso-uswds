@@ -1,0 +1,10 @@
+.tag {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    .usa-tag {
+      background-color: color('base-darker');
+    }
+  }
+}
