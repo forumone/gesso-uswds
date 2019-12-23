@@ -7,13 +7,13 @@
     <span class="usa-error-message" id="{{ textarea_id }}-message" role="alert">{{ error_message }}</span>
   {% endif %}
   {% spaceless %}
-    <textarea class="usa-textarea {{ modifier_classes }}"
-           id="{{ textarea_id }}"
-           name="{{ textarea_id }}"
-      {% if error_message %} aria-describedby="{{ textarea_id }}-message"{% endif %}
-      {% if textarea_disabled %} disabled{% endif %}
-      {% if textarea_required %} required{% endif %}
-      {% if textarea_rows %} rows="{{ textarea_rows }}"{% endif %}
-      {% if textarea_cols %} cols="{{ textarea_cols }}"{% endif %}></textarea>
+    <textarea aria-describedby="{{ textarea_id }}-message"
+      class="usa-textarea {{ modifier_classes }}"
+      cols="{{ textarea_cols }}"
+      {% if error_message %} disabled{% endif %}
+      {% if textarea_disabled %} id="{{ textarea_id }}"{% endif %}
+      {% if textarea_required %} name="{{ textarea_id }}"{% endif %}
+      {% if textarea_rows %} required{% endif %}
+      {% if textarea_cols %} rows="{{ textarea_rows }}"{% endif %}></textarea>
   {% endspaceless %}
 </div>
