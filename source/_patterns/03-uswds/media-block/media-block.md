@@ -3,7 +3,7 @@ el: .usa-media-block
 title: Media Block
 ---
 
-___Variables:___
+__Variables:__
 * media_image: [object] Media image object containing:
   * src: [string] Image source URL
   * alt: [string] Image alt text
