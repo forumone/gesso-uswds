@@ -23,8 +23,8 @@
 @import '_patterns/02-base/**/*.scss';
 
 // USWDS components.
-@import '_patterns/03-uswds/**/*.scss';
 @import 'packages/form-controls';
+@import '_patterns/03-uswds/**/*.scss';
 
 // Gesso layouts and components.
 @import '_patterns/04-layouts/**/*.scss';
