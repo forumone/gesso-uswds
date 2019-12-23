@@ -1,9 +1,10 @@
 {% set classes = [
   'tag',
-  type ? 'tag--' ~ type,
-  size ? 'tag--' ~ size
+  modifier_classes ? modifier_classes,
 ]|join(' ')|trim %}
 
 <a href="{{ url }}" class="{{ classes }}" rel="tag">
-  {{ title }}
+  {% include "@uswds/tag/tag.twig" with {
+    text: title
+  }%}
 </a>
