@@ -12,3 +12,7 @@ __Variables:__
 __Blocks:__
 * content: Twig block for content. This will include the Navbar and Nav, which
   are part of the USWDS header component.
+
+__Dependencies:__
+* [Navbar](../navbar/navbar.md)
+* [Nav](../nav/nav.md)
