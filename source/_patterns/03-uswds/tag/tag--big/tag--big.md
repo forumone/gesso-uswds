@@ -1,6 +1,6 @@
 ---
-el: .usa-tag
-title: Tag (Big)
+el: .usa-tag--big
+title: Big Tag
 ---
 
 ___Variables:___

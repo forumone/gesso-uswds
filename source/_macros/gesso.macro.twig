@@ -8,8 +8,8 @@
 {% endmacro %}
 
 
-{% macro tag(url, title) %}
-  {% include '@components/tag/tag.twig' with {
+{% macro tagLink(url, title) %}
+  {% include '@components/tag-link/tag-link.twig' with {
     'url': url,
     'title': title
   } %}
