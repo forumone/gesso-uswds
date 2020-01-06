@@ -4,6 +4,7 @@ uswds:
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-general.scss
   image-path: '../images'
   show-compile-warnings: false
+  show-notifications: false
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-typography.scss
   font-path: '../fonts'
   type-scale-md: 7
