@@ -1,6 +1,6 @@
 ---
 el: .usa-button--secondary
-title: Button (Secondary)
+title: Secondary Button
 ---
 
 __Variables:__

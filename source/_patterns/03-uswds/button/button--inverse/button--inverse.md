@@ -1,6 +1,6 @@
 ---
 el: .usa-button--inverse
-title: Button (Outline Inverse)
+title: Inverse Outline Button
 ---
 
 __Variables:__

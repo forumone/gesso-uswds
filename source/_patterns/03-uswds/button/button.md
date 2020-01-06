@@ -1,6 +1,6 @@
 ---
 el: .usa-button
-title: Button (Default)
+title: Button
 ---
 
 __Variables:__

@@ -1,6 +1,6 @@
 ---
 el: .usa-button--base
-title: Button (Base)
+title: Base Button
 ---
 
 __Variables:__

@@ -1,6 +1,6 @@
 ---
 el: .usa-button--big
-title: Button (Big)
+title: Big Button
 ---
 
 __Variables:__

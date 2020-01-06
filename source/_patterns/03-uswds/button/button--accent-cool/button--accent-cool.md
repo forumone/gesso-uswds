@@ -1,6 +1,6 @@
 ---
 el: .usa-button--accent-cool
-title: Button (Accent Cool)
+title: Accent Cool Button
 ---
 
 __Variables:__

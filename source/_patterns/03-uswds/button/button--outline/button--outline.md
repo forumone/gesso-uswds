@@ -1,6 +1,6 @@
 ---
 el: .usa-button--outline
-title: Button (Outline)
+title: Outline Button
 ---
 
 __Variables:__

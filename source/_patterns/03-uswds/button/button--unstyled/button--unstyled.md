@@ -1,6 +1,6 @@
 ---
 el: .usa-button--unstyled
-title: Button (Unstyled)
+title: Unstyled Button
 ---
 
 __Variables:__
