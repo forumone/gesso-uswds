@@ -99,4 +99,8 @@
 
 .form-item__select {
   @extend .usa-select;
+
+  &[multiple] {
+    height: auto;
+  }
 }
