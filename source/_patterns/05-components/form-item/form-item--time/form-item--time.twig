@@ -1,10 +1,4 @@
 <div class="form-item form-item--time">
-  {% include "@uswds/input/input.twig" with {
-    input_id: 'edit-time',
-    input_label: 'Time',
-    input_type: 'time',
-    input_title: 'Time (e.g. 09:30:30)',
-    input_step: 1,
-    input_size: 12
-  }%}
+  <label class="form-item__label" for="edit-time">Time</label>
+  <input class="form-item__time" id="edit-time" type="time" title="Time (e.g. 09:30:30)" step="1" size="12">
 </div>

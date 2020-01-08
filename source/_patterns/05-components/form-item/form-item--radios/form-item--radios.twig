@@ -1,9 +1,8 @@
-{% embed "@uswds/fieldset/fieldset.twig" with {
-  description_id: 'edit-radios-description',
-  description: '<p>The description for this form field.</p>',
-  legend: 'Radios'
-}%}
-  {% block fieldset_content %}
+<fieldset class="fieldset fieldset--radios" aria-describedby="edit-radios-description">
+  <legend class="fieldset__legend">
+    <span class="fieldset__legend-text">Radios</span>
+  </legend>
+  <div class="fieldset__content">
     <div class="form-item form-item--radios">
       {% include '@components/form-item/form-item--radio/form-item--radio.twig' with {
         'radio_option_id': 'edit-radios-one',
@@ -27,5 +26,8 @@
         'radio_option_disabled': true
       } %}
     </div>
-  {% endblock %}
-{% endembed %}
+    <div class="fieldset__description" id="edit-radios-description">
+      <p>The description for this form field.</p>
+    </div>
+  </div>
+</fieldset>

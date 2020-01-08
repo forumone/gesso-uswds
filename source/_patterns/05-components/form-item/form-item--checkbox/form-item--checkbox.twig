@@ -1,8 +1,4 @@
 <div class="form-item form-item--checkbox">
-  {% include "@uswds/checkbox/checkbox.twig" with {
-    checkbox_id: checkbox_id,
-    checkbox_disable: checkbox_disable,
-    checkbox_checked: checkbox_checked,
-    checkbox_label: checkbox_label
-  }%}
+  <input class="form-item__checkbox" id="{{ checkbox_id }}" type="checkbox" {% if checkbox_disabled %}disabled{% endif %} {% if checkbox_checked %}checked{% endif %}>
+  <label class="form-item__label is-after" for="{{ checkbox_id }}">{{ checkbox_label }}</label>
 </div>

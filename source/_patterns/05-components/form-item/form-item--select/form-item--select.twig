@@ -1,149 +1,55 @@
 <div class="form-item form-item--select">
-  {% include "@uswds/select/select.twig" with {
-    dropdown_label: 'Select',
-    dropdown_id: 'edit-select',
-    dropdown_options: [
-      {
-        value: '',
-        label: 'Option One'
-      },
-      {
-        value: '',
-        label: 'Option Two'
-      },
-      {
-        value: '',
-        label: 'Option Three'
-      },
-      {
-        value: '',
-        label: 'Option Four'
-      },
-      {
-        value: '',
-        label: 'Option Five'
-      },
-      {
-        value: '',
-        label: 'Disabled Option',
-        disabled: true
-      }
-    ]
-  }%}
+  <label class="form-item__label" for="edit-select">Select</label>
+  <select class="form-item__select" id="edit-select">
+    <option>Option One</option>
+    <option>Option Two</option>
+    <option>Option Three</option>
+    <option>Option Four</option>
+    <option>Option Five</option>
+    <option disabled>Disabled Option</option>
+  </select>
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--select">
-  {% include "@uswds/select/select--groups/select--groups.twig" with {
-    dropdown_label: 'Select with groups',
-    dropdown_id: '"edit-select-groups',
-    dropdown_options: [
-      {
-        group_label: 'Group One',
-        items: [
-        {
-          value: '',
-          label: 'Option One'
-        },
-        {
-          value: '',
-          label: 'Option Two'
-        },
-        {
-          value: '',
-          label: 'Option Three'
-        }
-        ]
-      },
-      {
-        group_label: 'Group Two',
-        items: [
-        {
-          value: '',
-          label: 'Option Four'
-        },
-        {
-          value: '',
-          label: 'Option Five'
-        },
-        {
-          value: '',
-          label: 'Option Six'
-        }
-      ]
-      }
-    ]
-  }%}
+  <label class="form-item__label" for="edit-select-groups">Select with groups</label>
+  <select class="form-item__select" id="edit-select-groups">
+    <optgroup label="Group One">
+      <option>Option One</option>
+      <option>Option Two</option>
+      <option>Option Three</option>
+    </optgroup>
+    <optgroup label="Group Two">
+      <option>Option Four</option>
+      <option>Option Five</option>
+      <option disabled>Disabled Option</option>
+    </optgroup>
+  </select>
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--select is-disabled">
-  {% include "@uswds/select/select.twig" with {
-    dropdown_label: 'Disabled select',
-    dropdown_id: 'edit-select-disabled',
-    dropdown_disabled: true,
-    dropdown_options: [
-      {
-        value: '',
-        label: 'Option One'
-      },
-      {
-        value: '',
-        label: 'Option Two'
-      },
-      {
-        value: '',
-        label: 'Option Three'
-      },
-      {
-        value: '',
-        label: 'Option Four'
-      },
-      {
-        value: '',
-        label: 'Option Five'
-      },
-      {
-        value: '',
-        label: 'Disabled Option',
-        disabled: true
-      }
-    ]
-  }%}
+  <label class="form-item__label" for="edit-select-disabled">Disabled select</label>
+  <select class="form-item__select" id="edit-select-disabled" disabled>
+    <option>Option One</option>
+    <option>Option Two</option>
+    <option>Option Three</option>
+    <option>Option Four</option>
+    <option>Option Five</option>
+    <option disabled>Disabled Option</option>
+  </select>
   <div class="form-item__description">The description for this form field.</div>
 </div>
 
 <div class="form-item form-item--select is-full-width">
-  {% include "@uswds/select/select.twig" with {
-    dropdown_label: 'Full width select',
-    dropdown_id: 'edit-select-width',
-    dropdown_options: [
-      {
-        value: '',
-        label: 'Option One'
-      },
-      {
-        value: '',
-        label: 'Option Two'
-      },
-      {
-        value: '',
-        label: 'Option Three'
-      },
-      {
-        value: '',
-        label: 'Option Four'
-      },
-      {
-        value: '',
-        label: 'Option Five'
-      },
-      {
-        value: '',
-        label: 'Disabled Option',
-        disabled: true
-      }
-    ]
-  }%}
+  <label class="form-item__label" for="edit-select-width">Full width select</label>
+  <select class="form-item__select" id="edit-select-width">
+    <option>Option One</option>
+    <option>Option Two</option>
+    <option>Option Three</option>
+    <option>Option Four</option>
+    <option>Option Five</option>
+    <option disabled>Disabled Option</option>
+  </select>
   <div class="form-item__description">The description for this form field.</div>
 </div>

@@ -2,16 +2,101 @@
 // Styles for form items.
 
 .form-item {
-  margin: 0 0 rem(gesso-spacing(3));
+  // Add top margin when preceded by another element.
+  * + & {
+    margin-top: gesso-spacing(3);
+  }
+
+  // Add top margin to item directly after this.
+  + * {
+    margin-top: gesso-spacing(3);
+  }
+
+  &.is-full-width {
+    > .form-item__label,
+    > .form-item__description,
+    > .form-item__color,
+    > .form-item__date,
+    > .form-item__email,
+    > .form-item__month,
+    > .form-item__number,
+    > .form-item__password,
+    > .form-item__range,
+    > .form-item__search,
+    > .form-item__select,
+    > .form-item__tel,
+    > .form-item__text,
+    > .form-item__textarea,
+    > .form-item__time,
+    > .form-item__url,
+    > .form-item__week {
+      max-width: 100%;
+    }
+  }
 }
 
-// .form-item__legend {}
+.form-item__label {
+  @extend .usa-label;
+  margin-top: 0;
+
+  .is-disabled > & {
+    color: color('disabled');
+  }
+}
+
+.form-item__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 
 .form-item__description {
   color: gesso-color(text, secondary);
   font-size: font-size(body, sm);
+  margin-top: units('05');
+  max-width: units($theme-input-max-width);
+}
 
-  > :last-child {
-    margin-bottom: 0;
+.form-item__color,
+.form-item__date,
+.form-item__email,
+.form-item__month,
+.form-item__number,
+.form-item__password,
+.form-item__search,
+.form-item__select,
+.form-item__tel,
+.form-item__text,
+.form-item__time,
+.form-item__url,
+.form-item__week {
+  @extend .usa-input;
+
+  .is-full-width > & {
+    max-width: 100%;
   }
+}
+
+.form-item__textarea {
+  @extend .usa-textarea;
+}
+
+.form-item__checkbox {
+  @extend .usa-checkbox__input;
+}
+
+.form-item__radio {
+  @extend .usa-radio__input;
+
+  &:disabled + .form-item__label {
+    color: color('disabled');
+  }
+}
+
+.form-item__range {
+  @extend .usa-range;
+}
+
+.form-item__select {
+  @extend .usa-select;
 }
