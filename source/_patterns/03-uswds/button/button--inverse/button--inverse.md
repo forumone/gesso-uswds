@@ -1,6 +1,6 @@
 ---
-el: .button--large
-title: Large Button
+el: .usa-button--inverse
+title: Inverse Outline Button
 ---
 
 __Variables:__

@@ -1,6 +1,6 @@
 ---
-el: .button--small
-title: Small Button
+el: .usa-button
+title: Button
 ---
 
 __Variables:__

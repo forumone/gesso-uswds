@@ -1,9 +1,9 @@
 {% set classes = [
-  'button--large',
+  'usa-button--big',
   modifier_classes ? modifier_classes,
 ]|join(' ')|trim %}
 
-{% include '@components/button/button.twig' with {
+{% include '@uswds/button/button.twig' with {
   'url': url,
   'text': text,
   'modifier_classes': classes,

@@ -1,6 +1,6 @@
 ---
-el: .button--secondary
-title: Secondary Button
+el: .usa-button--unstyled
+title: Unstyled Button
 ---
 
 __Variables:__
