@@ -53,7 +53,7 @@
 .form-item__description {
   color: gesso-color(text, secondary);
   font-size: font-size(body, sm);
-  margin-top: units('05');
+  margin-top: gesso-spacing('05');
   max-width: units($theme-input-max-width);
 }
 
