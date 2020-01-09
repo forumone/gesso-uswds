@@ -1,7 +1,9 @@
 ---
 el: .usa-button--inverse
-title: Inverse Outline Button
+title: Outline Inverse Button
 ---
+See [https://designsystem.digital.gov/components/button/]() and
+[https://components.designsystem.digital.gov/components/detail/buttons--outline-inverse.html]().
 
 __Variables:__
 * is_button_tag: [boolean] Whether to output as a button element.

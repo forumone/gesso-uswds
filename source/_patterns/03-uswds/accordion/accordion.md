@@ -2,8 +2,7 @@
 el: .usa-accordion
 title: Accordion
 ---
-See
-https://designsystem.digital.gov/components/accordion/.
+See [https://designsystem.digital.gov/components/accordion/]().
 
 __Variables:__
 * accordion: [array] Accordion items.

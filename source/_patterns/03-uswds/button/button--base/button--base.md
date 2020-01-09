@@ -2,6 +2,8 @@
 el: .usa-button--base
 title: Base Button
 ---
+See [https://designsystem.digital.gov/components/button/]() and
+[https://components.designsystem.digital.gov/components/detail/buttons--base.html]().
 
 __Variables:__
 * is_button_tag: [boolean] Whether to output as a button element.

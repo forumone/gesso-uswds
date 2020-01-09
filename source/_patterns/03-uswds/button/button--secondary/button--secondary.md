@@ -2,6 +2,8 @@
 el: .usa-button--secondary
 title: Secondary Button
 ---
+See [https://designsystem.digital.gov/components/button/]() and
+[https://components.designsystem.digital.gov/components/detail/buttons--secondary.html]().
 
 __Variables:__
 * is_button_tag: [boolean] Whether to output as a button element.

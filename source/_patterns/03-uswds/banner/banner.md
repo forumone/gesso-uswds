@@ -2,7 +2,9 @@
 el: .usa-banner
 title: Government Banner
 ---
-See https://components.designsystem.digital.gov/components/detail/banner.html and https://designsystem.digital.gov/components/header/.
+See [https://designsystem.digital.gov/components/banner/](),
+[https://components.designsystem.digital.gov/components/detail/banner.html](),
+and [https://designsystem.digital.gov/components/header/]().
 
 __Variables:__
 * banner_text: [string] Text displayed next to the flag.

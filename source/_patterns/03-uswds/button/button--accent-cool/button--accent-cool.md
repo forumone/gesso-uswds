@@ -2,6 +2,8 @@
 el: .usa-button--accent-cool
 title: Accent Cool Button
 ---
+See [https://designsystem.digital.gov/components/button/]() and
+[https://components.designsystem.digital.gov/components/detail/buttons--accent-cool.html]().
 
 __Variables:__
 * is_button_tag: [boolean] Whether to output as a button element.

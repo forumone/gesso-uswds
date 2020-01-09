@@ -2,7 +2,8 @@
 el: .usa-tag
 title: Tag
 ---
-USWDS tag component. See https://designsystem.digital.gov/components/tag/.
+See [https://designsystem.digital.gov/components/tag/]() and
+[https://components.designsystem.digital.gov/components/detail/labels--default.html]().
 
 ___Variables:___
 * text: [string] Text inside the tag.
