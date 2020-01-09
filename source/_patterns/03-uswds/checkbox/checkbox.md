@@ -2,8 +2,10 @@
 el: .usa-checkbox
 title: Checkbox
 ---
+See [https://designsystem.digital.gov/components/form-controls/]() and
+[https://components.designsystem.digital.gov/components/detail/checkboxes.html]().
 
-___Variables:___
+__Variables:__
 * checkbox_id: [string] Checkbox field ID.
 * checkbox_name: [string] Checkbox field name.
 * checkbox_checked: [boolean] Whether checkbox is currently checked.

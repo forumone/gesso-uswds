@@ -2,6 +2,10 @@
 el: .usa-textarea
 title: Textarea
 ---
+See [https://designsystem.digital.gov/components/form-controls/]() and
+[https://components.designsystem.digital.gov/components/detail/text-input.html]().
+
+__Variables:__
 * textarea_id: [string] Textarea ID.
 * textarea_label: [string] Textarea label.
 * group_modifier_classes: [string] Optional additional CSS classes for the outer group element.

@@ -2,8 +2,10 @@
 el: .usa-memorable-date
 title: Date Input
 ---
+See [https://designsystem.digital.gov/components/form-controls/]() and
+[https://components.designsystem.digital.gov/components/detail/date-input.html]().
 
-___Variables:___
+__Variables:__
 * label: [string] Label for the field as a whole.
 * hint: [string] Optional field hint or description.
 * hint_id: [string] Optional ID value for hint.

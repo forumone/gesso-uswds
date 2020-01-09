@@ -2,7 +2,10 @@
 el: .usa-input
 title: Text Input
 ---
+See [https://designsystem.digital.gov/components/form-controls/]() and
+[https://components.designsystem.digital.gov/components/detail/text-input.html]().
 
+__Variables:__
 * input_id: [string] Text input ID.
 * input_label: [string] Text input label.
 * input_type: [string] Type of input field. Defaults to `text`.

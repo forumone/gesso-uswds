@@ -2,8 +2,10 @@
 el: .usa-select
 title: Dropdown Select with Groups
 ---
+See [https://designsystem.digital.gov/components/form-controls/]() and
+[https://components.designsystem.digital.gov/components/detail/dropdown.html]().
 
-___Variables:___
+__Variables:__
 * dropdown_label: [string] Field label.
 * dropdown_options: [object] Set of possible values.
   * group_label: [string] Optgroup label
