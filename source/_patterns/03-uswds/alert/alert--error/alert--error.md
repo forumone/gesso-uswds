@@ -2,7 +2,7 @@
 el: .usa-alert--error
 title: Error Alert
 ---
-See
+See [https://designsystem.digital.gov/components/alert/] and
 [https://components.designsystem.digital.gov/components/detail/alerts--error.html]().
 
 __Variables:__

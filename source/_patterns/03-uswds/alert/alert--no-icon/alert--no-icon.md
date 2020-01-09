@@ -2,7 +2,7 @@
 el: .usa-alert--no-icon
 title: No Icon Alert
 ---
-See
+See [https://designsystem.digital.gov/components/alert/] and
 [https://components.designsystem.digital.gov/components/detail/alerts--no-icon.html]().
 
 __Variables:__

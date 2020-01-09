@@ -2,7 +2,7 @@
 el: .usa-alert--warning
 title: Warning Alert
 ---
-See
+See [https://designsystem.digital.gov/components/alert/] and
 [https://components.designsystem.digital.gov/components/detail/alerts--warning.html]().
 
 __Variables:__

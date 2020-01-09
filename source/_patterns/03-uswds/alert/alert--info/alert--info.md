@@ -2,7 +2,7 @@
 el: .usa-alert--info
 title: Info Alert
 ---
-See
+See [https://designsystem.digital.gov/components/alert/] and
 [https://components.designsystem.digital.gov/components/detail/alerts--default.html]().
 
 __Variables:__

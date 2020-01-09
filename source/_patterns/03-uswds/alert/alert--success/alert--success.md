@@ -2,7 +2,7 @@
 el: .usa-alert--success
 title: Success Alert
 ---
-See
+See [https://designsystem.digital.gov/components/alert/] and
 [https://components.designsystem.digital.gov/components/detail/alerts--success.html]().
 
 __Variables:__
