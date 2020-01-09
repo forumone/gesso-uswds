@@ -33,6 +33,9 @@
 <fieldset{{ attributes.removeClass(removeClasses).addClass(addClasses) }}>
   <legend{{ legend.attributes.addClass(addLegendClasses) }}>
     {{ legend.title }}
+    {% if not required and type != 'fieldset' -%}
+      <span class="usa-hint">({{ 'optional'|t }})</span>
+    {%- endif %}
   </legend>
   {% if description.content %}
     <div{{ description.attributes.addClass('usa-hint') }}>{{ description.content }}</div>
