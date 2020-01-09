@@ -3,7 +3,7 @@ el: .usa-alert--slim
 title: Slim Alert
 ---
 See
-https://components.designsystem.digital.gov/components/detail/alerts--slim.html.
+[https://components.designsystem.digital.gov/components/detail/alerts--slim.html]().
 
 __Variables:__
 * modifier_classes: [string] Classes to modify the default component styling.
