@@ -1,7 +1,7 @@
 ---
 modifier_classes: ''
-is_multi_selectable: false
-accordion_id: 'a'
+is_multi_selectable: true
+accordion_id: 'c'
 accordion:
   -
     title: 'First Amendment'
