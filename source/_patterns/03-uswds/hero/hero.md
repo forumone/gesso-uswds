@@ -2,8 +2,10 @@
 el: .usa-hero
 title: Hero
 ---
+See
+[https://components.designsystem.digital.gov/components/detail/hero.html]().
 
-___Variables:___
+__Variables:__
 * callout: [string] Optional callout text displayed before the title.
 * title: [string] Hero title.
 * paragraph: [string] Optional hero paragraph content.
