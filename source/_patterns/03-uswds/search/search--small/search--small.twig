@@ -1,0 +1,11 @@
+{% set classes = [
+  'usa-search--small',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+{% include '@uswds/search/search.twig' with {
+  'modifier_classes': classes,
+  'id': id,
+  'label': label,
+  'button_text': button_text,
+} %}
