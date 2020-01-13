@@ -9,12 +9,17 @@
 // Accessibility utility classes
 .visually-hidden {
   @include visually-hidden-important;
+
   &.focusable {
     &:focus,
     &:active {
       @include visually-hidden-off-important;
     }
   }
+}
+
+.usa-sr-only {
+  @include sr-only;
 }
 
 .hidden {
