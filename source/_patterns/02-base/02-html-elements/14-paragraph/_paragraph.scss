@@ -3,6 +3,8 @@
 
 p {
   @include typeset-p;
+  @include vertical-spacing(rem(gesso-spacing(sm)));
+  margin: 0;
 
   @media print {
     orphans: 3;
