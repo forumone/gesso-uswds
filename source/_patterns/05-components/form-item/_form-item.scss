@@ -88,6 +88,12 @@
   }
 }
 
+.form-item__select {
+  &[multiple] {
+    background-image: none;
+  }
+}
+
 .form-item__textarea {
   @extend .usa-textarea;
 
