@@ -95,6 +95,12 @@
 
 .form-item__range {
   @extend .usa-range;
+  padding: 0;
+
+  &:disabled {
+    background: transparent;
+    opacity: 0.5;
+  }
 }
 
 .form-item__select {
