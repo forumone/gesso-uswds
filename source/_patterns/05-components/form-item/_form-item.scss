@@ -41,6 +41,10 @@
 
   .is-disabled > & {
     color: color('disabled');
+
+    .usa-hint {
+      color: color('disabled');
+    }
   }
 }
 
