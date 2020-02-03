@@ -33,8 +33,8 @@ $mobile-menu-submenu-link-hover-color: gesso-color(
   generic,
   text-darker
 ) !default;
-$mobile-menu-button-height: 54px;
-$mobile-menu-button-width: 44px;
+$mobile-menu-button-height: rem(54px);
+$mobile-menu-button-width: rem(44px);
 $mobile-menu-font-size: font-size(ui, md);
 $mobile-menu-line-height: line-height(ui, $theme-body-line-height);
 
@@ -72,8 +72,9 @@ $mobile-menu-line-height: line-height(ui, $theme-body-line-height);
   margin: 0;
   padding: (
       $mobile-menu-button-height -
-        ($mobile-menu-font-size * $mobile-menu-line-height)
-    ) / 2 gesso-spacing(2);
+        ($mobile-menu-font-size * $mobile-menu-line-height) / 2
+    )
+    gesso-spacing(2);
   text-align: left;
   text-decoration: none;
   white-space: normal;
