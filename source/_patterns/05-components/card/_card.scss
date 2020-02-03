@@ -22,12 +22,12 @@ $card-padding: rem(gesso-spacing(3)) !default;
 
 .card__date {
   @include vertical-spacing(rem(gesso-spacing(2)));
-  font-size: rem(gesso-font-size(0));
+  font-size: font-size(body, 3xs);
 }
 
 .card__title {
   @include vertical-spacing(rem(gesso-spacing(2)));
-  font-size: rem(gesso-font-size(3));
+  font-size: font-size(heading, lg);
   margin: 0;
 
   a {
