@@ -2,15 +2,7 @@
 // Styles for form items.
 
 .form-item {
-  // Add top margin when preceded by another element.
-  * + & {
-    margin-top: gesso-spacing(3);
-  }
-
-  // Add top margin to item directly after this.
-  + * {
-    margin-top: gesso-spacing(3);
-  }
+  @include vertical-spacing(rem(gesso-spacing(3)));
 
   &.is-full-width {
     > .form-item__label,
