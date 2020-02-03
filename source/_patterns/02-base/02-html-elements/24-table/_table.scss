@@ -3,12 +3,6 @@
 
 table {
   @extend %usa-table;
-  @include vertical-spacing(rem(gesso-spacing(1)));
-}
-
-caption {
-  @include vertical-spacing(rem(gesso-spacing(0)));
-  margin: 0;
 }
 
 thead {

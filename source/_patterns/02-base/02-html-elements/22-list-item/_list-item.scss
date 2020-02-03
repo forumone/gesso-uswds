@@ -3,8 +3,6 @@
 
 li {
   @extend %usa-list-item;
-  @include vertical-spacing(rem(gesso-spacing(1)));
-  margin: 0;
 
   @media print {
     page-break-inside: avoid;
