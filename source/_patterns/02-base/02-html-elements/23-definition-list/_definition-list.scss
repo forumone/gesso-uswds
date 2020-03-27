@@ -2,15 +2,8 @@
 // Definition list styles.
 
 dd {
-  @include vertical-spacing(rem(gesso-spacing(2)));
-  margin: 0 0 0 3ch;
-
-  @if $support-for-rtl {
-    [dir='rtl'] & {
-      margin-left: 0;
-      margin-right: 3ch;
-    }
-  }
+  margin-bottom: rem(gesso-spacing(2));
+  padding-left: rem(gesso-spacing(3));
 
   dt + & {
     margin-top: 0;
@@ -18,8 +11,7 @@ dd {
 }
 
 dl {
-  @include vertical-spacing(rem(gesso-spacing(2)));
-  margin: 0;
+  margin-bottom: rem(gesso-spacing(2));
 }
 
 // dt {}
