@@ -408,6 +408,7 @@ gesso:
         text-active: grayscale.white
       disabled:
         background: uswds.disabled.base
+        border: uswds.disabled.base
         text: grayscale.white
       danger:
         background: uswds.error.base
