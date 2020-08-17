@@ -9,7 +9,7 @@ import navigation from './modules/navigation';
 import banner from 'uswds/src/js/components/banner.js';
 import backToTop from './modules/_back-to-top.es6';
 
-(function() {
+(function () {
   'use strict';
 
   // Generic function that runs on window resize.
