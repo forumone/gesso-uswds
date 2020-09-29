@@ -1,0 +1,7 @@
+---
+modifier_classes: 'usa-button--base'
+is_button_tag: true
+is_demo: true
+url: '#'
+text: 'Base Button'
+text_demo: 'Base Link Button'

@@ -1,0 +1,7 @@
+---
+modifier_classes: 'usa-button--outline usa-button--inverse'
+is_button_tag: true
+is_demo: true
+url: '#'
+text: 'Inverse Button'
+text_demo: 'Inverse Link Button'
