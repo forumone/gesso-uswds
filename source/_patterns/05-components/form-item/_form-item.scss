@@ -2,7 +2,7 @@
 // Styles for form items.
 
 .form-item {
-  @include vertical-spacing(rem(gesso-spacing(3)));
+  margin-bottom: gesso-spacing(3);
 
   &.is-full-width {
     > .form-item__label,

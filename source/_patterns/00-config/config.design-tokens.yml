@@ -392,6 +392,8 @@ gesso:
         background: uswds.primary.base
         background-hover: uswds.primary.dark
         background-active: uswds.primary.darker
+        border: uswds.primary.base
+        border-hover: uswds.primary.dark
         text: grayscale.white
         text-hover: grayscale.white
         text-active: grayscale.white
@@ -399,19 +401,29 @@ gesso:
         background: uswds.accent-cool.base
         background-hover: uswds.accent-cool.dark
         background-active: uswds.accent-cool.darker
+        border: uswds.accent-cool.base
+        border-hover: uswds.accent-cool.dark
         text: grayscale.gray-7
         text-hover: grayscale.white
         text-active: grayscale.white
       disabled:
         background: uswds.disabled.base
+        border: uswds.disabled.base
         text: grayscale.white
       danger:
         background: uswds.error.base
         background-hover: uswds.error.dark
         background-active: uswds.error.darker
+        border: uswds.error.base
+        border-hover: uswds.error.dark
         text: grayscale.white
         text-hover: grayscale.white
         text-active: grayscale.white
+      back-to-top:
+        background: grayscale.gray-4
+        background-hover: grayscale.gray-5
+        color: grayscale.white
+        color-hover: grayscale.white
     selection:
       background: uswds.primary.base
       text: grayscale.white

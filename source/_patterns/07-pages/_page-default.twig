@@ -112,7 +112,7 @@
         'has_constrain': true
       } %}
         {% block content %}
-          {{ content }}
+          {{ page_default_content }}
         {% endblock %}
       {% endembed %}
 
@@ -144,5 +144,10 @@
         {% include '@components/copyright/copyright.twig' %}
       {% endblock %}
     {% endembed %}
+
+    {% include '@components/back-to-top/back-to-top.twig' with {
+      'text': 'Back to top',
+      'top_element': 'top'
+    }%}
 
   {% endblock %}

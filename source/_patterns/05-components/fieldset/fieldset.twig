@@ -4,7 +4,7 @@
 ]|join(' ')|trim %}
 
 <fieldset class="{{ classes }}">
-  <legend class="fieldset__legend">{{ legend }}</legend>
-  <div class="usa-hint">{{ description }}</div>
-  {{ content }}
+  <legend class="fieldset__legend">{{ fieldset_legend }}</legend>
+  <div class="usa-hint">{{ fieldset_description }}</div>
+  {{ fieldset_content }}
 </fieldset>

@@ -1,6 +1,6 @@
 import navigation from 'uswds/src/js/components/navigation.js';
 
-export default function() {
+export default function () {
   const subnav = document.querySelectorAll('.menu__subnav');
   subnav.forEach((menu, index) => {
     const button = menu.previousElementSibling;

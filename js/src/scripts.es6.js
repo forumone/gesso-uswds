@@ -7,8 +7,9 @@ import domready from 'domready';
 import accordion from 'uswds/src/js/components/accordion.js';
 import navigation from './modules/navigation';
 import banner from 'uswds/src/js/components/banner.js';
+import backToTop from './modules/_back-to-top.es6';
 
-(function() {
+(function () {
   'use strict';
 
   // Generic function that runs on window resize.
@@ -28,9 +29,11 @@ import banner from 'uswds/src/js/components/banner.js';
     timeOut = setTimeout(resizeStuff, 200);
   });
 
+  // Any scripts you want to initialize once the DOM is ready go here.
   domready(() => {
     accordion.on(document.body);
     banner.on(document.body);
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
+    backToTop();
   });
 })();

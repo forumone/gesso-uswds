@@ -15,6 +15,11 @@
       display: inline-block;
     }
   }
+
+  // Add top margin when headers are preceded by other elements (p, ul, etc.)
+  * + & {
+    margin-top: 1em;
+  }
 }
 
 h1,
