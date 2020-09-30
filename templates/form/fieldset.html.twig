@@ -1,11 +1,6 @@
-{% set removeClasses = [
-  'required',
-] %}
-
 {% set addClasses = [
   'fieldset',
   required ? 'is-required',
-  'js-form-wrapper',
 ] %}
 
 {% set addLegendClasses = [
@@ -23,7 +18,6 @@
   {% set removeClasses = removeClasses|merge([
     'fieldgroup',
     'form-composite',
-    'js-form-wrapper',
   ]) %}
   {% set addClasses = addClasses|merge([
     'fieldset--' ~ type|clean_class,
