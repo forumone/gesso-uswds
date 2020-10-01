@@ -53,11 +53,7 @@
 
 // Get Font Family
 @function gesso-font-family($ff-type) {
-  $stack: gesso-get-map(typography, font-family, $ff-type, stack);
-  @if (type_of($stack) == 'string') {
-    @return unquote($stack);
-  }
-  @return $stack;
+  @return unquote(gesso-get-map(typography, font-family, $ff-type, stack));
 }
 
 // Get Base Font Size
@@ -88,6 +84,11 @@
 // Get spacing
 @function gesso-spacing($keys...) {
   @return gesso-get-map(spacing, $keys...);
+}
+
+// Get Site margins
+@function gesso-site-margins($keys...) {
+  @return gesso-get-map(site-margins, $keys...);
 }
 
 @function gesso-duration($keys...) {

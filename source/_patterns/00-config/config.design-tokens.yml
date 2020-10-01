@@ -669,3 +669,6 @@ gesso:
       sass: 'units(15)'
       fallback: '120px'
   gutter-width: !uswds uswds.column-gap-desktop
+  site-margins:
+    'mobile': 16px
+    'desktop': 32px
