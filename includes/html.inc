@@ -8,8 +8,10 @@
 /**
  * Implements hook_preprocess().
  */
-function gesso_preprocess(&$vars) {
-  $vars['gesso_image_path'] = '/' . $vars['directory'] . '/images';
+function guswds_preprocess(&$vars) {
+  if (!empty($variables['directory'])) {
+    $variables['gesso_image_path'] = '/' . $variables['directory'] . '/images';
+  }
 }
 
 /**
