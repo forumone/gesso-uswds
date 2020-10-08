@@ -1,5 +1,5 @@
 ---
-modifier_classes: ''
+modifier_classes: 'l-grid--4col'
 grid_content: |-
   <div><div style="background:#333;color:#fff;padding:1em;margin:0;">Grid Item</div></div>
   <div><div style="background:#333;color:#fff;padding:1em;margin:0;">Grid Item</div></div>

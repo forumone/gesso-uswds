@@ -1,0 +1,7 @@
+---
+modifier_classes: 'usa-button--big'
+is_button_tag: true
+is_demo: true
+url: '#'
+text: 'Big Button'
+text_demo: 'Big Link Button'
