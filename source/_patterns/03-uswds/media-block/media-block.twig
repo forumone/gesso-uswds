@@ -1,4 +1,9 @@
-<div class="usa-media-block">
+{% set classes = [
+  'usa-media-block',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ classes }}">
   <img src="{{ media_image.src }}" alt="{{ media_image.alt }}" class="usa-media-block__img" />
   <div class="usa-media-block__body">
     {{ media_body }}

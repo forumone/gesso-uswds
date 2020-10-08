@@ -1,4 +1,9 @@
-<nav class="usa-nav" role="navigation" aria-label="{{ label }}">
+{% set classes = [
+  'usa-nav',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<nav class="{{ classes }}" role="navigation" aria-label="{{ label }}">
   {% if is_extended %}<div class="usa-nav__inner">{% endif %}
   <button class="usa-nav__close">{{ 'Close'|t }}</button>
   {% block content %}

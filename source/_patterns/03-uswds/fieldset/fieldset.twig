@@ -1,4 +1,9 @@
-<fieldset class="usa-fieldset"{% if description and description_id %} aria-describedby="{{ description_id }}"{% endif %}>
+{% set classes = [
+  'usa-fieldset',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<fieldset class="{{ classes }}"{% if description and description_id %} aria-describedby="{{ description_id }}"{% endif %}>
   {% if legend %}
     <legend class="usa-legend{% if legend_modifier_classes %} {{ legend_modifier_classes }}{% endif %}">{{ legend }}</legend>
   {% endif %}

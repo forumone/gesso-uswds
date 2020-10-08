@@ -1,4 +1,10 @@
-<footer class="usa-footer usa-footer--slim" role="contentinfo">
+{% set classes = [
+  'usa-footer',
+  'usa-footer--slim',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<footer class="{{ classes }}" role="contentinfo">
   {% if has_back_to_top %}
     <div class="usa-footer__return-to-top grid-container">
       <a href="#">{{ 'Return to top'|t }}</a>

@@ -1,4 +1,9 @@
-<div class="usa-banner">
+{% set classes = [
+  'usa-banner',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ classes }}">
   {% if has_expanded %}<div class="usa-accordion">{% endif %}
   <header class="usa-banner__header">
     <div class="usa-banner__inner">
