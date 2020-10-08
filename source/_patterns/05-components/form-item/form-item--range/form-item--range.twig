@@ -1,4 +1,10 @@
-<div class="form-item form-item--range">
+{% set classes = [
+  'form-item',
+  'form-item--range',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ classes }}">
   <label class="form-item__label" for="edit-range">
     Range
     <span class="usa-hint">(optional)</span>

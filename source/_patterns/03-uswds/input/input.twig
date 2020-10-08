@@ -1,5 +1,20 @@
-<div class="usa-form-group {{ group_modifier_classes }}">
-  <label class="usa-label {{ label_modifier_classes }}" for="{{ input_id }}">
+{% set classes = [
+  'usa-input',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+{% set group_classes = [
+  'usa-form-group',
+  group_modifier_classes ? group_modifier_classes,
+]|join(' ')|trim %}
+
+{% set label_classes = [
+  'usa-label',
+  label_modifier_classes ? label_modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ group_classes }}">
+  <label class="{{ label_classes }}" for="{{ input_id }}">
     {{ input_label }}
     {% if not input_required %}<span class="usa-hint">({{ 'optional'|t }})</span>{% endif %}
   </label>
@@ -7,7 +22,7 @@
     <span class="usa-error-message" id="{{ input_id }}-message" role="alert">{{ error_message }}</span>
   {% endif %}
   {% spaceless %}
-  <input class="usa-input {{ modifier_classes }}"
+  <input class="{{ classes }}"
      id="{{ input_id }}"
      name="{{ input_id }}"
      type="{{ input_type|default('text') }}"

@@ -1,5 +1,20 @@
-<div class="usa-form-group {{ group_modifier_classes }}">
-  <label class="usa-label {{ label_modifier_classes }}" for="{{ textarea_id }}">
+{% set classes = [
+  'usa-textarea',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+{% set group_classes = [
+  'usa-form-group',
+  group_modifier_classes ? group_modifier_classes,
+]|join(' ')|trim %}
+
+{% set label_classes = [
+  'usa-label',
+  label_modifier_classes ? label_modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ group_classes }}">
+  <label class="{{ label_classes }}" for="{{ textarea_id }}">
     {{ textarea_label }}
     {% if not textarea_required %}<span class="usa-hint">({{ 'optional'|t }})</span>{% endif %}
   </label>
@@ -8,7 +23,7 @@
   {% endif %}
   {% spaceless %}
     <textarea aria-describedby="{{ textarea_id }}-message"
-      class="usa-textarea {{ modifier_classes }}"
+      class="{{ classes }}"
       cols="{{ textarea_cols }}"
       {% if error_message %} disabled{% endif %}
       {% if textarea_disabled %} id="{{ textarea_id }}"{% endif %}

@@ -1,4 +1,9 @@
-<table class="usa-table {{ modifier_classes }}">
+{% set classes = [
+  'usa-table',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<table class="{{ classes }}">
   {% if caption %}
     <caption>{{ caption }}</caption>
   {% endif %}

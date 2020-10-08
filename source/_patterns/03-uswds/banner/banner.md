@@ -7,6 +7,7 @@ See [https://designsystem.digital.gov/components/banner/](),
 and [https://designsystem.digital.gov/components/header/]().
 
 __Variables:__
+* modifier_classes: [string] Classes to modify the default component styling.
 * banner_text: [string] Text displayed next to the flag.
 * has_expanded: [boolean] Whether the banner has expanded content.
 * banner_action: [string] Linked text used to hide and show expanded content.

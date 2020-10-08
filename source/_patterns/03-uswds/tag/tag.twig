@@ -1,1 +1,6 @@
-<span class="usa-tag {{ modifier_classes }}">{{ text }}</span>
+{% set classes = [
+  'usa-tag',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<span class="{{ classes }}">{{ text }}</span>

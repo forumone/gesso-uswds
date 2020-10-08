@@ -1,4 +1,10 @@
-<div class="form-item form-item--time">
+{% set classes = [
+  'form-item',
+  'form-item--time',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ classes }}">
   <label class="form-item__label" for="edit-time">
     Time
     <span class="usa-hint">(optional)</span>

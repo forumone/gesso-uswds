@@ -1,3 +1,8 @@
-<em class="site-name">
+{% set classes = [
+  'site-name',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<em class="{{ classes }}">
   <a class="site-name__text" href="{{ url }}" title="{{ 'Home'|t }}" rel="home" aria-label="{{ 'Home'|t }}">{{ site_name }}</a>
 </em>

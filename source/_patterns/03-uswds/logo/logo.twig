@@ -1,4 +1,9 @@
-<div class="usa-logo">
+{% set classes = [
+  'usa-logo',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+<div class="{{ classes }}">
   <em class="usa-logo__text">
     <a href="{{ url }}" title="{{ 'Home'|t }}" aria-label="{{ 'Home'|t }}">
       {{ site_name }}
