@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ *
+ * @ingroup themeable
+ */
+#}
+{% extends '@layouts/site-container/site-container.twig' %}
+  {% block site_content %}
+
+    {% embed "@uswds/header/header.twig" with {
+      'is_extended': page.secondary.content is empty
+    }
+    %}
+      {% block content %}
+        {{ page.header }}
+        {% embed '@uswds/nav/nav.twig' with {
+          'label': 'Primary navigation',
+          'is_extended': page.secondary.content is empty
+        } %}
+          {% block content %}
+            {{ page.navigation }}
+            {{ page.secondary }}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {{ page.breadcrumb }}
+
+    {{ page.highlighted }}
+
+    {{ page.help }}
+
+    <main id="main" class="main" role="main" tabindex="-1">
+      {{ page.preface }}
+
+      {% include '@components/page-title/page-title.twig' with {
+        'page_title': page['#title'],
+      } %}
+
+      {{ page.content }}
+      {{ page.postscript }}
+    </main>
+
+    {% embed '@uswds/footer/footer.twig' with {
+      has_back_to_top: true
+    } %}
+      {% block primary %}
+        {{ page.footer }}
+      {% endblock %}
+      {% block secondary %}
+        {{ page.subfooter }}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
