@@ -7,10 +7,17 @@
   } %}
 {% endmacro %}
 
-
-{% macro tagLink(url, title) %}
-  {% include '@components/tag-link/tag-link.twig' with {
+{% macro tag(url, title, type = "full", size = "normal" ) %}
+  {% include '@components/tag/tag.twig' with {
     'url': url,
-    'title': title
+    'title': title,
+    'type': type,
+    'size': size
+  } %}
+{% endmacro %}
+
+{% macro sample_content(content = 'Example Content') %}
+  {% include '@layouts/_sample-content/sample-content.twig' with {
+    'content': content,
   } %}
 {% endmacro %}
