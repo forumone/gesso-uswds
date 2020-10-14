@@ -12,7 +12,7 @@ $grid-gutter: 5;
   }
 }
 
-.l-grid--2col {
+.l-grid--2-col {
   @include grid-gap($grid-gutter);
 
   @include breakpoint(600px) {
@@ -22,7 +22,7 @@ $grid-gutter: 5;
   }
 }
 
-.l-grid--3col {
+.l-grid--3-col {
   @include grid-gap($grid-gutter);
 
   @include breakpoint(760px) {
@@ -32,7 +32,7 @@ $grid-gutter: 5;
   }
 }
 
-.l-grid--4col {
+.l-grid--4-col {
   @include grid-gap($grid-gutter);
 
   @include breakpoint(600px 800px) {
@@ -48,7 +48,7 @@ $grid-gutter: 5;
   }
 }
 
-.l-grid--6col {
+.l-grid--6-col {
   @include grid-gap($grid-gutter);
 
   @include breakpoint(600px 999px) {
