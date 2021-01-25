@@ -2,7 +2,8 @@
 // Accessibility utility classes
 
 .visually-hidden,
-.u-visually-hidden {
+.u-visually-hidden,
+.usa-sr-only {
   @include visually-hidden-important;
 
   &.focusable,
