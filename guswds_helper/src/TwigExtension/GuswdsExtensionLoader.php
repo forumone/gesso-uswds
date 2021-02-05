@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\gesso_helper\TwigExtension;
+namespace Drupal\guswds_helper\TwigExtension;
 
 /**
  * Load custom twig functions and filters from Pattern Lab.
  */
-class GessoExtensionLoader {
+class GuswdsExtensionLoader {
 
   /**
    * Set of Twig functions.

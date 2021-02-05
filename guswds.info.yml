@@ -6,7 +6,7 @@ core_version_requirement: ^8.9 || ^9
 base theme: stable
 dependencies:
   - components
-  - gesso_helper
+  - guswds_helper
 
 libraries:
   - guswds/global

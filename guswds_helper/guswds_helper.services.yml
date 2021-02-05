@@ -1,0 +1,6 @@
+services:
+  guswds_helper.guswds_twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\guswds_helper\TwigExtension\GuswdsExtensionAdapter
+    tags:
+      - { name: twig.extension }

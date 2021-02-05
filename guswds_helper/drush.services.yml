@@ -1,0 +1,5 @@
+services:
+  guswds_helper.commands:
+    class: \Drupal\guswds_helper\Commands\GuswdsHelperCommands
+    tags:
+      - { name: drush.command }

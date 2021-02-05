@@ -1,5 +1,5 @@
 {
-    "name": "forumone/gesso_helper",
+    "name": "forumone/guswds_helper",
     "description": "Provides additional functionality for the Gesso USWDS theme.",
     "type": "drupal-drush",
     "authors": [

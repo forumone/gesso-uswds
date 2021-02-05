@@ -1,33 +1,33 @@
 <?php
 
-namespace Drupal\gesso_helper\TwigExtension;
+namespace Drupal\guswds_helper\TwigExtension;
 
 use Twig_Extension;
 
 /**
  * Load custom twig functions from Pattern Lab.
  */
-class GessoExtensionAdapter extends Twig_Extension {
+class GuswdsExtensionAdapter extends Twig_Extension {
 
   /**
-   * GessoExtensionAdapter constructor.
+   * GuswdsExtensionAdapter constructor.
    */
   public function __construct() {
-    GessoExtensionLoader::init();
+    GuswdsExtensionLoader::init();
   }
 
   /**
    * Get all Twig functions.
    */
   public function getFunctions() {
-    return GessoExtensionLoader::getFunctions();
+    return GuswdsExtensionLoader::getFunctions();
   }
 
   /**
    * Get all Twig filters.
    */
   public function getFilters() {
-    return GessoExtensionLoader::getFilters();
+    return GuswdsExtensionLoader::getFilters();
   }
 
 }
