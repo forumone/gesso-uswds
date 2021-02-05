@@ -1,6 +1,6 @@
 {
     "name": "forumone/gesso_helper",
-    "description": "Provides additional functionality for the Gesso theme.",
+    "description": "Provides additional functionality for the Gesso USWDS theme.",
     "type": "drupal-drush",
     "authors": [
         {

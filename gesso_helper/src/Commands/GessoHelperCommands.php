@@ -65,8 +65,8 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     $description = $options['description'];
 
     // Validate the command.
-    if (!$this->gessoThemeExists('gesso')) {
-      throw new \Exception(dt('Where is the Gesso theme? I could not find it.'));
+    if (!$this->gessoThemeExists('guswds')) {
+      throw new \Exception(dt('Where is the Gesso USWDS theme? I could not find it.'));
     }
 
     if ($this->gessoThemeExists($machine_name)) {
@@ -85,7 +85,7 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     $theme_path = substr($gesso_path, 0, strrpos($gesso_path, '/'));
     $new_path = Path::join($theme_path, $machine_name);
 
-    // Copy the Gesso theme directory recursively to the new theme’s location.
+    // Copy the Gesso USWDS theme directory recursively to the new theme’s location.
     $fs = new Filesystem();
     $fs->mirror($gesso_path, $new_path);
 
@@ -158,7 +158,7 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     ), 'SUCCESS', 'fg=black;bg=green', ' ! ');
 
     // Warn the user that they might have some additional steps.
-    $this->io()->caution(dt('If you want to remove the guswds theme entirely, be sure to copy and rename the '
+    $this->io()->caution(dt('If you want to remove the Gesso USWDS theme entirely, be sure to copy and rename the '
      . 'gesso_helper module first.'));
   }
 
