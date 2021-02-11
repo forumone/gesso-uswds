@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess().
  */
-function guswds_preprocess(&$vars) {
+function guswds_preprocess(&$variables) {
   if (!empty($variables['directory'])) {
     $variables['gesso_image_path'] = '/' . $variables['directory'] . '/images';
   }
