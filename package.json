@@ -57,6 +57,7 @@
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-prettier": "^1.1.2",
     "terser-webpack-plugin": "^4.1.0",
+    "uswds": "2.9.0",
     "webpack": "^4.44.1",
     "yaml": "1.10.0"
   },
@@ -66,7 +67,6 @@
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",
     "domready": "^1.0.8",
-    "lightercollective": "^0.3.0",
-    "uswds": "2.4.0"
+    "lightercollective": "^0.3.0"
   }
 }
