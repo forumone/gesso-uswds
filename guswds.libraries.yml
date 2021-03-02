@@ -10,7 +10,7 @@ global:
   js:
     js/dist/scripts.min.js: {}
   dependencies:
-    - gesso/common
+    - guswds/common
     - core/drupal
     - core/drupalSettings
     - core/modernizr
