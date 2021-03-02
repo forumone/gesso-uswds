@@ -1,5 +1,7 @@
 # Gesso USWDS
 
+![Gesso USWDS logo](https://github.com/forumone/gesso-uswds/blob/4.x/screenshot.png?raw=true)
+
 Gesso is a [Sass](http://sass-lang.com/)-based and
 [Pattern Lab](https://patternlab.io)
 integrated starter theme that outputs accessible HTML5 markup. It uses a
@@ -14,11 +16,9 @@ discrete, reusable UI elements. Gesso is heavily integrated with
 allowing Drupal and Pattern Lab to share the same markup.
 
 For more information, view the
-[Gesso Drupal project page](https://drupal.org/project/gesso/) or
-[Gesso GitHub repo](https://github.com/forumone/gesso).
+[Gesso USWDS GitHub repo](https://github.com/forumone/gesso-uswds).
 To submit bug reports or feature requests, visit the
-[Gesso issue queue](https://github.com/forumone/gesso/issues).
-Also available for [WordPress](https://github.com/forumone/gesso-wp).
+[Gesso USWDS issue queue](https://github.com/forumone/gesso-uswds/issues).
 
 The United States Web Design System is a set of design guidelines and starting
 code for creating digital government services. For more information view the
