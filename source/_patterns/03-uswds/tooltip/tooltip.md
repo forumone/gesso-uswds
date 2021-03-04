@@ -2,7 +2,7 @@
 el: .usa-tooltip
 title: Tooltop
 ---
-See [https://designsystem.digital.gov/components/tooltip/]()
+See [https://designsystem.digital.gov/components/tooltip/]().
 
 __Variables:__
 * is_demo: [boolean] Whether to show extra demo examples.
