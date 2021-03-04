@@ -7,6 +7,7 @@ import domready from 'domready';
 import accordion from 'uswds/src/js/components/accordion.js';
 import navigation from './modules/navigation';
 import banner from 'uswds/src/js/components/banner.js';
+import tooltip from 'uswds/src/js/components/tooltip.js';
 import backToTop from './modules/_back-to-top.es6';
 
 (function () {
@@ -33,6 +34,7 @@ import backToTop from './modules/_back-to-top.es6';
   domready(() => {
     accordion.on(document.body);
     banner.on(document.body);
+    tooltip.on(document.body);
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
     backToTop();
   });
