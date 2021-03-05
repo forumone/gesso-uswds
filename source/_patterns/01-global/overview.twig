@@ -1,4 +1,5 @@
-<div class="l-constrain">
-  <h1>Style Guide</h1>
-  <p>This is a style guide and pattern library for this project.</p>
-</div>
+{% include '@layouts/section/section.twig' with {
+  'has_constrain': true,
+  'section_title': 'Pattern Lab',
+  'section_content': "<p>This is a style guide and pattern library for " ~ site_name ~ ".</p>"
+} %}
