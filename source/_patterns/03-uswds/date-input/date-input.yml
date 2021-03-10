@@ -1,3 +1,4 @@
+---
 label: 'Date of birth'
 hint: 'For example: 04 28 1996'
 hint_id: 'dobHint'
