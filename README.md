@@ -377,6 +377,13 @@ code.
 See the README.md file in the /js directory for details on included scripts
 (e.g., mobile menu, primary menu, etc.).
 
+## Contributing
+
+Please use the Github issue queue (https://github.com/forumone/gesso-uswds/issues) for
+discussion, bug reports, feature requests, etc.
+
+Submitted pull requests should be against the release candidate branch, `4.x-RC`.
+
 ## Maintainers
 
 The Gesso USWDS theme is maintained by [Dan Mouyard](https://drupal.org/u/dcmouyard)
@@ -386,5 +393,3 @@ The Gesso USWDS theme is maintained by [Dan Mouyard](https://drupal.org/u/dcmouy
 [Corey Lafferty](https://drupal.org/u/clafferty)
 ([@coreylafferty](http://twitter.com/coreylafferty)), and
 [KJ Monahan](https://drupal.org/u/kmonahan).
-
-Please use the Github issue queue: https://github.com/forumone/gesso-uswds/issues
