@@ -6,6 +6,9 @@ See [https://designsystem.digital.gov/components/table/]() and
 [https://components.designsystem.digital.gov/components/detail/tables.html]().
 
 __Variables:__
+* scrollable: [boolean] Enable table scrolling.
+* sortable: [boolean] Enable table sorting (also requires data-sortable
+property on headers).
 * modifier_classes: [string] Optional additional CSS classes.
 * caption: [string] Table caption.
 * header: [array] Header cells. Each item is an object containing:
