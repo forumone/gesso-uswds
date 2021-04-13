@@ -104,5 +104,5 @@
 }
 
 @function gesso-box-shadow($keys...) {
-  @return unquote(gesso-get-map(box-shadow, $keys...));
+  @return gesso-get-map(box-shadow, $keys...);
 }
