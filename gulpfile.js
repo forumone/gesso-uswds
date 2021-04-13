@@ -32,7 +32,7 @@ const buildConfig = async () => {
   const scssDir = path.join(__dirname, '/source/_patterns/00-config');
   const jsDir = path.join(__dirname, '/js/src/constants');
   const ymlDir = path.join(__dirname, './source/_data');
-  const configDir = path.join(__dirname, '/source/_patterns');
+  const configDir = path.join(__dirname, '/source/_patterns/00-config');
 
   const parsed = await readSource(
     path.join(

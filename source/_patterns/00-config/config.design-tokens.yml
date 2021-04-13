@@ -10,7 +10,7 @@ uswds:
   type-scale-md: 7
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
-  grid-container-max-width: 'widescreen'
+  grid-container-max-width: 'desktop'
   site-max-width: 'widescreen'
   site-margins-width: 4
   site-margins-mobile-width: 2
@@ -77,6 +77,9 @@ uswds:
   color-disabled-light: 'gray-10'
   color-disabled: 'gray-20'
   color-disabled-dark: 'gray-30'
+  body-background-color: 'white'
+  text-color: 'ink'
+  text-reverse-color: 'white'
   link-color: 'primary'
   link-visited-color: 'violet-70v'
   link-hover-color: 'primary-dark'
@@ -371,10 +374,16 @@ gesso:
       fallback: 1400px
   colors:
     text:
-      primary: grayscale.gray-7
+      primary: !sass
+        sass: 'color($theme-text-color)'
+        fallback: '#1b1b1b'
       secondary: grayscale.gray-5
-      on-light: grayscale.gray-7
-      on-dark: grayscale.white
+      on-light: !sass
+        sass: 'color($theme-text-color)'
+        fallback: '#1b1b1b'
+      on-dark: !sass
+        sass: 'color($theme-text-reverse-color)'
+        fallback: '#fff'
       link: !sass
         sass: 'color($theme-link-color)'
         fallback: '#005ea2'
@@ -388,7 +397,9 @@ gesso:
         sass: 'color($theme-link-visited-color)'
         fallback: '#54278f'
     background:
-      site: grayscale.white
+      site: !sass
+        sass: 'color($theme-body-background-color)'
+        fallback: '#fff'
     button:
       primary:
         background: uswds.primary.base
