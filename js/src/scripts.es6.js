@@ -8,6 +8,7 @@ import accordion from 'uswds/src/js/components/accordion.js';
 import navigation from './modules/navigation';
 import banner from 'uswds/src/js/components/banner.js';
 import tooltip from 'uswds/src/js/components/tooltip.js';
+import table from 'uswds/src/js/components/table.js';
 import backToTop from './modules/_back-to-top.es6';
 
 (function () {
@@ -35,6 +36,7 @@ import backToTop from './modules/_back-to-top.es6';
     accordion.on(document.body);
     banner.on(document.body);
     tooltip.on(document.body);
+    table.on(document.body);
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
     backToTop();
   });
