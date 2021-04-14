@@ -330,21 +330,23 @@ gesso:
           sass: 'color($theme-color-disabled-dark)'
           fallback: '#adadad'
   box-shadow:
-    0: none
+    0: !sass
+      sass: 'get-uswds-value(box-shadow, none)'
+      fallback: 'none'
     1: !sass
-      sass: 'shadow(1)'
+      sass: 'get-uswds-value(box-shadow, 1)'
       fallback: '0 1px 4px 0 rgba(0, 0, 0, 0.1)'
     2: !sass
-      sass: 'shadow(2)'
+      sass: 'get-uswds-value(box-shadow, 2)'
       fallback: '0 4px 8px 0 rgba(0, 0, 0, 0.1)'
     3: !sass
-      sass: 'shadow(3)'
+      sass: 'get-uswds-value(box-shadow, 3)'
       fallback: '0 8px 16px 0 rgba(0, 0, 0, 0.1)'
     4: !sass
-      sass: 'shadow(4)'
+      sass: 'get-uswds-value(box-shadow, 4)'
       fallback: '0 12px 24px 0 rgba(0, 0, 0, 0.1)'
     5: !sass
-      sass: 'shadow(5)'
+      sass: 'get-uswds-value(box-shadow, 5)'
       fallback: '0 16px 32px 0 rgba(0, 0, 0, 0.1)'
   constrains:
     sm: 800px
