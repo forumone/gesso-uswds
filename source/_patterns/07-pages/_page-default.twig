@@ -27,10 +27,10 @@
         {% include '@uswds/navbar/navbar.twig' %}
         {% embed '@uswds/nav/nav.twig' with {
           'label': 'Primary navigation',
-          'extended': true
+          'is_extended': true
         } %}
           {% block content %}
-            {% include '@components/menu/menu.twig' with {
+            {% include '@components/menu/menu--main/menu--main.twig' with {
               'menu_name': 'main',
               'items': [
                 { 'title': 'Home', 'url': '#' },
