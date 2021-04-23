@@ -18,8 +18,10 @@ function guswds_preprocess_menu_local_tasks(array &$variables) {
     $tabs = [];
 
     // Sort the tabs by #weight.
-    uasort($variables[$type], ['Drupal\Component\Utility\SortArray', 'sortByWeightProperty']);
-
+    uasort($variables[$type], [
+      'Drupal\Component\Utility\SortArray',
+      'sortByWeightProperty',
+    ]);
     foreach (array_keys($variables[$type]) as $key) {
       // Add the tab to a new array.
       $tabs[$key] = [
