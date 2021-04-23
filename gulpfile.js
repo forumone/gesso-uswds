@@ -93,7 +93,7 @@ const compileStyles = () => {
       sass({
         includePaths: ['./node_modules/breakpoint-sass/stylesheets', './node_modules/uswds/src/stylesheets'],
         precision: 10,
-        importer: sassGlobImporter()
+        importer: sassGlobImporter(),
       })
     )
     .pipe(
