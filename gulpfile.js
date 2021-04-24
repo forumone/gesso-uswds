@@ -5,7 +5,7 @@ const patternLabConfig = require('./pattern-lab-config.json');
 const patternLab = require('@pattern-lab/core')(patternLabConfig);
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
-const sassGlobImporter = require('node-sass-glob-importer');
+const magicImporter = require('node-sass-magic-importer');
 const sourcemaps = require('gulp-sourcemaps');
 const stylelint = require('gulp-stylelint');
 const svgSprite = require('gulp-svg-sprite');
@@ -93,7 +93,7 @@ const compileStyles = () => {
       sass({
         includePaths: ['./node_modules/breakpoint-sass/stylesheets', './node_modules/uswds/src/stylesheets'],
         precision: 10,
-        importer: sassGlobImporter(),
+        importer: magicImporter(),
       })
     )
     .pipe(
@@ -185,7 +185,11 @@ const watchFiles = () => {
     { usePolling: true, interval: 1500 },
     bundleScriptsDev
   );
-  watch(['source/**/*.md'], { usePolling: true, interval: 1500 }, lintPatterns);
+  watch(
+    ['source/**/*.md'],
+    { usePolling: true, interval: 1500 },
+    series(lintPatterns, buildPatternLab)
+  );
 };
 
 const buildStyles = (exports.buildStyles = series(lintStyles, compileStyles));
