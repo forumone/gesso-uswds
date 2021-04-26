@@ -185,7 +185,11 @@ const watchFiles = () => {
     { usePolling: true, interval: 1500 },
     bundleScriptsDev
   );
-  watch(['source/**/*.md'], { usePolling: true, interval: 1500 }, lintPatterns);
+  watch(
+    ['source/**/*.md'],
+    { usePolling: true, interval: 1500 },
+    series(lintPatterns, buildPatternLab)
+  );
 };
 
 const buildStyles = (exports.buildStyles = series(lintStyles, compileStyles));
