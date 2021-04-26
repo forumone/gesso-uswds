@@ -5,3 +5,4 @@ radio_disabled: false
 radio_checked: false
 radio_label: 'Elizabeth Cady Stanton'
 radio_value: 'stanton'
+radio_tile: true

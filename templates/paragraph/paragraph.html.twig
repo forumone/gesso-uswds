@@ -33,12 +33,7 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% embed '@layouts/section/section.twig' with {
-  'section_title': false
+{% include '@layouts/section/section.twig' with {
+  'section_title': false,
+  'section_content': content
 } %}
-
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-
-{% endembed %}

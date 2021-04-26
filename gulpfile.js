@@ -32,7 +32,7 @@ const buildConfig = async () => {
   const scssDir = path.join(__dirname, '/source/_patterns/00-config');
   const jsDir = path.join(__dirname, '/js/src/constants');
   const ymlDir = path.join(__dirname, './source/_data');
-  const configDir = path.join(__dirname, '/source/_patterns');
+  const configDir = path.join(__dirname, '/source/_patterns/00-config');
 
   const parsed = await readSource(
     path.join(
@@ -93,7 +93,7 @@ const compileStyles = () => {
       sass({
         includePaths: ['./node_modules/breakpoint-sass/stylesheets', './node_modules/uswds/src/stylesheets'],
         precision: 10,
-        importer: sassGlobImporter()
+        importer: sassGlobImporter(),
       })
     )
     .pipe(
@@ -185,7 +185,11 @@ const watchFiles = () => {
     { usePolling: true, interval: 1500 },
     bundleScriptsDev
   );
-  watch(['source/**/*.md'], { usePolling: true, interval: 1500 }, lintPatterns);
+  watch(
+    ['source/**/*.md'],
+    { usePolling: true, interval: 1500 },
+    series(lintPatterns, buildPatternLab)
+  );
 };
 
 const buildStyles = (exports.buildStyles = series(lintStyles, compileStyles));

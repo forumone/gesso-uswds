@@ -3,6 +3,9 @@
   modifier_classes ? modifier_classes,
 ]|join(' ')|trim %}
 
+{% if scrollable %}
+  <div class="usa-table-container--scrollable">
+{% endif %}
 <table class="{{ classes }}">
   {% if caption %}
     <caption>{{ caption }}</caption>
@@ -12,7 +15,7 @@
     <thead>
       <tr>
         {% for cell in header %}
-          <th cell.attributes }}>
+          <th{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
             {{- cell.content -}}
           </th>
         {% endfor %}
@@ -24,7 +27,7 @@
     <tfoot>
       <tr>
         {% for cell in footer %}
-          <th cell.attributes }}>
+          <th{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
             {{- cell.content -}}
           </th>
         {% endfor %}
@@ -35,9 +38,9 @@
   {% if rows %}
     <tbody>
       {% for row in rows %}
-        <tr{{ row.attributes }}>
+        <tr{% if row.attributes %} {{ row.attributes }}{% endif %}>
           {% for cell in row.cells %}
-            <{{ cell.tag }}{{ cell.attributes }}>
+            <{{ cell.tag }}{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
               {{- cell.content -}}
             </{{ cell.tag }}>
           {% endfor %}
@@ -46,3 +49,9 @@
     </tbody>
   {% endif %}
 </table>
+{% if sortable %}
+  <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
+{% endif %}
+{% if scrollable %}
+  </div>
+{% endif %}

@@ -1,65 +1,104 @@
 // @file
 // Styles for Grid Layout.
 
-$grid-gutter: 5;
-@import 'packages/layout-grid';
+$grid-gutter: gesso-get-map(gutter-width);
 
 .l-grid {
-  @include grid-row;
+  @include flex-grid(1, $grid-gutter, 0);
 
-  > * {
-    @include grid-col(12);
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
   }
 }
 
 .l-grid--2-col {
-  @include grid-gap($grid-gutter);
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
 
   @include breakpoint(600px) {
     > * {
-      @include grid-col(6);
+      @include set-flex-column(2, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(2, $grid-gutter, true);
     }
   }
 }
 
 .l-grid--3-col {
-  @include grid-gap($grid-gutter);
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
 
   @include breakpoint(760px) {
     > * {
-      @include grid-col(4);
+      @include set-flex-column(3, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(3, $grid-gutter, true);
     }
   }
 }
 
 .l-grid--4-col {
-  @include grid-gap($grid-gutter);
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
 
   @include breakpoint(600px 800px) {
     > * {
-      @include grid-col(6);
+      @include set-flex-column(2, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(2, $grid-gutter, true);
     }
   }
 
   @include breakpoint(801px) {
     > * {
-      @include grid-col(3);
+      @include set-flex-column(4, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(4, $grid-gutter, true);
     }
   }
 }
 
 .l-grid--6-col {
-  @include grid-gap($grid-gutter);
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
 
   @include breakpoint(600px 999px) {
     > * {
-      @include grid-col(4);
+      @include set-flex-column(3, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(3, $grid-gutter, true);
     }
   }
 
   @include breakpoint(1000px) {
     > * {
-      @include grid-col(2);
+      @include set-flex-column(6, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(6, $grid-gutter, true);
     }
   }
 }

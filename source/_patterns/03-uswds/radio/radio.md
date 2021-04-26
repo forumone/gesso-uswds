@@ -11,5 +11,6 @@ __Variables:__
 * radio_name: [string] Radio field name.
 * radio_checked: [boolean] Whether radio button is currently selected.
 * radio_disabled: [boolean] Whether radio button is currently disabled.
+* radio_tile: [boolean] Whether radio shows as tile display.
 * radio_label: [string] Radio label text.
 * radio_value: [string] Value of radio button.

@@ -2,13 +2,13 @@ modifier_classes: 'usa-table--borderless'
 caption: 'Borderless table'
 header:
   -
-    attributes: ' scope="col"'
+    attributes: 'scope="col"'
     content: 'Document title'
   -
-    attributes: ' scope="col"'
+    attributes: 'scope="col"'
     content: 'Description'
   -
-    attributes: ' scope="col"'
+    attributes: 'scope="col"'
     content: 'Year'
 footer: false
 rows:
@@ -17,7 +17,7 @@ rows:
     cells:
       -
         tag: 'th'
-        attributes: ' scope="row"'
+        attributes: 'scope="row"'
         content: 'Declaration of Independence'
       -
         tag: 'td'
@@ -32,7 +32,7 @@ rows:
     cells:
       -
         tag: 'th'
-        attributes: ' scope="row"'
+        attributes: 'scope="row"'
         content: 'Bill of Rights'
       -
         tag: 'td'
@@ -47,7 +47,7 @@ rows:
     cells:
       -
         tag: 'th'
-        attributes: ' scope="row"'
+        attributes: 'scope="row"'
         content: 'Declaration of Sentiments'
       -
         tag: 'td'
@@ -62,7 +62,7 @@ rows:
     cells:
       -
         tag: 'th'
-        attributes: ' scope="row"'
+        attributes: 'scope="row"'
         content: 'Emancipation Proclamation'
       -
         tag: 'td'

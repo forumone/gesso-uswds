@@ -11,5 +11,6 @@ __Variables:__
 * checkbox_name: [string] Checkbox field name.
 * checkbox_checked: [boolean] Whether checkbox is currently checked.
 * checkbox_disabled: [boolean] Whether checkbox is currently disabled.
+* checkbox_tile: [boolean] Whether checkbox shows as tile display.
 * checkbox_label: [string] Checkbox label text.
 * checkbox_value: [string] Value attribute of checkbox.

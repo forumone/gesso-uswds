@@ -10,7 +10,7 @@ uswds:
   type-scale-md: 7
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
-  grid-container-max-width: 'widescreen'
+  grid-container-max-width: 'desktop'
   site-max-width: 'widescreen'
   site-margins-width: 4
   site-margins-mobile-width: 2
@@ -77,6 +77,9 @@ uswds:
   color-disabled-light: 'gray-10'
   color-disabled: 'gray-20'
   color-disabled-dark: 'gray-30'
+  body-background-color: 'white'
+  text-color: 'ink'
+  text-reverse-color: 'white'
   link-color: 'primary'
   link-visited-color: 'violet-70v'
   link-hover-color: 'primary-dark'
@@ -327,21 +330,23 @@ gesso:
           sass: 'color($theme-color-disabled-dark)'
           fallback: '#adadad'
   box-shadow:
-    0: none
+    0: !sass
+      sass: 'get-uswds-value(box-shadow, none)'
+      fallback: 'none'
     1: !sass
-      sass: 'shadow(1)'
+      sass: 'get-uswds-value(box-shadow, 1)'
       fallback: '0 1px 4px 0 rgba(0, 0, 0, 0.1)'
     2: !sass
-      sass: 'shadow(2)'
+      sass: 'get-uswds-value(box-shadow, 2)'
       fallback: '0 4px 8px 0 rgba(0, 0, 0, 0.1)'
     3: !sass
-      sass: 'shadow(3)'
+      sass: 'get-uswds-value(box-shadow, 3)'
       fallback: '0 8px 16px 0 rgba(0, 0, 0, 0.1)'
     4: !sass
-      sass: 'shadow(4)'
+      sass: 'get-uswds-value(box-shadow, 4)'
       fallback: '0 12px 24px 0 rgba(0, 0, 0, 0.1)'
     5: !sass
-      sass: 'shadow(5)'
+      sass: 'get-uswds-value(box-shadow, 5)'
       fallback: '0 16px 32px 0 rgba(0, 0, 0, 0.1)'
   constrains:
     sm: 800px
@@ -371,10 +376,16 @@ gesso:
       fallback: 1400px
   colors:
     text:
-      primary: grayscale.gray-7
+      primary: !sass
+        sass: 'color($theme-text-color)'
+        fallback: '#1b1b1b'
       secondary: grayscale.gray-5
-      on-light: grayscale.gray-7
-      on-dark: grayscale.white
+      on-light: !sass
+        sass: 'color($theme-text-color)'
+        fallback: '#1b1b1b'
+      on-dark: !sass
+        sass: 'color($theme-text-reverse-color)'
+        fallback: '#fff'
       link: !sass
         sass: 'color($theme-link-color)'
         fallback: '#005ea2'
@@ -388,7 +399,9 @@ gesso:
         sass: 'color($theme-link-visited-color)'
         fallback: '#54278f'
     background:
-      site: grayscale.white
+      site: !sass
+        sass: 'color($theme-body-background-color)'
+        fallback: '#fff'
     button:
       primary:
         background: uswds.primary.base

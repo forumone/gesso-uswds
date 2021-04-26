@@ -8,6 +8,7 @@ global:
     theme:
       css/styles.css: {}
   js:
+    js/libraries/uswds-init.min.js: {}
     js/dist/scripts.min.js: {}
   dependencies:
     - guswds/common
