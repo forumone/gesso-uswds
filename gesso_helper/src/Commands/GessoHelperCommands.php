@@ -169,7 +169,7 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     foreach ($files as $file) {
       $this->gessoFileStrReplace(
         Path::join($new_path, $file),
-        ['gesso', 'Gesso'],
+        ['guswds', 'Gesso USWDS'],
         [$machine_name, $name]
       );
     }
