@@ -4,11 +4,8 @@
 // include it on a template-specific script file instead.
 // Be sure to initialize any components as well (see init() function below.)
 import domready from 'domready';
-import accordion from 'uswds/src/js/components/accordion.js';
+import 'uswds';
 import navigation from './modules/navigation';
-import banner from 'uswds/src/js/components/banner.js';
-import tooltip from 'uswds/src/js/components/tooltip.js';
-import table from 'uswds/src/js/components/table.js';
 import backToTop from './modules/_back-to-top.es6';
 
 (function () {
@@ -33,10 +30,6 @@ import backToTop from './modules/_back-to-top.es6';
 
   // Any scripts you want to initialize once the DOM is ready go here.
   domready(() => {
-    accordion.on(document.body);
-    banner.on(document.body);
-    tooltip.on(document.body);
-    table.on(document.body);
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
     backToTop();
   });

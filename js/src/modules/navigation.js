@@ -1,5 +1,3 @@
-import navigation from 'uswds/src/js/components/navigation.js';
-
 export default function () {
   const subnav = document.querySelectorAll('.menu__subnav');
   subnav.forEach((menu, index) => {
@@ -10,5 +8,4 @@ export default function () {
       button.setAttribute('aria-controls', id);
     }
   });
-  navigation.on(document.body);
 }
