@@ -25,6 +25,7 @@ $pattern-lab-overrides: false !default;
 
 // USWDS components.
 @import 'packages/form-controls';
+@import 'packages/layout-grid';
 @import '_patterns/03-uswds/**/*.scss';
 
 // Gesso layouts and components.
