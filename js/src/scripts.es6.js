@@ -32,6 +32,5 @@ import backToTop from './modules/_back-to-top.es6';
   domready(() => {
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
     backToTop();
-    window.uswdsPresent = true;
   });
 })();
