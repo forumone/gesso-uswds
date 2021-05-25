@@ -39,5 +39,6 @@ import backToTop from './modules/_back-to-top.es6';
     table.on(document.body);
     navigation(); // If used with the USWDS accordion component, the navigation must run after it.
     backToTop();
+    window.uswdsPresent = true;
   });
 })();
