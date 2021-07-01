@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// Convert unitless number to unit value
 // @param {Number} $value - unitless number
 // @return {String} - unit type
@@ -15,8 +17,12 @@
   }
 }
 
-// Convert values to px.
-// $base must be a base font size in pixels.
+/// Convert values to px.
+// @param {Number} $value - Value to convert. Can be px, em, or rem.
+//   If unitless, pixels are assumed.
+// @param {Number} $base - Base font size in pixels.
+// @return {Number} - Value in pixels.
+
 @function px($value, $base: gesso-get-map(typography, base-font-size)) {
   @if unitless($value) {
     @return convert($value, px);
@@ -27,7 +33,12 @@
   @return strip-unit($value) * $base;
 }
 
-// Convert values to em.
+/// Convert values to em.
+// @param {Number} $value - Value to convert. Can be px, em, or rem.
+//   If unitless, pixels are assumed.
+// @param {Number} $base - Base font size in pixels.
+// @return {Number} - Value in ems.
+
 @function em($value, $base: gesso-get-map(typography, base-font-size)) {
   @if (type-of($base) != 'number' or unit($base) != 'px') {
     @error "Base font size must be in pixels.";
@@ -36,12 +47,19 @@
     @if (unit($value) != 'px') {
       $value: px($value, $base);
     }
-    @return ($value / $base) * 1em;
+    @return (math.div($value, $base)) * 1em;
   }
   @return $value;
 }
 
-// Convert values to rem.
+/// Convert values to rem.
+// @param {Number} $value - Value to convert. Can be px, em, or rem.
+//   If unitless, pixels are assumed. If ems, size will be converted using
+//   the same base (so 0.5em is equal to 0.5rem). If you want to convert using
+//   a different font size, do rem(px($emValue, $emBase), $remBase).
+// @param {Number} $base - Base font size in pixels.
+// @return {Number} - Value in rems.
+
 @function rem($value, $base: gesso-get-map(typography, base-font-size)) {
   @if (type-of($base) != 'number' or unit($base) != 'px') {
     @error "Base font size must be in pixels.";
@@ -50,7 +68,7 @@
     @if (unit($value) != 'px') {
       $value: px($value, $base);
     }
-    @return ($value / $base) * 1rem;
+    @return (math.div($value, $base)) * 1rem;
   }
   @return $value;
 }
