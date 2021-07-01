@@ -3,7 +3,6 @@
 $pattern-lab-overrides: false !default;
 
 @import '_patterns/00-config/uswds-theme-settings.artifact';
-@import 'breakpoint';
 
 // Required USWDS styles.
 @import 'packages/required';
