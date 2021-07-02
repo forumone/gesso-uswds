@@ -11,7 +11,6 @@ uswds:
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
   grid-container-max-width: 'desktop'
-  site-max-width: 'widescreen'
   site-margins-width: 4
   site-margins-mobile-width: 2
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-color.scss

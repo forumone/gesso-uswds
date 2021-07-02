@@ -4,11 +4,11 @@
 // include it on a template-specific script file instead.
 // Be sure to initialize any components as well (see init() function below.)
 import domready from 'domready';
-import accordion from 'uswds/src/js/components/accordion.js';
+import accordion from 'uswds/src/js/components/accordion';
 import navigation from './modules/navigation';
-import banner from 'uswds/src/js/components/banner.js';
-import tooltip from 'uswds/src/js/components/tooltip.js';
-import table from 'uswds/src/js/components/table.js';
+import banner from 'uswds/src/js/components/banner';
+import tooltip from 'uswds/src/js/components/tooltip';
+import table from 'uswds/src/js/components/table';
 import backToTop from './modules/_back-to-top.es6';
 
 (function () {
