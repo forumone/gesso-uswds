@@ -27,7 +27,7 @@ h1,
   @extend %hN;
   @include display-text-style(h1);
 
-  @include breakpoint(gesso-breakpoint(tablet), 'max') {
+  @include breakpoint-max(gesso-breakpoint(tablet), true) {
     font-size: font-size(heading, xl);
   }
 }
@@ -37,7 +37,7 @@ h2,
   @extend %hN;
   @include display-text-style(h2);
 
-  @include breakpoint(gesso-breakpoint(tablet), 'max') {
+  @include breakpoint-max(gesso-breakpoint(tablet), true) {
     font-size: font-size(heading, lg);
   }
 }
@@ -47,7 +47,7 @@ h3,
   @extend %hN;
   @include display-text-style(h3);
 
-  @include breakpoint(gesso-breakpoint(tablet), 'max') {
+  @include breakpoint-max(gesso-breakpoint(tablet), true) {
     font-size: font-size(heading, md);
   }
 }
