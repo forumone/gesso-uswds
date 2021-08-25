@@ -26,22 +26,27 @@
   {% endset %}
 
   {% if type == 'status' %}
-    {% include '@uswds/alert/alert--success/alert--success.twig' with {
+    {% include '@uswds/alert/alert.twig' with {
+      'modifier_classes': 'usa-alert--success',
       'title': status_headings[type],
       'content': message_content
     } %}
   {% elseif type == 'error' %}
-    {% include '@uswds/alert/alert--error/alert--error.twig' with {
+    {% include '@uswds/alert/alert.twig' with {
+      'modifier_classes': 'usa-alert--error',
+      'role': 'alert',
       'title': status_headings[type],
       'content': message_content
     } %}
   {% elseif type == 'warning' %}
-    {% include '@uswds/alert/alert--warning/alert--warning.twig' with {
+    {% include '@uswds/alert/alert.twig' with {
+      'modifier_classes': 'usa-alert--warning',
       'title': status_headings[type],
       'content': message_content
     } %}
   {% else %}
-    {% include '@uswds/alert/alert--info/alert--info.twig' with {
+    {% include '@uswds/alert/alert.twig' with {
+      'modifier_classes': 'usa-alert--info',
       'title': status_headings[type],
       'content': message_content
     } %}
