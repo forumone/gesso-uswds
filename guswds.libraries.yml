@@ -6,7 +6,7 @@ global:
   version: VERSION
   css:
     theme:
-      css/styles.css: {}
+      css/styles.css: { minified: true }
   js:
     js/libraries/uswds-init.min.js: {}
     js/dist/scripts.min.js: {}
