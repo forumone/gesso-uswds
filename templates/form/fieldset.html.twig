@@ -7,6 +7,8 @@
   'fieldset__legend',
 ] %}
 
+{% set removeClasses = [] %}
+
 {% if type == 'fieldset' %}
   {% set addClasses = addClasses|merge([
     'usa-fieldset',
