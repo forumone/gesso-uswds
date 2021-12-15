@@ -1,9 +1,25 @@
-{% embed '@layouts/content/content.twig' with {
-  'has_constrain': true
-} %}
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  {% embed '@layouts/content/content.twig' with {
+    'has_constrain': true,
+  } %}
 
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
 
-{% endembed %}
+  {% endembed %}
+{% endif %}

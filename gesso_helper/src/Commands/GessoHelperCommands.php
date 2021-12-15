@@ -4,11 +4,13 @@ namespace Drupal\gesso_helper\Commands;
 
 use Consolidation\SiteAlias\SiteAliasManagerAwareInterface;
 use Consolidation\SiteAlias\SiteAliasManagerAwareTrait;
-use Drush\Drush;
 use Drupal\Core\Extension\ThemeHandlerInterface;
+use Drush\Drush;
 use Drush\Commands\DrushCommands;
 use Symfony\Component\Filesystem\Filesystem;
 use Webmozart\PathUtil\Path;
+use Drupal\gesso_helper\GessoHelperDirFilterExclude;
+use Drupal\gesso_helper\GessoHelperDirFilterInclude;
 
 /**
  * A Drush commandfile.
@@ -33,11 +35,16 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
   protected $themeHandler;
 
   /**
-   * Set of available themes.
-   *
    * @var array
    */
   protected $themeList;
+
+  /**
+   * Filesystem variable.
+   *
+   * @var \Symfony\Component\Filesystem\Filesystem
+   */
+  protected $fs;
 
   /**
    * GessoHelperCommands constructor.
@@ -48,6 +55,7 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
   public function __construct(ThemeHandlerInterface $themeHandler) {
     parent::__construct();
     $this->themeHandler = $themeHandler;
+    $this->fs = new Filesystem();
   }
 
   /**
@@ -108,70 +116,97 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     $new_path = Path::join($theme_path, $machine_name);
 
     // Copy the Gesso theme directory recursively to the new theme’s location.
-    $fs = new Filesystem();
-    $fs->mirror($gesso_path, $new_path);
+    $this->fs->mirror($gesso_path, $new_path, new \RecursiveIteratorIterator(new GessoHelperDirFilterExclude(new \RecursiveDirectoryIterator($gesso_path))), \RecursiveIteratorIterator::SELF_FIRST);
 
-    // Remove Gesso’s helper module from the new theme.
-    $this->gessoRecursiveRm(Path::join($new_path, 'gesso_helper'));
+    // Replace specific occurrences of 'gesso'
+    // with the machine name of the new theme.
+    $files = new \RecursiveIteratorIterator(
+      new GessoHelperDirFilterInclude(
+        new \RecursiveDirectoryIterator(
+          $new_path, \FilesystemIterator::SKIP_DOTS
+        )
+      ),
+      \RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($files as $file) {
+      if (!$file->isDir()) {
+        $this->gessoFileStrReplace(
+          $file->getPathname(),
+          [
+            "/(?<!\[('|\")drupalSettings('|\")\]\[('|\"))gesso(?!_image_path)/",
+            '/Gesso/',
+          ],
+          [$machine_name, $name]
+        );
+      }
+    }
+    $templateFiles = new \RecursiveIteratorIterator(
+        new \RecursiveDirectoryIterator(
+          $new_path . '/source', \FilesystemIterator::SKIP_DOTS
+        ),
+      \RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($templateFiles as $templateFile) {
+      if (!$templateFile->isDir()) {
+        $this->gessoFileStrReplace(
+          $templateFile->getPathname(),
+          ["/attach_library\((')?gesso/"],
+          ['attach_library($1' . $machine_name]
+        );
+      }
+    }
 
     // Rename the .info.yml file.
-    $gesso_info_file = Path::join($new_path, 'guswds.info.yml');
+    $gesso_info_file = Path::join($new_path, 'gesso.info.yml');
     $new_info_file = Path::join($new_path, $machine_name . '.info.yml');
     drush_op('rename', $gesso_info_file, $new_info_file);
 
     // Update the .info.yml file based on the command options.
     $changes = [
-      'Gesso USWDS' => $name,
-      'Sass-based starter theme based on Gesso and the United States Web Design System.' => $description,
-      'guswds' => $machine_name,
+      '/Gesso/' => $name,
+      '/Sass-based starter theme\./' => $description,
+      '/gesso(?!_helper)/' => $machine_name,
     ];
     $this->gessoFileStrReplace($new_info_file, array_keys($changes), $changes);
 
     // Rename the .breakpoints.yml file.
-    $gesso_info_file = Path::join($new_path, 'guswds.breakpoints.yml');
+    $gesso_info_file = Path::join($new_path, 'gesso.breakpoints.yml');
     $new_info_file = Path::join($new_path, $machine_name . '.breakpoints.yml');
-    drush_op('rename', $gesso_info_file, $new_info_file);
+    if ($this->fs->exists($gesso_info_file)) {
+      drush_op('rename', $gesso_info_file, $new_info_file);
+    }
 
     // Rename the .libraries.yml file.
-    $gesso_libraries_file = Path::join($new_path, 'guswds.libraries.yml');
+    $gesso_libraries_file = Path::join($new_path, 'gesso.libraries.yml');
     $new_libraries_file = Path::join($new_path, $machine_name . '.libraries.yml');
-    drush_op('rename', $gesso_libraries_file, $new_libraries_file);
+    if ($this->fs->exists($gesso_libraries_file)) {
+      drush_op('rename', $gesso_libraries_file, $new_libraries_file);
+    }
 
     // Rename the .layouts.yml file.
-    $gesso_layouts_file = Path::join($new_path, 'guswds.layouts.yml');
+    $gesso_layouts_file = Path::join($new_path, 'gesso.layouts.yml');
     $new_layouts_file = Path::join($new_path, $machine_name . '.layouts.yml');
-    drush_op('rename', $gesso_layouts_file, $new_layouts_file);
+    if ($this->fs->exists($gesso_layouts_file)) {
+      drush_op('rename', $gesso_layouts_file, $new_layouts_file);
+    }
 
     // Rename the .theme file.
-    $gesso_theme_file = Path::join($new_path, 'guswds.theme');
+    $gesso_theme_file = Path::join($new_path, 'gesso.theme');
     $new_theme_file = Path::join($new_path, $machine_name . '.theme');
-    drush_op('rename', $gesso_theme_file, $new_theme_file);
+    if ($this->fs->exists($gesso_theme_file)) {
+      drush_op('rename', $gesso_theme_file, $new_theme_file);
+    }
 
-    // Replace all occurrences of 'guswds'
-    // with the machine name of the new theme.
-    $breakpoints_file = $machine_name . '.breakpoints.yml';
-    $libraries_file = $machine_name . '.libraries.yml';
-    $layouts_file = $machine_name . '.layouts.yml';
-    $theme_file = $machine_name . '.theme';
-    $files = [
-      $breakpoints_file,
-      $libraries_file,
-      $theme_file,
-      $layouts_file,
-      'includes/block.inc',
-      'includes/field.inc',
-      'includes/form.inc',
-      'includes/html.inc',
-      'includes/navigation.inc',
-      'includes/taxonomy.inc',
-      'includes/views.inc',
-    ];
-    foreach ($files as $file) {
-      $this->gessoFileStrReplace(
-        Path::join($new_path, $file),
-        ['guswds', 'Gesso USWDS'],
-        [$machine_name, $name]
-      );
+    // Rename the config files.
+    $configFiles = new \RecursiveIteratorIterator(
+      new \RecursiveDirectoryIterator(
+        $new_path . '/config', \FilesystemIterator::SKIP_DOTS
+      ),
+      \RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($configFiles as $file) {
+      if (!$file->isDir()) {
+        $existing_name = $file->getPathname();
+        $new_name = str_replace('gesso', $machine_name, $existing_name);
+        drush_op('rename', $existing_name, $new_name);
+      }
     }
 
     // Notify user of the newly created theme.
@@ -184,7 +219,8 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
     ), 'SUCCESS', 'fg=black;bg=green', ' ! ');
 
     // Warn the user that they might have some additional steps.
-    $this->io()->caution(dt('If you want to remove the guswds theme entirely, be sure to copy and rename the '
+    $this->io()->caution(dt('If you want to remove the gesso theme ' .
+      'entirely, be sure to uninstall, move, and re-enable the '
       . 'gesso_helper module first.'));
   }
 
@@ -223,7 +259,7 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
   private function gessoFileStrReplace($file_path, $find, $replace) {
     $file_path = Path::normalize($file_path);
     $file_contents = file_get_contents($file_path);
-    $file_contents = str_replace($find, $replace, $file_contents);
+    $file_contents = preg_replace($find, $replace, $file_contents);
     drush_op('file_put_contents', $file_path, $file_contents);
   }
 

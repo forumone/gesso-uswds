@@ -1,25 +1,20 @@
-{% set removeClasses = [
+{#
+/**
+ * @file
+ * Theme override for a select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the <select> tag.
+ * - options: The <option> element children.
+ *
+ * @see template_preprocess_select()
+ */
+#}
+{% set remove_classes = [
   'form-select',
   'required',
 ] %}
 
-{% set addClasses = [
-  'form-item__select',
-  required ? 'is-required',
-] %}
+{% set attributes = attributes.removeClass(remove_classes) %}
 
-{% spaceless %}
-  <select{{ attributes.removeClass(removeClasses).addClass(addClasses) }}>
-    {% for option in options %}
-      {% if option.type == 'optgroup' %}
-        <optgroup label="{{ option.label }}">
-          {% for sub_option in option.options %}
-            <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
-          {% endfor %}
-        </optgroup>
-      {% elseif option.type == 'option' %}
-        <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
-      {% endif %}
-    {% endfor %}
-  </select>
-{% endspaceless %}
+{% include '@components/form-item/form-item--select/_select.twig' %}

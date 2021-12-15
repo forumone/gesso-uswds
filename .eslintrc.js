@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 11,
     sourceType: 'module',
   },
   env: {
@@ -9,42 +9,20 @@ module.exports = {
     node: true,
     browser: true,
   },
-  plugins: ['implicit-dependencies'],
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  plugins: ['prettier'],
+  extends: ['airbnb', 'prettier'],
+  settings: {
+    'import/resolver': 'webpack',
+    'import/core-modules': ['drupal', 'drupalSettings', 'jquery', 'once'],
+  },
   rules: {
-    'arrow-parens': ['off', 'as-needed'],
-    camelcase: [
+    'class-methods-use-this': 'off', // Too many false positives
+    'react/no-danger': 'off', // Necessary for Storybook
+    'no-param-reassign': [
+      // Allow modifying props, esp. for DOM Nodes
       'error',
       {
-        properties: 'never',
-      },
-    ],
-    curly: 'error',
-    'dot-notation': 'error',
-    eqeqeq: 'error',
-    'guard-for-in': 'error',
-    'implicit-dependencies/no-implicit': [
-      'error',
-      { optional: true, dev: true },
-    ],
-    'no-console': ['error', { allow: ['warn', 'error'] }],
-    'no-empty-function': 'error',
-    'no-floating-decimal': 'error',
-    'no-irregular-whitespace': 'off',
-    'no-param-reassign': 'error',
-    'no-template-curly-in-string': 'error',
-    'no-unused-expressions': 'error',
-    'no-unused-vars': ['error', { args: 'none' }],
-    'no-var': 'error',
-    'object-shorthand': 'error',
-    'one-var': ['error', 'never'],
-    'prefer-const': 'error',
-    'prefer-template': 'error',
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
+        props: false,
       },
     ],
   },

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Provides the necessary hooks for the block theme suggestions.
+ * Block-related hook implementations.
  */
 
 use Drupal\block_content\BlockContentInterface;
@@ -10,7 +10,7 @@ use Drupal\block_content\BlockContentInterface;
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function gesso_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   $content = $variables['elements']['content'];
   if (isset($content['#block_content']) and $content['#block_content'] instanceof BlockContentInterface) {
     $suggestions = [];

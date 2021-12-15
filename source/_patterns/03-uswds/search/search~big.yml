@@ -1,6 +1,0 @@
----
-modifier_classes: 'usa-search--big'
-id: 'search-field-big'
-label: 'Search'
-hide_button_text: false
-button_text: 'Search'

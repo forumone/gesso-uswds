@@ -1,19 +1,23 @@
 {#
- /**
-  * @file
-  * Theme override for a breadcrumb trail.
-  *
-  * Available variables:
-  * - modifier_class: Variant classes to modify component.
-  * - heading: Accessible heading.
-  * - breadcrumb: Breadcrumb trail items.
-  */
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ * - include_current_page: Whether to add the current page to the breadcrumb
+ *   list. Controlled via theme setting.
+ * - page_title: The page title, for use in the actual content. This only has
+ *   content if include_current_page is true.
+ */
 #}
-
 {% if breadcrumb %}
   {% include '@components/breadcrumb/breadcrumb.twig' with {
     'modifier_classes': '',
-    'heading': 'Breadcrumb'|t,
-    'breadcrumb': breadcrumb
-  } only %}
+    'title_modifier_classes': '',
+    'hide_title': true,
+    'title_element': 'h2',
+    'title': 'Breadcrumb'|t,
+    'breadcrumb': breadcrumb,
+  } %}
 {% endif %}

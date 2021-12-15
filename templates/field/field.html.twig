@@ -33,16 +33,14 @@
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
  *
- *
  * @see template_preprocess_field()
  */
 #}
-
 {% set classes = [
-  'field',
-  'field--name-' ~ field_name|clean_class,
-  'field--type-' ~ field_type|clean_class,
-  'field--label-' ~ label_display,
+  'c-field',
+  'c-field--name-' ~ field_name|clean_class,
+  'c-field--type-' ~ field_type|clean_class,
+  'c-field--label-' ~ label_display,
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}
@@ -50,9 +48,11 @@
 {% include '@components/field/field.twig' with {
   'element': 'div',
   'label_display': label_display,
-  'label_hidden': label_hidden,
+  'hide_label': label_hidden,
   'label_element': 'div',
   'label': label,
-  'multiple': multiple,
-  'field_items': items
+  'hide_content_wrapper': false,
+  'show_separator': true,
+  'separator': ', ',
+  'field_items': items,
 } %}

@@ -1,49 +1,40 @@
-{% set addClasses = [
-  'fieldset',
-  required ? 'is-required',
-] %}
-
-{% set addLegendClasses = [
-  'fieldset__legend',
-] %}
-
-{% set removeClasses = [] %}
-
+{#
+/**
+ * @file
+ * Theme override for a fieldset element and its children.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the <fieldset> element.
+ * - errors: (optional) Any errors for this <fieldset> element, may not be set.
+ * - required: Boolean indicating whether the <fieldset> element is required.
+ * - legend: The <legend> element containing the following properties:
+ *   - title: Title of the <fieldset>, intended for use as the text
+       of the <legend>.
+ *   - attributes: HTML attributes to apply to the <legend> element.
+ * - description: The description element containing the following properties:
+ *   - content: The description content of the <fieldset>.
+ *   - attributes: HTML attributes to apply to the description container.
+ * - children: The rendered child elements of the <fieldset>.
+ * - prefix: The content to add before the <fieldset> children.
+ * - suffix: The content to add after the <fieldset> children.
+ *
+ * @see template_preprocess_fieldset()
+ */
+#}
 {% if type == 'fieldset' %}
-  {% set addClasses = addClasses|merge([
-    'usa-fieldset',
-  ]) %}
-  {% set addLegendClasses = addLegendClasses|merge([
-    'usa-legend',
-  ]) %}
+  {% set classes =[
+    'c-fieldset--default',
+  ] %}
 {% else %}
-  {% set removeClasses = removeClasses|merge([
+  {% set remove_classes = [
     'fieldgroup',
     'form-composite',
-  ]) %}
-  {% set addClasses = addClasses|merge([
-    'fieldset--' ~ type|clean_class,
-  ]) %}
+  ] %}
+  {% set classes = [
+    'c-fieldset--' ~ type|clean_class,
+  ] %}
 {% endif %}
 
-<fieldset{{ attributes.removeClass(removeClasses).addClass(addClasses) }}>
-  <legend{{ legend.attributes.addClass(addLegendClasses) }}>
-    {{ legend.title }}
-    {% if not required and type != 'fieldset' -%}
-      <span class="usa-hint">({{ 'optional'|t }})</span>
-    {%- endif %}
-  </legend>
-  {% if description.content %}
-    <div{{ description.attributes.addClass('usa-hint') }}>{{ description.content }}</div>
-  {% endif %}
-  {% if errors %}
-    <div class="fieldset__error-message">{{ errors }}</div>
-  {% endif %}
-  {% if prefix %}
-    <span class="fieldset__prefix">{{ prefix }}</span>
-  {% endif %}
-  {{ children }}
-  {% if suffix %}
-    <span class="fieldset__suffix">{{ suffix }}</span>
-  {% endif %}
-</fieldset>
+{% include '@components/fieldset/fieldset.twig' with {
+  modifier_classes: attributes.addClass(classes).removeClass(remove_classes).class|join(' ')|trim,
+} %}

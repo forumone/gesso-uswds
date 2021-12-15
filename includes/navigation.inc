@@ -2,42 +2,33 @@
 
 /**
  * @file
- * Navigation-specific theming alterations.
+ * Navigation-related hook implementations.
  */
-
-use Drupal\Component\Utility\Html;
 
 /**
- * Implements theme_preprocess_menu_local_tasks()
- *
- * @param array $variables
- *   Variables that get passed along to the theming template.
+ * Implements hook_preprocess_breadcrumb().
  */
-function guswds_preprocess_menu_local_tasks(array &$variables) {
-  foreach (['primary', 'secondary'] as $type) {
-    $tabs = [];
+function gesso_preprocess_breadcrumb(array &$variables) {
+  if ($variables['breadcrumb']) {
+    /** @var \Drupal\Core\Render\Renderer $renderer */
+    $renderer = \Drupal::service('renderer');
+    $variables['include_current_page']
+      = theme_get_setting('include_current_page_in_breadcrumb', 'gesso') ?? TRUE;
+    $themeConfig = \Drupal::config('gesso.settings');
+    $renderer->addCacheableDependency($variables, $themeConfig);
 
-    // Sort the tabs by #weight.
-    uasort($variables[$type], [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightProperty',
-    ]);
-    foreach (array_keys($variables[$type]) as $key) {
-      // Add the tab to a new array.
-      $tabs[$key] = [
-        'active' => $variables[$type][$key]['#active'],
-        'url' => $variables[$type][$key]['#link']['url']->toString(),
-        'text' => Html::escape($variables[$type][$key]['#link']['title']),
-      ];
+    if ($variables['include_current_page']) {
+      $request = \Drupal::request();
+      $route_match = \Drupal::routeMatch();
+      $variables['#cache']['contexts'][] = 'route';
+      $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
 
-      // Check if the tab should be shown by rendering the original.
-      $link = \Drupal::service('renderer')->render($variables[$type][$key]);
-      if (!$link) {
-        unset($tabs[$key]);
+      if (!empty($page_title)) {
+        $variables['page_title'] = $page_title;
+        $variables['breadcrumb'][] = [
+          'text' => $page_title,
+        ];
       }
     }
-
-    // Overwrite the original tabs data.
-    $variables[$type] = $tabs;
   }
 }

@@ -1,35 +1,8 @@
-// @file
 // Main styles
-$pattern-lab-overrides: false !default;
 
-@import '_patterns/00-config/uswds-theme-settings.artifact';
-
-// Required USWDS styles.
-@import 'packages/required';
-
-// Gesso configuration.
-@import '_patterns/00-config/**/*.scss';
-@import '_patterns/01-global/**/*.scss';
-
-// Global USWDS styles.
-// 'global/typography' is omitted in favor of Gesso’s base HTML styles.
-@import 'lib/normalize';
-@import 'global/font-face';
-@import 'global/focus';
-@import 'global/sizing';
-@import 'elements/typography/content';
-
-// Gesso base styles.
-@import '_patterns/02-base/**/*.scss';
-
-// USWDS components.
-@import 'packages/form-controls';
-@import 'packages/layout-grid';
-@import '_patterns/03-uswds/**/*.scss';
-
-// Gesso layouts and components.
-@import '_patterns/04-layouts/**/*.scss';
-@import '_patterns/05-components/**/*.scss';
-
-@import '_patterns/utility-classes/**/*.scss';
-@import '_patterns/shame';
+@use '00-config' as *;
+@use '01-global' as *;
+@use '02-layouts' as *;
+@use '03-components' as *;
+@use '06-utility' as *;
+@use 'shame';

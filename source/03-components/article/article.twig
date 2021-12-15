@@ -1,0 +1,94 @@
+{% set classes = [
+  'c-article',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<article {{ add_attributes({ 'class': classes }) }}>
+  {{ title_prefix }}
+  {% block title %}
+    {% include '@components/page-title/page-title.twig' with {
+      'page_title': title,
+    } %}
+  {% endblock %}
+  {{ title_suffix }}
+
+  {% block messages %}
+    {% if show_admin_info %}
+      {% include '@components/message/message.twig' with {
+        'heading': 'Status message',
+        'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
+      } %}
+    {% endif %}
+  {% endblock %}
+
+  {% block local_tasks %}
+    {% if show_admin_info %}
+      {% include '@components/button-group/button-group.twig' with {
+        'heading': 'Primary tabs',
+        'element': 'nav',
+        'button_modifier_classes': 'c-button--base',
+        'buttons': [
+          {
+            'text': 'View',
+            'active': true,
+          },
+          {
+            'text': 'Edit',
+          },
+          {
+            'text': 'Delete',
+          },
+          {
+            'text': 'Revisions',
+          },
+        ],
+      } %}
+    {% endif %}
+  {% endblock %}
+
+  {% if show_footer %}
+    <footer class="c-article__footer">
+      {% block footer %}
+        {% if not date %}
+          {% set date %}
+            {% include '@components/date/date.twig' with {
+              'format': 'medium-date',
+              'year': {
+                'long': '2016',
+              },
+              'month': {
+                'long': 'September',
+              },
+              'day': {
+                'short': '28',
+              }
+            } %}
+          {% endset %}
+        {% endif %}
+
+        {% if not author %}
+          {% set author %}
+            {% include '@components/author/author.twig' with {
+                'author': author_name,
+              } %}
+          {% endset %}
+        {% endif %}
+
+        {% include '@components/list/list.twig' with {
+          'modifier_classes': 'c-list--pipeline',
+          'list': [
+            { 'content': date },
+            { 'content': author },
+          ]
+        } %}
+
+        {{ author_picture }}
+        {{ rdf_metadata }}
+      {% endblock %}
+    </footer>
+  {% endif %}
+
+  {% block body %}
+    {{ body }}
+  {% endblock %}
+</article>

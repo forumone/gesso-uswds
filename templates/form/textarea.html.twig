@@ -1,11 +1,27 @@
-{% set removeClasses = [
+{#
+/**
+ * @file
+ * Theme override for a 'textarea' #type form element.
+ *
+ * Available variables
+ * - wrapper_attributes: A list of HTML attributes for the wrapper element.
+ * - attributes: A list of HTML attributes for the <textarea> element.
+ * - resizable: An indicator for whether the textarea is resizable.
+ * - required: An indicator for whether the textarea is required.
+ * - value: The textarea content.
+ *
+ * @see template_preprocess_textarea()
+ */
+#}
+{% set classes = [
+  resizable ? 'is-resizable',
+] %}
+
+{% set remove_classes = [
   'form-textarea',
   'required',
 ] %}
 
-{% set addClasses = [
-  'form-item__textarea',
-  required ? 'is-required',
-] %}
+{% set attributes = attributes.removeClass(remove_classes).addClass(classes) %}
 
-<textarea{{ attributes.removeClass(removeClasses).addClass(addClasses) }}>{{ value }}</textarea>
+{% include '@components/form-item/form-item--textarea/_textarea.twig' %}
