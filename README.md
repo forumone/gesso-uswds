@@ -1,4 +1,6 @@
-# Gesso
+# Gesso USWDS
+
+![Gesso USWDS logo](https://github.com/forumone/gesso-uswds/blob/5.x/screenshot.png?raw=true)
 
 Gesso is a [Sass](http://sass-lang.com/)-based starter theme that outputs
 accessible HTML5 markup. It uses a mobile-first responsive approach and
@@ -9,18 +11,22 @@ UI elements. Gesso is heavily integrated with
 Libraries](https://www.drupal.org/project/components) module, allowing Drupal
 and Storybook to share the same markup.
 
-Visit the [Gesso Storybook demo site](https://forumone.github.io/gesso/).
+Visit the [Gesso USWDS Storybook demo site](https://forumone.github.io/gesso-uswds/).
 
-For more information, view the [Gesso Drupal project
-page](https://drupal.org/project/gesso/) or [Gesso GitHub
-repo](https://github.com/forumone/gesso). To submit bug reports or feature
-requests, visit the [Gesso issue
-queue](https://github.com/forumone/gesso/issues).
+For more information, view the
+[Gesso USWDS GitHub repo](https://github.com/forumone/gesso-uswds). To submit bug
+reports or feature requests, visit the
+[Gesso USWDS issue queue](https://github.com/forumone/gesso-uswds/issues).
+
+The United States Web Design System is a set of design guidelines and starting
+code for creating digital government services. For more information view the
+[USWDS](https://designsystem.digital.gov) project website or the
+[USWDS Github repo](https://github.com/uswds/uswds).
 
 ## Global prerequisites
 
 The following packages need to be installed on your system in order to compile
-and use Gesso.
+and use Gesso USWDS.
 
 -   [Node](https://nodejs.org/en/) version 14.x.x or greater. Long-term stable
     recommended.
@@ -29,7 +35,7 @@ and use Gesso.
 
 ## Installation
 
-1.  Place the Gesso theme in your site’s theme directory. (e.g., themes/gesso)
+1.  Place the Gesso USWDS theme in your site’s theme directory. (e.g., themes/guswds)
     Read documentation on [installing
     themes](https://drupal.org/getting-started/install-contrib/themes) for more
     information.
@@ -56,7 +62,7 @@ and use Gesso.
     it will allow you to use images uploaded to Drupal as background images,
     with different image sizes at different breakpoints.
 
-Because Gesso is a starter theme, you may want to rename the Gesso directory or
+Because Gesso USWDS is a starter theme, you may want to rename the Gesso directory or
 copy its contents to a new custom theme directory based on the name of your
 project.
 
@@ -65,7 +71,7 @@ The easiest way to accomplish this is to use
 information. If you get an error that the `gesso` command is not defined, make
 sure you have enabled the Gesso Helper module.
 
-If you can’t use Drush, then manually replace all instances of `gesso` within
+If you can’t use Drush, then manually replace all instances of `guswds` within
 this directory with a machine-readable name of your choice, including folder
 names, filenames, and all occurrences within files. This custom name must start
 with a letter and may only contain lowercase letters, numbers, and underscores.
@@ -185,7 +191,7 @@ JavaScript can be compiled to individual JS files for use in a JavaScript
 library or included within a different JS file. JS files that use modern
 (ES2015+) syntax must be named `[name].es6.js`, but this is not required by the
 compiler. JavaScript files should go in the appropriate folder under source
-(e.g., `source/03-components/menu` for menu-related JavaScript). There is not a
+(e.g., `source/04-components/menu` for menu-related JavaScript). There is not a
 separate folder for JS files as there was in previous versions of Gesso.
 
 All JavaScript files must have a unique filename, even if they are in different
@@ -212,7 +218,7 @@ documentation](https://eslint.org/docs/user-guide/configuring#disabling-rules-wi
 Please add a comment about the valid reason to disable the ESLint rule(s) in
 your use case.
 
-The ESLint config can be changed in the `.eslintrc.js` file. Gesso follows the
+The ESLint config can be changed in the `.eslintrc.js` file. Gesso USWDS follows the
 [Airbnb standards](https://github.com/airbnb/javascript/), which are [followed
 by Drupal](https://www.drupal.org/docs/develop/standards/javascript/javascript-coding-standards)
 as well.
@@ -221,7 +227,7 @@ The Prettier config can be changed in the `.prettierrc` file.
 
 ## Design tokens
 
-Gesso uses the configuration file `source/00-config/config.design-tokens.yml` to
+Gesso USWDS uses the configuration file `source/00-config/config.design-tokens.yml` to
 manage the theme’s design tokens. The npm build and dev tasks will automatically
 generate a global Sass map to easily pull design tokens into individual SCSS
 files.
@@ -379,7 +385,7 @@ your Sass.
 
 ### Width-based media queries
 
-Gesso uses custom mixins to specify viewport width based media queries:
+Gesso USWDS uses custom mixins to specify viewport width based media queries:
 -   `breakpoint`: min-width queries
 -   `breakpoint-max`: max-width queries
 -   `breakpoint-min-max`: queries with both a min and max width
@@ -446,11 +452,11 @@ set to `true` (default: `false`).
 
 A static Storybook site can be built with `npm run build-storybook`. You will
 then be able to view Storybook at
-[YOUR_URL/themes/gesso/storybook/index.html]().
+[YOUR_URL/themes/guswds/storybook/index.html]().
 
 ## Theme settings
 
-Some aspects of Gesso can be configured in the theme settings. These include
+Some aspects of Gesso USWDS can be configured in the theme settings. These include
 the Back to Top component, Breadcrumb options, and Button styles for links.
 
 For the buttons, put the classes that should be added for each button size
@@ -468,7 +474,7 @@ under the entity's display settings.
 
 ## Contributing
 
-Please use the Github issue queue [https://github.com/forumone/gesso/issues]()
+Please use the Github issue queue [https://github.com/forumone/gesso-uswds/issues]()
 for discussion, bug reports, feature requests, etc.
 
 Submitted pull requests should be against the latest release candidate branch,
@@ -476,7 +482,7 @@ such as `5.x-RC`.
 
 ## Maintainers
 
-The Gesso theme is maintained by
+The Gesso USWDS theme is maintained by
 [Corey Lafferty](https://drupal.org/u/clafferty) ([@coreylafferty](http://twitter.com/coreylafferty)),
 [KJ Monahan](https://www.drupal.org/u/kmonahan), and
 [Dan Mouyard](https://drupal.org/u/dcmouyard) ([@dcmouyard](http://twitter.com/dcmouyard)).

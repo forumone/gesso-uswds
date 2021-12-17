@@ -23,10 +23,11 @@ module.exports = {
             twigOptions: {
               namespaces: {
                 global: resolve(__dirname, '../', 'source/01-global'),
-                layouts: resolve(__dirname, '../', 'source/02-layouts'),
-                components: resolve(__dirname, '../', 'source/03-components'),
-                templates: resolve(__dirname, '../', 'source/04-templates'),
-                pages: resolve(__dirname, '../', 'source/05-pages'),
+                uswds: resolve(__dirname, '../', 'source/02-uswds'),
+                layouts: resolve(__dirname, '../', 'source/03-layouts'),
+                components: resolve(__dirname, '../', 'source/04-components'),
+                templates: resolve(__dirname, '../', 'source/05-templates'),
+                pages: resolve(__dirname, '../', 'source/06-pages'),
               },
             },
           },

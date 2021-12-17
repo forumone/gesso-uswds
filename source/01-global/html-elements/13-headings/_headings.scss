@@ -3,11 +3,8 @@
 @use '00-config' as *;
 
 %hN {
-  color: inherit;
-  font-weight: gesso-font-weight(bold);
+  @extend %usa-heading;
   hyphens: none;
-  line-height: gesso-line-height(base);
-  margin: 0 0 rem(gesso-spacing(2));
   text-rendering: optimizeLegibility;
 
   @media print {
@@ -32,7 +29,7 @@ h1,
   @include display-text-style(h1);
 
   @include breakpoint-max(gesso-breakpoint(tablet), true) {
-    font-size: rem(gesso-font-size(5));
+    font-size: font-size(heading, xl);
   }
 }
 
@@ -42,7 +39,7 @@ h2,
   @include display-text-style(h2);
 
   @include breakpoint-max(gesso-breakpoint(tablet), true) {
-    font-size: rem(gesso-font-size(4));
+    font-size: font-size(heading, lg);
   }
 }
 
@@ -52,7 +49,7 @@ h3,
   @include display-text-style(h3);
 
   @include breakpoint-max(gesso-breakpoint(tablet), true) {
-    font-size: rem(gesso-font-size(3));
+    font-size: font-size(heading, md);
   }
 }
 
@@ -60,10 +57,6 @@ h4,
 %h4 {
   @extend %hN;
   @include display-text-style(h4);
-
-  @include breakpoint-max(gesso-breakpoint(tablet), true) {
-    font-size: rem(gesso-font-size(2));
-  }
 }
 
 h5,
@@ -76,16 +69,4 @@ h6,
 %h6 {
   @extend %hN;
   @include display-text-style(h6);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  // Remove top margin for adjacent subheadings.
-  & + & {
-    margin-top: 0;
-  }
 }

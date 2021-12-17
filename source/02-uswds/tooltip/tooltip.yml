@@ -1,0 +1,6 @@
+---
+is_demo: true
+modifier_classes: ''
+tooltip_text: 'Tooltip'
+tooltip_position: 'top'
+text: 'Element with tooltip'

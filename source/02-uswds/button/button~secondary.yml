@@ -1,0 +1,8 @@
+---
+modifier_classes: 'usa-button--secondary'
+is_button_tag: true
+is_demo: true
+url: '#'
+button_type: 'submit'
+text: 'Secondary Button'
+text_demo: 'Secondary Link Button'

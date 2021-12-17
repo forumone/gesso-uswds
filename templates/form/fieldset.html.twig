@@ -38,3 +38,57 @@
 {% include '@components/fieldset/fieldset.twig' with {
   modifier_classes: attributes.addClass(classes).removeClass(remove_classes).class|join(' ')|trim,
 } %}
+
+{# Gus 4
+
+  {% set addClasses = [
+  'fieldset',
+  required ? 'is-required',
+] %}
+
+{% set addLegendClasses = [
+  'fieldset__legend',
+] %}
+
+{% set removeClasses = [] %}
+
+{% if type == 'fieldset' %}
+  {% set addClasses = addClasses|merge([
+    'usa-fieldset',
+  ]) %}
+  {% set addLegendClasses = addLegendClasses|merge([
+    'usa-legend',
+  ]) %}
+{% else %}
+  {% set removeClasses = removeClasses|merge([
+    'fieldgroup',
+    'form-composite',
+  ]) %}
+  {% set addClasses = addClasses|merge([
+    'fieldset--' ~ type|clean_class,
+  ]) %}
+{% endif %}
+
+<fieldset{{ attributes.removeClass(removeClasses).addClass(addClasses) }}>
+  <legend{{ legend.attributes.addClass(addLegendClasses) }}>
+    {{ legend.title }}
+    {% if not required and type != 'fieldset' -%}
+      <span class="usa-hint">({{ 'optional'|t }})</span>
+    {%- endif %}
+  </legend>
+  {% if description.content %}
+    <div{{ description.attributes.addClass('usa-hint') }}>{{ description.content }}</div>
+  {% endif %}
+  {% if errors %}
+    <div class="fieldset__error-message">{{ errors }}</div>
+  {% endif %}
+  {% if prefix %}
+    <span class="fieldset__prefix">{{ prefix }}</span>
+  {% endif %}
+  {{ children }}
+  {% if suffix %}
+    <span class="fieldset__suffix">{{ suffix }}</span>
+  {% endif %}
+</fieldset>
+
+#}

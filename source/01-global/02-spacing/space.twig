@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th class="pattern-lab-spacing__header">Token</th>
+      <th class="pattern-lab-spacing__header">USWDS Function</th>
       <th class="pattern-lab-spacing__header">REM</th>
       <th class="pattern-lab-spacing__header">PX</th>
       <th class="pattern-lab-spacing__header">Example</th>
@@ -10,17 +11,24 @@
   <tbody>{% spaceless %}
     {# Base font value should be a pixel value or unitless value #}
     {% for name, unit in gesso.spacing|keysort %}
+      {% if unit is iterable %}
+        {% set unit_label = unit['sass'] %}
+        {% set unit = unit['sass'] is empty ? unit['sass'] : unit['fallback'] %}
+      {% endif %}
       {% set remValue =
         (unit~''|replace({'px':''})) /
         (gesso.typography['base-font-size']|replace({'px':''}))
       %}
 
       <tr>
-        <td class="pattern-lab-spacing__cell">{{name|trim}}</td>
-        <td class="pattern-lab-spacing__cell">{{remValue}}rem</td>
-        <td class="pattern-lab-spacing__cell">{{unit}}</td>
+        <td class="pattern-lab-spacing__cell">{{ name }}</td>
+        {% if unit_label is not empty %}
+          <td class="pattern-lab-spacing__cell"><code>{{ unit_label }}</code></td>
+        {% endif %}
+        <td class="pattern-lab-spacing__cell">{{ remValue }}rem</td>
+        <td class="pattern-lab-spacing__cell">{{ unit }}</td>
         <td class="pattern-lab-spacing__cell">
-          <div style="height:{{unit}}; width:{{unit}}; background-color: #ccc;"></div>
+          <div style="height:{{ unit }}; width:{{ unit }}; background-color: #ccc;"></div>
         </td>
       </tr>
     {% endfor %}

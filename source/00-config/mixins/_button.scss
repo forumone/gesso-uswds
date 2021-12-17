@@ -1,10 +1,12 @@
 // Mixins: Button
 
+@import 'packages/required';
+@import 'packages/usa-button';
 @use '../functions/' as *;
 @use './focus' as *;
 
 $button-border-width: 0 !default;
-$button-border-radius: 0 !default;
+$button-border-radius: radius($theme-button-border-radius) !default;
 $button-background-color: gesso-color(button, primary, background) !default;
 $button-background-color-active: gesso-color(
   button,
@@ -46,6 +48,8 @@ $button-font-size: gesso-base-font-size() !default;
   $border-width: $button-border-width,
   $font-size: $button-font-size
 ) {
+  // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
+  @extend .usa-button;
   background-color: $color-background;
   @if $border-width != 0 {
     border: $border-width solid $color-border;
@@ -54,17 +58,9 @@ $button-font-size: gesso-base-font-size() !default;
   }
   border-radius: $border-radius;
   color: $color-text;
-  cursor: pointer;
   display: inline-block;
-  font-family: gesso-font-family(primary);
+  font-family: gesso-font-family(body);
   font-size: rem($font-size);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: gesso-font-weight(bold);
-  line-height: gesso-line-height(base);
-  padding: rem(gesso-spacing(1)) rem(gesso-spacing(2));
-  text-align: center;
-  text-decoration: none;
   transition: background gesso-duration(short) gesso-easing(ease-in);
   vertical-align: top;
   white-space: normal;
@@ -89,13 +85,12 @@ $button-font-size: gesso-base-font-size() !default;
   }
 
   &[disabled] {
+    @include button-disabled;
     background-color: $color-background-disabled;
     @if $border-width != 0 {
       border-color: $color-border-disabled;
     }
     color: $color-text-disabled;
-    cursor: default;
-    pointer-events: none;
   }
 }
 

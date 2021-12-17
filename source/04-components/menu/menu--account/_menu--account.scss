@@ -1,0 +1,11 @@
+// Component: Account Menu
+
+@use '00-config' as *;
+
+.c-menu--account {
+  @extend .usa-nav__secondary-links;
+
+  .c-menu__item {
+    @extend .usa-nav__secondary-item;
+  }
+}

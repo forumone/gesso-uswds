@@ -56,7 +56,11 @@
 
 // Get Font Family
 @function gesso-font-family($ff-type) {
-  @return unquote(gesso-get-map(typography, font-family, $ff-type, stack));
+  $stack: gesso-get-map(typography, font-family, $ff-type, stack);
+  @if (type_of($stack) == 'string') {
+    @return unquote($stack);
+  }
+  @return $stack;
 }
 
 // Get Base Font Size
@@ -103,5 +107,5 @@
 }
 
 @function gesso-box-shadow($keys...) {
-  @return unquote(gesso-get-map(box-shadow, $keys...));
+  @return gesso-get-map(box-shadow, $keys...);
 }

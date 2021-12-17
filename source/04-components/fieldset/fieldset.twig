@@ -1,0 +1,15 @@
+{% set classes = [
+  'c-fieldset',
+  modifier_classes ? modifier_classes,
+]|join(' ')|trim %}
+
+{% set legend_classes = [
+  'c-fieldset__legend',
+  add_legend_classes ? add_legend_classes,
+]|join(' ')|trim %}
+
+<fieldset class="{{ classes }}">
+  <legend class="{{ legend_classes }}">{{ fieldset_legend }}</legend>
+  <div class="usa-hint">{{ fieldset_description }}</div>
+  {{ fieldset_content }}
+</fieldset>

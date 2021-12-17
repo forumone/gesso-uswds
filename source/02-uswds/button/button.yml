@@ -1,0 +1,9 @@
+---
+is_button_tag: true
+is_demo: true
+is_disabled: false
+url: '#'
+button_type: 'submit'
+text: 'Button'
+text_demo: 'Link Button'
+modifier_classes: ''

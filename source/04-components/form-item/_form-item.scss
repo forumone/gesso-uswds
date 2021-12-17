@@ -1,0 +1,128 @@
+// Component: Form Item
+
+@use '00-config' as *;
+
+.c-form-item {
+  margin-bottom: gesso-spacing(3);
+
+  &.is-full-width {
+    > .c-form-item__label,
+    > .c-form-item__description,
+    > .c-form-item__color,
+    > .c-form-item__date,
+    > .c-form-item__email,
+    > .c-form-item__month,
+    > .c-form-item__number,
+    > .c-form-item__password,
+    > .c-form-item__range,
+    > .c-form-item__search,
+    > .c-form-item__select,
+    > .c-form-item__tel,
+    > .c-form-item__text,
+    > .c-form-item__textarea,
+    > .c-form-item__time,
+    > .c-form-item__url,
+    > .c-form-item__week {
+      max-width: 100%;
+    }
+  }
+}
+
+.c-form-item__label {
+  @extend .usa-label;
+  margin-top: 0;
+
+  .is-disabled > & {
+    color: color('disabled');
+
+    .usa-hint {
+      color: color('disabled');
+    }
+  }
+}
+
+.c-form-item__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.c-form-item__description {
+  color: gesso-color(text, secondary);
+  font-size: font-size(body, sm);
+  margin-top: gesso-spacing('05');
+  max-width: units($theme-input-max-width);
+}
+
+.c-form-item__color,
+.c-form-item__date,
+.c-form-item__email,
+.c-form-item__month,
+.c-form-item__number,
+.c-form-item__password,
+.c-form-item__search,
+.c-form-item__select,
+.c-form-item__tel,
+.c-form-item__text,
+.c-form-item__time,
+.c-form-item__url,
+.c-form-item__week {
+  @extend .usa-input;
+
+  &:disabled {
+    background-color: color($theme-color-disabled-light);
+    background-image: none;
+    border-color: color($theme-color-disabled);
+    color: color($theme-color-disabled-dark);
+  }
+
+  .is-full-width > & {
+    max-width: 100%;
+  }
+}
+
+.c-form-item__select {
+  &[multiple] {
+    background-image: none;
+  }
+}
+
+.c-form-item__textarea {
+  @extend .usa-textarea;
+
+  &:disabled {
+    background-color: color($theme-color-disabled-light);
+    border-color: color($theme-color-disabled);
+    color: color($theme-color-disabled-dark);
+  }
+}
+
+.c-form-item__checkbox {
+  @extend .usa-checkbox__input;
+}
+
+.c-form-item__radio {
+  @extend .usa-radio__input;
+
+  &:disabled + .form-item__label {
+    color: color('disabled');
+  }
+}
+
+.c-form-item__range {
+  @extend .usa-range;
+  padding: 0;
+
+  &:disabled {
+    background: transparent;
+    opacity: 0.5;
+  }
+}
+
+.c-form-item__select {
+  @extend .usa-select;
+
+  &[multiple] {
+    height: auto;
+  }
+}

@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess().
  */
-function gesso_preprocess(array &$variables) {
+function guswds_preprocess(array &$variables) {
   if (!empty($variables['directory'])) {
     $variables['gesso_image_path'] = '/' . $variables['directory'] . '/dist/images';
   }
@@ -17,7 +17,7 @@ function gesso_preprocess(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function gesso_preprocess_html(array &$variables) {
+function guswds_preprocess_html(array &$variables) {
   $variables['include_back_to_top']
     = theme_get_setting('include_back_to_top', 'gesso') ?? TRUE;
   /** @var \Drupal\Core\Render\Renderer $renderer */
@@ -29,7 +29,7 @@ function gesso_preprocess_html(array &$variables) {
 /**
  * Implements hook_page_attachments_alter().
  */
-function gesso_page_attachments_alter(array &$attachments) {
+function guswds_page_attachments_alter(array &$attachments) {
   $include_back_to_top = theme_get_setting('include_back_to_top') ?? TRUE;
   if ($include_back_to_top) {
     $attachments['#attached']['drupalSettings']['gesso']['backToTopThreshold']

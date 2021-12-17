@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_breadcrumb().
  */
-function gesso_preprocess_breadcrumb(array &$variables) {
+function guswds_preprocess_breadcrumb(array &$variables) {
   if ($variables['breadcrumb']) {
     /** @var \Drupal\Core\Render\Renderer $renderer */
     $renderer = \Drupal::service('renderer');

@@ -12,26 +12,32 @@
 {% extends '@layouts/site-container/site-container.twig' %}
 
 {% block site_content %}
-  {# page.header is missing system-branding-block. #}
-  {% set header_content %}
-    {% include '@gesso/block/block--system-branding-block.html.twig' %}
-    {{ page.header }}
-  {% endset %}
-
-  {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region--header.html.twig' with {
-    'content': header_content,
+  {% embed "@uswds/header/header.twig" with {
+    'is_extended': page.secondary.content is empty
   } %}
-
-  {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region.html.twig' with {
-    'region': 'navigation',
-    'content': page.navigation,
-  } %}
+    {% block content %}
+      {{ page.header }}
+      {% embed '@uswds/nav/nav.twig' with {
+        'label': 'Primary navigation',
+        'is_extended': page.secondary.content is empty
+      } %}
+        {% block content %}
+          {{ page.navigation }}
+          {{ page.secondary }}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
 
   {# We have to manually wrap region content. #}
   {% include '@gesso/layout/region--breadcrumb.html.twig' with {
     'content': page.breadcrumb,
+  } %}
+
+  {# We have to manually wrap region content. #}
+  {% include '@gesso/layout/region.html.twig' with {
+    'region': 'highlighted',
+    'content': page.highlighted,
   } %}
 
   {# We have to manually wrap region content. #}
@@ -53,8 +59,6 @@
       {% include '@components/page-title/page-title.twig' with {
         'page_title': page['#title'],
       } %}
-      {{ page.status }}
-      {{ page.content }}
     {% endset %}
 
     {# We have to manually wrap region content. #}
@@ -69,8 +73,15 @@
     } %}
   </main>
 
-  {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region--footer.html.twig' with {
-    'content': page.footer,
+  {% embed '@uswds/footer/footer.twig' with {
+    has_back_to_top: true
   } %}
+    {% block primary %}
+      {{ page.footer }}
+    {% endblock %}
+    {% block secondary %}
+      {{ page.subfooter }}
+    {% endblock %}
+  {% endembed %}
+
 {% endblock %}
