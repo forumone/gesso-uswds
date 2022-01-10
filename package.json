@@ -62,7 +62,6 @@
     "stylelint-prettier": "^1.2.0",
     "twig-drupal-filters": "^3.1.2",
     "twig-loader": "https://github.com/fourkitchens/twig-loader/archive/94126e3dafec1c1eba4597d6502fc1707065ae99.tar.gz",
-    "uswds": "2.12.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
@@ -86,6 +85,7 @@
     "svgo-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.2.4",
     "twig": "^1.15.4",
+    "uswds": "2.12.2",
     "webpack-merge": "^5.7.3",
     "yaml": "^1.10.2"
   }
