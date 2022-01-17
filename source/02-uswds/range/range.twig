@@ -1,0 +1,7 @@
+{% set classes = [
+  'usa-range',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<label class="usa-label" for="{{ range_id }}">{{ range_label }}</label>
+<input id="{{ range_id }}" class="{{ classes }}" type="range" min="{{ range_min }}" max="{{ range_max }}" step="{{ range_step }}" aria-valuemin="{{ range_min }}" aria-valuemax="{{ range_max }}" role="slider"{% if range_disabled %} disabled{% endif %}{% if range_value %} value="{{ range_value }}" aria-valuenow="{{ range_value }}"{% endif %}>

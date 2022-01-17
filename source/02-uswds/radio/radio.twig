@@ -1,0 +1,9 @@
+{% set classes = [
+  'usa-radio',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes }) }}>
+  <input class="usa-radio__input{% if radio_tile %} usa-radio__input--tile{% endif %}" id="{{ radio_id }}" type="radio" name="{{ radio_name }}" value="{{ radio_value }}"{% if radio_checked %} checked{% endif %}{% if radio_disabled %} disabled{% endif %}>
+  <label class="usa-radio__label" for="{{ radio_id }}">{{ radio_label }}</label>
+</div>

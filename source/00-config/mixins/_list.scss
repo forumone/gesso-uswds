@@ -1,10 +1,5 @@
 // Mixins: List
 
-@use '../config.settings' as *;
-@use '../functions' as *;
-@use 'clearfix' as *;
-@use 'breakpoint' as *;
-
 @mixin list-clean {
   list-style-type: none;
   margin: 0;
@@ -87,12 +82,9 @@
   margin-left: 0;
   padding-left: 0;
 
-  li {
-    padding-left: 0;
-  }
-
   > li {
     border-bottom: 1px solid $list-border-color;
+    margin-bottom: 0;
     padding: $list-border-padding;
   }
 }

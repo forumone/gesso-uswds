@@ -82,16 +82,11 @@
   {%- endblock -%}
 {% endset %}
 
-{% embed '@layouts/section/section.twig' with {
+{% include '@layouts/page-section/page-section.twig' with {
   'modifier_classes': paragraph_modifier_classes,
   'constrain_modifier_classes': paragraph_constrain_modifier_classes,
   'has_constrain': paragraph_has_constrain,
   'section_title': paragraph_title,
   'section_title_element': paragraph_title_element,
+  'section_content': paragraph_content
 } %}
-
-  {% block content %}
-    {{ paragraph_content }}
-  {% endblock %}
-
-{% endembed %}

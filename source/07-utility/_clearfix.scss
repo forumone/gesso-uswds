@@ -1,0 +1,6 @@
+// Utility: Clearfix
+
+.clearfix,
+.u-clearfix {
+  @include clearfix();
+}

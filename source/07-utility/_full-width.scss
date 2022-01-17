@@ -1,0 +1,7 @@
+// Utility: Full Width
+
+// Breaks something outside its parent l-constrain or other centered container
+// and makes it flush with the edge of the viewport.
+.u-full-width {
+  @include layout-full-bleed();
+}

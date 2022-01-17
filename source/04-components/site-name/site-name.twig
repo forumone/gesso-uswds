@@ -1,0 +1,8 @@
+{% set classes = [
+  'c-site-name',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<em {{ add_attributes({ 'class': classes })}}>
+  <a class="c-site-name__text" href="{{ url }}" title="{{ 'Home'|t }}" rel="home" aria-label="{{ 'Home'|t }}">{{ site_name }}</a>
+</em>

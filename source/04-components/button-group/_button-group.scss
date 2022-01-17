@@ -1,0 +1,110 @@
+// Component: Button Group
+
+.c-button-group {
+  display: flex;
+  margin: rem(gesso-spacing(2)) 0;
+}
+
+.c-button-group__list {
+  @include list-clean();
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.c-button-group__item {
+  margin: 0;
+
+  &.is-active {
+    z-index: 1;
+  }
+
+  &:focus-within,
+  &:hover {
+    z-index: 2;
+  }
+
+  .c-button-group__link {
+    border-radius: 0;
+    border-top-width: 0;
+
+    @include breakpoint(gesso-breakpoint(tablet)) {
+      border-left-width: 0;
+      border-top-width: $button-border-width;
+    }
+  }
+
+  &:first-child {
+    .c-button-group__link {
+      border-top-left-radius: $button-border-radius;
+      border-top-right-radius: $button-border-radius;
+      border-top-width: $button-border-width;
+
+      @include breakpoint(gesso-breakpoint(tablet)) {
+        border-bottom-left-radius: $button-border-radius;
+        border-left-width: $button-border-width;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .c-button-group__link {
+      border-bottom-left-radius: $button-border-radius;
+      border-bottom-right-radius: $button-border-radius;
+
+      @include breakpoint(gesso-breakpoint(tablet)) {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: $button-border-radius;
+      }
+    }
+  }
+}
+
+.c-button-group__link {
+  margin: 0 !important;
+  width: 100%;
+}
+
+.c-button-group--separated {
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    .c-button-group__item {
+      margin: rem(gesso-spacing('05'));
+
+      .c-button-group__link {
+        border-radius: $button-border-radius;
+        border-width: $button-border-width;
+      }
+    }
+  }
+}
+
+.c-button-group--segmented {
+  .c-button-group__item {
+    margin-bottom: -1px !important;
+    margin-top: -1px !important;
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+    @include breakpoint(gesso-breakpoint(tablet)) {
+      margin-bottom: 0 !important;
+      margin-left: -1px !important;
+      margin-right: -1px !important;
+      margin-top: 0 !important;
+      &:first-child {
+        margin-left: 0 !important;
+      }
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}

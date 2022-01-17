@@ -1,0 +1,14 @@
+{% set classes = [
+  'usa-navbar',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes }) }}>
+  {% block content %}
+    {% include "@uswds/logo/logo.twig" with {
+      'site_name': 'Project Title'|t,
+      'url': '/'
+    } %}
+  {% endblock %}
+  <button class="usa-menu-btn">{{ 'Menu'|t }}</button>
+</div>

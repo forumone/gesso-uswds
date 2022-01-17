@@ -1,0 +1,50 @@
+// @file
+// Styles for Button.
+
+.c-button,
+%c-button {
+  @extend .usa-button;
+}
+
+.c-button.is-active {
+  @extend .usa-button--active;
+}
+
+.c-button--large,
+%c-button--large {
+  @extend .usa-button--big;
+}
+
+.c-button--secondary,
+%c-button--secondary {
+  @extend .usa-button--secondary;
+}
+
+.c-button--outline,
+%c-button--outline {
+  @extend .usa-button--outline;
+}
+
+// Drupal outputs this class on buttons that can delete content.
+.c-button--danger {
+  background-color: gesso-color(button, danger, background);
+  color: gesso-color(button, danger, text);
+
+  &:hover,
+  &:focus {
+    background-color: gesso-color(button, danger, background-hover);
+    color: gesso-color(button, danger, text-hover);
+  }
+
+  &:active {
+    background-color: gesso-color(button, danger, background-active);
+    color: gesso-color(button, danger, text-active);
+  }
+}
+
+// This custom button class, included as an example, is not output by Drupal by default.
+.c-button--small,
+%c-button--small {
+  font-size: font-size(body, 1);
+  padding: rem(gesso-spacing(1)) rem(gesso-spacing(2));
+}

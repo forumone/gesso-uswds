@@ -1,0 +1,43 @@
+{% set classes = [
+  'usa-footer',
+  'usa-footer--slim',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% if is_demo and not primary_content %}
+  {% import '@global/gesso.macro.twig' as macros %}
+  {% set primary_content = macros.sample_content('Primary Content') %}
+{% endif %}
+
+{% if is_demo and not secondary_content %}
+  {% import '@global/gesso.macro.twig' as macros %}
+  {% set secondary_content = macros.sample_content('Secondary Content') %}
+{% endif %}
+
+<footer {{ add_attributes({ 'class': classes }) }} role="contentinfo">
+  {% if has_back_to_top %}
+    <div class="usa-footer__return-to-top grid-container">
+      <a href="#">{{ 'Return to top'|t }}</a>
+    </div>
+  {% endif %}
+  <div class="usa-footer__primary-section">
+    <div class="usa-footer__primary-container grid-row">
+      <div class="mobile-lg:grid-col-8">
+        <nav class="usa-footer__nav">
+          {% block primary %}
+            {{ primary_content }}
+          {% endblock %}
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap-2">
+        {% block secondary %}
+          {{ secondary_content }}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</footer>

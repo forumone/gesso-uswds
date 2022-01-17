@@ -1,8 +1,6 @@
 // Extendable: Accessibility
 // Included from global/helpers/_accessibility.scss.
 
-@use '00-config' as *;
-
 %visually-hidden {
   @include visually-hidden();
 }

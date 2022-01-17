@@ -1,0 +1,13 @@
+{% set classes = [
+  'usa-select',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<label class="usa-label" for="{{ dropdown_id }}">{{ dropdown_label }}</label>
+<select class="{{ classes }}" name="{{ dropdown_id }}" id="{{ dropdown_id }}"{% if dropdown_disabled %} disabled{% endif %}>
+  {% block option_list %}
+    {% for option in dropdown_options %}
+      <option value="{{ option.value }}"{% if option.disabled %} disabled{% endif %}>{{ option.label }}</option>
+    {% endfor %}
+  {% endblock %}
+</select>

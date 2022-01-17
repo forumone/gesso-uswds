@@ -1,0 +1,25 @@
+{% set classes = [
+  'l-page-section',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% set constrain_classes = [
+  'l-constrain',
+  constrain_modifier_classes ? constrain_modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes }) }}>
+  {% if has_constrain %}
+    <div class="{{ constrain_classes }}">
+  {% endif %}
+
+  {% if section_title %}
+    <{{ section_title_element ?: 'h2' }}>{{ section_title }}</{{ section_title_element ?: 'h2' }}>
+  {% endif %}
+
+  {{ section_content }}
+
+  {% if has_constrain %}
+    </div>
+  {% endif %}
+</div>

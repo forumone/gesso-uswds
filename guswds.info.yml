@@ -1,0 +1,39 @@
+name: Gesso USWDS
+type: theme
+base theme: false
+description: 'Storybook-based starter theme based on Gesso and the United States Web Design System.'
+package: Custom
+core_version_requirement: ^8.9 || ^9
+libraries:
+  - guswds/global
+libraries-override:
+  core/drupal.dropbutton: guswds/dropbutton
+ckeditor_stylesheets:
+  - dist/css/editor-styles.css
+dependencies:
+  - components
+  - gesso_helper
+  - twig_tweak
+components:
+  namespaces:
+    global: source/01-global
+    uswds: source/02-uswds
+    layouts: source/03-layouts
+    components: source/04-components
+    templates: source/05-templates
+    utility: source/07-utility
+regions:
+  page_top: 'Page top'
+  header: Header
+  navigation: 'Main navigation'
+  secondary: 'Secondary navigation'
+  breadcrumb: Breadcrumbs
+  help: Help
+  preface: Preface
+  status: 'Status messages & Tabs'
+  content: Content
+  postscript: Postscript
+  footer: Footer
+  disabled: Disabled
+  page_bottom: 'Page bottom'
+  subfooter: Subfooter

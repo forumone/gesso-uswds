@@ -93,17 +93,17 @@ module.exports = {
         test: /\.scss$/i,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
+          },
           {
             loader: 'css-loader',
             options: {
-              url: (url) => {
-                // Ignore `/core/` urls.
-                if (url.includes('/core/')) {
-                  return false;
-                }
-                return true;
-              },
+              // Ignore /core/ URLs
+              url: (url) => !url.includes('/core/'),
             },
           },
           {
@@ -111,7 +111,7 @@ module.exports = {
             options: {
               implementation: dartSass,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, 'source')],
+                includePaths: [path.resolve(__dirname, 'source'), './node_modules/uswds/src/stylesheets'],
               },
             },
           },
@@ -132,6 +132,14 @@ module.exports = {
           'svg-transform-loader',
           'svgo-loader',
         ],
+      },
+      {
+        test: /fonts\/.*\.(woff2?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        exclude: ['/node_modules/'],
+        type: 'asset/resource',
+        generator: {
+         filename: 'fonts/[hash][ext][query]'
+        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/i,

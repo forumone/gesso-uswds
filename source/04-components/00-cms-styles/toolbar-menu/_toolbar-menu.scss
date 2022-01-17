@@ -1,0 +1,11 @@
+// Component: Toolbar Menu
+// Used for overriding the toolbar module styles.
+
+ul.toolbar-menu {
+  @include list-clean();
+
+  li {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}

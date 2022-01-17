@@ -1,0 +1,7 @@
+---
+modifier_classes: 'usa-button--accent-warm'
+is_button_tag: true
+is_demo: true
+url: '#'
+text: 'Accent Warm Button'
+text_demo: 'Accent Warm Link Button'

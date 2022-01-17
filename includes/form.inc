@@ -8,10 +8,14 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function gesso_preprocess_input(array &$variables) {
+function guswds_preprocess_input(array &$variables) {
   $variables['is_required'] = isset($variables['element']['#required']) ? $variables['element']['#required'] : NULL;
   $variables['type'] = isset($variables['element']['#attributes']['type']) ? $variables['element']['#attributes']['type'] : NULL;
   $variables['dropbutton'] = isset($variables['element']['#dropbutton']) ? $variables['element']['#dropbutton'] : NULL;
+
+  // Replace button classes with c-button.
+  $variables['attributes']['class'] = preg_replace('/^button/', 'c-button', $variables['attributes']['class']);
+
   if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
     $description_id = $variables['element']['#id'] . '-description';
     $variables['described_by'] = $description_id;
@@ -21,27 +25,7 @@ function gesso_preprocess_input(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function gesso_preprocess_select(array &$variables) {
-  if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
-    $description_id = $variables['element']['#id'] . '-description';
-    $variables['described_by'] = $description_id;
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function gesso_preprocess_textarea(array &$variables) {
-  if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
-    $description_id = $variables['element']['#id'] . '-description';
-    $variables['described_by'] = $description_id;
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function gesso_preprocess_fieldset(array &$variables) {
+function guswds_preprocess_fieldset(array &$variables) {
   $variables['type'] = isset($variables['element']['#type']) ? $variables['element']['#type'] : 'fieldset';
   $variables['is_disabled'] = isset($variables['element']['#disabled']) ? $variables['element']['#disabled'] : NULL;
 }
@@ -49,7 +33,7 @@ function gesso_preprocess_fieldset(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function gesso_preprocess_form_element(array &$variables) {
+function guswds_preprocess_form_element(array &$variables) {
   $variables['is_required'] = isset($variables['element']['#required']) ? $variables['element']['#required'] : NULL;
   if (!empty($variables['description']['content']) && !empty($variables['element']['#id'])) {
     $variables['description']['attributes']['id'] = $variables['element']['#id'] . '-description';
@@ -57,9 +41,29 @@ function gesso_preprocess_form_element(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function guswds_preprocess_select(array &$variables) {
+  if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
+    $description_id = $variables['element']['#id'] . '-description';
+    $variables['described_by'] = $description_id;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function guswds_preprocess_textarea(array &$variables) {
+  if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
+    $description_id = $variables['element']['#id'] . '-description';
+    $variables['described_by'] = $description_id;
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function gesso_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_container_alter(array &$suggestions, array $variables) {
   $array_parents = isset($variables['element']['#array_parents']) ? $variables['element']['#array_parents'] : NULL;
 
   // Add parents as template suggestions.
@@ -87,16 +91,16 @@ function gesso_theme_suggestions_container_alter(array &$suggestions, array $var
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function gesso_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   if (isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form-item__' . $variables['element']['#form_id'];
+    $suggestions[] = 'form__' . $variables['element']['#form_id'];
   }
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function gesso_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
   $id = isset($variables['element']['#id']) ? $variables['element']['#id'] : NULL;
   $type = isset($variables['element']['#type']) ? $variables['element']['#type'] : NULL;
 

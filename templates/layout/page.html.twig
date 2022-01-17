@@ -45,9 +45,33 @@
 {% extends '@layouts/site-container/site-container.twig' %}
 
 {% block site_content %}
-  {{ page.header }}
-  {{ page.navigation }}
+  {% include '@uswds/banner/banner.twig' with {
+    'language': language.id,
+    'gesso_image_path': gesso_image_path,
+    'has_expanded': true,
+  } %}
+
+  {% embed "@uswds/header/header.twig" with {
+    'is_extended': page.secondary.content is empty
+  } %}
+    {% block content %}
+      {{ page.header }}
+      {% embed '@uswds/nav/nav.twig' with {
+        'label': 'Primary navigation',
+        'is_extended': page.secondary.content is empty
+      } %}
+        {% block content %}
+          {{ page.navigation }}
+          {{ page.secondary }}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
   {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
   {{ page.help }}
 
   <main id="main" class="c-main" role="main" tabindex="-1">
@@ -65,5 +89,15 @@
     {% endblock %}
   </main>
 
-  {{ page.footer }}
+  {% embed '@uswds/footer/footer.twig' with {
+    has_back_to_top: true
+  } %}
+    {% block primary %}
+      {{ page.footer }}
+    {% endblock %}
+    {% block secondary %}
+      {{ page.subfooter }}
+    {% endblock %}
+  {% endembed %}
+
 {% endblock %}

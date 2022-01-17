@@ -1,0 +1,6 @@
+{% set classes = [
+  'usa-tag',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<span {{ add_attributes({ 'class': classes }) }}>{{ text }}</span>

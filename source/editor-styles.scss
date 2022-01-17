@@ -1,11 +1,33 @@
 // WYSIWYG styles
 
-@use '00-config' as * with($wysiwyg: true);
-@use '01-global' as *;
-@use '02-layouts' as *;
-@use '03-components' as *;
-@use '06-utility' as *;
-@use 'shame';
+// Custom Gesso USWDS settings.
+@import '00-config/uswds-theme-settings.artifact';
+
+// Required USWDS styles.
+@import 'packages/required';
+
+//@import '00-config' with($wysiwyg: true);
+@import '00-config';
+
+// Global USWDS styles.
+// 'global/typography' is omitted in favor of Gesso’s base HTML styles.
+@import 'lib/normalize';
+@import 'global/font-face';
+@import 'global/focus';
+@import 'global/sizing';
+@import 'elements/typography/content';
+
+@import '01-global';
+
+// USWDS components.
+@import 'packages/form-controls';
+@import 'packages/layout-grid';
+
+@import '02-uswds';
+@import '03-layouts';
+@import '04-components';
+@import '07-utility';
+@import 'shame';
 
 // stylelint-disable-next-line
 body.cke_editable {

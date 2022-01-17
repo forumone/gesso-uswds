@@ -1,0 +1,34 @@
+{% set classes = [
+  'usa-textarea',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% set group_classes = [
+  'usa-form-group',
+  group_modifier_classes ? group_modifier_classes : '',
+]|join(' ')|trim %}
+
+{% set label_classes = [
+  'usa-label',
+  label_modifier_classes ? label_modifier_classes : '',
+]|join(' ')|trim %}
+
+<div class="{{ group_classes }}">
+  <label class="{{ label_classes }}" for="{{ textarea_id }}">
+    {{ textarea_label }}
+    {% if not textarea_required %}<span class="usa-hint">({{ 'optional'|t }})</span>{% endif %}
+  </label>
+  {% if error_message %}
+    <span class="usa-error-message" id="{{ textarea_id }}-message" role="alert">{{ error_message }}</span>
+  {% endif %}
+  {% spaceless %}
+    <textarea aria-describedby="{{ textarea_id }}-message"
+      class="{{ classes }}"
+      cols="{{ textarea_cols }}"
+      {% if error_message %} disabled{% endif %}
+      {% if textarea_disabled %} id="{{ textarea_id }}"{% endif %}
+      {% if textarea_required %} name="{{ textarea_id }}"{% endif %}
+      {% if textarea_rows %} required{% endif %}
+      {% if textarea_cols %} rows="{{ textarea_rows }}"{% endif %}></textarea>
+  {% endspaceless %}
+</div>

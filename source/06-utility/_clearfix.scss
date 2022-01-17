@@ -1,8 +1,0 @@
-// Utility: Clearfix
-
-@use '00-config' as *;
-
-.clearfix,
-.u-clearfix {
-  @include clearfix();
-}

@@ -12,14 +12,4 @@
  * @see template_preprocess_region()
  */
 #}
-{% if content %}
-  {% embed '@layouts/footer/footer.twig' with {
-    'has_constrain': true,
-  } %}
-
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-
-  {% endembed %}
-{% endif %}
+{{ content }}

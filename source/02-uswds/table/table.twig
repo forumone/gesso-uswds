@@ -1,0 +1,57 @@
+{% set classes = [
+  'usa-table',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% if scrollable %}
+  <div class="usa-table-container--scrollable">
+{% endif %}
+<table {{ add_attributes({ 'class': classes }) }}>
+  {% if caption %}
+    <caption>{{ caption }}</caption>
+  {% endif %}
+
+  {% if header %}
+    <thead>
+      <tr>
+        {% for cell in header %}
+          <th{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
+            {{- cell.content -}}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+  {% endif %}
+
+  {% if footer %}
+    <tfoot>
+      <tr>
+        {% for cell in footer %}
+          <th{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
+            {{- cell.content -}}
+          </th>
+        {% endfor %}
+      </tr>
+    </tfoot>
+  {% endif %}
+
+  {% if rows %}
+    <tbody>
+      {% for row in rows %}
+        <tr{% if row.attributes %} {{ row.attributes }}{% endif %}>
+          {% for cell in row.cells %}
+            <{{ cell.tag }}{% if cell.attributes %} {{ cell.attributes }}{% endif %}>
+              {{- cell.content -}}
+            </{{ cell.tag }}>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  {% endif %}
+</table>
+{% if sortable %}
+  <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
+{% endif %}
+{% if scrollable %}
+  </div>
+{% endif %}

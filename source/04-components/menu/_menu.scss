@@ -1,0 +1,11 @@
+// Component: Menu
+
+// .c-menu {}
+
+.c-menu__item {
+  max-width: initial;
+}
+
+.c-menu__subnav {
+  @extend .usa-nav__submenu;
+}

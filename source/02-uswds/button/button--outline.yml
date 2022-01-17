@@ -1,0 +1,7 @@
+---
+modifier_classes: 'usa-button--outline'
+is_button_tag: true
+is_demo: true
+url: '#'
+text: 'Outline Button'
+text_demo: 'Outline Link Button'

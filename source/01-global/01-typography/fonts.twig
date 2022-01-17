@@ -1,6 +1,10 @@
 {% for name, item in gesso.typography['font-family'] %}
 
-  {% set stack = item.stack|replace({'/\\/' : ""})  %}
+  {% if item.stack is iterable %}
+    {% set stack = item.stack['fallback'] is empty ? item.stack['sass'] : item.stack['fallback'] %}
+  {% else %}
+    {% set stack = item.stack|replace({'/\\/' : ""})  %}
+  {% endif %}
   {% set font_family = 'font-family: ' ~ stack ~ ';' %}
 
   <div class="gesso-storybook-font">
@@ -9,6 +13,9 @@
     </h3>
 
     {% for key, weight in gesso.typography['font-weight'] %}
+      {% if weight is iterable %}
+        {% set weight = weight['fallback'] is empty ? weight['sass'] : weight['fallback'] %}
+      {% endif %}
       {% set font_weight = 'font-weight: ' ~ weight ~ ';' %}
 
       {% set preview_style = 'font-style: normal;' ~ font_weight ~ font_family %}
@@ -25,7 +32,7 @@
             {{ weight }}
           </div>
           <div class="gesso-storybook-font__style">
-            <span class="pattern-lab-font__label">Style:</span>
+            <span class="gesso-storybook-font__label">Style:</span>
             {{ stack }}
           </div>
         </div>

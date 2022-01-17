@@ -1,0 +1,23 @@
+{% set classes = [
+  'usa-header',
+  is_extended ? 'usa-header--extended' : 'usa-header--basic',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% if is_demo and not header_content %}
+  {% set header_content %}
+    {% include "@uswds/navbar/navbar.twig" %}
+    {% include "@uswds/nav/nav.twig" with {
+      is_extended: is_extended
+    }%}
+  {% endset %}
+{% endif %}
+
+<div class="usa-overlay"></div>
+<header {{ add_attributes({ 'class': classes }) }} role="banner">
+  {% if not is_extended %}<div class="usa-nav-container">{% endif %}
+  {% block content %}
+    {{ header_content }}
+  {% endblock %}
+  {% if not is_extended %}</div>{% endif %}
+</header>

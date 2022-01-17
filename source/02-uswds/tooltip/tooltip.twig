@@ -1,0 +1,21 @@
+{% set classes = [
+  'usa-tooltip',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<{{ element ?: 'span' }} {{ add_attributes({ 'class': classes }) }} title="{{ tooltip_text }}"{% if tooltip_position %} data-position="{{ tooltip_position }}"{% endif %}{% if element == 'a' and url %} href="{{ url }}"{% endif %}>{{ text }}</{{ element ?: 'span' }}>
+
+{% if is_demo %}
+  <div class="u-spaced-5-above">
+    <span class="usa-tooltip" title="Tooltip" data-position="top">Show on Top</span>
+  </div>
+  <div class="u-spaced-5-above">
+    <span class="usa-tooltip" title="Tooltip" data-position="right">Show on Right</span>
+  </div>
+  <div class="u-spaced-5-above">
+    <span class="usa-tooltip" title="Tooltip" data-position="bottom">Show on Bottom</span>
+  </div>
+  <div class="u-spaced-5-above">
+    <span class="usa-tooltip" title="Tooltip" data-position="left">Show on Left</span>
+  </div>
+{% endif %}

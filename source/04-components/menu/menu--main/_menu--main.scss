@@ -1,0 +1,10 @@
+// Component: Main Menu
+
+.c-menu--main {
+  @extend .usa-accordion;
+  @extend .usa-nav__primary;
+
+  .c-menu__item {
+    @extend .usa-nav__primary-item;
+  }
+}

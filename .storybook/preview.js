@@ -35,6 +35,7 @@ export const parameters = {
       order: [
         'Global',
         ['Color Palette', '*'],
+        'USWDS',
         'Layouts',
         'Components',
         'Templates',
