@@ -2,7 +2,6 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './text-styles.twig';
 import data from '../../00-config/config.design-tokens.yml';
-// import './text-styles.scss';
 
 const settings = {
   title: 'Global/Text Styles',

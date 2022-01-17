@@ -7,18 +7,12 @@ global:
     dist/js/uswds.es6.js: {}
 
 back_to_top:
-  # css:
-  #   theme:
-  #     dist/css/back-to-top.css: {}
   js:
     dist/js/back-to-top.es6.js: {}
 
 dropbutton:
   js:
     dist/js/dropbutton.es6.js: {}
-  # css:
-  #   component:
-  #     dist/css/dropbutton.css: {}
   dependencies:
     - core/jquery
     - core/drupal

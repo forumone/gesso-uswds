@@ -2,8 +2,6 @@
 
 @import 'packages/required';
 @import 'packages/usa-button';
-// @use '../functions/' as *;
-// @use './focus' as *;
 
 $button-border-width: 0 !default;
 $button-border-radius: radius($theme-button-border-radius) !default;

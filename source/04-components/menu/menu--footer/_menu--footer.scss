@@ -1,7 +1,5 @@
 // Component: Footer Menu
 
-// @use '00-config' as *;
-
 .c-menu--footer {
   @include grid-row;
   @include grid-gap;
