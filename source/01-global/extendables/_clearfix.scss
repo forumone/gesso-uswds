@@ -1,7 +1,7 @@
 // Extendable: Clearfix
 // Included from global/helpers/_clearfix.scss.
 
-@use '00-config' as *;
+// @use '00-config' as *;
 
 %clearfix {
   @include clearfix();

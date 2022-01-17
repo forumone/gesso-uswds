@@ -1,42 +1,45 @@
 // Component: Form Item
 
-@use '00-config' as *;
+@use 'sass:math';
+// @use '00-config' as *;
+
+$form-background-color: gesso-color(form, background) !default;
+$form-background-color-focus: gesso-color(form, background-active) !default;
+$form-border-color: gesso-color(form, border) !default;
+$form-border-color-focus: gesso-color(form, border-dark) !default;
+$form-box-shadow-focus: gesso-box-shadow(2) !default;
+$form-disabled-opacity: 0.35 !default;
+$form-text-size: gesso-base-font-size() !default;
 
 .c-form-item {
-  margin-bottom: gesso-spacing(3);
+  margin: 0 0 rem(gesso-spacing(3));
+}
 
-  &.is-full-width {
-    > .c-form-item__label,
-    > .c-form-item__description,
-    > .c-form-item__color,
-    > .c-form-item__date,
-    > .c-form-item__email,
-    > .c-form-item__month,
-    > .c-form-item__number,
-    > .c-form-item__password,
-    > .c-form-item__range,
-    > .c-form-item__search,
-    > .c-form-item__select,
-    > .c-form-item__tel,
-    > .c-form-item__text,
-    > .c-form-item__textarea,
-    > .c-form-item__time,
-    > .c-form-item__url,
-    > .c-form-item__week {
-      max-width: 100%;
-    }
+%disabled-form-styles {
+  .is-disabled > & {
+    opacity: $form-disabled-opacity;
   }
 }
 
 .c-form-item__label {
-  @extend .usa-label;
-  margin-top: 0;
+  @extend %disabled-form-styles;
+  display: block;
+  font-weight: gesso-font-weight(bold);
+}
 
-  .is-disabled > & {
-    color: color('disabled');
+.c-form-item__element {
+  align-items: center;
+  display: flex;
+  gap: 0.25em;
 
-    .usa-hint {
-      color: color('disabled');
+  > input {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .is-full-width > & {
+    > input {
+      flex-grow: 1;
     }
   }
 }
@@ -47,16 +50,31 @@
   padding: 0;
 }
 
+// .c-form-item__legend {}
+
 .c-form-item__description {
+  @extend %disabled-form-styles;
   color: gesso-color(text, secondary);
-  font-size: font-size(body, sm);
-  margin-top: gesso-spacing('05');
-  max-width: units($theme-input-max-width);
+  font-size: font-size(body, 3xs);
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
+.c-form-item__errors {
+  @extend %disabled-form-styles;
+}
+
+.c-form-item__required-marker::before {
+  content: '*';
+}
+
+%c-form-item__box,
 .c-form-item__color,
 .c-form-item__date,
 .c-form-item__email,
+.c-form-item__file,
 .c-form-item__month,
 .c-form-item__number,
 .c-form-item__password,
@@ -64,65 +82,51 @@
 .c-form-item__select,
 .c-form-item__tel,
 .c-form-item__text,
+.c-form-item__textarea,
 .c-form-item__time,
 .c-form-item__url,
 .c-form-item__week {
-  @extend .usa-input;
+  appearance: none;
+  background-color: $form-background-color;
+  border: 1px solid $form-border-color;
+  border-radius: 0;
+  display: inline-block;
+  font-size: rem($form-text-size);
+  height: rem(44px);
+  line-height: math.div(22px, $form-text-size);
+  margin: rem(gesso-spacing('05')) 0;
+  max-width: 100%;
+  padding: em(10px, $form-text-size) em(7px, $form-text-size);
+  transition-duration: gesso-duration(short);
+  transition-property: background-color, border;
+  transition-timing-function: gesso-easing(ease-in-out);
+
+  &:hover,
+  &:focus {
+    background-color: $form-background-color-focus;
+    border: 1px solid $form-border-color-focus;
+  }
+
+  &:focus {
+    @include focus();
+  }
 
   &:disabled {
-    background-color: color($theme-color-disabled-light);
-    background-image: none;
-    border-color: color($theme-color-disabled);
-    color: color($theme-color-disabled-dark);
+    cursor: default;
+    opacity: $form-disabled-opacity;
+
+    &:hover,
+    &:focus {
+      background-color: $form-background-color;
+      border: 1px solid $form-border-color;
+    }
   }
 
   .is-full-width > & {
-    max-width: 100%;
-  }
-}
-
-.c-form-item__select {
-  &[multiple] {
-    background-image: none;
+    width: 100%;
   }
 }
 
 .c-form-item__textarea {
-  @extend .usa-textarea;
-
-  &:disabled {
-    background-color: color($theme-color-disabled-light);
-    border-color: color($theme-color-disabled);
-    color: color($theme-color-disabled-dark);
-  }
-}
-
-.c-form-item__checkbox {
-  @extend .usa-checkbox__input;
-}
-
-.c-form-item__radio {
-  @extend .usa-radio__input;
-
-  &:disabled + .form-item__label {
-    color: color('disabled');
-  }
-}
-
-.c-form-item__range {
-  @extend .usa-range;
-  padding: 0;
-
-  &:disabled {
-    background: transparent;
-    opacity: 0.5;
-  }
-}
-
-.c-form-item__select {
-  @extend .usa-select;
-
-  &[multiple] {
-    height: auto;
-  }
+  height: auto;
 }

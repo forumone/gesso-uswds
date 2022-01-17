@@ -1,9 +1,9 @@
 {% set classes = [
   'usa-hero',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<section class="{{ classes }}"{% if background_image %} style="background-image:url({{ background_image }});"{% endif %}>
+<section {{ add_attributes({ 'class': classes }) }}{% if background_image %} style="background-image:url({{ background_image }});"{% endif %}>
   <div class="grid-container">
     <div class="usa-hero__callout">
       <h1 class="usa-hero__heading">

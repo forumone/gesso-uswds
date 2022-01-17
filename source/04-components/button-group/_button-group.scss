@@ -1,6 +1,6 @@
 // Component: Button Group
 
-@use '00-config' as *;
+// @use '00-config' as *;
 
 .c-button-group {
   display: flex;
@@ -71,4 +71,42 @@
 .c-button-group__link {
   margin: 0 !important;
   width: 100%;
+}
+
+.c-button-group--separated {
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    .c-button-group__item {
+      margin: rem(gesso-spacing('05'));
+
+      .c-button-group__link {
+        border-radius: $button-border-radius;
+        border-width: $button-border-width;
+      }
+    }
+  }
+}
+
+.c-button-group--segmented {
+  .c-button-group__item {
+    margin-bottom: -1px !important;
+    margin-top: -1px !important;
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+    @include breakpoint(gesso-breakpoint(tablet)) {
+      margin-bottom: 0 !important;
+      margin-left: -1px !important;
+      margin-right: -1px !important;
+      margin-top: 0 !important;
+      &:first-child {
+        margin-left: 0 !important;
+      }
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
 }

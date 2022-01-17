@@ -1,0 +1,8 @@
+---
+input_label: 'Text input label'
+input_id: 'input-type-text'
+group_modifier_classes: "usa-form-group--error"
+label_modifier_classes: "usa-label--error"
+error_message: "Helpful error message"
+modifier_classes: "usa-input--error"
+

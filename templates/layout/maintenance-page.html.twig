@@ -30,26 +30,25 @@
   {% endembed %}
 
   {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region--breadcrumb.html.twig' with {
+  {% include '@guswds/layout/region--breadcrumb.html.twig' with {
     'content': page.breadcrumb,
   } %}
 
   {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region.html.twig' with {
+  {% include '@guswds/layout/region.html.twig' with {
     'region': 'highlighted',
     'content': page.highlighted,
   } %}
 
   {# We have to manually wrap region content. #}
-  {% include '@gesso/layout/region.html.twig' with {
+  {% include '@guswds/layout/region.html.twig' with {
     'region': 'help',
     'content': page.help,
   } %}
-  {{ page.breadcrumb }}
 
   <main id="main" class="main" role="main" tabindex="-1">
     {# We have to manually wrap region content. #}
-    {% include '@gesso/layout/region.html.twig' with {
+    {% include '@guswds/layout/region.html.twig' with {
       'region': 'preface',
       'content': page.preface,
     } %}
@@ -62,12 +61,12 @@
     {% endset %}
 
     {# We have to manually wrap region content. #}
-    {% include '@gesso/layout/region--content.html.twig' with {
+    {% include '@guswds/layout/region--content.html.twig' with {
       'content': content,
     } %}
 
     {# We have to manually wrap region content. #}
-    {% include '@gesso/layout/region.html.twig' with {
+    {% include '@guswds/layout/region.html.twig' with {
       'region': 'postscript',
       'content': page.postscript,
     } %}

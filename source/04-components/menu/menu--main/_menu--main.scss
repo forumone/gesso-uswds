@@ -1,0 +1,12 @@
+// Component: Main Menu
+
+// @use '00-config' as *;
+
+.c-menu--main {
+  @extend .usa-accordion;
+  @extend .usa-nav__primary;
+
+  .c-menu__item {
+    @extend .usa-nav__primary-item;
+  }
+}

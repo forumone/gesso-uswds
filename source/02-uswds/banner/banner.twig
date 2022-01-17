@@ -1,6 +1,6 @@
 {% set classes = [
   'usa-banner',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% if language == 'es' %}
@@ -39,7 +39,7 @@
   %}
 {% endif %}
 
-<section class="{{ classes }}" aria-label="{{ 'Official government website'|t }}">
+<section {{ add_attributes({ 'class': classes }) }} aria-label="{{ 'Official government website'|t }}">
   {% if has_expanded %}<div class="usa-accordion">{% endif %}
   <header class="usa-banner__header">
     <div class="usa-banner__inner">

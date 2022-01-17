@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 
 import './dropbutton.es6';
-import './dropbutton.scss';
+// import './dropbutton.scss';
 import data from './dropbutton.yml';
 import twigTemplate from './dropbutton.twig';
 

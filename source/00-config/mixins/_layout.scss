@@ -1,7 +1,7 @@
 // Mixins: Layout
 
-@use '../functions' as *;
-@use 'breakpoint' as *;
+// @use '../functions' as *;
+// @use 'breakpoint' as *;
 
 @mixin layout-align-left($margin) {
   float: left;

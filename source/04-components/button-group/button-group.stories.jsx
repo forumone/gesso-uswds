@@ -4,55 +4,31 @@ import twigTemplate from './button-group.twig';
 import data from './button-group.yml';
 
 const settings = {
-  title: 'Components/ButtonGroup',
+  title: 'Components/Button Group',
 };
 
-const Primary = args => (
+const Default = args => (
   parse(twigTemplate({
     ...args,
   }))
 );
-Primary.args = { ...data };
+Default.args = { ...data };
 
-const Secondary = args => (
+const Separated = args => (
   parse(twigTemplate({
     ...args,
-    button_modifier_classes: 'c-button--secondary',
+    is_separated: true,
   }))
 );
-Secondary.args = { ...data };
+Separated.args = { ...data };
 
-const Base = args => (
+const Segmented = args => (
   parse(twigTemplate({
     ...args,
-    button_modifier_classes: 'c-button--base',
+    is_segmented: true,
   }))
 );
-Base.args = { ...data };
-
-const Danger = args => (
-  parse(twigTemplate({
-    ...args,
-    button_modifier_classes: 'c-button--danger',
-  }))
-);
-Danger.args = { ...data };
-
-const Small = args => (
-  parse(twigTemplate({
-    ...args,
-    button_modifier_classes: 'c-button--small',
-  }))
-);
-Small.args = { ...data };
-
-const Large = args => (
-  parse(twigTemplate({
-    ...args,
-    button_modifier_classes: 'c-button--large',
-  }))
-);
-Large.args = { ...data };
+Segmented.args = { ...data };
 
 export default settings;
-export { Primary, Secondary, Base, Danger, Large, Small };
+export { Default, Separated, Segmented };

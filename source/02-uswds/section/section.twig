@@ -1,8 +1,8 @@
 {% set classes = [
   'usa-section',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<section class="{{ classes }}">
+<section {{ add_attributes({ 'class': classes }) }}>
   {{ content }}
 </section>

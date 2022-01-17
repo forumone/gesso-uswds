@@ -2,18 +2,21 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
+import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../05-templates/homepage/homepage.twig';
-import { Default as HeroBgImage } from '../04-components/hero-bg-image/hero-bg-image.stories.jsx';
+import { Hero } from '../02-uswds/hero/hero.stories.jsx';
 import { Default as Card } from '../04-components/card/card.stories.jsx';
 
 export default {
   title: 'Pages/Homepage',
   parameters: {
     controls: {
-      hideNoControlsWarning: true,
-    },
-  },
+      include: [
+        'show_admin_info',
+      ]
+    }
+  }
 };
 
 // You can override the default arguments, as done here, to demo different
@@ -30,8 +33,8 @@ const homepageGridContent = [
     title: 'Let Us Ride to Camelot',
     media: '<img src="https://picsum.photos/800/600?image=1025" alt="">',
     card_content:
-      '<p>Well, we did do the nose. I don’t want to talk to you no more, you\n' +
-      '      empty-headed animal food trough water!</p>',
+      '<p>Well, we did do the nose. I don’t want to talk to you no more, you ' +
+      'empty-headed animal food trough water!</p>',
   }),
   Card({
     ...Card.args,
@@ -45,9 +48,19 @@ const homepageGridContent = [
   }),
 ];
 
-const homepageContent = twigTemplate({
+const homepageContent = args => twigTemplate({
+  ...args,
   homepage_hero: ReactDOMServer.renderToStaticMarkup(
-    <>{HeroBgImage(HeroBgImage.args)}</>
+    <>{Hero({
+      ...Hero.args,
+      background_image: 'https://picsum.photos/1600/800/?image=96&gravity=north',
+      title: "Where’d You Get The Coconuts?",
+      paragraph: "<p>The swallow may fly south with the sun, and the house martin or " +
+        "the plover may seek warmer climes in winter, yet these are not strangers to our land. " +
+        "Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A " +
+        "swallow carrying a coconut? It could grip it by the husk!</p>",
+      button_text: 'Ni! Ni! Ni! Ni!',
+    })}</>
   ),
   homepage_grid_content: ReactDOMServer.renderToStaticMarkup(
     <>{homepageGridContent.map(card => card)}</>
@@ -55,7 +68,9 @@ const homepageContent = twigTemplate({
   homepage_grid_title: 'You Don’t Vote For Kings',
 });
 
-const Homepage = () => <PageWrapper>{parse(homepageContent)}</PageWrapper>;
-Homepage.args = {};
+const Homepage = args => <PageWrapper>{parse(homepageContent(args))}</PageWrapper>;
+Homepage.args = {
+  ...globalData,
+};
 
 export { Homepage };

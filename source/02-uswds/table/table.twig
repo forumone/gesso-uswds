@@ -1,12 +1,12 @@
 {% set classes = [
   'usa-table',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% if scrollable %}
   <div class="usa-table-container--scrollable">
 {% endif %}
-<table class="{{ classes }}">
+<table {{ add_attributes({ 'class': classes }) }}>
   {% if caption %}
     <caption>{{ caption }}</caption>
   {% endif %}

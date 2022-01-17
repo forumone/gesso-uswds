@@ -1,6 +1,6 @@
 // Mixins: Display Text Style
 
-@use '../functions' as *;
+// @use '../functions' as *;
 
 @mixin display-text-style($keys...) {
   $display: gesso-get-map(typography, display, $keys...);

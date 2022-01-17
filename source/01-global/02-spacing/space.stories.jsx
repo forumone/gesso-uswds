@@ -2,7 +2,7 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './space.twig';
 import data from '../../00-config/config.design-tokens.yml';
-import './space.scss';
+// import './space.scss';
 
 const settings = {
   title: 'Global/Spacing',

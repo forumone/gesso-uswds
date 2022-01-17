@@ -1,9 +1,9 @@
 {% set classes = [
   'usa-summary-box',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<div class="{{ classes }}" role="complementary">
+<div {{ add_attributes({ 'class': classes }) }} role="complementary">
   <div class="usa-summary-box__body">
     {% if heading %}
       <h3 class="usa-summary-box__heading">{{ heading }}</h3>

@@ -1,5 +1,7 @@
 {% set classes = [
   'c-button-group',
+  is_separated ? 'c-button-group--separated' : '',
+  is_segmented ? 'c-button-group--segmented' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
@@ -15,7 +17,8 @@
           'c-button-group__link',
           'c-button',
           button_modifier_classes ? button_modifier_classes : '',
-          button.active ? 'is-active' : '',
+          not is_segmented and button.active ? 'is-active' : '',
+          is_segmented and not button.active ? 'c-button--outline' : '',
         ]|join(' ')|trim %}
 
         <li class="c-button-group__item{% if button.active %} is-active{% endif %}">

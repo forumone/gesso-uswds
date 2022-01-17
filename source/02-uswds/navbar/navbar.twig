@@ -1,9 +1,9 @@
 {% set classes = [
   'usa-navbar',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<div class="{{ classes }}">
+<div {{ add_attributes({ 'class': classes }) }}>
   {% block content %}
     {% include "@uswds/logo/logo.twig" with {
       'site_name': 'Project Title'|t,

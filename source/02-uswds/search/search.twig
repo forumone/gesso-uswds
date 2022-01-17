@@ -1,9 +1,9 @@
 {% set classes = [
   'usa-search',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<form class="{{ classes }}">
+<form {{ add_attributes({ 'class': classes }) }}>
   <div role="search">
     <label class="usa-sr-only" for="{{ id }}">{{ label }}</label>
     <input class="usa-input" id="{{ id }}" type="search" name="search">

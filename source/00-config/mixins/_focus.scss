@@ -1,6 +1,6 @@
 // Mixins: Focus
 
- @use '00-config/functions/gesso' as *;
+// @use '00-config/functions/gesso' as *;
 
 @mixin focus(
   $color: gesso-color(ui, generic, focus),
@@ -11,7 +11,7 @@
   outline-offset: $offset;
 
   &:focus {
-    outline-color: color($color);
+    outline-color: $color;
   }
 
   &:focus:not(:focus-visible) {

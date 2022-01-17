@@ -1,6 +1,6 @@
 {% set classes = [
     'usa-sidenav',
-    modifier_classes ? modifier_classes,
+    modifier_classes ? modifier_classes : '',
   ]|join(' ')|trim %}
 
 <nav aria-label="{{ label }}">

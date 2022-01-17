@@ -1,16 +1,16 @@
 {% set classes = [
   'usa-textarea',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% set group_classes = [
   'usa-form-group',
-  group_modifier_classes ? group_modifier_classes,
+  group_modifier_classes ? group_modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% set label_classes = [
   'usa-label',
-  label_modifier_classes ? label_modifier_classes,
+  label_modifier_classes ? label_modifier_classes : '',
 ]|join(' ')|trim %}
 
 <div class="{{ group_classes }}">

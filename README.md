@@ -158,7 +158,7 @@ appropriate aggregate file (i.e. `_components.scss`).
 
 DO NOT prefix the name of your Sass file with `_`, e.g. `menu.scss`. Import the
 config and global aggregate files. Import your SCSS file at the top of your
-Storybook file. See `dropdown-menu.stories.jsx` for an example. Don’t forget to
+Storybook file. See `back-to-top.stories.jsx` for an example. Don’t forget to
 add it to the `gesso.libraries.yml` file as well.
 
 ### Sass Linting
@@ -464,9 +464,9 @@ and button style on each line, with classes separated with ` .`, similar to how
 you would add custom classes to the WYSIWYG editor.
 
 ```text
-button|Primary
-button.button--secondary|Secondary
-button.button--tertiary|Tertiary
+c-button|Primary
+c-button.c-button--secondary|Secondary
+c-button.c-button--tertiary|Tertiary
 ```
 
 To use these classes, select **Gesso Button** as the formatter for a link field

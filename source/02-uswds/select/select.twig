@@ -1,6 +1,6 @@
 {% set classes = [
   'usa-select',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 <label class="usa-label" for="{{ dropdown_id }}">{{ dropdown_label }}</label>

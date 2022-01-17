@@ -7,12 +7,12 @@ const settings = {
   title: 'Components/Button',
 };
 
-const Primary = args => (
+const Default = args => (
   parse(twigTemplate({
     ...args,
   }))
 );
-Primary.args = { ...data };
+Default.args = { ...data };
 
 const Secondary = args => (
   parse(twigTemplate({
@@ -22,13 +22,13 @@ const Secondary = args => (
 );
 Secondary.args = { ...data };
 
-const Base = args => (
+const Outline = args => (
   parse(twigTemplate({
     ...args,
-    modifier_classes: 'c-button--base',
+    modifier_classes: 'c-button--outline',
   }))
 );
-Base.args = { ...data };
+Outline.args = { ...data };
 
 const Danger = args => (
   parse(twigTemplate({
@@ -55,4 +55,4 @@ const Large = args => (
 Large.args = { ...data };
 
 export default settings;
-export { Primary, Secondary, Base, Danger, Large, Small };
+export { Default, Secondary, Outline, Danger, Small, Large };

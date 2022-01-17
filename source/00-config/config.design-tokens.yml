@@ -2,11 +2,11 @@
 # Define basic design variables here.
 uswds:
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-general.scss
-  image-path: 'images'
+  image-path: '../dist/images'
   show-compile-warnings: false
   show-notifications: false
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-typography.scss
-  font-path: '../fonts'
+  font-path: 'fonts'
   type-scale-md: 7
   # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
   column-gap-desktop: 5
@@ -447,6 +447,16 @@ gesso:
         background-hover: grayscale.gray-5
         color: grayscale.white
         color-hover: grayscale.white
+    form:
+      background: grayscale.gray-1
+      background-active: grayscale.white
+      background-checked: brand.blue.base
+      background-unchecked: grayscale.white
+      border: grayscale.gray-2
+      border-dark: grayscale.gray-5
+      border-light: grayscale.gray-1
+      thumb: grayscale.gray-5
+      track: grayscale.gray-3
     selection:
       background: uswds.primary.base
       text: grayscale.white
@@ -467,6 +477,7 @@ gesso:
         accent: uswds.accent-cool.base
         accent-dark: uswds.accent-cool.dark
         accent-light: uswds.accent-cool.light
+        focus: brand.blue.light
       error:
         background: uswds.error.lighter
         border: uswds.error.light
@@ -655,14 +666,14 @@ gesso:
     1: !sass
       sass: 'units(1)'
       fallback: '8px'
-    '105': !sass
-      sass: "units('105')"
+    1.5: !sass
+      sass: "units(1.5)"
       fallback: '12px'
     2: !sass
       sass: 'units(2)'
       fallback: '16px'
-    '205': !sass
-      sass: "units('205')"
+    2.5: !sass
+      sass: "units(2.5)"
       fallback: '20px'
     3: !sass
       sass: 'units(3)'
