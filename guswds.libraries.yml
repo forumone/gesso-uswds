@@ -5,6 +5,8 @@ global:
   js:
     dist/js/uswds-init.es6.js: {}
     dist/js/uswds.es6.js: {}
+  dependencies:
+    - core/drupal
 
 back_to_top:
   js:
