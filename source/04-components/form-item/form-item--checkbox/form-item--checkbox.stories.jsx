@@ -19,7 +19,10 @@ const settings = {
   },
 };
 
-const label = args => labelTemplate(args);
+const label = args => labelTemplate({
+  ...args,
+  hide_optional_hint: true
+});
 const children = args =>
   inputTemplate({
     ...args,

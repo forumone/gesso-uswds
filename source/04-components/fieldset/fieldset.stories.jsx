@@ -12,6 +12,7 @@ const Default = args => (
   parse(twigTemplate({
     ...args,
     modifier_classes: 'c-fieldset--default',
+    hide_optional_hint: true
   }))
 );
 Default.args = { ...data };

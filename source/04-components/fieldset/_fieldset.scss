@@ -41,7 +41,6 @@ $fieldset-disabled-opacity: 0.35 !default;
 // .c-fieldset__content {}
 
 .c-fieldset__description {
-  color: gesso-color(text, secondary);
   font-size: font-size(body, 3xs);
 
   > :last-child {
