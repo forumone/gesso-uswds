@@ -13,3 +13,4 @@ description:
 size: 12
 errors: ''
 type: 'week'
+hide_optional_hint: true

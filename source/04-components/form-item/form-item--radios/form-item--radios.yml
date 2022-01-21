@@ -6,3 +6,4 @@ is_required: false
 description:
   content: 'The description for this fieldset.'
 id: 'radios'
+hide_optional_hint: true

@@ -12,3 +12,4 @@ is_required: false
 prefix: ''
 suffix: ''
 errors: ''
+hide_optional_hint: true

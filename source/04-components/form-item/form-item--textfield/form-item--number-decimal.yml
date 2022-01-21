@@ -13,3 +13,4 @@ description:
 step: 0.01
 errors: ''
 type: 'number'
+hide_optional_hint: true

@@ -13,3 +13,4 @@ description:
 size: 15
 errors: ''
 type: 'tel'
+hide_optional_hint: true

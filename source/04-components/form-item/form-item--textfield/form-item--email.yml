@@ -14,3 +14,4 @@ size: 60
 max_length: 255
 errors: ''
 type: 'email'
+hide_optional_hint: true

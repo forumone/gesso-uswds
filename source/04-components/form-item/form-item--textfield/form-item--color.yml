@@ -12,3 +12,4 @@ description:
   content: 'The description for this form field.'
 errors: ''
 type: 'color'
+hide_optional_hint: true
