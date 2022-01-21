@@ -12,3 +12,4 @@ name: 'name'
 prefix: ''
 suffix: ''
 errors: ''
+hide_optional_hint: true

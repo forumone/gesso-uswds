@@ -19,7 +19,9 @@ const settings = {
   },
 };
 
-const label = args => labelTemplate(args);
+const label = args => labelTemplate({
+  ...args,
+});
 const children = args =>
   inputTemplate({
     ...args,

@@ -37,4 +37,5 @@
 
 {% include '@components/fieldset/fieldset.twig' with {
   modifier_classes: attributes.addClass(classes).removeClass(remove_classes).class|join(' ')|trim,
+  hide_optional_hint: type == 'fieldset'
 } %}

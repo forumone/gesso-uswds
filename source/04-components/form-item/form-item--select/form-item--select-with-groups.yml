@@ -32,3 +32,4 @@ options:
         disabled: true
 errors: ''
 type: 'select'
+hide_optional_hint: true

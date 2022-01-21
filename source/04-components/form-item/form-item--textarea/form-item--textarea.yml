@@ -14,3 +14,4 @@ rows: 5
 errors: ''
 value: ''
 type: 'textarea'
+hide_optional_hint: true

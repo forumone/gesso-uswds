@@ -14,3 +14,4 @@ size: 60
 max_length: 128
 errors: ''
 type: 'text'
+hide_optional_hint: true

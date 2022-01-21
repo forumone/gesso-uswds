@@ -14,3 +14,4 @@ size: 12
 step: 1
 errors: ''
 type: 'time'
+hide_optional_hint: true

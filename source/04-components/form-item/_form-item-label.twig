@@ -19,12 +19,10 @@
 <label {{ add_attributes(attributes_to_add) }}>
   {{- title }}
 
-  {% if is_required %}
+  {% if not is_required and not hide_optional_hint %}
     {%- spaceless %}
-      <span class="c-form-item__required-marker">
-        <span class="u-visually-hidden">
-          {{ 'This field is required.'|t }}
-        </span>
+      <span class="usa-hint">
+        {{ '(optional)'|t }}
       </span>
     {% endspaceless -%}
   {% endif -%}

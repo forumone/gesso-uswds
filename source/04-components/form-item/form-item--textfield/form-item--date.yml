@@ -15,3 +15,4 @@ min: '1900-01-01'
 max: '2050-12-31'
 errors: ''
 type: 'date'
+hide_optional_hint: true
