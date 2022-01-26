@@ -88,9 +88,11 @@
   .c-button-group__item {
     margin-bottom: -1px !important;
     margin-top: -1px !important;
+
     &:first-child {
       margin-top: 0 !important;
     }
+
     &:last-child {
       margin-bottom: 0 !important;
     }
@@ -99,9 +101,11 @@
       margin-left: -1px !important;
       margin-right: -1px !important;
       margin-top: 0 !important;
+
       &:first-child {
         margin-left: 0 !important;
       }
+
       &:last-child {
         margin-right: 0 !important;
       }
