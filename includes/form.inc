@@ -17,6 +17,7 @@ function guswds_preprocess_input(array &$variables) {
   if (isset($variables['attributes']['class'])) {
     $variables['attributes']['class'] = preg_replace('/^button/', 'c-button', $variables['attributes']['class']);
   }
+
   if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {
     $description_id = $variables['element']['#id'] . '-description';
     $variables['described_by'] = $description_id;
