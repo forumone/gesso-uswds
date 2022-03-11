@@ -3,7 +3,7 @@
 %hN {
   @extend %usa-heading;
   hyphens: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 
   @media print {
     orphans: 3;
