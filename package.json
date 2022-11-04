@@ -45,9 +45,9 @@
     "babel-loader": "^8.2.2",
     "concurrently": "^7.1.0",
     "css-loader": "^6.5.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.24.2",
@@ -98,7 +98,7 @@
     "svgo-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.2.4",
     "twig": "^1.15.4",
-    "uswds": "2.12.2",
+    "uswds": "2.13.3",
     "webpack-merge": "^5.7.3",
     "yaml": "^1.10.2"
   }
