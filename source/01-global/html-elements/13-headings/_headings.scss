@@ -1,7 +1,9 @@
 // HTML Element: Headings
 
+@use '00-config' as *;
+
 %hN {
-  @extend %usa-heading;
+  @include typeset-heading();
   hyphens: none;
   text-rendering: optimizelegibility;
 

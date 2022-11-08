@@ -1,5 +1,10 @@
 // Mixins: List
 
+@use '../config.settings' as *;
+@use '../functions' as *;
+@use '../uswds-theme-settings.artifact' as *;
+@use 'breakpoint' as *;
+
 @mixin list-clean {
   list-style-type: none;
   margin: 0;

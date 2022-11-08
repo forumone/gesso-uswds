@@ -1,5 +1,7 @@
 // HTML Element: Inline Elements
 
+@use '00-config' as *;
+
 a {
   background-color: transparent;
   color: gesso-color(text, link);

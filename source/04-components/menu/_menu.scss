@@ -1,5 +1,8 @@
 // Component: Menu
 
+@use '00-config' as *;
+@use 'usa-nav' as *;
+
 // .c-menu {}
 
 .c-menu__item {

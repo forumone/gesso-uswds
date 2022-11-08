@@ -1,30 +1,40 @@
 // Main styles
 
 // Custom Gesso USWDS settings.
-@import '00-config/uswds-theme-settings.artifact';
+//@import '00-config/uswds-theme-settings.artifact';
 
 // Required USWDS styles.
-@import 'packages/required';
+//@import 'packages/required';
 
 // Gesso config.
-@import '00-config';
+//@import '00-config';
+@use '00-config' as *;
 
 // Global USWDS styles.
 // 'global/typography' is omitted in favor of Gesso’s base HTML styles.
-@import 'lib/normalize';
-@import 'global/font-face';
-@import 'global/focus';
-@import 'global/sizing';
-@import 'elements/typography/content';
+// @import 'lib/normalize';
+// @import 'global/font-face';
+// @import 'global/focus';
+// @import 'global/sizing';
+// @import 'elements/typography/content';
 
-@import '01-global';
+//@import '01-global';
+@use '01-global' as *;
+@forward 'uswds-global';
 
 // USWDS components.
-@import 'packages/form-controls';
-@import 'packages/layout-grid';
+//@import 'packages/form-controls';
+@forward 'uswds-form-controls';
+//@import 'packages/layout-grid';
+@forward 'usa-layout-grid';
 
-@import '02-uswds';
-@import '03-layouts';
-@import '04-components';
-@import '07-utility';
-@import 'shame';
+//@import '02-uswds';
+@use '02-uswds' as *;
+//@import '03-layouts';
+@use '03-layouts' as *;
+//@import '04-components';
+@use '04-components' as *;
+//@import '07-utility';
+@use '07-utility' as *;
+//@import 'shame';
+@use 'shame';

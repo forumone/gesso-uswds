@@ -1,5 +1,7 @@
 // Component: Breadcrumb
 
+@use '00-config' as *;
+
 $breadcrumb-background-color: gesso-color(ui, generic, accent-dark) !default;
 $breadcrumb-divider-color: gesso-color(ui, generic, border-light) !default;
 $breadcrumb-link-color: gesso-color(ui, generic, text-light) !default;

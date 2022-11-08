@@ -1,19 +1,19 @@
 # Design Tokens
 # Define basic design variables here.
 uswds:
-  # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-general.scss
+  # https://github.com/uswds/uswds/blob/develop/packages/uswds-core/src/styles/settings/_settings-general.scss
   image-path: '../dist/images'
   show-compile-warnings: false
   show-notifications: false
-  # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-typography.scss
+  # https://github.com/uswds/uswds/blob/develop/packages/uswds-core/src/styles/settings/_settings-typography.scss
   font-path: 'fonts'
   type-scale-md: 7
-  # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-spacing.scss
+  # https://github.com/uswds/uswds/blob/develop/packages/uswds-core/src/styles/settings/_settings-spacing.scss
   column-gap-desktop: 5
   grid-container-max-width: 'desktop'
   site-margins-width: 4
   site-margins-mobile-width: 2
-  # https://github.com/uswds/uswds/blob/develop/src/stylesheets/theme/_uswds-theme-color.scss
+  # https://github.com/uswds/uswds/blob/develop/packages/uswds-core/src/styles/settings/_settings-color.scss
   color-base-family: 'gray-cool'
   color-base-lightest: 'gray-5'
   color-base-lighter: 'gray-cool-10'

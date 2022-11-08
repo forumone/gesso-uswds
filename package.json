@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "@drupal/once": "^1.0.1",
+    "@uswds/uswds": "3.2.0",
     "add-attributes-twig-extension": "^0.1.0",
     "domready": "^1.0.8",
     "eslint-webpack-plugin": "^3.1.0",
@@ -98,7 +99,6 @@
     "svgo-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.2.4",
     "twig": "^1.15.4",
-    "uswds": "2.13.3",
     "webpack-merge": "^5.7.3",
     "yaml": "^1.10.2"
   }

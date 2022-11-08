@@ -1,5 +1,7 @@
 // Component: Tag List
 
+@use '00-config' as *;
+
 .c-tag-list {
   @include list-clean();
 }
