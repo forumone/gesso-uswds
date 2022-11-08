@@ -61,7 +61,7 @@ module.exports = {
           options: {
             implementation: require('sass'),
             sassOptions: {
-              includePaths: [path.resolve(__dirname, '../source')],
+              includePaths: [path.resolve(__dirname, '../source'), '../node_modules/@uswds', '../node_modules/@uswds/uswds/packages'],
             },
           },
         },
@@ -74,7 +74,7 @@ module.exports = {
       once: 'once',
     };
 
-    config.resolve.modules.push(path.resolve(__dirname, '../source'));
+    config.resolve.modules.push(path.resolve(__dirname, '../source'), '../node_modules/@uswds', '../node_modules/@uswds/uswds/packages');
 
     return config;
   },
