@@ -3,7 +3,7 @@
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<div {{ add_attributes({ 'class': classes }) }}{% if is_multi_selectable %} aria-multiselectable="true"{% endif %}>
+<div {{ add_attributes({ 'class': classes }) }}{% if is_multi_selectable %} data-allow-multiple{% endif %}>
   {% for item in accordion %}
     <h2 class="usa-accordion__heading">
       <button class="usa-accordion__button" aria-expanded="false" aria-controls="{{ accordion_id }}-a{{ loop.index }}">
