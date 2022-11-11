@@ -1,5 +1,8 @@
 // Component: Fieldset
 
+@use '00-config' as *;
+@use '../form-item/form-item' as *;
+
 $fieldset-legend-offset: rem(
   gesso-line-height(4) * gesso-base-font-size()
 ) !default;
@@ -99,7 +102,7 @@ $fieldset-disabled-opacity: 0.35 !default;
   margin-bottom: rem(gesso-spacing(3)) + $fieldset-legend-offset;
 
   .c-fieldset__content {
-    margin-top: rem(gesso-spacing(0.5));
+    margin-top: rem(gesso-spacing('05'));
   }
 
   &.is-disabled {

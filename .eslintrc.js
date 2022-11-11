@@ -19,6 +19,10 @@ module.exports = {
     'import/core-modules': ['drupal', 'drupalSettings', 'jquery', 'once'],
   },
   rules: {
+    'import/no-unresolved': [
+      2,
+      { ignore: ['@uswds'] }
+    ],
     'arrow-body-style': 'off',
     'class-methods-use-this': 'off', // Too many false positives
 

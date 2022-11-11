@@ -2,6 +2,7 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './shadows.twig';
 import data from '../../00-config/config.design-tokens.yml';
+import './shadows.scss';
 
 const settings = {
   title: 'Global/Box Shadows',

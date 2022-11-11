@@ -1,6 +1,8 @@
 // Functions: Unit Convert
 
 @use 'sass:math';
+@use 'gesso' as *;
+@use 'numbers' as *;
 
 /// Convert unitless number to unit value
 // @param {Number} $value - unitless number

@@ -1,6 +1,8 @@
 // Component: Skiplinks
 // Used for accessible skiplinks at the beginning of the page.
 
+@use '00-config' as *;
+
 $skiplinks-font-family-token: ui;
 
 .c-skiplinks {

@@ -2,6 +2,7 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './search.twig';
 import data from './search.yml';
+import globalData from '../../00-config/storybook.global-data.yml';
 import bigData from './search--big.yml';
 import smallData from './search--small.yml';
 import '../uswds.es6';
@@ -22,21 +23,21 @@ const Default = args => (
     ...args,
   }))
 );
-Default.args = { ...data };
+Default.args = { ...globalData, ...data };
 
 const BigSearch = args => (
   parse(twigTemplate({
     ...args,
   }))
 );
-BigSearch.args = { ...bigData };
+BigSearch.args = { ...globalData, ...bigData };
 
 const SmallSearch = args => (
   parse(twigTemplate({
     ...args,
   }))
 );
-SmallSearch.args = { ...smallData };
+SmallSearch.args = { ...globalData,...smallData };
 
 export default settings;
 export { Default, BigSearch, SmallSearch };

@@ -1,5 +1,8 @@
 // Component: Account Menu
 
+@use '00-config' as *;
+@use 'usa-nav' as *;
+
 .c-menu--account {
   @extend .usa-nav__secondary-links;
 

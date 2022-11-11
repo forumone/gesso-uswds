@@ -1,12 +1,13 @@
-// Include the USWDS Accordion script.
-// This makes the component available globally. If you're only using it on certain pages,
-// include it on a template-specific script file instead.
-// Be sure to initialize any components as well (see init() function below.)
-import accordion from 'uswds/src/js/components/accordion';
-import navigation from 'uswds/src/js/components/navigation';
-import banner from 'uswds/src/js/components/banner';
-import tooltip from 'uswds/src/js/components/tooltip';
-import table from 'uswds/src/js/components/table';
+// // Include the USWDS Accordion script.
+// // This makes the component available globally. If you're only using it on certain pages,
+// // include it on a template-specific script file instead.
+// // Be sure to initialize any components as well (see init() function below.)
+
+import accordion from "@uswds/uswds/js/usa-accordion";
+import navigation from '@uswds/uswds/js/usa-header';
+import banner from '@uswds/uswds/js/usa-banner';
+import tooltip from '@uswds/uswds/js/usa-tooltip';
+import table from '@uswds/uswds/js/usa-table';
 import Drupal from 'drupal';
 
 function gessoUswdsNavigation (context) {

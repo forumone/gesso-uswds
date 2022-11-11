@@ -1,7 +1,11 @@
 // Mixins: Button
 
-@import 'packages/required';
-@import 'packages/usa-button';
+// @import 'packages/required';
+// @import 'packages/usa-button';
+@use '../functions/' as *;
+@use './focus' as *;
+@use '../uswds-theme-settings.artifact' as *;
+@use 'usa-button' as *;
 
 $button-border-width: 0 !default;
 $button-border-radius: radius($theme-button-border-radius) !default;

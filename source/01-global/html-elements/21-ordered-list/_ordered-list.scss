@@ -1,5 +1,8 @@
 // HTML Element: Ordered List
 
+@use 'sass:math';
+@use '00-config' as *;
+
 ol {
   @extend %usa-list;
 

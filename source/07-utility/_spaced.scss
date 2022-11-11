@@ -1,7 +1,8 @@
 // Utility: Spaced
 // Used for vertical spacing.
 
-$sizes: 0.5, 1, 1.5, 2, 2.5, 3, 4, 5;
+@use '00-config' as *;
+$sizes: '05', 1, 1.5, 2, 2.5, 3, 4, 5;
 
 @each $size in $sizes {
   .u-spaced-#{escape-number($size)},

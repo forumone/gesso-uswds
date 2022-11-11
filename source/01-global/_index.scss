@@ -1,11 +1,3 @@
-@import '00-colors/color';
-@import '01-typography/fonts';
-@import '01-typography/line-height';
-@import '01-typography/text-styles';
-@import '02-spacing/space';
-@import '03-box-shadow/shadows';
-@import '04-transitions/duration';
-@import '04-transitions/easing';
-@import 'fonts/fonts';
-@import 'html-elements';
-@import 'extendables';
+@use 'fonts/fonts';
+@use 'html-elements';
+@use 'extendables';

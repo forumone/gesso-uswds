@@ -1,4 +1,5 @@
-@import 'components/footer';
+@use '00-config' as *;
+@forward 'usa-footer';
 
 .usa-footer__secondary-section .grid-row > * {
   @include grid-col(auto);

@@ -122,7 +122,7 @@ module.exports = {
             options: {
               implementation: dartSass,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, 'source'), './node_modules/uswds/src/stylesheets'],
+                includePaths: [path.resolve(__dirname, 'source'), './node_modules/@uswds/uswds/packages'],
               },
             },
           },

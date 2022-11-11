@@ -1,5 +1,7 @@
 // Layout: Grid
 
+@use '00-config' as *;
+
 $grid-gutter: gesso-get-map(gutter-width);
 
 .l-grid {
