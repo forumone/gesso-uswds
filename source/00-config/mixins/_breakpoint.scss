@@ -3,6 +3,8 @@
 // to browsers not using the Gesso base font size for media query calculations.
 
 @use 'sass:string';
+@use '../config.settings' as *;
+@use '../functions' as *;
 
 // Create a min-width media query.
 // @param {Number} $breakpoint - width value.

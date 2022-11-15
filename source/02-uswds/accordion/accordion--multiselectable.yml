@@ -1,5 +1,5 @@
 ---
-modifier_classes: ''
+modifier_classes: 'usa-accordion--multiselectable'
 is_multi_selectable: true
 accordion_id: 'c'
 accordion:

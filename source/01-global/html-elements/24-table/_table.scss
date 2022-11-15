@@ -1,7 +1,10 @@
 // HTML Element: Table
 
+@use '00-config' as *;
+@use 'usa-table' as *;
+
 table {
-  @extend %usa-table;
+  @include usa-table();
 }
 
 thead {

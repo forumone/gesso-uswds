@@ -84,12 +84,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /config\.design-tokens\.yml$/,
-        exclude: /node_modules/,
-        use: [path.resolve(__dirname, './lib/configLoader.js')],
-        type: 'asset/source',
-      },
-      {
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
@@ -128,7 +122,7 @@ module.exports = {
             options: {
               implementation: dartSass,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, 'source'), './node_modules/uswds/src/stylesheets'],
+                includePaths: [path.resolve(__dirname, 'source'), './node_modules/@uswds/uswds/packages'],
               },
             },
           },

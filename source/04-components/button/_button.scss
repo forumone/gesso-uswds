@@ -1,6 +1,8 @@
 // @file
 // Styles for Button.
 
+@use '00-config' as *;
+
 .c-button,
 %c-button {
   @extend .usa-button;

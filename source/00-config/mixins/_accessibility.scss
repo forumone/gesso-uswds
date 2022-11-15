@@ -1,5 +1,7 @@
 // Mixins: Accessibility
 
+@use '../functions' as *;
+
 // Makes an element visually hidden, but accessible.
 // @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 // @param {Boolean} $important
