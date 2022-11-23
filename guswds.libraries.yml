@@ -9,10 +9,16 @@ global:
     - core/drupal
 
 back_to_top:
+  css:
+    theme:
+      dist/css/back-to-top.css: {}
   js:
     dist/js/back-to-top.es6.js: {}
 
 dropbutton:
+  css:
+    component:
+      dist/css/dropbutton.css: {}
   js:
     dist/js/dropbutton.es6.js: {}
   dependencies:
