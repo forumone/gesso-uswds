@@ -59,7 +59,8 @@ module.exports = {
         {
           loader: 'sass-loader',
           options: {
-            implementation: require('sass'),
+            implementation: require('sass-embedded'),
+            webpackImporter: false,
             sassOptions: {
               includePaths: [path.resolve(__dirname, '../source'), '../node_modules/@uswds/uswds/packages'],
             },
