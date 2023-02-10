@@ -123,7 +123,10 @@ module.exports = {
               implementation: embeddedSass,
               webpackImporter: false,
               sassOptions: {
-                includePaths: [path.resolve(__dirname, 'source'), './node_modules/@uswds/uswds/packages'],
+                includePaths: [
+                  path.resolve(__dirname, 'source'),
+                  './node_modules/@uswds/uswds/packages',
+                ],
               },
             },
           },
@@ -150,15 +153,15 @@ module.exports = {
         exclude: ['/node_modules/'],
         type: 'asset/resource',
         generator: {
-         filename: 'fonts/[hash][ext][query]'
-        }
+          filename: 'fonts/[hash][ext][query]',
+        },
       },
       {
         test: /\.(png|svg|jpg|gif)$/i,
         exclude: [/images\/_sprite-source-files\/.*\.svg$/, '/node_modules/'],
         type: 'asset',
         generator: {
-          filename: 'images/[hash][ext][query]',
+          filename: 'images/backgrounds/[hash][ext][query]',
         },
       },
     ],
