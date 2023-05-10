@@ -13,10 +13,11 @@
  */
 #}
 {% if content %}
-  {% extends '@uswds/navbar/navbar.twig' %}
+  {% embed '@uswds/navbar/navbar.twig' %}
 
     {% block content %}
       {{ content }}
     {% endblock %}
 
+  {% endembed %}
 {% endif %}
