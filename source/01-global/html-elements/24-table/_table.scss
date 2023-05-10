@@ -3,6 +3,7 @@
 @use '00-config' as *;
 @use 'usa-table' as *;
 
+%table,
 table {
   @include usa-table();
 }
@@ -16,5 +17,37 @@ thead {
 tr {
   @media print {
     page-break-inside: avoid;
+  }
+}
+
+@if ($wysiwyg) {
+  .ck-widget.table {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+
+    table {
+      @extend %table;
+      margin-top: 0;
+    }
+
+    td {
+      color: revert;
+      height: revert;
+    }
+
+    th {
+      color: revert;
+      height: revert;
+      line-height: revert;
+    }
+
+
+    > figcaption {
+      background-color: revert;
+      color: revert;
+      font-size: revert;
+      padding: revert;
+    }
   }
 }
