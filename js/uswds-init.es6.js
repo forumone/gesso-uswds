@@ -1,0 +1,1 @@
+!function(){"use strict";var e,t="usa-js-loading";function n(){document.documentElement.classList.remove(t)}document.documentElement.classList.add(t),e=setTimeout(n,8e3),document.addEventListener("load",(function t(){window.uswdsPresent&&(clearTimeout(e),n(),document.removeEventListener("load",t,!0))}),!0)}();
