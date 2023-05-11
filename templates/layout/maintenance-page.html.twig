@@ -55,9 +55,7 @@
 
     {# page.content is missing page title. #}
     {% set content %}
-      {% include '@components/page-title/page-title.twig' with {
-        'page_title': page['#title'],
-      } %}
+      {{ page.title }}
     {% endset %}
 
     {# We have to manually wrap region content. #}

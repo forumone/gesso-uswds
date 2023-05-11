@@ -14,6 +14,29 @@ back_to_top:
       dist/css/back-to-top.css: {}
   js:
     dist/js/back-to-top.es6.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+block:
+  css:
+    theme:
+      dist/css/block.css: {}
+
+breadcrumb:
+  css:
+    theme:
+      dist/css/breadcrumb.css: {}
+
+card:
+  css:
+    theme:
+      dist/css/card.css: {}
+
+details:
+  css:
+    theme:
+      dist/css/details.css: {}
 
 dropbutton:
   css:
@@ -22,7 +45,77 @@ dropbutton:
   js:
     dist/js/dropbutton.es6.js: {}
   dependencies:
-    - core/jquery
     - core/drupal
     - core/drupalSettings
+    - core/jquery
     - core/once
+
+file:
+  css:
+    theme:
+      dist/css/file.css: {}
+  dependencies:
+    - guswds/icon_link
+
+icon_link:
+  css:
+    theme:
+      dist/css/icon-link.css: {}
+
+image_teaser:
+  css:
+    theme:
+      dist/css/image-teaser.css: {}
+
+pager:
+  css:
+    theme:
+      dist/css/pager.css: {}
+
+pager_mini:
+  css:
+    theme:
+      dist/css/pager--mini.css: {}
+  dependencies:
+    - guswds/pager
+
+progress:
+  css:
+    theme:
+      dist/css/progress.css: {}
+
+read_more_link:
+  css:
+    theme:
+      dist/css/rss-more-link.css: {}
+  dependencies:
+    - guswds/icon_link
+
+rss_feed:
+  css:
+    theme:
+      dist/css/rss-feed.css: {}
+  dependencies:
+    - guswds/icon_link
+
+tag_link:
+  css:
+    theme:
+      dist/css/tag-link.css: {}
+
+tag_list:
+  css:
+    theme:
+      dist/css/tag-list.css: {}
+  dependencies:
+    - guswds/tag_link
+
+teaser:
+  css:
+    theme:
+      dist/css/teaser.css: {}
+
+video:
+  css:
+    theme:
+      dist/css/video.css: {}
