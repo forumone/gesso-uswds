@@ -7,6 +7,8 @@ global:
     dist/js/uswds.es6.js: {}
   dependencies:
     - core/drupal
+    - core/once
+    - guswds/common
 
 back_to_top:
   css:
@@ -17,6 +19,7 @@ back_to_top:
   dependencies:
     - core/drupal
     - core/once
+    - guswds/common
 
 block:
   css:
@@ -49,6 +52,7 @@ dropbutton:
     - core/drupalSettings
     - core/jquery
     - core/once
+    - guswds/common
 
 file:
   css:
