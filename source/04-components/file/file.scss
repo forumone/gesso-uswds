@@ -1,0 +1,11 @@
+// Component: File
+
+@use '00-config' as *;
+
+.c-file {
+  display: inline-block;
+}
+
+.c-file__size {
+  font-size: font-size(body, xs);
+}

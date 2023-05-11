@@ -21,7 +21,7 @@
   {% if error_message %}
     <span class="usa-error-message" id="{{ textarea_id }}-message" role="alert">{{ error_message }}</span>
   {% endif %}
-  {% spaceless %}
+  {% apply spaceless %}
     <textarea aria-describedby="{{ textarea_id }}-message"
       class="{{ classes }}"
       cols="{{ textarea_cols }}"
@@ -30,5 +30,5 @@
       {% if textarea_required %} name="{{ textarea_id }}"{% endif %}
       {% if textarea_rows %} required{% endif %}
       {% if textarea_cols %} rows="{{ textarea_rows }}"{% endif %}></textarea>
-  {% endspaceless %}
+  {% endapply %}
 </div>

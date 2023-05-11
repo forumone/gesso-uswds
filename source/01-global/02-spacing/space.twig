@@ -8,7 +8,7 @@
       <th class="gesso-storybook-spacing__header">Example</th>
     </tr>
   </thead>
-  <tbody>{% spaceless %}
+  <tbody>{% apply spaceless %}
     {# Base font value should be a pixel value or unitless value #}
     {% for name, unit in gesso.spacing|keysort %}
       {% if unit is iterable %}
@@ -32,5 +32,5 @@
         </td>
       </tr>
     {% endfor %}
-  {% endspaceless %}</tbody>
+  {% endapply %}</tbody>
 </table>

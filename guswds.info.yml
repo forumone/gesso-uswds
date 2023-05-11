@@ -3,12 +3,14 @@ type: theme
 base theme: false
 description: 'Storybook-based starter theme based on Gesso and the United States Web Design System.'
 package: Custom
-core_version_requirement: ^8.9 || ^9
+core_version_requirement: ^8.9 || ^9 || ^10
 libraries:
   - guswds/global
 libraries-override:
   core/drupal.dropbutton: guswds/dropbutton
 ckeditor_stylesheets:
+  - dist/css/ckeditor4-styles.css
+ckeditor5-stylesheets:
   - dist/css/editor-styles.css
 dependencies:
   - components
@@ -30,6 +32,7 @@ regions:
   breadcrumb: Breadcrumbs
   help: Help
   preface: Preface
+  title: 'Page title'
   status: 'Status messages & Tabs'
   content: Content
   postscript: Postscript
