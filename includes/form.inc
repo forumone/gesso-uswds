@@ -6,6 +6,16 @@
  */
 
 /**
+ * Implements hook_form_alter().
+ */
+function guswds_form_alter(&$form, &$form_state, $form_id) {
+  // Replace button classes with c-button.
+  if (isset($form['actions']['delete']['#attributes']['class'])) {
+    $form['actions']['delete']['#attributes']['class'] = preg_replace('/^button/', 'c-button', $form['actions']['delete']['#attributes']['class']);
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function guswds_preprocess_input(array &$variables) {
