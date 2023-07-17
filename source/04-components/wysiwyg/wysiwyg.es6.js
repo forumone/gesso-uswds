@@ -1,0 +1,19 @@
+import Drupal from 'drupal';
+import once from 'once';
+
+Drupal.behaviors.wysiwyg = {
+  attach(context) {
+    once('wysiwyg', '[data-wysiwyg]', context).forEach(wysiwyg => {
+      // Wrap all tables output via WYSIWYG with a responsive table layout.
+      const tables = wysiwyg.querySelectorAll('[data-wysiwyg] table');
+      tables.forEach((table, i) => {
+        const responsiveTable = document.createElement('div');
+
+        responsiveTable.classList.add('usa-table-container--scrollable');
+        responsiveTable.setAttribute('tabindex', '0');
+        responsiveTable.appendChild(table.cloneNode(true));
+        table.parentNode.replaceChild(responsiveTable, table);
+      });
+    });
+  },
+};
