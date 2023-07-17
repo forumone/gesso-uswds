@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/text-input.html.",
+        component:
+          'See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/text-input.html.',
       },
     },
-  }
+  },
 };
 
-const TextArea = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const TextArea = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 TextArea.args = { ...data };
 
 export default settings;

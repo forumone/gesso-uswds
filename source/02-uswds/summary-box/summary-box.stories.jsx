@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/summary-box/.",
+        component:
+          'See https://designsystem.digital.gov/components/summary-box/.',
       },
     },
-  }
+  },
 };
 
-const SummaryBox = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const SummaryBox = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 SummaryBox.args = { ...data };
 
 export default settings;

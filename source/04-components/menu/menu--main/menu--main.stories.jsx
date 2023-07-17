@@ -8,11 +8,12 @@ const settings = {
   title: 'Components/Menu/Main Menu',
 };
 
-const MainMenu = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const MainMenu = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 MainMenu.args = { ...data };
 
 export default settings;

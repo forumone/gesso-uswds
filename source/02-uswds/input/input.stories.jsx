@@ -11,31 +11,35 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/text-input.html.",
+        component:
+          'See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/text-input.html.',
       },
     },
-  }
+  },
 };
 
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Default.args = { ...data };
 
-const ErrorInput = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const ErrorInput = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 ErrorInput.args = { ...dataError };
 
-const SuccessInput = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const SuccessInput = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 SuccessInput.args = { ...dataSuccess };
 
 export default settings;

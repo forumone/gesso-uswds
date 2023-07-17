@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://components.designsystem.digital.gov/components/detail/hero.html.",
+        component:
+          'See https://components.designsystem.digital.gov/components/detail/hero.html.',
       },
     },
-  }
+  },
 };
 
-const Hero = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Hero = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Hero.args = { ...data };
 
 export default settings;

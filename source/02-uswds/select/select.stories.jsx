@@ -9,18 +9,20 @@ const settings = {
   title: 'USWDS/Select',
 };
 
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Default.args = { ...data };
 
-const GroupsSelect = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const GroupsSelect = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 GroupsSelect.args = { ...groupsData };
 
 export default settings;

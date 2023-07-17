@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See [https://designsystem.digital.gov/components/form-controls/]() and [https://components.designsystem.digital.gov/components/detail/radio-buttons.html]().",
+        component:
+          'See [https://designsystem.digital.gov/components/form-controls/]() and [https://components.designsystem.digital.gov/components/detail/radio-buttons.html]().',
       },
     },
-  }
+  },
 };
 
-const RadioButton = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const RadioButton = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 RadioButton.args = { ...data };
 
 export default settings;

@@ -11,40 +11,46 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--default.html.",
+        component:
+          'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--default.html.',
       },
     },
-  }
-};
-
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
-Default.args = { ...data };
-
-const Bordered = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
-Bordered.args = { ...borderedData };
-Bordered.parameters = {
-  docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--bordered.html.",
   },
 };
 
-const Multiselectable = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+Default.args = { ...data };
+
+const Bordered = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+Bordered.args = { ...borderedData };
+Bordered.parameters = {
+  docs: {
+    storyDescription:
+      'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--bordered.html.',
+  },
+};
+
+const Multiselectable = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Multiselectable.args = { ...multiselectableData };
 Multiselectable.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--multiselectable.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--multiselectable.html.',
   },
 };
 

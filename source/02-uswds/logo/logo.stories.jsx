@@ -8,11 +8,12 @@ const settings = {
   title: 'USWDS/Logo',
 };
 
-const Logo = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Logo = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Logo.args = { ...data };
 
 export default settings;

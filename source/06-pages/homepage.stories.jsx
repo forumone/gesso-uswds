@@ -12,11 +12,9 @@ export default {
   title: 'Pages/Homepage',
   parameters: {
     controls: {
-      include: [
-        'show_admin_info',
-      ]
-    }
-  }
+      include: ['show_admin_info'],
+    },
+  },
 };
 
 // You can override the default arguments, as done here, to demo different
@@ -48,27 +46,34 @@ const homepageGridContent = [
   }),
 ];
 
-const homepageContent = args => twigTemplate({
-  ...args,
-  homepage_hero: ReactDOMServer.renderToStaticMarkup(
-    <>{Hero({
-      ...Hero.args,
-      background_image: 'https://picsum.photos/1600/800/?image=96&gravity=north',
-      title: "Where’d You Get The Coconuts?",
-      paragraph: "<p>The swallow may fly south with the sun, and the house martin or " +
-        "the plover may seek warmer climes in winter, yet these are not strangers to our land. " +
-        "Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A " +
-        "swallow carrying a coconut? It could grip it by the husk!</p>",
-      button_text: 'Ni! Ni! Ni! Ni!',
-    })}</>
-  ),
-  homepage_grid_content: ReactDOMServer.renderToStaticMarkup(
-    <>{homepageGridContent.map(card => card)}</>
-  ),
-  homepage_grid_title: 'You Don’t Vote For Kings',
-});
+const homepageContent = args =>
+  twigTemplate({
+    ...args,
+    homepage_hero: ReactDOMServer.renderToStaticMarkup(
+      <>
+        {Hero({
+          ...Hero.args,
+          background_image:
+            'https://picsum.photos/1600/800/?image=96&gravity=north',
+          title: 'Where’d You Get The Coconuts?',
+          paragraph:
+            '<p>The swallow may fly south with the sun, and the house martin or ' +
+            'the plover may seek warmer climes in winter, yet these are not strangers to our land. ' +
+            'Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A ' +
+            'swallow carrying a coconut? It could grip it by the husk!</p>',
+          button_text: 'Ni! Ni! Ni! Ni!',
+        })}
+      </>
+    ),
+    homepage_grid_content: ReactDOMServer.renderToStaticMarkup(
+      <>{homepageGridContent.map(card => card)}</>
+    ),
+    homepage_grid_title: 'You Don’t Vote For Kings',
+  });
 
-const Homepage = args => <PageWrapper isHomepage>{parse(homepageContent(args))}</PageWrapper>;
+const Homepage = args => (
+  <PageWrapper isHomepage>{parse(homepageContent(args))}</PageWrapper>
+);
 Homepage.args = {
   ...globalData,
 };

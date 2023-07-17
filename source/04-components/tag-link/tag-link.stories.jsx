@@ -8,11 +8,12 @@ const settings = {
   title: 'Components/Tag Link',
 };
 
-const TagLink = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const TagLink = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 TagLink.args = { ...data };
 
 export default settings;

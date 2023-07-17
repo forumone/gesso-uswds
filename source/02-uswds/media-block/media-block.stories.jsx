@@ -8,11 +8,12 @@ const settings = {
   title: 'USWDS/Media Block',
 };
 
-const MediaBlock = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const MediaBlock = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 MediaBlock.args = { ...data };
 
 export default settings;
