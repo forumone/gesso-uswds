@@ -10,28 +10,32 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--default.html.",
+        component:
+          'See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--default.html.',
       },
     },
-  }
+  },
 };
 
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Default.args = { ...data };
 
-const Extended = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Extended = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Extended.args = { ...extendedData };
 Extended.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--extended.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--extended.html.',
   },
 };
 

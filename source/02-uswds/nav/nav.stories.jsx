@@ -8,11 +8,12 @@ const settings = {
   title: 'USWDS/Nav',
 };
 
-const Nav = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Nav = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Nav.args = { ...data };
 
 export default settings;

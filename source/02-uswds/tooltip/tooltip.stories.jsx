@@ -9,17 +9,18 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/tooltip/.",
+        component: 'See https://designsystem.digital.gov/components/tooltip/.',
       },
     },
-  }
+  },
 };
 
-const Tooltip = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Tooltip = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Tooltip.args = { ...data };
 
 export default settings;

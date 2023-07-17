@@ -8,17 +8,18 @@ const settings = {
   argTypes: {
     is_demo: {
       table: {
-        disable: true
-      }
-    }
+        disable: true,
+      },
+    },
   },
 };
 
-const PageSection = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const PageSection = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 PageSection.args = { ...data };
 
 export default settings;

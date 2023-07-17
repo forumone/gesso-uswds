@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/footer/ and https://components.designsystem.digital.gov/components/detail/footer--default.html.",
+        component:
+          'See https://designsystem.digital.gov/components/footer/ and https://components.designsystem.digital.gov/components/detail/footer--default.html.',
       },
     },
-  }
+  },
 };
 
-const Footer = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Footer = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Footer.args = { ...data };
 
 export default settings;

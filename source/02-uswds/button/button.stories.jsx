@@ -17,114 +17,142 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--default.html.",
+        component:
+          'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--default.html.',
       },
     },
-  }
+  },
 };
 
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Default.args = { ...data };
 
-const AccentCool = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const AccentCool = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 AccentCool.args = { ...accentCoolData };
 AccentCool.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-cool.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-cool.html.',
   },
 };
 
-const AccentWarm = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const AccentWarm = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 AccentWarm.args = { ...accentWarmData };
 AccentWarm.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-warm.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-warm.html.',
   },
 };
 
-const Base = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Base = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Base.args = { ...baseData };
 Base.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--base.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--base.html.',
   },
 };
 
-const Big = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Big = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Big.args = { ...bigData };
 Big.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--big.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--big.html.',
   },
 };
 
-const Inverse = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Inverse = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Inverse.args = { ...inverseData };
 Inverse.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline-inverse.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline-inverse.html.',
   },
 };
 
-const Outline = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Outline = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Outline.args = { ...outlineData };
 Outline.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline.html.',
   },
 };
 
-const Secondary = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Secondary = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Secondary.args = { ...secondaryData };
 Secondary.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--secondary.html.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--secondary.html.',
   },
 };
 
-const Unstyled = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Unstyled = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Unstyled.args = { ...unstyledData };
 Unstyled.parameters = {
   docs: {
-    storyDescription: "See https://designsystem.digital.gov/components/button/.",
+    storyDescription:
+      'See https://designsystem.digital.gov/components/button/.',
   },
 };
 
 export default settings;
-export { Default, AccentCool, AccentWarm, Base, Big, Inverse, Outline, Secondary, Unstyled };
+export {
+  Default,
+  AccentCool,
+  AccentWarm,
+  Base,
+  Big,
+  Inverse,
+  Outline,
+  Secondary,
+  Unstyled,
+};

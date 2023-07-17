@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/checkboxes.html.",
+        component:
+          'See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/checkboxes.html.',
       },
     },
-  }
+  },
 };
 
-const Checkbox = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Checkbox = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Checkbox.args = { ...data };
 
 export default settings;

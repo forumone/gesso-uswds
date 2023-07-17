@@ -10,17 +10,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/banner/, https://components.designsystem.digital.gov/components/detail/banner.html, and https://designsystem.digital.gov/components/header/.",
+        component:
+          'See https://designsystem.digital.gov/components/banner/, https://components.designsystem.digital.gov/components/detail/banner.html, and https://designsystem.digital.gov/components/header/.',
       },
     },
-  }
+  },
 };
 
-const Banner = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Banner = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Banner.args = { ...globalData, ...data };
 
 export default settings;
