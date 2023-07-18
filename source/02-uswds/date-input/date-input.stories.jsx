@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/date-input.html.",
+        component:
+          'See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/date-input.html.',
       },
     },
-  }
+  },
 };
 
-const DateInput = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const DateInput = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 DateInput.args = { ...data };
 
 export default settings;

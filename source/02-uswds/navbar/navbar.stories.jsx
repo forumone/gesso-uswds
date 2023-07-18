@@ -8,17 +8,18 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "Part of the USWDS Header component.",
+        component: 'Part of the USWDS Header component.',
       },
     },
-  }
+  },
 };
 
-const NavBar = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const NavBar = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 
 export default settings;
 export { NavBar };

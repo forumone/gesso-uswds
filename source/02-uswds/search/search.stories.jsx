@@ -12,32 +12,36 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/search/ and https://components.designsystem.digital.gov/components/detail/search--default.html.",
+        component:
+          'See https://designsystem.digital.gov/components/search/ and https://components.designsystem.digital.gov/components/detail/search--default.html.',
       },
     },
-  }
+  },
 };
 
-const Default = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Default = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Default.args = { ...globalData, ...data };
 
-const BigSearch = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const BigSearch = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 BigSearch.args = { ...globalData, ...bigData };
 
-const SmallSearch = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
-SmallSearch.args = { ...globalData,...smallData };
+const SmallSearch = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+SmallSearch.args = { ...globalData, ...smallData };
 
 export default settings;
 export { Default, BigSearch, SmallSearch };

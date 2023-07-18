@@ -9,17 +9,19 @@ const settings = {
   parameters: {
     docs: {
       description: {
-        component: "See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/range-input.html.",
+        component:
+          'See https://designsystem.digital.gov/components/form-controls/ and https://components.designsystem.digital.gov/components/detail/range-input.html.',
       },
     },
-  }
+  },
 };
 
-const RangeInput = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const RangeInput = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 RangeInput.args = { ...data };
 
 export default settings;
