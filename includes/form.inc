@@ -37,6 +37,21 @@ function guswds_preprocess_input(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function guswds_preprocess_field_multiple_value_form(&$variables) {
+  // Make disabled variable available to the template.
+  $variables['disabled'] = !empty($variables['element']['#disabled']);
+
+  if ($variables['multiple']) {
+    // Make add more button smaller.
+    if (!empty($variables['button'])) {
+      $variables['button']['#attributes']['class'][] = 'c-button--small';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function guswds_preprocess_fieldset(array &$variables) {
   $variables['type'] = isset($variables['element']['#type']) ? $variables['element']['#type'] : 'fieldset';
   $variables['is_disabled'] = isset($variables['element']['#disabled']) ? $variables['element']['#disabled'] : NULL;
