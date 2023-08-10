@@ -3,6 +3,7 @@ global:
     theme:
       dist/css/styles.css: {}
   js:
+    dist/js/universal.es6.js: {}
     dist/js/html.es6.js: {}
     dist/js/uswds-init.es6.js: {}
     dist/js/uswds.es6.js: {}
