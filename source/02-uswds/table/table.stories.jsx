@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './table.twig';
 import data from './table.yml';
 import borderlessData from './table--borderless.yml';
@@ -10,6 +11,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Table',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

@@ -1,11 +1,13 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './range.twig';
 import data from './range.yml';
 import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Range Input',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

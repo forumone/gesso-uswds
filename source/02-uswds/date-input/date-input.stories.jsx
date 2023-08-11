@@ -1,11 +1,13 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './date-input.twig';
 import data from './date-input.yml';
 import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Date Input',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

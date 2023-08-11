@@ -2,7 +2,7 @@
 
 {% set classes = [
   'tag-link',
-  modifier_classes ? modifier_classes,
+  modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 <a href="{{ url }}" class="{{ classes }}" rel="tag">
