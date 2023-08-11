@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './search.twig';
 import data from './search.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
@@ -9,6 +10,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Search',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

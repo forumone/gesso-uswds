@@ -1,11 +1,13 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './textarea.twig';
 import data from './textarea.yml';
 import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Text Area',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

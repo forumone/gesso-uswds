@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './alert.twig';
 import data from './alert.yml';
 import errorData from './alert--error.yml';
@@ -12,6 +13,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Alert',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

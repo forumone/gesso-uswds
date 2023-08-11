@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './accordion.twig';
 import data from './accordion.yml';
 import borderedData from './accordion--bordered.yml';
@@ -8,6 +9,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Accordion',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

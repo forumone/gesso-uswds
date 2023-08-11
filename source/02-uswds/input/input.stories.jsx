@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './input.twig';
 import data from './input.yml';
 import dataError from './input--error.yml';
@@ -8,6 +9,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Input',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {

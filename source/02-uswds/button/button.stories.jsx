@@ -1,5 +1,6 @@
 import parse from 'html-react-parser';
 
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './button.twig';
 import data from './button.yml';
 import accentCoolData from './button--accent-cool.yml';
@@ -14,6 +15,7 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Button',
+  decorators: [withGlobalWrapper],
   parameters: {
     docs: {
       description: {
