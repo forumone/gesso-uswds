@@ -69,7 +69,13 @@ const config = {
             implementation: require('sass-embedded'),
             webpackImporter: false,
             sassOptions: {
-              includePaths: [path.resolve(__dirname, '../source'), path.resolve(__dirname, '../node_modules/@uswds/uswds/packages')],
+              includePaths: [
+                path.resolve(__dirname, '../source'),
+                path.resolve(
+                  __dirname,
+                  '../node_modules/@uswds/uswds/packages'
+                ),
+              ],
             },
           },
         },
@@ -83,6 +89,28 @@ const config = {
     };
 
     config.resolve.modules.push(path.resolve(__dirname, '../source'));
+    config.stats = 'errors-warnings';
+
+    if (configType === 'DEVELOPMENT') {
+      config.plugins.push(function readyToGoPlugin() {
+        this.hooks.beforeCompile.tap('ReadyToGoPlugin', () => {
+          console.log(
+            `\n${new Date().toLocaleTimeString('en-US', {
+              timeZone: 'America/New_York',
+              timeZoneName: 'short',
+            })}: Storybook's webpack beginning compilation.`
+          );
+        });
+        this.hooks.afterCompile.tap('ReadyToGoPlugin', () => {
+          console.log(
+            `\n${new Date().toLocaleTimeString('en-US', {
+              timeZone: 'America/New_York',
+              timeZoneName: 'short',
+            })}: Storybook's compilation complete. Watching for changes.`
+          );
+        });
+      });
+    }
 
     return config;
   },
