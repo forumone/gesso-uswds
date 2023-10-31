@@ -1,8 +1,11 @@
+import React from 'react'
+import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import twigTemplate from './header.twig';
+import { NavBar } from '../navbar/navbar.stories.jsx';
+import { Nav } from '../nav/nav.stories.jsx';
 import data from './header.yml';
-import extendedData from './header--extended.yml';
 import '../uswds.es6';
 
 const settings = {
@@ -17,13 +20,31 @@ const settings = {
   },
 };
 
+const headerContent = ReactDOMServer.renderToStaticMarkup(
+  <>
+    {NavBar(NavBar.args)}
+    {Nav({...Nav.args, is_extended: false})}
+  </>
+);
+
+const headerContentExtended = ReactDOMServer.renderToStaticMarkup(
+  <>
+    {NavBar(NavBar.args)}
+    {Nav({...Nav.args, is_extended: true})}
+  </>
+);
+
 const Default = args =>
   parse(
     twigTemplate({
       ...args,
     })
   );
-Default.args = { ...data };
+Default.args = {
+  header_content: headerContent,
+  ...data,
+  is_extended: false,
+};
 
 const Extended = args =>
   parse(
@@ -31,7 +52,11 @@ const Extended = args =>
       ...args,
     })
   );
-Extended.args = { ...extendedData };
+Extended.args = {
+  header_content: headerContentExtended,
+  ...data,
+  is_extended: true,
+};
 Extended.parameters = {
   docs: {
     storyDescription:

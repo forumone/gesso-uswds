@@ -5,13 +5,6 @@ import data from './page-section.yml';
 
 const settings = {
   title: 'Layouts/Page Section',
-  argTypes: {
-    is_demo: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 };
 
 const PageSection = args =>

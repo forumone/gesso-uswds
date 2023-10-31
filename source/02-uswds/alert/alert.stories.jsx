@@ -3,17 +3,16 @@ import parse from 'html-react-parser';
 import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './alert.twig';
 import data from './alert.yml';
-import errorData from './alert--error.yml';
-import infoData from './alert--info.yml';
-import noIconData from './alert--no-icon.yml';
-import slimData from './alert--slim.yml';
-import successData from './alert--success.yml';
-import warningData from './alert--warning.yml';
 import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Alert',
-  decorators: [withGlobalWrapper],
+  decorators: [
+    (Story, {args}) =>
+      <>
+        <Story />
+        <Story args={{ ...args, title: false }} />
+      </>, withGlobalWrapper],
   parameters: {
     docs: {
       description: {
@@ -38,7 +37,7 @@ const Error = args =>
       ...args,
     })
   );
-Error.args = { ...errorData };
+Error.args = { ...data, modifier_classes: 'usa-alert--error', title: 'Error status', role: 'alert'  };
 Error.parameters = {
   docs: {
     storyDescription:
@@ -52,7 +51,7 @@ const Info = args =>
       ...args,
     })
   );
-Info.args = { ...infoData };
+Info.args = { ...data, modifier_classes: 'usa-alert--info', title: 'Informative status' };
 Info.parameters = {
   docs: {
     storyDescription:
@@ -66,7 +65,7 @@ const NoIcon = args =>
       ...args,
     })
   );
-NoIcon.args = { ...noIconData };
+NoIcon.args = { ...data, modifier_classes: 'usa-alert--no-icon usa-alert--info', title: 'Informative status' };
 NoIcon.parameters = {
   docs: {
     storyDescription:
@@ -80,7 +79,7 @@ const Slim = args =>
       ...args,
     })
   );
-Slim.args = { ...slimData };
+Slim.args = { ...data, modifier_classes: 'usa-alert--slim usa-alert--info', title: 'Informative status' };
 Slim.parameters = {
   docs: {
     storyDescription:
@@ -94,7 +93,7 @@ const Success = args =>
       ...args,
     })
   );
-Success.args = { ...successData };
+Success.args = { ...data, modifier_classes: 'usa-alert--success', title: 'Success status' };
 Success.parameters = {
   docs: {
     storyDescription:
@@ -108,7 +107,7 @@ const Warning = args =>
       ...args,
     })
   );
-Warning.args = { ...warningData };
+Warning.args = { ...data, modifier_classes: 'usa-alert--warning', title: 'Warning status' };
 Warning.parameters = {
   docs: {
     storyDescription:
