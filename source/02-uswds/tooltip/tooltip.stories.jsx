@@ -1,3 +1,5 @@
+import React from 'react'
+import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
@@ -7,7 +9,25 @@ import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Tooltip',
-  decorators: [withGlobalWrapper],
+  decorators: [
+    (Story, {args}) =>
+      <>
+        <div class="u-spaced-5-above">
+          <Story />
+        </div>
+        <div class="u-spaced-5-above">
+          <Story args={{ ...args, tooltip_position: 'top', text: 'Show on Top' }} />
+        </div>
+        <div class="u-spaced-5-above">
+          <Story args={{ ...args, tooltip_position: 'right', text: 'Show on Right' }} />
+        </div>
+        <div class="u-spaced-5-above">
+          <Story args={{ ...args, tooltip_position: 'bottom', text: 'Show on Bottom' }} />
+        </div>
+        <div class="u-spaced-5-above">
+          <Story args={{ ...args, tooltip_position: 'left', text: 'Show on Left' }} />
+        </div>
+      </>, withGlobalWrapper],
   parameters: {
     docs: {
       description: {

@@ -3,19 +3,18 @@ import parse from 'html-react-parser';
 import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './button.twig';
 import data from './button.yml';
-import accentCoolData from './button--accent-cool.yml';
-import accentWarmData from './button--accent-warm.yml';
-import baseData from './button--base.yml';
-import bigData from './button--big.yml';
-import inverseData from './button--inverse.yml';
-import outlineData from './button--outline.yml';
-import secondaryData from './button--secondary.yml';
-import unstyledData from './button--unstyled.yml';
 import '../uswds.es6';
 
 const settings = {
   title: 'USWDS/Button',
-  decorators: [withGlobalWrapper],
+  decorators: [
+    (Story, {args}) =>
+      <>
+        <Story />
+        <Story args={{ ...args, is_button_tag: false, text: 'Link Button' }} />
+        <Story args={{ ...args, is_disabled: true, text: 'Disabled Button' }} />
+      </>, withGlobalWrapper],
+
   parameters: {
     docs: {
       description: {
@@ -40,7 +39,7 @@ const AccentCool = args =>
       ...args,
     })
   );
-AccentCool.args = { ...accentCoolData };
+AccentCool.args = { ...data, modifier_classes: 'usa-button--accent-cool', };
 AccentCool.parameters = {
   docs: {
     storyDescription:
@@ -54,7 +53,7 @@ const AccentWarm = args =>
       ...args,
     })
   );
-AccentWarm.args = { ...accentWarmData };
+AccentWarm.args = { ...data, modifier_classes: 'usa-button--accent-warm', };
 AccentWarm.parameters = {
   docs: {
     storyDescription:
@@ -68,7 +67,7 @@ const Base = args =>
       ...args,
     })
   );
-Base.args = { ...baseData };
+Base.args = { ...data, modifier_classes: 'usa-button--base', };
 Base.parameters = {
   docs: {
     storyDescription:
@@ -82,7 +81,7 @@ const Big = args =>
       ...args,
     })
   );
-Big.args = { ...bigData };
+Big.args = { ...data, modifier_classes: 'usa-button--big', };
 Big.parameters = {
   docs: {
     storyDescription:
@@ -96,7 +95,7 @@ const Inverse = args =>
       ...args,
     })
   );
-Inverse.args = { ...inverseData };
+Inverse.args = { ...data, modifier_classes: 'usa-button--outline usa-button--inverse', };
 Inverse.parameters = {
   docs: {
     storyDescription:
@@ -110,7 +109,7 @@ const Outline = args =>
       ...args,
     })
   );
-Outline.args = { ...outlineData };
+Outline.args = { ...data, modifier_classes: 'usa-button--outline', };
 Outline.parameters = {
   docs: {
     storyDescription:
@@ -124,7 +123,7 @@ const Secondary = args =>
       ...args,
     })
   );
-Secondary.args = { ...secondaryData };
+Secondary.args = { ...data, modifier_classes: 'usa-button--secondary', };
 Secondary.parameters = {
   docs: {
     storyDescription:
@@ -138,7 +137,7 @@ const Unstyled = args =>
       ...args,
     })
   );
-Unstyled.args = { ...unstyledData };
+Unstyled.args = { ...data, modifier_classes: 'usa-button--unstyled', };
 Unstyled.parameters = {
   docs: {
     storyDescription:
