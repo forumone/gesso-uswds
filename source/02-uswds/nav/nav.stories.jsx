@@ -35,10 +35,10 @@ const Nav = args =>
   parse(
     twigTemplate({
       ...args,
+      nav_content: args.nav_content ?? navPlaceholderContent(args.is_extended)
     })
   );
 Nav.args = {
-  nav_content: navPlaceholderContent(false),
   is_extended: false,
 };
 
