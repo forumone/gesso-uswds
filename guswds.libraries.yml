@@ -52,7 +52,6 @@ dropbutton:
   dependencies:
     - core/drupal
     - core/drupalSettings
-    - core/jquery
     - core/once
     - guswds/common
 
