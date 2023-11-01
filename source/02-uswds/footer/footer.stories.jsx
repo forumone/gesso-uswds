@@ -1,7 +1,10 @@
+import React from 'react'
+import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import twigTemplate from './footer.twig';
 import data from './footer.yml';
+import ContentPlaceholder from '../../01-global/content-placeholder/content-placeholder';
 import '../uswds.es6';
 
 const settings = {
@@ -22,7 +25,15 @@ const Footer = args =>
       ...args,
     })
   );
-Footer.args = { ...data };
+Footer.args = {
+  primary_content: ReactDOMServer.renderToStaticMarkup(
+    <ContentPlaceholder>Primary Content</ContentPlaceholder>
+  ),
+  secondary_content: ReactDOMServer.renderToStaticMarkup(
+    <ContentPlaceholder>Secondary Content</ContentPlaceholder>
+  ),
+  ...data
+};
 
 export default settings;
 export { Footer };

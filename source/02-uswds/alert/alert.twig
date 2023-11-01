@@ -11,11 +11,3 @@
     {{ content }}
   </div>
 </div>
-
-{% if is_demo %}
-  <div class="{{ classes }}"{% if role %} role="{{ role }}"{% endif %}>
-    <div class="usa-alert__body">
-      {{ content }}
-    </div>
-  </div>
-{% endif %}

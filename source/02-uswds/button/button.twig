@@ -8,8 +8,3 @@
 {% else %}
   <a href="{{ url }}" {{ add_attributes({ 'class': classes }) }}>{{ text }}</a>
 {% endif %}
-
-{% if is_demo %}
-  <a href="{{ url }}" {{ add_attributes({ 'class': classes }) }}>{{ text_demo }}</a>
-  <button {{ add_attributes({ 'class': classes }) }} disabled>Disabled {{ text }}</button>
-{% endif %}
