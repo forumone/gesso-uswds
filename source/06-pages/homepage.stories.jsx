@@ -21,12 +21,12 @@ export default {
 // cards. See the Landing Page story for an example of a loop using the same
 // card args.
 const homepageGridContent = [
-  Card({
+  Card.render({
     ...Card.args,
     title: 'It’s Only a Model',
     media: '<img src="https://picsum.photos/800/600?image=1069" alt="">',
   }),
-  Card({
+  Card.render({
     ...Card.args,
     title: 'Let Us Ride to Camelot',
     media: '<img src="https://picsum.photos/800/600?image=1025" alt="">',
@@ -34,12 +34,12 @@ const homepageGridContent = [
       '<p>Well, we did do the nose. I don’t want to talk to you no more, you ' +
       'empty-headed animal food trough water!</p>',
   }),
-  Card({
+  Card.render({
     ...Card.args,
     title: 'What a Strange Person',
     media: '<img src="https://picsum.photos/800/600?image=1040" alt="">',
   }),
-  Card({
+  Card.render({
     ...Card.args,
     title: 'The Knights Who Say Ni',
     media: '<img src="https://picsum.photos/800/600?image=870" alt="">',
@@ -50,30 +50,28 @@ const homepageContent = args =>
   twigTemplate({
     ...args,
     homepage_hero: ReactDOMServer.renderToStaticMarkup(
-      <>
-        {Hero({
-          ...Hero.args,
-          background_image:
-            'https://picsum.photos/1600/800/?image=96&gravity=north',
-          title: 'Where’d You Get The Coconuts?',
-          paragraph:
-            '<p>The swallow may fly south with the sun, and the house martin or ' +
-            'the plover may seek warmer climes in winter, yet these are not strangers to our land. ' +
-            'Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A ' +
-            'swallow carrying a coconut? It could grip it by the husk!</p>',
-          button_text: 'Ni! Ni! Ni! Ni!',
-        })}
-      </>
+      Hero.render({
+        ...Hero.args,
+        background_image:
+          'https://picsum.photos/1600/800/?image=96&gravity=north',
+        title: 'Where’d You Get The Coconuts?',
+        paragraph:
+          '<p>The swallow may fly south with the sun, and the house martin or ' +
+          'the plover may seek warmer climes in winter, yet these are not strangers to our land. ' +
+          'Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A ' +
+          'swallow carrying a coconut? It could grip it by the husk!</p>',
+        button_text: 'Ni! Ni! Ni! Ni!',
+      })
     ),
     homepage_grid_content: ReactDOMServer.renderToStaticMarkup(
-      <>{homepageGridContent.map(card => card)}</>
+      homepageGridContent.map(card => card)
     ),
     homepage_grid_title: 'You Don’t Vote For Kings',
   });
 
-const Homepage = args => (
-  <PageWrapper isHomepage>{parse(homepageContent(args))}</PageWrapper>
-);
-Homepage.args = { ...globalData };
+const Homepage = {
+  render: args => <PageWrapper isHomepage>{parse(homepageContent(args))}</PageWrapper>,
+  args: { ...globalData },
+};
 
 export { Homepage };

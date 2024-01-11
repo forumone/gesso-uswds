@@ -7,13 +7,10 @@ const settings = {
   title: 'Layouts/Page Section',
 };
 
-const PageSection = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-PageSection.args = { ...data };
+const PageSection = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { PageSection };

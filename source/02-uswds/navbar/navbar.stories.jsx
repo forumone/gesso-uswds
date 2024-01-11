@@ -16,12 +16,10 @@ const settings = {
   },
 };
 
-const NavBar = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
+
+const NavBar = {
+  render: args => parse(twigTemplate(args)),
+};
 
 export default settings;
 export { NavBar };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
@@ -25,45 +25,39 @@ const settings = {
 
 const headerContent = ReactDOMServer.renderToStaticMarkup(
   <>
-    {NavBar(NavBar.args)}
-    {Nav({...Nav.args, is_extended: false})}
+    {NavBar.render(NavBar.args)}
+    {Nav.render({...Nav.args, is_extended: false})}
   </>
 );
 
 const headerContentExtended = ReactDOMServer.renderToStaticMarkup(
   <>
-    {NavBar(NavBar.args)}
-    {Nav({...Nav.args, is_extended: true})}
+    {NavBar.render(NavBar.args)}
+    {Nav.render({...Nav.args, is_extended: true})}
   </>
 );
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = {
-  header_content: headerContent,
-  ...data,
-  is_extended: false,
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: {
+    header_content: headerContent,
+    ...data,
+    is_extended: false,
+   },
 };
 
-const Extended = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Extended.args = {
-  header_content: headerContentExtended,
-  ...data,
-  is_extended: true,
-};
-Extended.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--extended.html.',
+const Extended = {
+  render: args => parse(twigTemplate(args)),
+  args: {
+    header_content: headerContentExtended,
+    ...data,
+    is_extended: true,
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/header/ and https://components.designsystem.digital.gov/components/detail/header--extended.html.',
+    },
   },
 };
 

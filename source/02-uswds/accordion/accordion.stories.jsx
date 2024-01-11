@@ -20,39 +20,34 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const Bordered = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Bordered.args = { ...borderedData };
-Bordered.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--bordered.html.',
+const Bordered = {
+   ...Default,
+   args: {
+    ...borderedData,
+   },
+   parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--bordered.html.',
+    },
   },
 };
 
-const Multiselectable = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Multiselectable.args = { ...multiselectableData };
-Multiselectable.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--multiselectable.html.',
+const Multiselectable = {
+  ...Default,
+  args: {
+   ...multiselectableData,
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/accordion/ and https://components.designsystem.digital.gov/components/detail/accordion--multiselectable.html.',
+    },
   },
 };
 

@@ -21,29 +21,20 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...globalData, ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...globalData, ...data },
+};
 
-const BigSearch = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-BigSearch.args = { ...globalData, ...bigData };
+const BigSearch = {
+  ...Default,
+  args: { ...globalData, ...bigData },
+};
 
-const SmallSearch = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-SmallSearch.args = { ...globalData, ...smallData };
+const SmallSearch = {
+  ...Default,
+  args: { ...globalData, ...smallData },
+};
 
 export default settings;
 export { Default, BigSearch, SmallSearch };

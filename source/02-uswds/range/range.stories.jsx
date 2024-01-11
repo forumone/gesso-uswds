@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const RangeInput = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-RangeInput.args = { ...data };
+const RangeInput = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { RangeInput };

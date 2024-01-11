@@ -30,15 +30,17 @@ const children = args =>
     ...args,
     described_by: args.id ? `${args.id}-description` : null,
   });
-const Checkbox = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      label: label(args),
-      children: children(args),
-    })
-  );
-Checkbox.args = { ...data };
+const Checkbox = {
+  render: args =>
+    parse(
+      twigTemplate({
+        ...args,
+        label: label(args),
+        children: children(args),
+      })
+    ),
+  args: { ...data },
+};
 
 export default settings;
 export { Checkbox };

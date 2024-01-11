@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
@@ -19,20 +19,17 @@ const settings = {
   },
 };
 
-const Footer = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Footer.args = {
-  primary_content: ReactDOMServer.renderToStaticMarkup(
-    <ContentPlaceholder>Primary Content</ContentPlaceholder>
-  ),
-  secondary_content: ReactDOMServer.renderToStaticMarkup(
-    <ContentPlaceholder>Secondary Content</ContentPlaceholder>
-  ),
-  ...data
+const Footer = {
+  render: args => parse(twigTemplate(args)),
+  args: {
+    primary_content: ReactDOMServer.renderToStaticMarkup(
+      <ContentPlaceholder>Primary Content</ContentPlaceholder>
+    ),
+    secondary_content: ReactDOMServer.renderToStaticMarkup(
+      <ContentPlaceholder>Secondary Content</ContentPlaceholder>
+    ),
+    ...data
+  },
 };
 
 export default settings;
