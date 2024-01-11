@@ -25,123 +25,120 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const AccentCool = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-AccentCool.args = { ...data, modifier_classes: 'usa-button--accent-cool', };
-AccentCool.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-cool.html.',
+const AccentCool = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--accent-cool',
+  },
+  parameters: {
+    docs: {
+     storyDescription:
+       'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-cool.html.',
+    },
   },
 };
 
-const AccentWarm = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-AccentWarm.args = { ...data, modifier_classes: 'usa-button--accent-warm', };
-AccentWarm.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-warm.html.',
+const AccentWarm = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--accent-warm',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+       'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--accent-warm.html.',
+    },
   },
 };
 
-const Base = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Base.args = { ...data, modifier_classes: 'usa-button--base', };
-Base.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--base.html.',
+const Base = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--base',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--base.html.',
+    },
   },
 };
 
-const Big = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Big.args = { ...data, modifier_classes: 'usa-button--big', };
-Big.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--big.html.',
+const Big = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--big',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--big.html.',
+    },
   },
 };
 
-const Inverse = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Inverse.args = { ...data, modifier_classes: 'usa-button--outline usa-button--inverse', };
-Inverse.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline-inverse.html.',
+const Inverse = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--outline usa-button--inverse',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline-inverse.html.',
+    },
   },
 };
 
-const Outline = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Outline.args = { ...data, modifier_classes: 'usa-button--outline', };
-Outline.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline.html.',
+const Outline = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--outline',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--outline.html.',
+    },
   },
 };
 
-const Secondary = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Secondary.args = { ...data, modifier_classes: 'usa-button--secondary', };
-Secondary.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--secondary.html.',
+const Secondary = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--secondary',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/ and https://components.designsystem.digital.gov/components/detail/buttons--secondary.html.',
+    },
   },
 };
 
-const Unstyled = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Unstyled.args = { ...data, modifier_classes: 'usa-button--unstyled', };
-Unstyled.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/button/.',
+const Unstyled = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'usa-button--unstyled',
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/button/.',
+    },
   },
 };
 

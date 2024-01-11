@@ -11,7 +11,7 @@ const settings = {
   },
 };
 
-const InlineElements = () => parse(twigTemplate());
+const InlineElements = { render: () => parse(twigTemplate()) };
 
 export default settings;
 export { InlineElements };

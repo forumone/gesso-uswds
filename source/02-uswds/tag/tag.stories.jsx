@@ -19,25 +19,19 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const BigTag = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-BigTag.args = { ...bigData };
-BigTag.parameters = {
-  docs: {
-    storyDescription:
-      'See https://designsystem.digital.gov/components/tag/ and https://components.designsystem.digital.gov/components/detail/labels--big.html.',
+const BigTag = {
+  ...Default,
+  args: { ...bigData },
+  parameters: {
+    docs: {
+      storyDescription:
+        'See https://designsystem.digital.gov/components/tag/ and https://components.designsystem.digital.gov/components/detail/labels--big.html.',
+    },
   },
 };
 

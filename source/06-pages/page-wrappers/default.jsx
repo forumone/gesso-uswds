@@ -32,26 +32,24 @@ const PageWrapper = props => {
     <>
       {parse(SkiplinksTwig())}
       <div className="l-site-container">
-        {Banner(Banner.args)}
+        {Banner.render(Banner.args)}
         {parse(
           HeaderTwig({
             is_extended: true,
             header_content: ReactDOMServer.renderToStaticMarkup(
               <>
-                {NavBar(NavBar.args)}
+                {NavBar.render(NavBar.args)}
                 {parse(
                   NavTwig({
                     label: 'Primary navigation',
                     is_extended: true,
                     nav_content: ReactDOMServer.renderToStaticMarkup(
                       <>
-                        {MainMenu(MainMenu.args)}
+                        {MainMenu.render(MainMenu.args)}
                         {parse(
                           SecondaryTwig({
                             secondary_content: ReactDOMServer.renderToStaticMarkup(
-                              <>
-                                {AccountMenu(AccountMenu.args)}
-                              </>
+                              <>{AccountMenu.render(AccountMenu.args)}</>
                             )
                           })
                         )}
@@ -68,7 +66,7 @@ const PageWrapper = props => {
             has_constrain: false,
             breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
               <>
-                {Breadcrumb(Breadcrumb.args)}
+                {Breadcrumb.render(Breadcrumb.args)}
               </>
             ),
           })
@@ -78,9 +76,7 @@ const PageWrapper = props => {
             ContentTwig({
               has_constrain: true,
               content_content: ReactDOMServer.renderToStaticMarkup(
-                <>
-                  {children}
-                </>
+                <>{children}</>
               ),
             })
           )}
@@ -90,19 +86,17 @@ const PageWrapper = props => {
             has_constrain: true,
             has_back_to_top: true,
             primary_content: ReactDOMServer.renderToStaticMarkup(
-              <>
-                {FooterMenu(FooterMenu.args)}
-              </>
+              <>{FooterMenu.render(FooterMenu.args)}</>
             ),
             secondary_content: ReactDOMServer.renderToStaticMarkup(
               <>
-                {Copyright(Copyright.args)}
+                {Copyright.render(Copyright.args)}
               </>
             ),
           })
         )}
       </div>
-      {BackToTop({
+      {BackToTop.render({
         ...BackToTop.args,
         top_element: 'top'
       })}

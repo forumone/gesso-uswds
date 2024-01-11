@@ -9,31 +9,26 @@ const settings = {
   decorators: [withGlobalWrapper],
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const Separated = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      is_separated: true,
-    })
-  );
-Separated.args = { ...data };
+const Separated = {
+  ...Default,
+  args: {
+    ...Default.args,
+    is_separated: true,
+  },
+};
 
-const Segmented = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      is_segmented: true,
-    })
-  );
-Segmented.args = { ...data };
+const Segmented = {
+  ...Default,
+  args: {
+    ...Default.args,
+    is_segmented: true,
+  },
+};
 
 export default settings;
 export { Default, Separated, Segmented };

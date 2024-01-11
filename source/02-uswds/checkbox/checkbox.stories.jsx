@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const Checkbox = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Checkbox.args = { ...data };
+const Checkbox = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { Checkbox };
