@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
@@ -37,13 +37,10 @@ const settings = {
   },
 };
 
-const Tooltip = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Tooltip.args = { ...data };
+const Tooltip = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { Tooltip };

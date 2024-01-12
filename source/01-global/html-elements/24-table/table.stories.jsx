@@ -11,7 +11,7 @@ const settings = {
   },
 };
 
-const Default = () => parse(twigTemplate());
+const Default = { render: () => parse(twigTemplate()) };
 
 export default settings;
 export { Default };

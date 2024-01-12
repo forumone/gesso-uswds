@@ -11,9 +11,10 @@ const settings = {
   },
 };
 
-const TableWithColumnAndRowHeaders = () => parse(twigTemplate());
-
-TableWithColumnAndRowHeaders.storyName = 'Table with Column and Row Headers';
+const TableWithColumnAndRowHeaders = {
+  render: () => parse(twigTemplate()),
+  storyName: 'Table with Column and Row Headers',
+};
 
 export default settings;
 export { TableWithColumnAndRowHeaders };

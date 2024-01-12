@@ -10,13 +10,10 @@ const settings = {
   decorators: [withGlobalWrapper],
 };
 
-const MediaBlock = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-MediaBlock.args = { ...data };
+const MediaBlock = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { MediaBlock };

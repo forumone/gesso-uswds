@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const SummaryBox = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-SummaryBox.args = { ...data };
+const SummaryBox = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { SummaryBox };

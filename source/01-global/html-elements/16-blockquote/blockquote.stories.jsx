@@ -12,12 +12,7 @@ const settings = {
   },
 };
 
-const Blockquote = () =>
-  parse(
-    twigTemplate({
-      ...data,
-    })
-  );
+const Blockquote = { render: () => parse(twigTemplate(data)) };
 
 export default settings;
 export { Blockquote };

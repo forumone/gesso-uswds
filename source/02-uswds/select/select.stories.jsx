@@ -11,21 +11,15 @@ const settings = {
   decorators: [withGlobalWrapper],
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const GroupsSelect = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-GroupsSelect.args = { ...groupsData };
+const GroupsSelect = {
+  ...Default,
+  args: { ...groupsData },
+};
 
 export default settings;
 export { Default, GroupsSelect };

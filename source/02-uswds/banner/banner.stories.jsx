@@ -17,13 +17,10 @@ const settings = {
   },
 };
 
-const Banner = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Banner.args = { ...globalData, ...data };
+const Banner = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...globalData, ...data },
+};
 
 export default settings;
 export { Banner };

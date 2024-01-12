@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const TextArea = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-TextArea.args = { ...data };
+const TextArea = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { TextArea };

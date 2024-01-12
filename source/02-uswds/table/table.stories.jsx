@@ -22,45 +22,30 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const BorderlessTable = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-BorderlessTable.args = { ...borderlessData };
+const BorderlessTable = {
+  ...Default,
+  args: { ...borderlessData },
+};
 
-const ScrollableTable = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-ScrollableTable.args = { ...scrollableData };
+const ScrollableTable = {
+  ...Default,
+  args: { ...scrollableData },
+};
 
-const SortableTable = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-SortableTable.args = { ...sortableData };
+const SortableTable = {
+  ...Default,
+  args: { ...sortableData },
+};
 
-const StackedTable = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-StackedTable.args = { ...stackedData };
+const StackedTable = {
+  ...Default,
+  args: { ...stackedData },
+};
 
 export default settings;
 export {

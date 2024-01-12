@@ -10,13 +10,10 @@ const settings = {
   decorators: [withGlobalWrapper],
 };
 
-const Logo = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Logo.args = { ...data };
+const Logo = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { Logo };
