@@ -1,4 +1,4 @@
-import "./drupalSettings";
+import './drupalSettings';
 
 // Simple Drupal.behaviors usage for Storybook
 // via https://github.com/emulsify-ds/emulsify-drupal/
@@ -6,7 +6,7 @@ import "./drupalSettings";
 window.Drupal = { behaviors: {} };
 
 (function (Drupal, drupalSettings) {
-  Drupal.throwError = (error) => {
+  Drupal.throwError = error => {
     setTimeout(function () {
       throw error;
     }, 0);
@@ -32,6 +32,10 @@ window.Drupal = { behaviors: {} };
 
   Drupal.theme = (themeFunction, options) => {
     return Drupal.theme[themeFunction](options);
+  };
+
+  drupalSettings.guswds = {
+    imagePath: 'images',
   };
 })(Drupal, window.drupalSettings);
 
