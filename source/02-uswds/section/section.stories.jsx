@@ -10,29 +10,20 @@ const settings = {
   title: 'USWDS/Section',
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const DarkSection = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-DarkSection.args = { ...darkData };
+const DarkSection = {
+  ...Default,
+  args: { ...darkData },
+};
 
-const LightSection = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-LightSection.args = { ...lightData };
+const LightSection = {
+  ...Default,
+  args: { ...lightData },
+};
 
 export default settings;
 export { Default, DarkSection, LightSection };

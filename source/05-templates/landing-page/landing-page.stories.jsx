@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
@@ -12,18 +12,25 @@ const settings = {
   decorators: [withGlobalWrapper],
   parameters: {
     controls: {
-      include: ['page_title', 'show_admin_info', 'content'],
+      include: [
+        'is_published',
+        'page_title',
+        'show_admin_info',
+        'content',
+      ],
     },
   },
 };
 
-const LandingPage = args => parse(twigTemplate(args));
-LandingPage.args = {
-  ...globalData,
-  page_title: 'Landing Page Title',
-  content: ReactDOMServer.renderToStaticMarkup(
-    <ContentPlaceholder>Landing Page Content</ContentPlaceholder>
-  ),
+const LandingPage = {
+  render: args => parse(twigTemplate(args)),
+  args: {
+    ...globalData,
+    page_title: 'Landing Page Title',
+    content: ReactDOMServer.renderToStaticMarkup(
+      <ContentPlaceholder>Landing Page Content</ContentPlaceholder>
+    ),
+  },
 };
 
 export default settings;

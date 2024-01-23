@@ -11,7 +11,7 @@ const settings = {
   },
 };
 
-const Address = () => parse(twigTemplate());
+const Address = { render: () => parse(twigTemplate()) };
 
 export default settings;
 export { Address };

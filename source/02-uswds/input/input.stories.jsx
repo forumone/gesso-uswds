@@ -20,29 +20,24 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data };
+const Default = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
-const ErrorInput = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-ErrorInput.args = { ...dataError };
+const ErrorInput = {
+  ...Default,
+  args: {
+    ...dataError,
+  },
+};
 
-const SuccessInput = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-SuccessInput.args = { ...dataSuccess };
+const SuccessInput = {
+  ...Default,
+  args: {
+    ...dataSuccess,
+  },
+};
 
 export default settings;
 export { Default, ErrorInput, SuccessInput };

@@ -14,6 +14,7 @@ const settings = {
   parameters: {
     controls: {
       include: [
+        'is_published',
         'title',
         'show_admin_info',
         'show_footer',
@@ -30,7 +31,7 @@ const settings = {
   },
 };
 
-const Article = args => parse(twigTemplate(args));
+const Article = { render: args => parse(twigTemplate(args)) };
 Article.args = { ...globalData, ...data };
 
 export default settings;

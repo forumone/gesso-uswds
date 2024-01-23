@@ -11,7 +11,7 @@ const settings = {
   },
 };
 
-const Headings = () => parse(twigTemplate());
+const Headings = { render: () => parse(twigTemplate()) };
 
 export default settings;
 export { Headings };

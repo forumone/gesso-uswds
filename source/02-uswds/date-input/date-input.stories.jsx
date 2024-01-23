@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const DateInput = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-DateInput.args = { ...data };
+const DateInput = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { DateInput };

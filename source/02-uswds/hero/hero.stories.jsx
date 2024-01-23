@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const Hero = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Hero.args = { ...data };
+const Hero = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { Hero };

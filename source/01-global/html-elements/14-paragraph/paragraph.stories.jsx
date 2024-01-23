@@ -11,7 +11,7 @@ const settings = {
   },
 };
 
-const Paragraph = () => parse(twigTemplate());
+const Paragraph = { render: () => parse(twigTemplate()) };
 
 export default settings;
 export { Paragraph };

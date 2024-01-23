@@ -13,15 +13,17 @@ const settings = {
 
 const label = args => labelTemplate({ ...args });
 const children = args => inputTemplate({ ...args });
-const Radio = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      label: label(args),
-      children: children(args),
-    })
-  );
-Radio.args = { ...data };
+const Radio = {
+  render: args =>
+    parse(
+      twigTemplate({
+        ...args,
+        label: label(args),
+        children: children(args),
+      })
+    ),
+  args: { ...data },
+};
 
 export default settings;
 export { Radio };

@@ -12,6 +12,14 @@
   {% endblock %}
   {{ title_suffix }}
 
+  {% if not is_published %}
+    {% include '@uswds/alert/alert.twig' with {
+      'modifier_classes': 'usa-alert--warning',
+      'title': false,
+      'content': '<p class="usa-alert__text">' ~ 'This page is unpublished.'|t ~ '</p>',
+    } %}
+  {% endif %}
+
   {% if show_admin_info %}
     {% if not admin_info %}
       {% set admin_info %}

@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const Sidenav = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Sidenav.args = { ...data };
+const Sidenav = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { Sidenav };

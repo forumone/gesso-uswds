@@ -27,15 +27,17 @@ const textarea = args =>
     described_by: args.id ? `${args.id}-description` : null,
   });
 const label = args => labelTemplate(args);
-const Textarea = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      label: label(args),
-      children: textarea(args),
-    })
-  );
-Textarea.args = { ...data };
+const Textarea = {
+  render: args =>
+    parse(
+      twigTemplate({
+        ...args,
+        label: label(args),
+        children: textarea(args),
+      })
+    ),
+  args: { ...data },
+};
 
 export default settings;
 export { Textarea };

@@ -18,13 +18,10 @@ const settings = {
   },
 };
 
-const RadioButton = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-RadioButton.args = { ...data };
+const RadioButton = {
+  render: args => parse(twigTemplate(args)),
+  args: { ...data },
+};
 
 export default settings;
 export { RadioButton };

@@ -10,13 +10,7 @@ const settings = {
   decorators: [withGlobalWrapper],
 };
 
-const TagLink = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-TagLink.args = { ...data };
+const TagLink = { render: args => parse(twigTemplate(args)), args: { ...data } };
 
 export default settings;
 export { TagLink };
