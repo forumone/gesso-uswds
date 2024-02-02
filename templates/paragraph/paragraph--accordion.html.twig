@@ -1,0 +1,15 @@
+{% set accordion = [] %}
+{% for key, item in content.field_accordion_items|field_value %}
+  {% if key|first != '#' %}
+    {% set paragraph_id = item['#paragraph'].id.value %}
+    {% set heading = drupal_field('field_accordion_heading', 'paragraph', paragraph_id) %}
+    {% set content = drupal_field('field_accordion_body', 'paragraph', paragraph_id) %}
+    {% set accordion = accordion|merge([{ 'title': heading|field_value, 'content': content|field_value }]) %}
+  {% endif %}
+{% endfor %}
+
+{% include '@uswds/accordion/accordion.twig' with {
+  'modifier_classes': '',
+  'accordion': accordion,
+}%}
+
