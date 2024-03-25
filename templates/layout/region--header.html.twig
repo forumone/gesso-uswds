@@ -13,7 +13,9 @@
  */
 #}
 {% if content %}
-  {% embed '@uswds/navbar/navbar.twig' %}
+  {% embed '@uswds/navbar/navbar.twig' with {
+    'attributes': attributes,
+  } %}
 
     {% block content %}
       {{ content }}
