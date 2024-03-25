@@ -17,5 +17,5 @@ function guswds_theme_suggestions_field_alter(array &$suggestions, array $variab
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function guswds_theme_suggestions_gesso_icon_alter(array &$suggestions, array $variables) {
-  $suggestions[] = 'gesso_icon__override';
+  $suggestions[] = 'gesso_icon__custom';
 }
