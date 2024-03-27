@@ -1,3 +1,4 @@
+import React from 'react';
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
@@ -111,6 +112,14 @@ const Secondary = {
   },
 };
 
+const Base = {
+  ...Default,
+  args: {
+    ...Default.args,
+    modifier_classes: 'c-button--base',
+  },
+};
+
 const Outline = {
   ...Default,
   args: {
@@ -144,4 +153,4 @@ const Large = {
 };
 
 export default settings;
-export { Default, Secondary, Outline, Danger, Small, Large };
+export { Default, Secondary, Base, Outline, Danger, Small, Large };
