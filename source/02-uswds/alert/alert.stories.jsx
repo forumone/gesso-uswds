@@ -1,3 +1,4 @@
+import React from 'react';
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
@@ -8,11 +9,14 @@ import '../uswds.es6';
 const settings = {
   title: 'USWDS/Alert',
   decorators: [
-    (Story, {args}) =>
+    (Story, { args }) => (
       <>
         <Story />
         <Story args={{ ...args, title: false }} />
-      </>, withGlobalWrapper],
+      </>
+    ),
+    withGlobalWrapper,
+  ],
   parameters: {
     docs: {
       description: {

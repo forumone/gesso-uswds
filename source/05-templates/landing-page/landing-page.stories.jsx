@@ -6,6 +6,7 @@ import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './landing-page.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import ContentPlaceholder from '../../01-global/content-placeholder/content-placeholder';
+import { MessagesandTabs } from '../template-parts/messages-and-tabs/messages-and-tabs.stories.jsx';
 
 const settings = {
   title: 'Templates/Landing Page',
@@ -14,8 +15,8 @@ const settings = {
     controls: {
       include: [
         'is_published',
-        'page_title',
         'show_admin_info',
+        'page_title',
         'content',
       ],
     },
@@ -26,6 +27,7 @@ const LandingPage = {
   render: args => parse(twigTemplate(args)),
   args: {
     ...globalData,
+    admin_info: MessagesandTabs.args.admin_info,
     page_title: 'Landing Page Title',
     content: ReactDOMServer.renderToStaticMarkup(
       <ContentPlaceholder>Landing Page Content</ContentPlaceholder>
