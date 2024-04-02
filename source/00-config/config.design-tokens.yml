@@ -83,6 +83,9 @@ uswds:
   link-visited-color: 'violet-70v'
   link-hover-color: 'primary-dark'
   link-active-color: 'primary-darker'
+  # https://github.com/uswds/uswds/blob/develop/packages/uswds-core/src/styles/settings/_settings-components.scss
+  table-sticky-top-offset: -1px
+  table-background-color: default
 gesso:
   palette:
     brand:
