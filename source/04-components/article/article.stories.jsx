@@ -1,3 +1,4 @@
+import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
@@ -14,9 +15,7 @@ const settings = {
   parameters: {
     controls: {
       include: [
-        'is_published',
         'title',
-        'show_admin_info',
         'show_footer',
         'author_name',
         'date_format',
@@ -31,8 +30,13 @@ const settings = {
   },
 };
 
-const Article = { render: args => parse(twigTemplate(args)) };
-Article.args = { ...globalData, ...data };
+const Article = {
+  render: args => parse(twigTemplate(args)),
+  args: {
+    ...globalData,
+    ...data,
+  },
+};
 
 export default settings;
 export { Article };

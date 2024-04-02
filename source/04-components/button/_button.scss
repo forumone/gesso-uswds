@@ -22,6 +22,11 @@
   @extend .usa-button--secondary;
 }
 
+.c-button--base,
+%c-button--base {
+  @extend .usa-button--base;
+}
+
 .c-button--outline,
 %c-button--outline {
   @extend .usa-button--outline;

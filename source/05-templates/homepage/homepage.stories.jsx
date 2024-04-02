@@ -6,6 +6,7 @@ import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './homepage.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import ContentPlaceholder from '../../01-global/content-placeholder/content-placeholder';
+import { MessagesandTabs } from '../template-parts/messages-and-tabs/messages-and-tabs.stories.jsx';
 import { HeroImage } from '../../01-global/images/hero-image.stories.jsx';
 
 const settings = {
@@ -31,6 +32,7 @@ const Homepage = {
   render: args => parse(twigTemplate(args)),
   args: {
     ...globalData,
+    admin_info: MessagesandTabs.args.admin_info,
     hero_image: ReactDOMServer.renderToStaticMarkup(
       HeroImage.render(HeroImage.args)
     ),

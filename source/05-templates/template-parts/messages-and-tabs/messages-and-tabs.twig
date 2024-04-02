@@ -1,0 +1,13 @@
+{% if not is_published %}
+  {% include '@uswds/alert/alert.twig' with {
+    'modifier_classes': 'usa-alert--warning u-spaced-2',
+    'title': false,
+    'content': '<p class="usa-alert__text">' ~ 'This page is unpublished.'|t ~ '</p>',
+  } %}
+{% endif %}
+
+{% if show_admin_info %}
+  {% block admin_info %}
+    {{ admin_info }}
+  {% endblock %}
+{% endif %}

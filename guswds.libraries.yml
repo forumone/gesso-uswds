@@ -55,12 +55,27 @@ dropbutton:
     - core/once
     - guswds/common
 
+facets:
+  css:
+    theme:
+      dist/css/facet.css: {}
+      dist/css/facet-list.css: {}
+  dependencies:
+    - guswds/common
+
 file:
   css:
     theme:
       dist/css/file.css: {}
   dependencies:
     - guswds/icon_link
+
+filters:
+  css:
+    theme:
+      dist/css/filters.css: {}
+  dependencies:
+    - guswds/common
 
 icon_link:
   css:

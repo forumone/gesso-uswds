@@ -1,7 +1,8 @@
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
-import twigTemplate from './button-group.twig';
+import buttonGroupTemplate from './button-group.twig';
+import buttonGroupItemTemplate from './button-group-item.twig';
 import data from './button-group.yml';
 
 const settings = {
@@ -10,8 +11,27 @@ const settings = {
 };
 
 const Default = {
-  render: args => parse(twigTemplate(args)),
+  render: args => {
+    const buttonGroupItems = (args.button_group_data || data.button_group_data)
+      .map(item => buttonGroupItemTemplate({ ...args, ...item }))
+      .join('');
+
+    return parse(
+      buttonGroupTemplate({
+        button_group_items: buttonGroupItems,
+        ...args,
+      })
+    );
+  },
   args: { ...data },
+};
+
+const Base = {
+  ...Default,
+  args: {
+    ...Default.args,
+    button_modifier_classes: 'c-button--base',
+  },
 };
 
 const Separated = {
@@ -31,4 +51,4 @@ const Segmented = {
 };
 
 export default settings;
-export { Default, Separated, Segmented };
+export { Default, Base, Separated, Segmented };

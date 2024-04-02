@@ -7,6 +7,7 @@ import borderlessData from './table--borderless.yml';
 import scrollableData from './table--scrollable.yml';
 import sortableData from './table--sortable.yml';
 import stackedData from './table--stacked.yml';
+import stickheaderData from './table--sticky-header.yml';
 import '../uswds.es6';
 
 const settings = {
@@ -47,6 +48,11 @@ const StackedTable = {
   args: { ...stackedData },
 };
 
+const StickyheaderTable = {
+  ...Default,
+  args: { ...stickheaderData },
+};
+
 export default settings;
 export {
   Default,
@@ -54,4 +60,5 @@ export {
   ScrollableTable,
   SortableTable,
   StackedTable,
+  StickyheaderTable,
 };
