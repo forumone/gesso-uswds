@@ -41,11 +41,15 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
+{% if hide_title is null %}
+  {% set hide_title = false %}
+{% endif %}
+
 {% include '@components/view/views-view/views-view.twig' with {
   'attributes': attributes.addClass(classes),
   'title': title,
   'title_element': 'h2',
-  'hide_title': false,
+  'hide_title': hide_title,
   'element': 'div',
   'header': header,
   'exposed': exposed,
