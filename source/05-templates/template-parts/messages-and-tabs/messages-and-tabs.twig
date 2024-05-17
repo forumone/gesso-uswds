@@ -1,8 +1,11 @@
 {% if not is_published %}
+  {% set unpublished_message %}
+    <p class="usa-alert__text">{{ 'This page is unpublished.'|t }}</p>
+  {% endset %}
   {% include '@uswds/alert/alert.twig' with {
     'modifier_classes': 'usa-alert--warning u-spaced-2',
     'title': false,
-    'content': '<p class="usa-alert__text">' ~ 'This page is unpublished.'|t ~ '</p>',
+    'content': unpublished_message
   } %}
 {% endif %}
 
