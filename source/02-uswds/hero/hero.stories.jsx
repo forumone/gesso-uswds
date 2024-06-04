@@ -18,10 +18,18 @@ const settings = {
   },
 };
 
-const Hero = {
+const Default = {
   render: args => parse(twigTemplate(args)),
   args: { ...data },
 };
 
+const Right = {
+  ...Default,
+  args: {
+    ...data,
+    modifier_classes: 'has-content-right',
+  },
+};
+
 export default settings;
-export { Hero };
+export { Default, Right };

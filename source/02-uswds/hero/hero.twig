@@ -1,22 +1,23 @@
 {% set classes = [
   'usa-hero',
+  has_overlay ? 'has-overlay' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<section {{ add_attributes({ 'class': classes }) }}{% if background_image %} style="background-image:url({{ background_image }});"{% endif %}>
+<section {{ add_attributes({ 'class': classes }) }}{% if hero_image %} style="background-image:url({{ hero_image }});"{% endif %}>
   <div class="grid-container">
     <div class="usa-hero__callout">
       <h1 class="usa-hero__heading">
-        {% if callout %}
-          <span class="usa-hero__heading--alt">{{ callout }}</span>
+        {% if hero_callout %}
+          <span class="usa-hero__heading--alt">{{ hero_callout }}</span>
         {% endif %}
-        {{ title }}
+        {{ hero_title }}
       </h1>
-      {% if paragraph %}
-        <p>{{ paragraph }}</p>
+      {% if hero_summary %}
+        {{ hero_summary }}
       {% endif %}
-      {% if button_text and button_url %}
-        <a class="usa-button" href="{{ button_url }}">{{ button_text }}</a>
+      {% if hero_button_text and hero_button_url %}
+        <a class="usa-button" href="{{ hero_button_url }}">{{ hero_button_text }}</a>
       {% endif %}
     </div>
   </div>
