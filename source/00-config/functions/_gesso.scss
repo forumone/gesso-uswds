@@ -1,6 +1,7 @@
 // Functions: Gesso
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:string';
 @use '../design-tokens.artifact' as *;
 
 // Fetch nested keys
@@ -15,7 +16,7 @@
   }
 
   @each $key in $keys {
-    @if (map-has-key($map, $key)) {
+    @if (map.has-key($map, $key)) {
       $map: map.get($map, $key);
     } @else {
       @warn "Key `#{$key}` not found in map";
@@ -59,7 +60,7 @@
 @function gesso-font-family($ff-type) {
   $stack: gesso-get-map(typography, font-family, $ff-type, stack);
   @if (type_of($stack) == 'string') {
-    @return unquote($stack);
+    @return string.unquote($stack);
   }
   @return $stack;
 }
@@ -104,9 +105,9 @@
 }
 
 @function gesso-easing($keys...) {
-  @return unquote(gesso-get-map(transitions, ease, $keys...));
+  @return string.unquote(gesso-get-map(transitions, ease, $keys...));
 }
 
 @function gesso-box-shadow($keys...) {
-  @return gesso-get-map(box-shadow, $keys...);
+  @return string(gesso-get-map(box-shadow, $keys...));
 }
