@@ -146,6 +146,14 @@ teaser:
     theme:
       dist/css/teaser.css: {}
 
+uswds_modal:
+  js:
+    dist/js/modal.es6.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - guswds/common
+
 video:
   css:
     theme:

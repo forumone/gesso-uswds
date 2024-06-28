@@ -1,0 +1,35 @@
+{{ attach_library('guswds/uswds_modal') }}
+
+<div
+  class="usa-modal"
+  id="{{ id }}"
+  aria-labelledby="{{ heading_id }}"
+  aria-describedby="{{ description_id }}"
+>
+  <div class="usa-modal__content">
+    <div class="usa-modal__main">
+      <h2 class="usa-modal__heading" id="{{ heading_id }}">
+        {{ heading }}
+      </h2>
+      <div class="usa-prose">
+        <p id="{{ description_id }}">
+          {{ description }}
+        </p>
+      </div>
+      {% if footer %}
+        <div class="usa-modal__footer">
+          {{ footer }}
+        </div>
+      {% endif %}
+    </div>
+    <button
+      class="usa-button usa-modal__close"
+      aria-label="Close this window"
+      data-close-modal
+    >
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="{{ image_path }}/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+</div>
