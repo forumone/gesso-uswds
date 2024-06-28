@@ -5,13 +5,31 @@
  * Field-related hook implementations.
  */
 
+ /**
+ * Implements hook_preprocess_HOOK().
+ */
+function guswds_preprocess_field(&$variables) {
+  // Add index to individual paragraphs.
+  if (
+    $variables['field_type'] == 'entity_reference_revisions' &&
+    $variables['element']['#items']->getItemDefinition()->getSetting('target_type') == 'paragraph'
+  ) {
+    $delta = 0;
+    foreach ($variables['items'] as $key => $item) {
+      if (!empty($variables['items'][$key]['content']['#paragraph'])) {
+        $variables['items'][$key]['content']['#paragraph']->index = $delta;
+        $delta++;
+      }
+    }
+  }
+}
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function guswds_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
 }
-
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
