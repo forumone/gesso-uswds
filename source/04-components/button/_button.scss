@@ -53,5 +53,6 @@
 .c-button--small,
 %c-button--small {
   font-size: font-size(body, 1);
-  padding: rem(gesso-spacing(1)) rem(gesso-spacing(2));
+  padding-block: rem(gesso-spacing(1));
+  padding-inline: rem(gesso-spacing(2));
 }
