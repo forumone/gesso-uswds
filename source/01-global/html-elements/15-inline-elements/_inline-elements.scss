@@ -2,7 +2,7 @@
 
 @use '00-config' as *;
 
-a {
+a:not(.usa-button, .c-button) {
   background-color: transparent;
   color: gesso-color(text, link);
   -webkit-text-decoration-skip: objects;

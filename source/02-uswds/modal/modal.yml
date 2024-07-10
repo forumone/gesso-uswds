@@ -1,0 +1,7 @@
+---
+id: example-modal-1
+heading_id: modal-1-heading
+description_id: modal-1-description
+heading: Are you sure you want to continue?
+description: You have unsaved changes that will be lost.
+footer: Footer Text
