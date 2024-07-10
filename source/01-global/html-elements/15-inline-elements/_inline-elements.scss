@@ -2,7 +2,7 @@
 
 @use '00-config' as *;
 
-a {
+a:not(.usa-button, .c-button) {
   background-color: transparent;
   color: gesso-color(text, link);
   -webkit-text-decoration-skip: objects;
@@ -54,7 +54,7 @@ a {
 
 abbr {
   &[title] {
-    border-bottom: 1px dotted;
+    border-block-end: 1px dotted;
     text-decoration: none;
   }
 
@@ -117,11 +117,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  inset-block-end: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+  inset-block-start: -0.5em;
 }
 
 // time {}

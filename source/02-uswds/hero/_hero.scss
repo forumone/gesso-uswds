@@ -1,1 +1,29 @@
 @forward 'usa-hero';
+
+.usa-hero {
+  // Add option for an gradient overlay to default usa-hero.
+  &.has-overlay {
+    position: relative;
+
+    .usa-hero__callout {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::after {
+      background: rgba(0, 0, 0, 0.5);
+      content: '';
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  // Add option for a right aligned usa-hero.
+  &.has-content-right {
+    > .grid-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

@@ -9,13 +9,12 @@ ul {
 
   @if $support-for-rtl {
     [dir='rtl'] & {
-      padding-left: 0;
-      padding-right: 3ch;
+      padding-inline: 0 3ch;
     }
   }
 
   ol,
   ul {
-    margin-top: rem(gesso-spacing(1));
+    margin-block-start: rem(gesso-spacing(1));
   }
 }

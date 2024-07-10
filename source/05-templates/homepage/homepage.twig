@@ -10,11 +10,11 @@
 {% if not homepage_hero %}
   {% set homepage_hero %}
     {% include '@uswds/hero/hero.twig' with {
-      'background_image': hero_image,
-      'title': hero_title,
-      'paragraph': hero_summary,
-      'button_text': hero_button_text,
-      'button_url': hero_button_url,
+      'hero_image': hero_image,
+      'hero_title': hero_title,
+      'hero_summary': hero_summary,
+      'hero_button_text': hero_button_text,
+      'hero_button_url': hero_button_url,
     } %}
   {% endset %}
 {% endif %}

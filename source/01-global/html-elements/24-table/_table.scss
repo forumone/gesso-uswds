@@ -28,7 +28,7 @@ tr {
 
     table {
       @extend %table;
-      margin-top: 0;
+      margin-block-start: 0;
     }
 
     td {

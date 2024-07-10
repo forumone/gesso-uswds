@@ -3,14 +3,14 @@
 // // include it on a template-specific script file instead.
 // // Be sure to initialize any components as well (see init() function below.)
 
-import accordion from "@uswds/uswds/js/usa-accordion";
+import accordion from '@uswds/uswds/js/usa-accordion';
 import navigation from '@uswds/uswds/js/usa-header';
 import banner from '@uswds/uswds/js/usa-banner';
 import tooltip from '@uswds/uswds/js/usa-tooltip';
 import table from '@uswds/uswds/js/usa-table';
 import Drupal from 'drupal';
 
-function gessoUswdsNavigation (context) {
+function gessoUswdsNavigation(context) {
   const subnav = context.querySelectorAll('.c-menu__subnav');
   subnav.forEach((menu, index) => {
     const button = menu.previousElementSibling;
@@ -32,7 +32,5 @@ Drupal.behaviors.uswds = {
     table.on(document.body);
     gessoUswdsNavigation(context); // If used with the USWDS accordion component, the navigation must run after it.
     window.uswdsPresent = true;
-  }
+  },
 };
-
-

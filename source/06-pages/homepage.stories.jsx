@@ -5,7 +5,7 @@ import parse from 'html-react-parser';
 import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
 import { Homepage as Template } from '../05-templates/homepage/homepage.stories.jsx';
-import { Hero } from '../02-uswds/hero/hero.stories.jsx';
+import { Default as Hero } from '../02-uswds/hero/hero.stories.jsx';
 import { Default as Card } from '../04-components/card/card.stories.jsx';
 
 export default {
@@ -54,15 +54,15 @@ const homepageContent = args =>
       homepage_hero: ReactDOMServer.renderToStaticMarkup(
         Hero.render({
           ...Hero.args,
-          background_image:
+          hero_image:
             'https://picsum.photos/1600/800/?image=96&gravity=north',
-          title: 'Where’d You Get The Coconuts?',
-          paragraph:
+          hero_title: 'Where’d You Get The Coconuts?',
+          hero_summary:
             '<p>The swallow may fly south with the sun, and the house martin or ' +
             'the plover may seek warmer climes in winter, yet these are not strangers to our land. ' +
             'Are you suggesting that coconuts migrate? Not at all. They could be carried. What? A ' +
             'swallow carrying a coconut? It could grip it by the husk!</p>',
-          button_text: 'Ni! Ni! Ni! Ni!',
+          hero_button_text: 'Ni! Ni! Ni! Ni!',
         })
       ),
       homepage_grid_content: ReactDOMServer.renderToStaticMarkup(
