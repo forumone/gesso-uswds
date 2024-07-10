@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@drupal/once": "^1.0.1",
-    "@uswds/uswds": "3.8.0",
+    "@uswds/uswds": "3.8.1",
     "domready": "^1.0.8",
     "glob": "^10.3.10",
     "html-react-parser": "^5.1.9",
