@@ -8,4 +8,6 @@
   'attributes': attributes,
   'modifier_classes': '',
   'content': content.field_wysiwyg|field_value is not empty ? content.field_wysiwyg|field_value : false,
-}%}
+} %}
+
+{% set cache_catch = content|without('field_wysiwyg')|render %}

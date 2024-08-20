@@ -39,8 +39,6 @@
   dom_id ? 'js-view-dom-id-' ~ dom_id,
 ] %}
 
-{% set attributes = attributes.addClass(classes) %}
-
 {% if hide_title is null %}
   {% set hide_title = false %}
 {% endif %}

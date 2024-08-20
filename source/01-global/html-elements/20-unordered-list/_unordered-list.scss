@@ -6,12 +6,7 @@
 ul {
   @extend %usa-list;
   list-style-type: disc;
-
-  @if $support-for-rtl {
-    [dir='rtl'] & {
-      padding-inline: 0 3ch;
-    }
-  }
+  padding-inline: 3ch 0;
 
   ol,
   ul {

@@ -12,5 +12,6 @@
   'attributes': attributes,
   'modifier_classes': '',
   'accordion': accordion,
-}%}
+} %}
 
+{% set catch_cache = content|without('field_accordion_items')|render %}

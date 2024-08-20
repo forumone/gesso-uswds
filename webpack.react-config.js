@@ -53,7 +53,7 @@ const reactConfig = {
               implementation: embeddedSass,
               webpackImporter: false,
               sassOptions: {
-                includePaths: [
+                loadPaths: [
                   path.resolve(__dirname, 'source'),
                   './node_modules/@uswds/uswds/packages',
                 ],
