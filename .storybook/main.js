@@ -114,13 +114,16 @@ const config = {
             implementation: require('sass-embedded'),
             webpackImporter: false,
             sassOptions: {
-              includePaths: [
+              loadPaths: [
                 path.resolve(__dirname, '../source'),
                 path.resolve(
                   __dirname,
                   '../node_modules/@uswds/uswds/packages'
                 ),
               ],
+              // Hiding mixed declaration warnings for now.
+              // https://sass-lang.com/documentation/breaking-changes/mixed-decls/
+              silenceDeprecations: ['mixed-decls'],
             },
           },
         },

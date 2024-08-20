@@ -138,10 +138,13 @@ const commonConfig = {
               implementation: embeddedSass,
               webpackImporter: false,
               sassOptions: {
-                includePaths: [
+                loadPaths: [
                   path.resolve(__dirname, 'source'),
                   './node_modules/@uswds/uswds/packages',
                 ],
+                // Hiding mixed declaration warnings for now.
+                // https://sass-lang.com/documentation/breaking-changes/mixed-decls/
+                silenceDeprecations: ['mixed-decls'],
               },
             },
           },
