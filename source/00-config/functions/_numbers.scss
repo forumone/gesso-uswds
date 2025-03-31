@@ -36,7 +36,7 @@
     @return $number;
   }
   // $digits must be a unitless number
-  @if type-of($digits) != number {
+  @if meta.type-of($digits) != number {
     @warn '#{ $digits } is not a number.';
     @return $number;
   } @else if not math.is-unitless($digits) {
