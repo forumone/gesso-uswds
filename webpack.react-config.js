@@ -57,6 +57,8 @@ const reactConfig = {
                   path.resolve(__dirname, 'source'),
                   './node_modules/@uswds/uswds/packages',
                 ],
+                // Hiding dependency warnings due to deprecation warnings from USWDS.
+                quietDeps: true,
               },
             },
           },

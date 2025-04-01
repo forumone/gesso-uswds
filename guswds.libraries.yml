@@ -60,6 +60,14 @@ dropbutton:
     - core/once
     - guswds/common
 
+external-link:
+  js:
+    dist/js/external-link.es6.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - guswds/common
+
 facets:
   css:
     theme:

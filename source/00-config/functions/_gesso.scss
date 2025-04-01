@@ -59,7 +59,7 @@
 // Get Font Family
 @function gesso-font-family($ff-type) {
   $stack: gesso-get-map(typography, font-family, $ff-type, stack);
-  @if (type_of($stack) == 'string') {
+  @if (meta.type_of($stack) == 'string') {
     @return string.unquote($stack);
   }
   @return $stack;

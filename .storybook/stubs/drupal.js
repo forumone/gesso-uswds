@@ -3,7 +3,7 @@ import './drupalSettings';
 // Simple Drupal.behaviors usage for Storybook
 // via https://github.com/emulsify-ds/emulsify-drupal/
 
-window.Drupal = { behaviors: {} };
+const Drupal = { behaviors: {} };
 
 (function (Drupal, drupalSettings) {
   Drupal.throwError = error => {
@@ -34,9 +34,19 @@ window.Drupal = { behaviors: {} };
     return Drupal.theme[themeFunction](options);
   };
 
-  drupalSettings.guswds = {
+  drupalSettings.gesso = {
+    externalLinkExitDisclaimer: 'Exit this website',
+    externalLinkAllowedDomains: [
+      'example-allowed-domain.com',
+      'forumone.github.io',
+    ],
+    externalLinkAllowedLinks: [
+      'https:\/\/www.vimeo.com\/example-allowed-link',
+      'https:\/\/www.youtube.com\/example-allowed-link',
+    ],
     imagePath: 'images',
   };
 })(Drupal, window.drupalSettings);
 
+window.Drupal = Drupal;
 export default Drupal;
