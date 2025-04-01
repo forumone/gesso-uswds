@@ -3,7 +3,6 @@ import once from 'once';
 
 Drupal.behaviors.externalLink = {
   attach(context, settings) {
-    console.log(settings);
     const { imagePath } = settings.gesso;
     const exitDisclaimer =
       settings?.gesso?.externalLinkExitDisclaimer ??
