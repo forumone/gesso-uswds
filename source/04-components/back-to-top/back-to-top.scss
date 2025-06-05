@@ -2,7 +2,8 @@
 
 @use '00-config' as *;
 
-.c-back-to-top {
+// Including element selector to increase specificity and override default anchor styles
+a.c-back-to-top {
   display: none;
 
   @include breakpoint(gesso-breakpoint(mobile-lg)) {
@@ -39,6 +40,6 @@
 }
 
 // Ensure that the button is always visible (e.g., in Storybook).
-.c-back-to-top--always-visible {
+a.c-back-to-top--always-visible {
   opacity: 1 !important;
 }
