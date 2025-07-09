@@ -6,6 +6,7 @@ $wysiwyg: false !default;
 @use 'footer/footer';
 @use 'header/header';
 @use 'hero/hero';
+@use 'in-page-navigation/in-page-navigation';
 @use 'media-block/media-block';
 @use 'modal/modal';
 @use 'nav/nav';

@@ -6,6 +6,7 @@
 import accordion from '@uswds/uswds/js/usa-accordion';
 import navigation from '@uswds/uswds/js/usa-header';
 import banner from '@uswds/uswds/js/usa-banner';
+import inPageNavigation from '@uswds/uswds/js/usa-in-page-navigation';
 import tooltip from '@uswds/uswds/js/usa-tooltip';
 import table from '@uswds/uswds/js/usa-table';
 import Drupal from 'drupal';
@@ -28,6 +29,7 @@ Drupal.behaviors.uswds = {
     const initialElem = context === document ? document.body : context;
     accordion.on(initialElem);
     banner.on(initialElem);
+    inPageNavigation.on(initialElem);
     tooltip.on(initialElem);
     table.on(document.body);
     gessoUswdsNavigation(context); // If used with the USWDS accordion component, the navigation must run after it.
