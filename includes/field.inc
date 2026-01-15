@@ -8,7 +8,7 @@
  /**
  * Implements hook_preprocess_HOOK().
  */
-function guswds_preprocess_field(&$variables) {
+function guswds_preprocess_field(array &$variables) {
   // Add index to individual paragraphs.
   if (
     $variables['field_type'] == 'entity_reference_revisions' &&
@@ -27,13 +27,13 @@ function guswds_preprocess_field(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_field_alter(array &$suggestions, array $variables): void {
   $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_gesso_icon_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_gesso_icon_alter(array &$suggestions, array $variables): void {
   $suggestions[] = 'gesso_icon__custom';
 }

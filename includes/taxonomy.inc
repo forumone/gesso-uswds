@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function guswds_preprocess_taxonomy_term(array &$variables) {
+function guswds_preprocess_taxonomy_term(array &$variables): void {
   $variables['term_name'] = $variables['term']->getName();
 
   // Array of view modes to add regions to.
@@ -24,7 +24,7 @@ function guswds_preprocess_taxonomy_term(array &$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables): void {
   $bundle = $variables['elements']['name']['#bundle'];
   $view_mode = $variables['elements']['#view_mode'];
   $suggestions[] = 'taxonomy_term__' . $view_mode;
