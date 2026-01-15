@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function guswds_preprocess_views_view(array &$variables) {
+function guswds_preprocess_views_view(array &$variables): void {
   /** @var \Drupal\views\ViewExecutable $view */
   $view = $variables['view'];
 
@@ -24,7 +24,7 @@ function guswds_preprocess_views_view(array &$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_views_view_alter(array &$suggestions, array $variables): void {
   $view = $variables['view'];
   $suggestions[] = 'views_view__' . $view->id();
   $suggestions[] = 'views_view__' . $view->current_display;
@@ -34,7 +34,7 @@ function guswds_theme_suggestions_views_view_alter(array &$suggestions, array $v
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables): void {
   $view = $variables['view'];
   $suggestions[] = 'views_view_unformatted__' . $view->id();
   $suggestions[] = 'views_view_unformatted__' . $view->current_display;
