@@ -146,9 +146,6 @@ const commonConfig = {
                   path.resolve(__dirname, 'source'),
                   './node_modules/@uswds/uswds/packages',
                 ],
-                // Hiding mixed declaration warnings for now.
-                // https://sass-lang.com/documentation/breaking-changes/mixed-decls/
-                silenceDeprecations: ['mixed-decls'],
                 // Hiding dependency warnings due to deprecation warnings from USWDS.
                 quietDeps: true,
               },
