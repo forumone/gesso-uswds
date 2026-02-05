@@ -197,3 +197,11 @@ wysiwyg:
     dist/js/wysiwyg.es6.js: {}
   dependencies:
     - guswds/global
+test-test:
+  css:
+    theme:
+      dist/css/test-test.css: {}
+  js:
+    dist/js/test-test.js: {}
+  dependencies:
+    - uswds/global
