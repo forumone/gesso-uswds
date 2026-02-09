@@ -157,6 +157,15 @@ rss_feed:
     - guswds/global
     - guswds/icon_link
 
+tabs:
+  css:
+    theme:
+      dist/css/tabs.css: {}
+  js:
+    dist/js/tabs.es6.js: {}
+  dependencies:
+    - guswds/global
+
 tag_link:
   css:
     theme:
