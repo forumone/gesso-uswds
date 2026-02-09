@@ -1,8 +1,13 @@
 /* eslint no-console: "off" */
-
-import path, { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+import path, { resolve, dirname } from 'node:path';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import sass from 'sass-embedded';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
 const isProdBuild = process.env.NODE_ENV === 'production';
 
 const config = {
@@ -67,7 +72,7 @@ const config = {
       test: /\.twig$/,
       use: [
         {
-          loader: 'twig-loader',
+          loader: '@forumone/twig-loader',
           options: {
             twigOptions: {
               namespaces: {
@@ -122,9 +127,6 @@ const config = {
                   '../node_modules/@uswds/uswds/packages'
                 ),
               ],
-              // Hiding mixed declaration warnings for now.
-              // https://sass-lang.com/documentation/breaking-changes/mixed-decls/
-              silenceDeprecations: ['mixed-decls'],
               // Hiding dependency warnings due to deprecation warnings from USWDS.
               quietDeps: true,
             },

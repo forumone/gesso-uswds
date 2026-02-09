@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function guswds_preprocess_user(array &$variables) {
+function guswds_preprocess_user(array &$variables): void {
   $variables['display_name'] = $variables['user']->getDisplayName();
   $variables['view_mode'] = $variables['elements']['#view_mode'];
 
@@ -25,7 +25,7 @@ function guswds_preprocess_user(array &$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function guswds_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+function guswds_theme_suggestions_user_alter(array &$suggestions, array $variables): void {
   if (isset($variables['elements']['#view_mode'])) {
     $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
   }

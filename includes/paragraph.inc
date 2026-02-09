@@ -8,7 +8,7 @@
  /**
  * Implements theme_preprocess_paragraph().
  */
-function guswds_preprocess_paragraph(&$variables) {
+function guswds_preprocess_paragraph(array &$variables): void {
   $paragraph = $variables['paragraph'];
 
   $variables['paragraph_index'] = $paragraph->index;
