@@ -2,12 +2,12 @@
 
 @use '00-config' as *;
 
-// Default buttons without classes are styled as links.
-a:not(.usa-button, .c-button),
-button:not(.usa-button, .c-button),
-[type='button']:not(.usa-button, .c-button),
-[type='reset']:not(.usa-button, .c-button),
-[type='submit']:not(.usa-button, .c-button) {
+// Default buttons without classes are styled as links. :where() zeroes specificity so component classes win.
+a:not(:where(.usa-button, .c-button)),
+button:not(:where(.usa-button, .c-button)),
+[type='button']:not(:where(.usa-button, .c-button)),
+[type='reset']:not(:where(.usa-button, .c-button)),
+[type='submit']:not(:where(.usa-button, .c-button)) {
   background-color: transparent;
   color: gesso-color(text, link);
   -webkit-text-decoration-skip: objects;
@@ -57,11 +57,11 @@ button:not(.usa-button, .c-button),
   }
 }
 
-// Styled to look like a link.
-button:not(.usa-button, .c-button),
-[type='button']:not(.usa-button, .c-button),
-[type='reset']:not(.usa-button, .c-button),
-[type='submit']:not(.usa-button, .c-button) {
+// Styled to look like a link. :where() zeroes specificity so component button classes win.
+button:not(:where(.usa-button, .c-button)),
+[type='button']:not(:where(.usa-button, .c-button)),
+[type='reset']:not(:where(.usa-button, .c-button)),
+[type='submit']:not(:where(.usa-button, .c-button)) {
   @include text-button;
   font-weight: gesso-font-weight(normal);
   margin: 0;
