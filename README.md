@@ -314,7 +314,7 @@ To add jQuery to Drupal:
      js:
        dist/js/file-that-uses-jquery: {}
      dependencies:
-       - gesso/common
+       - guswds/common
        - core/drupal
        - core/once
        - core/jquery
