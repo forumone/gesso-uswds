@@ -17,9 +17,4 @@
   'hero_button_url': paragraph.field_hero_link.uri is not empty ? paragraph.field_hero_link.uri : false,
 } %}
 
-{#
-  field_hero_link and field_hero_aligment are intentionally omitted from the
-  |without list because specific values are extracted from them, bypassing the
-  normal render process.
-#}
-{% set catch_cache = content|without('field_hero_image', 'field_hero_heading', 'field_hero_body') %}
+{{ content|cache_metadata }}
