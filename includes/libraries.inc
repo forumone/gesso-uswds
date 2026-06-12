@@ -26,6 +26,6 @@ function guswds_library_info_build(): array {
  */
 function guswds_element_info_alter(array &$types): void {
   if (isset($types['gesso_icon_link'])) {
-    $types['gesso_icon_link']['#attached']['library'][] = 'gesso/icon_link';
+    $types['gesso_icon_link']['#attached']['library'][] = 'guswds/icon_link';
   }
 }

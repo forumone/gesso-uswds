@@ -3,8 +3,8 @@
   {% if key|first != '#' %}
     {% set paragraph_id = item['#paragraph'].id.value %}
     {% set heading = drupal_field('field_title', 'paragraph', paragraph_id) %}
-    {% set content = drupal_field('field_wysiwyg', 'paragraph', paragraph_id) %}
-    {% set accordion = accordion|merge([{ 'title': heading|field_value, 'content': content|field_value }]) %}
+    {% set panel_content = drupal_field('field_wysiwyg', 'paragraph', paragraph_id) %}
+    {% set accordion = accordion|merge([{ 'title': heading|field_value, 'content': panel_content|field_value }]) %}
   {% endif %}
 {% endfor %}
 
@@ -14,4 +14,4 @@
   'accordion': accordion,
 } %}
 
-{% set catch_cache = content|without('content.field_paragraphs')|render %}
+{{ content|cache_metadata }}
