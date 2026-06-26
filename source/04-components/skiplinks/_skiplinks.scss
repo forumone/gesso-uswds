@@ -8,9 +8,9 @@ $skiplinks-font-family-token: ui;
 .c-skiplinks {
   display: flex;
   font-family: gesso-font-family($skiplinks-font-family-token);
+  inline-size: 100%;
   justify-content: center;
   position: absolute;
-  width: 100%;
   z-index: 9999;
 }
 
