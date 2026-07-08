@@ -4,7 +4,7 @@
 
 p {
   @include typeset-p();
-  max-width: unset;
+  max-inline-size: unset;
 
   @media print {
     orphans: 3;

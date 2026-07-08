@@ -11,7 +11,7 @@ header:
   -
     attributes: 'scope="col"'
     content: 'Year'
-footer: false
+footer: null
 rows:
   -
     attributes: ''
