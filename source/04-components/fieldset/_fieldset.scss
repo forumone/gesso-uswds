@@ -19,11 +19,11 @@ $fieldset-disabled-opacity: 0.35 !default;
   box-sizing: content-box;
   display: block;
   font-weight: gesso-font-weight(bold);
+  inline-size: 100%;
   inset-block-start: -$fieldset-legend-offset;
   inset-inline-start: -1px;
   position: absolute;
   text-indent: 0;
-  width: 100%;
 }
 
 .c-fieldset__legend-text {
@@ -55,10 +55,10 @@ $fieldset-disabled-opacity: 0.35 !default;
 
   .c-fieldset__legend {
     background: gesso-color(form, border);
+    block-size: 2em;
     border: 1px solid gesso-color(form, border);
     border-block-end: 0;
     color: #212121;
-    height: 2em;
     line-height: 2;
     padding: 0;
     text-shadow: 0 1px 0 #fff;

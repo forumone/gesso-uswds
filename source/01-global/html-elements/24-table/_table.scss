@@ -23,8 +23,8 @@ tr {
 @if ($wysiwyg) {
   .ck-widget.table {
     box-sizing: border-box;
+    inline-size: 100%;
     margin: 0;
-    width: 100%;
 
     table {
       @extend %table;
@@ -32,13 +32,13 @@ tr {
     }
 
     td {
+      block-size: revert;
       color: revert;
-      height: revert;
     }
 
     th {
+      block-size: revert;
       color: revert;
-      height: revert;
       line-height: revert;
     }
 

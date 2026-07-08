@@ -4,7 +4,7 @@
 ]|join(' ')|trim %}
 
 {% if not accordion_id %}
-  {% set accordion_id = 'accordion-'|clean_unique_id %}
+  {% set accordion_id = 'accordion-'|unique_id %}
 {% endif %}
 
 <div {{ add_attributes({ 'class': classes }) }}{% if is_multi_selectable %} data-allow-multiple{% endif %}>
