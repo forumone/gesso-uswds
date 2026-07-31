@@ -69,7 +69,7 @@ dropbutton:
     - core/drupalSettings
     - guswds/global
 
-external-link:
+external_link:
   js:
     dist/js/external-link.es6.js: {}
   dependencies:
