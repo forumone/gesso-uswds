@@ -16,8 +16,9 @@ function guswds_preprocess_breadcrumb(array &$variables): void {
     /** @var \Drupal\Core\Render\Renderer $renderer */
     $renderer = \Drupal::service('renderer');
     $variables['include_current_page']
-      = theme_get_setting('include_current_page_in_breadcrumb', 'guswds') ?? TRUE;
-    $themeConfig = \Drupal::config('guswds.settings');
+      = gesso_helper_get_theme_setting('include_current_page_in_breadcrumb') ?? TRUE;
+    $themeName = \Drupal::theme()->getActiveTheme()->getName();
+    $themeConfig = \Drupal::config($themeName . '.settings');
     $renderer->addCacheableDependency($variables, $themeConfig);
 
     if ($variables['include_current_page']) {
