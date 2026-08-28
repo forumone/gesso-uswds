@@ -19,7 +19,6 @@ import { Copyright } from '../../04-components/copyright/copyright.stories.jsx';
 import { BackToTop } from '../../04-components/back-to-top/back-to-top.stories.jsx';
 
 const PageWrapper = props => {
-  // eslint-disable-next-line react/prop-types
   const { children, isHomepage } = props;
   if (isHomepage) {
     document.body.classList.add('front');
@@ -48,26 +47,25 @@ const PageWrapper = props => {
                         {MainMenu.render(MainMenu.args)}
                         {parse(
                           SecondaryTwig({
-                            secondary_content: ReactDOMServer.renderToStaticMarkup(
-                              <>{AccountMenu.render(AccountMenu.args)}</>
-                            )
+                            secondary_content:
+                              ReactDOMServer.renderToStaticMarkup(
+                                <>{AccountMenu.render(AccountMenu.args)}</>
+                              ),
                           })
                         )}
-                     </>
-                    )
+                      </>
+                    ),
                   })
                 )}
               </>
-            )
+            ),
           })
         )}
         {parse(
           BreadcrumbTwig({
             has_constrain: false,
             breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
-              <>
-                {Breadcrumb.render(Breadcrumb.args)}
-              </>
+              <>{Breadcrumb.render(Breadcrumb.args)}</>
             ),
           })
         )}
@@ -89,16 +87,14 @@ const PageWrapper = props => {
               <>{FooterMenu.render(FooterMenu.args)}</>
             ),
             secondary_content: ReactDOMServer.renderToStaticMarkup(
-              <>
-                {Copyright.render(Copyright.args)}
-              </>
+              <>{Copyright.render(Copyright.args)}</>
             ),
           })
         )}
       </div>
       {BackToTop.render({
         ...BackToTop.args,
-        top_element: 'top'
+        top_element: 'top',
       })}
     </>
   );
