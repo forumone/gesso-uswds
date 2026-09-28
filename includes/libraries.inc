@@ -7,6 +7,9 @@
 
 /**
  * Implements hook_library_info_alter().
+ *
+ * @phpstan-param array<string, mixed> $libraries
+ *   The libraries array.
  */
 function guswds_library_info_alter(array &$libraries, string $extension): void {
   if ($extension !== 'guswds') {
@@ -29,6 +32,9 @@ function guswds_library_info_alter(array &$libraries, string $extension): void {
 
 /**
  * Implements hook_element_info_alter().
+ *
+ * @phpstan-param array<string, mixed> $types
+ *   The element types array.
  */
 function guswds_element_info_alter(array &$types): void {
   if (isset($types['gesso_icon_link'])) {

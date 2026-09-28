@@ -337,19 +337,19 @@ gesso:
       fallback: 'none'
     1: !sass
       sass: 'get-uswds-value(box-shadow, 1)'
-      fallback: '0 1px 4px 0 rgba(0, 0, 0, 0.1)'
+      fallback: '0 1px 4px 0 rgb(0 0 0 / 10%)'
     2: !sass
       sass: 'get-uswds-value(box-shadow, 2)'
-      fallback: '0 4px 8px 0 rgba(0, 0, 0, 0.1)'
+      fallback: '0 4px 8px 0 rgb(0 0 0 / 10%)'
     3: !sass
       sass: 'get-uswds-value(box-shadow, 3)'
-      fallback: '0 8px 16px 0 rgba(0, 0, 0, 0.1)'
+      fallback: '0 8px 16px 0 rgb(0 0 0 / 10%)'
     4: !sass
       sass: 'get-uswds-value(box-shadow, 4)'
-      fallback: '0 12px 24px 0 rgba(0, 0, 0, 0.1)'
+      fallback: '0 12px 24px 0 rgb(0 0 0 / 10%)'
     5: !sass
       sass: 'get-uswds-value(box-shadow, 5)'
-      fallback: '0 16px 32px 0 rgba(0, 0, 0, 0.1)'
+      fallback: '0 16px 32px 0 rgb(0 0 0 / 10%)'
   constrains:
     sm: 800px
     md: !uswds uswds.grid-container-max-width

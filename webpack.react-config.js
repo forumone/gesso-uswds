@@ -40,7 +40,38 @@ const reactConfig = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.module\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                namedExport: false,
+                exportLocalsConvention: 'as-is',
+              },
+              esModule: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: embeddedSass,
+              webpackImporter: false,
+              sassOptions: {
+                loadPaths: [
+                  path.resolve(__dirname, 'source'),
+                  './node_modules/@uswds/uswds/packages',
+                ],
+                // Hiding dependency warnings due to deprecation warnings from USWDS.
+                quietDeps: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /(?<!\.module)\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
@@ -78,6 +109,9 @@ const reactConfig = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
     modules: [path.resolve(__dirname, 'source'), 'node_modules'],
+    fallback: {
+      path: 'path-browserify',
+    },
   },
 
   stats: 'minimal',

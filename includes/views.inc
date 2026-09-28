@@ -7,6 +7,9 @@
 
 /**
  * Implements hook_preprocess_HOOK().
+ *
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_preprocess_views_view(array &$variables): void {
   /** @var \Drupal\views\ViewExecutable $view */
@@ -23,6 +26,11 @@ function guswds_preprocess_views_view(array &$variables): void {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @phpstan-param array<int, string> $suggestions
+ *   The theme suggestions.
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_theme_suggestions_views_view_alter(array &$suggestions, array $variables): void {
   $view = $variables['view'];
@@ -33,6 +41,11 @@ function guswds_theme_suggestions_views_view_alter(array &$suggestions, array $v
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @phpstan-param array<int, string> $suggestions
+ *   The theme suggestions.
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables): void {
   $view = $variables['view'];
