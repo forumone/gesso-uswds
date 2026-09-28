@@ -10,6 +10,9 @@ use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_preprocess_HOOK().
+ *
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_preprocess_filter_caption(array &$variables): void {
   $dom = Html::load($variables['node']);
@@ -52,6 +55,9 @@ function guswds_preprocess_filter_caption(array &$variables): void {
 
 /**
  * Implements hook_preprocess_HOOK().
+ *
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_preprocess_image(array &$variables): void {
   if (empty($variables['attributes']['alt'])) {
@@ -61,6 +67,9 @@ function guswds_preprocess_image(array &$variables): void {
 
 /**
  * Implements hook_preprocess_HOOK().
+ *
+ * @phpstan-param array<string, mixed> $variables
+ *   The template variables.
  */
 function guswds_preprocess_media(array &$variables): void {
   $variables['has_caption'] = isset($variables['attributes']['data-caption']);
