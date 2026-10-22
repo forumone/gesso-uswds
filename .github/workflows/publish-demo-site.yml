@@ -23,19 +23,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
       # Installs npm dependencies
       - name: Install npm packages
         run: npm ci
       # Builds Storybook
       - name: Build Storybook artifact
         run: npm run build-storybook
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
       # Uploads the Storybook artifact
       - uses: actions/upload-pages-artifact@v3
         with:
