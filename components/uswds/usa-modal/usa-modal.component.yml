@@ -1,0 +1,54 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Modal'
+description: 'See https://designsystem.digital.gov/components/modal/.'
+status: experimental
+props:
+  type: object
+  properties:
+    id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID of the modal. Used by the opening link or button.'
+    heading_id:
+      type:
+        - string
+        - "null"
+      title: Heading ID
+      description: 'ID of the modal heading.'
+    description_id:
+      type:
+        - string
+        - "null"
+      title: Description ID
+      description: 'ID of the modal description.'
+    heading:
+      type:
+        - string
+        - "null"
+      title: Heading
+      description: 'Modal heading.'
+    description:
+      type:
+        - string
+        - "null"
+      title: Description
+      description: 'Modal description.'
+    footer:
+      type:
+        - string
+        - "null"
+      title: Footer
+      description: 'Modal footer content.'
+    image_path:
+      type:
+        - string
+        - "null"
+      title: Image Path
+      description: 'Path to the theme images directory.'
+libraryOverrides:
+  dependencies:
+    - guswds/global
+    - core/drupal
+    - core/once

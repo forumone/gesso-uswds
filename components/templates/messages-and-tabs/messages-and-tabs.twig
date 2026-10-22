@@ -1,0 +1,16 @@
+{% if not is_published %}
+  {% set unpublished_message %}
+    <p class="usa-alert__text">{{ 'This page is unpublished.'|t }}</p>
+  {% endset %}
+  {% include 'guswds:usa-alert' with {
+    'modifier_classes': 'usa-alert--warning u-spaced-2',
+    'title': null,
+    'content': unpublished_message
+  } %}
+{% endif %}
+
+{% if show_admin_info %}
+  {% block admin_info %}
+    {{ admin_info }}
+  {% endblock %}
+{% endif %}

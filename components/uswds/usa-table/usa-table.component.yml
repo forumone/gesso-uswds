@@ -1,0 +1,52 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Table'
+description: 'See https://designsystem.digital.gov/components/table/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    scrollable:
+      type:
+        - boolean
+        - "null"
+      title: Scrollable
+      description: 'Enable table scrolling.'
+    sortable:
+      type:
+        - boolean
+        - "null"
+      title: Sortable
+      description: 'Enable table sorting (also requires the data-sortable attribute on headers).'
+    caption:
+      type:
+        - string
+        - "null"
+      title: Caption
+      description: 'Table caption.'
+    header:
+      type:
+        - array
+        - "null"
+      title: Header
+      description: 'Header cells. Each item has attributes and content keys.'
+    footer:
+      type:
+        - array
+        - "null"
+      title: Footer
+      description: 'Footer cells. Each item has attributes and content keys.'
+    rows:
+      type:
+        - array
+        - "null"
+      title: Rows
+      description: 'Table rows. Each item has attributes and cells keys. Each cell has tag, attributes and content keys.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

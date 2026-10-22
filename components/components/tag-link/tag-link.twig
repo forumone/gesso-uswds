@@ -1,0 +1,10 @@
+{% set classes = [
+  'tag-link',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<a href="{{ url }}" class="{{ classes }}" rel="tag">
+  {% include "guswds:usa-tag" with {
+    text: title
+  }%}
+</a>

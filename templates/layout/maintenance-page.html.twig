@@ -9,15 +9,15 @@
  * @see template_preprocess_maintenance_page()
  */
 #}
-{% extends '@layouts/site-container/site-container.twig' %}
+{% extends 'guswds:site-container' %}
 
 {% block site_content %}
-  {% embed "@uswds/header/header.twig" with {
+  {% embed "guswds:usa-header" with {
     'is_extended': page.secondary.content is empty
   } %}
     {% block content %}
       {{ page.header }}
-      {% embed '@uswds/nav/nav.twig' with {
+      {% embed 'guswds:usa-nav' with {
         'label': 'Primary navigation',
         'is_extended': page.secondary.content is empty
       } %}
@@ -29,10 +29,12 @@
     {% endblock %}
   {% endembed %}
 
-  {# We have to manually wrap region content. #}
-  {% include '@guswds/layout/region--breadcrumb.html.twig' with {
-    'content': page.breadcrumb,
-  } %}
+  {% if page.breadcrumb %}
+    {% include 'guswds:breadcrumb-wrapper' with {
+      'has_constrain': false,
+      'breadcrumb_content': page.breadcrumb,
+    } %}
+  {% endif %}
 
   {# We have to manually wrap region content. #}
   {% include '@guswds/layout/region.html.twig' with {
@@ -47,30 +49,38 @@
   } %}
 
   <main id="main" class="main" role="main" tabindex="-1">
-    {# We have to manually wrap region content. #}
-    {% include '@guswds/layout/region.html.twig' with {
-      'region': 'preface',
-      'content': page.preface,
-    } %}
+    {% if page.preface %}
+      {% include 'guswds:region' with {
+        'region_name': 'preface',
+        'has_constrain': true,
+        'region_content': page.preface,
+      } %}
+    {% endif %}
 
     {# page.content is missing page title. #}
     {% set content %}
       {{ page.title }}
+      {{ page.status }}
+      {{ page.content }}
     {% endset %}
 
-    {# We have to manually wrap region content. #}
-    {% include '@guswds/layout/region--content.html.twig' with {
-      'content': content,
-    } %}
+    {% if content|trim is not empty %}
+      {% include 'guswds:content' with {
+        'has_constrain': true,
+        'content_content': content,
+      } %}
+    {% endif %}
 
-    {# We have to manually wrap region content. #}
-    {% include '@guswds/layout/region.html.twig' with {
-      'region': 'postscript',
-      'content': page.postscript,
-    } %}
+    {% if page.postscript %}
+      {% include 'guswds:region' with {
+        'region_name': 'postscript',
+        'has_constrain': true,
+        'region_content': page.postscript,
+      } %}
+    {% endif %}
   </main>
 
-  {% embed '@uswds/footer/footer.twig' with {
+  {% embed 'guswds:usa-footer' with {
     has_back_to_top: true
   } %}
     {% block primary %}

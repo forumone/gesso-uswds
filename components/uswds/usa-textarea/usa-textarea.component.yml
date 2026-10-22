@@ -1,0 +1,72 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Textarea'
+description: 'See https://designsystem.digital.gov/components/text-input/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    group_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Group Modifier Classes
+      description: 'Additional CSS classes for the form group.'
+    label_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Label Modifier Classes
+      description: 'Additional CSS classes for the label.'
+    textarea_id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID and name of the textarea.'
+    textarea_label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Label text.'
+    textarea_required:
+      type:
+        - boolean
+        - "null"
+      title: Required
+      description: 'Whether the textarea is required.'
+    error_message:
+      type:
+        - string
+        - "null"
+      title: Error Message
+      description: 'Error message text.'
+    textarea_cols:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Columns
+      description: 'Cols attribute.'
+    textarea_rows:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Rows
+      description: 'Rows attribute.'
+    textarea_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the textarea is disabled.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

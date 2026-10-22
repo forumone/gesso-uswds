@@ -1,0 +1,46 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Button'
+description: 'See https://designsystem.digital.gov/components/button/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    is_button_tag:
+      type:
+        - boolean
+        - "null"
+      title: Button Tag
+      description: 'Render a <button> element instead of a link.'
+    is_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the button is disabled.'
+    button_type:
+      type:
+        - string
+        - "null"
+      title: Button Type
+      description: 'The type attribute of the button (button, submit, reset).'
+    text:
+      type:
+        - string
+        - "null"
+      title: Text
+      description: 'Button text.'
+    url:
+      type:
+        - string
+        - "null"
+      title: URL
+      description: 'Link URL when rendered as a link.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

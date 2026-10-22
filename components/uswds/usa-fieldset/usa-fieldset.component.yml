@@ -1,0 +1,44 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Fieldset'
+description: 'See https://designsystem.digital.gov/components/form/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    legend:
+      type:
+        - string
+        - "null"
+      title: Legend
+      description: 'Fieldset legend.'
+    legend_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Legend Modifier Classes
+      description: 'Additional CSS classes for the legend.'
+    description:
+      type:
+        - string
+        - "null"
+      title: Description
+      description: 'Fieldset description.'
+    description_id:
+      type:
+        - string
+        - "null"
+      title: Description ID
+      description: 'ID of the description element.'
+slots:
+  fieldset_content:
+    title: Fieldset Content
+    description: 'Content of the fieldset.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

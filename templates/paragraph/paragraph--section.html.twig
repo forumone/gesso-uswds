@@ -46,7 +46,7 @@
   {%- endblock -%}
 {% endset %}
 
-{% include '@layouts/page-section/page-section.twig' with {
+{% include 'guswds:page-section' with {
   'attributes': attributes.addClass(classes),
   'modifier_classes': paragraph_modifier_classes,
   'constrain_modifier_classes': paragraph_constrain_modifier_classes,

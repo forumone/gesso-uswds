@@ -1,0 +1,97 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Text Input'
+description: 'See https://designsystem.digital.gov/components/text-input/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    group_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Group Modifier Classes
+      description: 'Additional CSS classes for the form group.'
+    label_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Label Modifier Classes
+      description: 'Additional CSS classes for the label.'
+    input_id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID and name of the input.'
+    input_label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Label text.'
+    input_required:
+      type:
+        - boolean
+        - "null"
+      title: Required
+      description: 'Whether the input is required.'
+    error_message:
+      type:
+        - string
+        - "null"
+      title: Error Message
+      description: 'Error message text.'
+    input_type:
+      type:
+        - string
+        - "null"
+      title: Type
+      description: 'Input type. Defaults to text.'
+    input_size:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Size
+      description: 'Size attribute.'
+    input_max:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Max Length
+      description: 'Maxlength attribute.'
+    input_placeholder:
+      type:
+        - string
+        - "null"
+      title: Placeholder
+      description: 'Placeholder text.'
+    input_title:
+      type:
+        - string
+        - "null"
+      title: Title
+      description: 'Title attribute.'
+    input_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the input is disabled.'
+    input_step:
+      type:
+        - number
+        - string
+        - "null"
+      title: Step
+      description: 'Step attribute.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

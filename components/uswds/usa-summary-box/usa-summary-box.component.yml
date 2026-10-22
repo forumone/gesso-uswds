@@ -1,0 +1,28 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Summary Box'
+description: 'See https://designsystem.digital.gov/components/summary-box/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    heading:
+      type:
+        - string
+        - "null"
+      title: Heading
+      description: 'Summary box heading.'
+    content:
+      type:
+        - string
+        - "null"
+      title: Content
+      description: 'Summary box content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

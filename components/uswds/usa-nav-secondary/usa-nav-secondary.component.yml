@@ -1,0 +1,20 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Secondary Nav'
+description: 'Secondary navigation area used in the extended USWDS header.'
+status: experimental
+props:
+  type: object
+  properties:
+    secondary_content:
+      type:
+        - string
+        - "null"
+      title: Secondary Content
+      description: 'Content of the secondary navigation. Can be overridden by the content slot.'
+slots:
+  content:
+    title: Content
+    description: 'Secondary navigation content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

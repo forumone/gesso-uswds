@@ -18,7 +18,7 @@ function guswds_preprocess_node(array &$variables): void {
   if (in_array($variables['view_mode'], $allowed_view_modes)) {
     // Array of regions to add to node template.
     $allowed_regions = ['status'];
-    _gesso_add_regions_to_template($allowed_regions, $variables);
+    _guswds_add_regions_to_template($allowed_regions, $variables);
   }
 }
 
@@ -30,12 +30,12 @@ function guswds_preprocess_node(array &$variables): void {
  * @param array<string, mixed> $variables
  *   The template variables.
  */
-function _gesso_add_regions_to_template(array $allowed_regions, array &$variables): void {
+function _guswds_add_regions_to_template(array $allowed_regions, array &$variables): void {
   // Get active theme.
   $theme = \Drupal::theme()->getActiveTheme()->getName();
 
   // Get current theme regions. Theme::listAllRegions() was only added in
-  // Drupal 11.4; gesso.info.yml still supports Drupal ^10.3 || ^11, so fall
+  // Drupal 11.4; guswds.info.yml still supports Drupal ^10.3 || ^11, so fall
   // back to the deprecated system_region_list() on cores where the
   // replacement doesn't exist yet.
   $theme_extension = \Drupal::service('theme_handler')->getTheme($theme);

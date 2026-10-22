@@ -1,0 +1,28 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Media Block'
+description: 'See https://designsystem.digital.gov/utilities/media-block/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    media_image:
+      type:
+        - object
+        - "null"
+      title: Image
+      description: 'Image object with src and alt keys.'
+    media_body:
+      type:
+        - string
+        - "null"
+      title: Body
+      description: 'Media block body content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

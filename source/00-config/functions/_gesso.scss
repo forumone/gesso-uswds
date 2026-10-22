@@ -3,6 +3,7 @@
 @use 'sass:map';
 @use 'sass:string';
 @use '../design-tokens.artifact' as *;
+@use 'unit-convert' as *;
 
 // Fetch nested keys
 // @param {Map} $map - Map
@@ -72,7 +73,7 @@
 
 // Get Font Size
 @function gesso-font-size($keys...) {
-  @return gesso-get-map(typography, font-size, $keys...);
+  @return rem(gesso-get-map(typography, font-size, $keys...));
 }
 
 // Get Font Weight
@@ -92,7 +93,7 @@
 
 // Get spacing
 @function gesso-spacing($keys...) {
-  @return gesso-get-map(spacing, $keys...);
+  @return rem(gesso-get-map(spacing, $keys...));
 }
 
 // Get Site margins

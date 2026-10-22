@@ -146,19 +146,40 @@ class GessoHelperCommands extends DrushCommands implements SiteAliasManagerAware
         );
       }
     }
-    $templateFiles = new \RecursiveIteratorIterator(
+    // Update SDC references in component templates and definitions. Component
+    // SCSS and JS are skipped, and only targeted patterns are replaced, since
+    // "gesso" also appears in Sass function names, drupalSettings keys and
+    // file names (e.g., gesso.macro.twig) that must not change.
+    $componentFiles = new \RecursiveIteratorIterator(
         new \RecursiveDirectoryIterator(
-          $new_path . '/source', \FilesystemIterator::SKIP_DOTS
+          $new_path . '/components', \FilesystemIterator::SKIP_DOTS
         ),
       \RecursiveIteratorIterator::SELF_FIRST);
-    foreach ($templateFiles as $templateFile) {
-      if (!$templateFile->isDir()) {
-        $this->gessoFileStrReplace(
-          $templateFile->getPathname(),
-          ["/attach_library\((')?guswds/"],
-          ['attach_library($1' . $machine_name]
-        );
+    foreach ($componentFiles as $componentFile) {
+      $filename = $componentFile->getFilename();
+      if ($componentFile->isDir()
+        || !(str_ends_with($filename, '.twig') || str_ends_with($filename, '.component.yml'))) {
+        continue;
       }
+      $this->gessoFileStrReplace(
+        $componentFile->getPathname(),
+        [
+          // Component IDs, e.g., {% include 'guswds:icon' %}.
+          "/(?<=['\"])guswds:/",
+          // Library names, e.g., guswds/global or attach_library('guswds/...').
+          '/\bguswds\//',
+          // SDC library names, e.g., core/components.guswds--button.
+          '/\bcomponents\.guswds--/',
+          // Theme settings path, e.g., /admin/appearance/settings/guswds.
+          '/(?<=\/appearance\/settings\/)guswds\b/',
+        ],
+        [
+          $machine_name . ':',
+          $machine_name . '/',
+          'components.' . $machine_name . '--',
+          $machine_name,
+        ]
+      );
     }
 
     // Rename the .info.yml file.

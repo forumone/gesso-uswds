@@ -1,0 +1,46 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Search'
+description: 'See https://designsystem.digital.gov/components/search/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID of the search input.'
+    label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Visually hidden label text.'
+    hide_button_text:
+      type:
+        - boolean
+        - "null"
+      title: Hide Button Text
+      description: 'Visually hide the button text.'
+    button_text:
+      type:
+        - string
+        - "null"
+      title: Button Text
+      description: 'Search button text.'
+    image_path:
+      type:
+        - string
+        - "null"
+      title: Image Path
+      description: 'Path to the theme images directory.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

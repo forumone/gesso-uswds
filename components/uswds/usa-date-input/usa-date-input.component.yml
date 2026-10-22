@@ -1,0 +1,60 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Date Input'
+description: 'See https://designsystem.digital.gov/components/memorable-date/.'
+status: experimental
+props:
+  type: object
+  properties:
+    label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Legend text for the date fieldset.'
+    hint:
+      type:
+        - string
+        - "null"
+      title: Hint
+      description: 'Hint text.'
+    hint_id:
+      type:
+        - string
+        - "null"
+      title: Hint ID
+      description: 'ID of the hint element.'
+    month_id:
+      type:
+        - string
+        - "null"
+      title: Month ID
+      description: 'ID of the month input.'
+    day_id:
+      type:
+        - string
+        - "null"
+      title: Day ID
+      description: 'ID of the day input.'
+    year_id:
+      type:
+        - string
+        - "null"
+      title: Year ID
+      description: 'ID of the year input.'
+    year_min:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Year Min
+      description: 'Minimum allowed year.'
+    year_max:
+      type:
+        - integer
+        - string
+        - "null"
+      title: Year Max
+      description: 'Maximum allowed year.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

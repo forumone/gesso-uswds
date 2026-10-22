@@ -1,0 +1,46 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Tooltip'
+description: 'See https://designsystem.digital.gov/components/tooltip/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    element:
+      type:
+        - string
+        - "null"
+      title: Element
+      description: 'HTML element for the tooltip trigger. Defaults to span.'
+    tooltip_text:
+      type:
+        - string
+        - "null"
+      title: Tooltip Text
+      description: 'Text of the tooltip.'
+    tooltip_position:
+      type:
+        - string
+        - "null"
+      title: Position
+      description: 'Position of the tooltip (top, bottom, left, right).'
+    url:
+      type:
+        - string
+        - "null"
+      title: URL
+      description: 'Link URL when the element is a link.'
+    text:
+      type:
+        - string
+        - "null"
+      title: Text
+      description: 'Text of the tooltip trigger.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

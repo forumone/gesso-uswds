@@ -1,0 +1,40 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Select with Groups'
+description: 'A USWDS select with options in optgroups. Extends usa-select.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    dropdown_id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID and name of the select.'
+    dropdown_label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Label text.'
+    dropdown_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the select is disabled.'
+    dropdown_options:
+      type:
+        - array
+        - "null"
+      title: Option Groups
+      description: 'Array of groups, each with a group_label and an array of items.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

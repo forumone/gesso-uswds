@@ -1,0 +1,6 @@
+// Component styles needed inside CKEditor and paragraph view-mode previews.
+// Keep this list to markup that can appear in rich text / LB previews.
+
+@use 'usa-button';
+@use '../components/components/button/button';
+@use '../components/components/figure/figure.source';

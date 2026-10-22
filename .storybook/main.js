@@ -12,7 +12,12 @@ const isProdBuild = process.env.NODE_ENV === 'production';
 const ddevHostname = process.env.DDEV_HOSTNAME || process.env.VIRTUAL_HOST;
 
 const config = {
-  stories: ['../source/**/*.mdx', '../source/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    '../source/**/*.mdx',
+    '../source/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
   framework: {
     name: '@storybook/react-webpack5',
   },
@@ -79,14 +84,18 @@ const config = {
         {
           loader: '@forumone/twig-loader',
           options: {
+            sdcSubdirectories: [
+              '',
+              'layouts',
+              'components',
+              'templates',
+              'uswds',
+            ],
             twigOptions: {
               namespaces: {
                 global: resolve(__dirname, '../', 'source/01-global'),
-                uswds: resolve(__dirname, '../', 'source/02-uswds'),
-                layouts: resolve(__dirname, '../', 'source/03-layouts'),
-                components: resolve(__dirname, '../', 'source/04-components'),
-                templates: resolve(__dirname, '../', 'source/05-templates'),
-                pages: resolve(__dirname, '../', 'source/06-pages'),
+                // SDC provider:name — resolves under components/{components,layouts,templates,uswds}/
+                guswds: resolve(__dirname, '../', 'components'),
               },
             },
           },
@@ -146,7 +155,10 @@ const config = {
       once: 'once',
     };
 
-    webpackConfig.resolve.modules.push(path.resolve(__dirname, '../source'));
+    webpackConfig.resolve.modules.push(
+      path.resolve(__dirname, '../source'),
+      path.resolve(__dirname, '../components')
+    );
     webpackConfig.stats = 'errors-warnings';
 
     if (configType === 'DEVELOPMENT') {

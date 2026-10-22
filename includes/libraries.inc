@@ -12,22 +12,51 @@
  *   The libraries array.
  */
 function guswds_library_info_alter(array &$libraries, string $extension): void {
-  if ($extension !== 'guswds') {
+  // Theme libs (guswds/*) and SDC libs (core/components.guswds--*) both ship
+  // webpack/Terser bundles that must not pass through Drupal JS aggregation.
+  if ($extension === 'guswds') {
+    foreach ($libraries as &$library) {
+      guswds_disable_library_js_preprocess($library, static function (string $path): bool {
+        return str_starts_with($path, 'dist/js/')
+          || str_starts_with($path, 'components/');
+      });
+    }
+    unset($library);
     return;
   }
 
-  // Stop Webpack/Terser output from passing through Drupal JS aggregation.
-  foreach ($libraries as &$library) {
-    if (empty($library['js'])) {
-      continue;
-    }
-    foreach ($library['js'] as $path => &$options) {
-      if (!is_string($path) || !str_starts_with($path, 'dist/js/')) {
+  if ($extension === 'core') {
+    // SDC registers under core with IDs like components.guswds--accordion and
+    // paths relative to core (../themes/guswds/components/...).
+    foreach ($libraries as $library_id => &$library) {
+      if (!str_starts_with((string) $library_id, 'components.guswds--')) {
         continue;
       }
-      $options['preprocess'] = FALSE;
+      guswds_disable_library_js_preprocess($library, static fn(string $path): bool => TRUE);
     }
+    unset($library);
   }
+}
+
+/**
+ * Sets preprocess FALSE on matching JS assets in a single library definition.
+ *
+ * @param array<string, mixed> $library
+ *   A library definition (modified by reference).
+ * @param callable(string): bool $path_matcher
+ *   Return TRUE when the asset path should skip aggregation.
+ */
+function guswds_disable_library_js_preprocess(array &$library, callable $path_matcher): void {
+  if (empty($library['js'])) {
+    return;
+  }
+  foreach ($library['js'] as $path => &$options) {
+    if (!is_string($path) || !$path_matcher($path)) {
+      continue;
+    }
+    $options['preprocess'] = FALSE;
+  }
+  unset($options);
 }
 
 /**
@@ -38,6 +67,11 @@ function guswds_library_info_alter(array &$libraries, string $extension): void {
  */
 function guswds_element_info_alter(array &$types): void {
   if (isset($types['gesso_icon_link'])) {
-    $types['gesso_icon_link']['#attached']['library'][] = 'guswds/icon_link';
+    $types['gesso_icon_link']['#attached']['library'][] = 'core/components.guswds--icon-link';
+  }
+  // gesso_button (used by the Gesso Button link formatter) renders c-button
+  // markup directly, so it doesn't get the button SDC's library on its own.
+  if (isset($types['gesso_button'])) {
+    $types['gesso_button']['#attached']['library'][] = 'core/components.guswds--button';
   }
 }

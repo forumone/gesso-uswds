@@ -1,0 +1,22 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Section'
+description: 'See https://designsystem.digital.gov/components/section/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    content:
+      type:
+        - string
+        - "null"
+      title: Content
+      description: 'Section content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

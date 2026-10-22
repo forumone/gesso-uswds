@@ -1,0 +1,41 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Footer'
+description: 'See https://designsystem.digital.gov/components/footer/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    has_back_to_top:
+      type:
+        - boolean
+        - "null"
+      title: Has Back to Top
+      description: 'Whether to show the "Return to top" link.'
+    primary_content:
+      type:
+        - string
+        - "null"
+      title: Primary Content
+      description: 'Content of the primary footer section. Can be overridden by the primary slot.'
+    secondary_content:
+      type:
+        - string
+        - "null"
+      title: Secondary Content
+      description: 'Content of the secondary footer section. Can be overridden by the secondary slot.'
+slots:
+  primary:
+    title: Primary
+    description: 'Primary footer section content.'
+  secondary:
+    title: Secondary
+    description: 'Secondary footer section content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

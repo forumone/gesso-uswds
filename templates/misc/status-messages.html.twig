@@ -33,14 +33,14 @@
   {% endset %}
 
   {% if type == 'status' %}
-    {% include '@uswds/alert/alert.twig' with {
+    {% include 'guswds:usa-alert' with {
       'attributes': attributes,
       'modifier_classes': 'usa-alert--success',
       'title': status_headings[type],
       'content': message_content
     } %}
   {% elseif type == 'error' %}
-    {% include '@uswds/alert/alert.twig' with {
+    {% include 'guswds:usa-alert' with {
       'attributes': attributes,
       'modifier_classes': 'usa-alert--error',
       'role': 'alert',
@@ -48,14 +48,14 @@
       'content': message_content
     } %}
   {% elseif type == 'warning' %}
-    {% include '@uswds/alert/alert.twig' with {
+    {% include 'guswds:usa-alert' with {
       'attributes': attributes,
       'modifier_classes': 'usa-alert--warning',
       'title': status_headings[type],
       'content': message_content
     } %}
   {% else %}
-    {% include '@uswds/alert/alert.twig' with {
+    {% include 'guswds:usa-alert' with {
       'attributes': attributes,
       'modifier_classes': 'usa-alert--info',
       'title': status_headings[type],

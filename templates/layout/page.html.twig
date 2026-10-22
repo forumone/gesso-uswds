@@ -44,21 +44,21 @@
  * @see html.html.twig
  */
 #}
-{% extends '@layouts/site-container/site-container.twig' %}
+{% extends 'guswds:site-container' %}
 
 {% block site_content %}
-  {% include '@uswds/banner/banner.twig' with {
+  {% include 'guswds:usa-banner' with {
     'language': language.id,
     'image_path': image_path,
     'has_expanded': true,
   } %}
 
-  {% embed "@uswds/header/header.twig" with {
+  {% embed "guswds:usa-header" with {
     'is_extended': page.secondary.content is empty
   } %}
     {% block content %}
       {{ page.header }}
-      {% embed '@uswds/nav/nav.twig' with {
+      {% embed 'guswds:usa-nav' with {
         'label': 'Primary navigation',
         'is_extended': page.secondary.content is empty
       } %}
@@ -88,7 +88,7 @@
     {% endblock %}
   </main>
 
-  {% embed '@uswds/footer/footer.twig' with {
+  {% embed 'guswds:usa-footer' with {
     has_back_to_top: true
   } %}
     {% block primary %}

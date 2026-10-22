@@ -1,0 +1,7 @@
+// USWDS Footer overrides. Base usa-footer styles are loaded globally in styles.scss.
+
+@use '00-config' as *;
+
+.usa-footer__secondary-section .grid-row > * {
+  @include grid-col(auto);
+}

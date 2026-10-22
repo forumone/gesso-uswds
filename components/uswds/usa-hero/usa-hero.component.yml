@@ -1,0 +1,58 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Hero'
+description: 'See https://designsystem.digital.gov/components/hero/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    has_overlay:
+      type:
+        - boolean
+        - "null"
+      title: Has Overlay
+      description: 'Whether to add a dark overlay over the background image.'
+    hero_image:
+      type:
+        - string
+        - "null"
+      title: Hero Image
+      description: 'URL of the background image.'
+    hero_callout:
+      type:
+        - string
+        - "null"
+      title: Callout
+      description: 'Callout text displayed above the title.'
+    hero_title:
+      type:
+        - string
+        - "null"
+      title: Title
+      description: 'Hero title.'
+    hero_summary:
+      type:
+        - string
+        - "null"
+      title: Summary
+      description: 'Hero summary content.'
+    hero_button_text:
+      type:
+        - string
+        - "null"
+      title: Button Text
+      description: 'Text of the call to action button.'
+    hero_button_url:
+      type:
+        - string
+        - "null"
+      title: Button URL
+      description: 'URL of the call to action button.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

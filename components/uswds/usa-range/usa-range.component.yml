@@ -1,0 +1,62 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Range Slider'
+description: 'See https://designsystem.digital.gov/components/range-slider/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    range_id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID of the range input.'
+    range_label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Label text.'
+    range_min:
+      type:
+        - number
+        - string
+        - "null"
+      title: Min
+      description: 'Minimum value.'
+    range_max:
+      type:
+        - number
+        - string
+        - "null"
+      title: Max
+      description: 'Maximum value.'
+    range_step:
+      type:
+        - number
+        - string
+        - "null"
+      title: Step
+      description: 'Step value.'
+    range_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the range is disabled.'
+    range_value:
+      type:
+        - number
+        - string
+        - "null"
+      title: Value
+      description: 'Current value.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

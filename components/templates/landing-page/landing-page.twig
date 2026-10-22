@@ -1,0 +1,16 @@
+{% include 'guswds:messages-and-tabs' with {
+  'is_published': is_published,
+  'show_admin_info': show_admin_info,
+  'admin_info': admin_info,
+} only %}
+
+{{ title_prefix }}
+{% include 'guswds:page-title' with {
+  'page_title': page_title
+} %}
+{{ title_suffix }}
+
+{% include 'guswds:page-section' with {
+  'section_title': null,
+  'section_content': content
+} %}

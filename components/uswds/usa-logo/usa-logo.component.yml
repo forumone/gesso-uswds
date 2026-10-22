@@ -1,0 +1,28 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Logo'
+description: 'See https://designsystem.digital.gov/components/header/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    url:
+      type:
+        - string
+        - "null"
+      title: URL
+      description: 'Link URL, usually the home page.'
+    site_name:
+      type:
+        - string
+        - "null"
+      title: Site Name
+      description: 'Site name text.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

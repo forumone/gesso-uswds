@@ -1,0 +1,46 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'Page Section'
+description: 'A section of page content with an optional title.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    section_title:
+      type:
+        - string
+        - "null"
+      title: Section Title
+      description: 'The title displayed at the top of the section.'
+    section_title_element:
+      type:
+        - string
+        - "null"
+      title: Section Title Element
+      description: 'The HTML element used for the section title. Defaults to h2.'
+    section_content:
+      type:
+        - string
+        - "null"
+      title: Section Content
+      description: 'The main content of the section.'
+    has_constrain:
+      type:
+        - boolean
+        - "null"
+      title: Has Constrain
+      description: 'Whether to add a constrain wrapper around the section content.'
+    constrain_modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Constrain Modifier Classes
+      description: 'Additional CSS classes for the constrain wrapper element.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

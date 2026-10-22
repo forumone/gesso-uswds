@@ -17,8 +17,9 @@
 ]|join(' ')|trim %}
 
 {% if title is not empty -%}
-  {% include '@components/form-item/_form-item-label.twig' with {
+  {% include 'guswds:form-item--label' with {
     'attributes': attributes,
     'modifier_classes': modifier_classes,
+    'is_required': required,
   } %}
 {%- endif %}

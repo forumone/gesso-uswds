@@ -1,0 +1,20 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Navbar'
+description: 'The logo and menu button area of the USWDS header.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+slots:
+  content:
+    title: Content
+    description: 'Navbar content, usually the site logo.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

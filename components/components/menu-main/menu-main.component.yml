@@ -1,0 +1,40 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'Main Menu'
+description: 'The main menu, using USWDS primary navigation styles.'
+status: experimental
+props:
+  type: object
+  required:
+    - items
+  properties:
+    menu_name:
+      type:
+        - string
+        - "null"
+      title: Menu Name
+      description: 'The machine name of the menu.'
+    items:
+      type: array
+      title: Menu Items
+      description: 'Array of menu item objects.'
+    menu_class:
+      type:
+        - array
+        - "null"
+      title: Menu Classes
+      description: 'Additional CSS classes for the top-level menu.'
+    menu_class_prefix:
+      type:
+        - string
+        - "null"
+      title: Menu Class Prefix
+      description: 'Prefix for top-level menu item classes.'
+    link_class:
+      type:
+        - array
+        - "null"
+      title: Link Classes
+      description: 'Additional CSS classes for menu links.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

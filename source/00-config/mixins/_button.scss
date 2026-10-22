@@ -1,11 +1,10 @@
 // Mixins: Button
 
-// @import 'packages/required';
-// @import 'packages/usa-button';
+// The button() mixin extends .usa-button, so any file that includes it must
+// also load the usa-button package (e.g., `@use 'usa-button';`).
 @use '../functions/' as *;
 @use './focus' as *;
 @use '../uswds-theme-settings.artifact' as *;
-@use 'usa-button' as *;
 
 $button-border-width: 0 !default;
 $button-border-radius: radius($theme-button-border-radius) !default;

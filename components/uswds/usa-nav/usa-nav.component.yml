@@ -1,0 +1,38 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Nav'
+description: 'See https://designsystem.digital.gov/components/header/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'ARIA label of the navigation.'
+    is_extended:
+      type:
+        - boolean
+        - "null"
+      title: Extended
+      description: 'Use the extended navigation variant.'
+    nav_content:
+      type:
+        - string
+        - "null"
+      title: Nav Content
+      description: 'Content of the navigation. Can be overridden by the content slot.'
+slots:
+  content:
+    title: Content
+    description: 'Navigation content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

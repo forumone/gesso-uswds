@@ -1,0 +1,58 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Checkbox'
+description: 'See https://designsystem.digital.gov/components/checkbox/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    checkbox_tile:
+      type:
+        - boolean
+        - "null"
+      title: Tile
+      description: 'Use the tile variant.'
+    checkbox_id:
+      type:
+        - string
+        - "null"
+      title: ID
+      description: 'ID of the checkbox input.'
+    checkbox_name:
+      type:
+        - string
+        - "null"
+      title: Name
+      description: 'Name of the checkbox input.'
+    checkbox_disabled:
+      type:
+        - boolean
+        - "null"
+      title: Disabled
+      description: 'Whether the checkbox is disabled.'
+    checkbox_checked:
+      type:
+        - boolean
+        - "null"
+      title: Checked
+      description: 'Whether the checkbox is checked.'
+    checkbox_value:
+      type:
+        - string
+        - "null"
+      title: Value
+      description: 'Value of the checkbox input.'
+    checkbox_label:
+      type:
+        - string
+        - "null"
+      title: Label
+      description: 'Checkbox label text.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

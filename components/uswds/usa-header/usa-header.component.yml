@@ -1,0 +1,32 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'USWDS Header'
+description: 'See https://designsystem.digital.gov/components/header/.'
+status: experimental
+props:
+  type: object
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    is_extended:
+      type:
+        - boolean
+        - "null"
+      title: Extended
+      description: 'Use the extended header variant.'
+    header_content:
+      type:
+        - string
+        - "null"
+      title: Header Content
+      description: 'Content of the header. Can be overridden by the content slot.'
+slots:
+  content:
+    title: Content
+    description: 'Header content.'
+libraryOverrides:
+  dependencies:
+    - guswds/global

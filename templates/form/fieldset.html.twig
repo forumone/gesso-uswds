@@ -34,7 +34,7 @@
   ]|join(' ')|trim %}
 {% endif %}
 
-{% include '@components/fieldset/fieldset.twig' with {
+{% include 'guswds:fieldset' with {
   'attributes': attributes.removeClass(remove_classes),
   'modifier_classes': modifier_classes,
   'hide_optional_hint': type == 'fieldset'

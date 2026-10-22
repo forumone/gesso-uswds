@@ -4,8 +4,13 @@ common:
 
 global:
   css:
-    theme:
+    # Base so SDC component CSS (weight 0) loads after global resets/element
+    # styles (weight -200). Declaring guswds/global as an SDC dependency is not
+    # enough — see https://www.drupal.org/project/drupal/issues/3560103
+    base:
       dist/css/styles.css: {}
+    state:
+      dist/css/utilities.css: {}
   js:
     dist/js/html.es6.js: {}
     dist/js/uswds-init.es6.js: {}
@@ -15,193 +20,13 @@ global:
     - core/once
     - guswds/common
 
-back_to_top:
-  css:
-    theme:
-      dist/css/back-to-top.css: {}
-  js:
-    dist/js/back-to-top.es6.js: {}
-  dependencies:
-    - guswds/global
-
-block:
-  css:
-    theme:
-      dist/css/block.css: {}
-  dependencies:
-    - guswds/global
-
-breadcrumb:
-  css:
-    theme:
-      dist/css/breadcrumb.css: {}
-  dependencies:
-    - guswds/global
-
-call_to_action:
-  css:
-    theme:
-      dist/css/call-to-action.css: {}
-  dependencies:
-    - guswds/global
-
-card:
-  css:
-    theme:
-      dist/css/card.css: {}
-  dependencies:
-    - guswds/global
-
-details:
-  css:
-    theme:
-      dist/css/details.css: {}
-  dependencies:
-    - guswds/global
-
-dropbutton:
-  css:
-    component:
-      dist/css/dropbutton.css: {}
-  js:
-    dist/js/dropbutton.es6.js: {}
-  dependencies:
-    - core/drupalSettings
-    - guswds/global
-
-external_link:
-  js:
-    dist/js/external-link.es6.js: {}
-  dependencies:
-    - guswds/global
-
-facets:
-  css:
-    theme:
-      dist/css/facet.css: {}
-      dist/css/facet-list.css: {}
-  dependencies:
-    - guswds/global
-
-file:
-  css:
-    theme:
-      dist/css/file.css: {}
-  dependencies:
-    - guswds/global
-    - guswds/icon_link
-
-filters:
-  css:
-    theme:
-      dist/css/filters.css: {}
-  dependencies:
-    - guswds/global
-
-icon_link:
-  css:
-    theme:
-      dist/css/icon-link.css: {}
-  dependencies:
-    - guswds/global
-
-image_teaser:
-  css:
-    theme:
-      dist/css/image-teaser.css: {}
-  dependencies:
-    - guswds/global
-
-pager:
-  css:
-    theme:
-      dist/css/pager.css: {}
-  dependencies:
-    - guswds/global
-
-pager_mini:
-  css:
-    theme:
-      dist/css/pager--mini.css: {}
-  dependencies:
-    - guswds/global
-    - guswds/pager
-
-progress:
-  css:
-    theme:
-      dist/css/progress.css: {}
-  dependencies:
-    - guswds/global
-
 react:
   js:
-    dist/js/react/main.js: {}
+    # Setting preprocess to false is important since we're using
+    # code-spliting (lazy()) in our React code. If Drupal's
+    # JS aggregation is turned on, only the main.js file will
+    # get aggregated. The split code won't and Drupal will
+    # erroneously try to load it from /sites/default/files/js.
+    dist/js/react/main.js: { preprocess: false }
   dependencies:
     - core/drupalSettings
-
-read_more_link:
-  css:
-    theme:
-      dist/css/rss-more-link.css: {}
-  dependencies:
-    - guswds/global
-    - guswds/icon_link
-
-rss_feed:
-  css:
-    theme:
-      dist/css/rss-feed.css: {}
-  dependencies:
-    - guswds/global
-    - guswds/icon_link
-
-tabs:
-  css:
-    theme:
-      dist/css/tabs.css: {}
-  js:
-    dist/js/tabs.es6.js: {}
-  dependencies:
-    - guswds/global
-
-tag_link:
-  css:
-    theme:
-      dist/css/tag-link.css: {}
-  dependencies:
-    - guswds/global
-
-tag_list:
-  css:
-    theme:
-      dist/css/tag-list.css: {}
-  dependencies:
-    - guswds/global
-    - guswds/tag_link
-
-teaser:
-  css:
-    theme:
-      dist/css/teaser.css: {}
-  dependencies:
-    - guswds/global
-
-uswds_modal:
-  js:
-    dist/js/modal.es6.js: {}
-  dependencies:
-    - guswds/global
-
-video:
-  css:
-    theme:
-      dist/css/video.css: {}
-  dependencies:
-    - guswds/global
-
-wysiwyg:
-  js:
-    dist/js/wysiwyg.es6.js: {}
-  dependencies:
-    - guswds/global

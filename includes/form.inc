@@ -5,7 +5,7 @@
  * Form-related hook implementations.
  */
 
- use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_alter().
@@ -31,9 +31,12 @@ function guswds_preprocess_input(array &$variables): void {
   $variables['type'] = $variables['element']['#attributes']['type'] ?? NULL;
   $variables['dropbutton'] = $variables['element']['#dropbutton'] ?? NULL;
 
-  // Replace button classes with c-button.
+  // Replace button classes with c-button and attach button CSS when needed.
   if (isset($variables['attributes']['class'])) {
     $variables['attributes']['class'] = preg_replace('/^button/', 'c-button', $variables['attributes']['class']);
+    if (preg_grep('/^c-button/', (array) $variables['attributes']['class'])) {
+      $variables['#attached']['library'][] = 'core/components.guswds--button';
+    }
   }
 
   if (!empty($variables['element']['#description']) && !empty($variables['element']['#id'])) {

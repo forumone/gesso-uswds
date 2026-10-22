@@ -20,7 +20,7 @@ function guswds_preprocess_taxonomy_term(array &$variables): void {
   if (in_array($variables['view_mode'], $allowed_view_modes)) {
     // Array of regions to add to taxonomy term template.
     $allowed_regions = ['status'];
-    _gesso_add_regions_to_template($allowed_regions, $variables);
+    _guswds_add_regions_to_template($allowed_regions, $variables);
   }
 }
 

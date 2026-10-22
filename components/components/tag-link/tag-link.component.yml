@@ -1,0 +1,28 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'Tag Link'
+description: 'A USWDS tag wrapped in a link.'
+status: experimental
+props:
+  type: object
+  required:
+    - url
+    - title
+  properties:
+    modifier_classes:
+      type:
+        - string
+        - "null"
+      title: Modifier Classes
+      description: 'Additional CSS classes to add to the component.'
+    url:
+      type: string
+      title: URL
+      description: 'Link URL.'
+    title:
+      type: string
+      title: Title
+      description: 'Tag text.'
+libraryOverrides:
+  dependencies:
+    - guswds/global
+    - core/components.guswds--usa-tag

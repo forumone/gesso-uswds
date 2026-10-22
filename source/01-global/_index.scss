@@ -2,4 +2,6 @@ $wysiwyg: false !default;
 
 @use 'fonts/fonts';
 @use 'html-elements';
+@use 'cms-styles';
+@use 'constrain/constrain';
 @use 'extendables';
