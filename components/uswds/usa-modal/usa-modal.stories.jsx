@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './usa-modal.twig';
 import data from './usa-modal.yml';
 import globalData from '../../../source/00-config/storybook.global-data.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import './usa-modal.source';
 import componentInfo from './usa-modal.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';

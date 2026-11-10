@@ -6,7 +6,7 @@ import data from './usa-search.yml';
 import globalData from '../../../source/00-config/storybook.global-data.yml';
 import bigData from './usa-search--big.yml';
 import smallData from './usa-search--small.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-search.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

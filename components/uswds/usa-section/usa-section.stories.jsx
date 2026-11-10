@@ -4,7 +4,7 @@ import twigTemplate from './usa-section.twig';
 import data from './usa-section.yml';
 import darkData from './usa-section--dark.yml';
 import lightData from './usa-section--light.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-section.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

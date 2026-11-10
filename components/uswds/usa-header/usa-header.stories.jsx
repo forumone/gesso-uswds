@@ -5,7 +5,7 @@ import twigTemplate from './usa-header.twig';
 import { NavBar } from '../usa-navbar/usa-navbar.stories.jsx';
 import { Nav } from '../usa-nav/usa-nav.stories.jsx';
 import data from './usa-header.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-header.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

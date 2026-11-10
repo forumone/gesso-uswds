@@ -5,7 +5,7 @@ import twigTemplate from './usa-nav.twig';
 import secondaryTwigTemplate from '../usa-nav-secondary/usa-nav-secondary.twig';
 import { MainMenu } from '../../components/menu-main/menu-main.stories.jsx';
 import { AccountMenu } from '../../components/menu-account/menu-account.stories.jsx';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-nav.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

@@ -4,7 +4,7 @@ import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './usa-tag.twig';
 import data from './usa-tag.yml';
 import bigData from './usa-tag--big.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-tag.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 
