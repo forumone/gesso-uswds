@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './usa-button.twig';
 import data from './usa-button.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-button.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

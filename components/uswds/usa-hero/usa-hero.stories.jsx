@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './usa-hero.twig';
 import data from './usa-hero.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import './usa-hero.source.scss';
 import componentInfo from './usa-hero.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';

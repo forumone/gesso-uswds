@@ -5,7 +5,7 @@ import twigTemplate from './usa-input.twig';
 import data from './usa-input.yml';
 import dataError from './usa-input--error.yml';
 import dataSuccess from './usa-input--success.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-input.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

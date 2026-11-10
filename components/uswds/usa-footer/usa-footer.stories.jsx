@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './usa-footer.twig';
 import data from './usa-footer.yml';
 import ContentPlaceholder from '../../../source/01-global/content-placeholder/content-placeholder';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import './usa-footer.source.scss';
 import componentInfo from './usa-footer.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';

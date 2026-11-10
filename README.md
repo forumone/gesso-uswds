@@ -299,9 +299,11 @@ directories.
 
 ### Modules
 
-Prefix the name of your JavaScript file with `_`, e.g. `_Tabs.es6.js`. Place
-helper modules in a `modules/` subdirectory inside the component directory.
-Import them into the component’s entry point script.
+Name helper modules `_[name].source.js`, e.g. `_Tabs.source.js`. The `_` prefix
+tells the build not to compile them to their own file. Place helper modules in
+a `modules/` subdirectory inside the component directory. Import them into the
+component’s entry point script. Unit tests are named `[name].test.js` (or
+`_[name].test.js` for a helper module) and live next to the file they test.
 
 ### Individual component/library scripts
 
@@ -583,13 +585,13 @@ z-index: gesso-z-index(modal);
 
 The values in Gesso’s configuration file are also exported to JavaScript objects
 so that the same values can be used in CSS and JS. The JS objects can be found
-in `source/00-config/_GESSO.es6.js`. This file is also rebuilt whenever
+in `source/00-config/_GESSO.source.js`. This file is also rebuilt whenever
 `npm run dev` or `npm run build` are run.
 
 For example, to use a breakpoint in a script:
 
 ```js
-import { BREAKPOINTS } from '../../../00-config/_GESSO.es6';
+import { BREAKPOINTS } from '../../../00-config/_GESSO.source';
 
 if (window.matchMedia(`min-width: ${BREAKPOINTS.desktop}`).matches) {
   // Some script that should only run on larger screens.

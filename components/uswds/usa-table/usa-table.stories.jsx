@@ -8,7 +8,7 @@ import scrollableData from './usa-table--scrollable.yml';
 import sortableData from './usa-table--sortable.yml';
 import stackedData from './usa-table--stacked.yml';
 import stickheaderData from './usa-table--sticky-header.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-table.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

@@ -2,7 +2,7 @@ import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
 import twigTemplate from './usa-navbar.twig';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-navbar.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

@@ -5,7 +5,7 @@ import twigTemplate from './usa-accordion.twig';
 import data from './usa-accordion.yml';
 import borderedData from './usa-accordion--bordered.yml';
 import multiselectableData from './usa-accordion--multiselectable.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-accordion.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

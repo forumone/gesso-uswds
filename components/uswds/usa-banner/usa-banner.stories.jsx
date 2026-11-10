@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './usa-banner.twig';
 import data from './usa-banner.yml';
 import globalData from '../../../source/00-config/storybook.global-data.yml';
-import '../../../source/01-global/uswds/uswds.es6';
+import '../../../source/01-global/uswds/uswds.source';
 import componentInfo from './usa-banner.component.yml';
 import getArgTypesFromComponent from '../../../.storybook/getArgTypesFromComponent.js';
 

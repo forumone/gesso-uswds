@@ -12,9 +12,9 @@ global:
     state:
       dist/css/utilities.css: {}
   js:
-    dist/js/html.es6.js: {}
-    dist/js/uswds-init.es6.js: {}
-    dist/js/uswds.es6.js: {}
+    dist/js/html.js: {}
+    dist/js/uswds-init.js: {}
+    dist/js/uswds.js: {}
   dependencies:
     - core/drupal
     - core/once
