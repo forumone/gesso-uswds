@@ -28,7 +28,7 @@ props:
         - string
         - "null"
       title: Hero Image
-      description: 'Hero background image markup. Used when homepage_hero slot is empty.'
+      description: 'URL of the hero background image. Used when homepage_hero slot is empty.'
     hero_title:
       type:
         - string
