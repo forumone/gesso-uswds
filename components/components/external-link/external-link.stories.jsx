@@ -5,6 +5,7 @@ import twigTemplate from './external-link.twig';
 import globalData from '../../../source/00-config/storybook.global-data.yml';
 import data from './external-link.yml';
 import './external-link.source';
+import '../icon/icon.stories.jsx';
 
 const settings = {
   title: 'Components/External Link',
