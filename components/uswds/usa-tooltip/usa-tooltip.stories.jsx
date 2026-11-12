@@ -1,4 +1,3 @@
-import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import { withGlobalWrapper } from '../../../.storybook/decorators';
@@ -16,20 +15,20 @@ const settings = {
   decorators: [
     (Story, { args }) => (
       <>
-        <div class="u-spaced-5-above">
+        <div className="u-spaced-5-above">
           <Story />
         </div>
-        <div class="u-spaced-5-above">
+        <div className="u-spaced-5-above">
           <Story
             args={{ ...args, tooltip_position: 'top', text: 'Show on Top' }}
           />
         </div>
-        <div class="u-spaced-5-above">
+        <div className="u-spaced-5-above">
           <Story
             args={{ ...args, tooltip_position: 'right', text: 'Show on Right' }}
           />
         </div>
-        <div class="u-spaced-5-above">
+        <div className="u-spaced-5-above">
           <Story
             args={{
               ...args,
@@ -38,7 +37,7 @@ const settings = {
             }}
           />
         </div>
-        <div class="u-spaced-5-above">
+        <div className="u-spaced-5-above">
           <Story
             args={{ ...args, tooltip_position: 'left', text: 'Show on Left' }}
           />

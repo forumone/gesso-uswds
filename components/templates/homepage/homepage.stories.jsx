@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
@@ -7,7 +6,7 @@ import twigTemplate from './homepage.twig';
 import globalData from '../../../source/00-config/storybook.global-data.yml';
 import ContentPlaceholder from '../../../source/01-global/content-placeholder/content-placeholder';
 import { MessagesandTabs } from '../messages-and-tabs/messages-and-tabs.stories.jsx';
-import { HeroImage } from '../../../source/01-global/images/hero-image.stories.jsx';
+import heroData from '../../uswds/usa-hero/usa-hero.yml';
 // Importing components to ensure their assets get loaded in Storybook when they
 // get referenced since Drupal loads them as a library.
 import '../../uswds/usa-hero/usa-hero.stories.jsx';
@@ -38,9 +37,8 @@ const Homepage = {
   args: {
     ...globalData,
     admin_info: MessagesandTabs.args.admin_info,
-    hero_image: ReactDOMServer.renderToStaticMarkup(
-      HeroImage.render(HeroImage.args)
-    ),
+    // usa-hero uses this as a CSS background-image URL, not markup.
+    hero_image: heroData.hero_image,
     hero_title: 'Homepage Hero Title',
     hero_summary: '<p>Homepage Hero Summary Text.</p>',
     hero_button_text: 'Homepage Hero Button Text',

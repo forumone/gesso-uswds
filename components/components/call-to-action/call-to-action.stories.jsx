@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import { withGlobalWrapper } from '../../../.storybook/decorators.jsx';
 import twigTemplate from './call-to-action.twig';
 import data from './call-to-action.yml';
+import globalData from '../../../source/00-config/storybook.global-data.yml';
 import './call-to-action.source.scss';
 // Importing components to ensure their assets get loaded in Storybook when they
 // get referenced since Drupal loads them as a library.
@@ -20,7 +21,7 @@ const settings = {
 
 const CallToAction = {
   render: args => parse(twigTemplate(args)),
-  args: { ...data },
+  args: { ...globalData, ...data },
 };
 
 export default settings;

@@ -14,10 +14,10 @@ const settings = {
     ...getArgTypesFromComponent(componentInfo),
   },
   decorators: Story => (
-    <div class="l-constrain u-spaced-05">
+    <div className="l-constrain u-spaced-05">
       <a
-        href={data.id}
-        class="usa-button"
+        href={`#${data.id}`}
+        className="usa-button"
         aria-controls={data.id}
         data-open-modal
       >
