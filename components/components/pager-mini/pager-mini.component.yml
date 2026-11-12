@@ -28,4 +28,5 @@ props:
 libraryOverrides:
   dependencies:
     - guswds/global
+    - core/components.guswds--icon
     - core/components.guswds--pager
