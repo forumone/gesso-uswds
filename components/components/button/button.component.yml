@@ -96,3 +96,4 @@ props:
 libraryOverrides:
   dependencies:
     - guswds/global
+    - core/components.guswds--icon
